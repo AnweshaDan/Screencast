@@ -4,6 +4,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Fade from '@material-ui/core/Fade';
 import MenuIcon from '@material-ui/icons/Menu';
+import Link from 'next/link'
 
 export default function FadeMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -30,10 +31,13 @@ export default function FadeMenu() {
         onClose={handleClose}
         TransitionComponent={Fade}
       >
-        <MenuItem onClick={handleClose}>Home</MenuItem>
-        <MenuItem onClick={handleClose}>Game</MenuItem>
-        <MenuItem onClick={handleClose}>Leaderboard</MenuItem>
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        
+        
+        <Link href = "/"><MenuItem onClick={handleClose}>Home</MenuItem></Link>
+        <Link href = "/game"><MenuItem onClick={handleClose}>Game</MenuItem></Link>
+        <Link href = "/leaderboard"><MenuItem onClick={handleClose}>Leaderboard</MenuItem></Link>
+        
+        
       </Menu>
     </div>
   );

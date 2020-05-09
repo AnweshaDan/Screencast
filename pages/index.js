@@ -1,30 +1,25 @@
 import React from 'react'
+import Head from 'next/head'
 import Navbar from '../components/Navbar'
-import Question from '../components/Question'
-import Hint from '../components/Hint'
-import Submit from '../components/Submit'
-
-import Answer from '../components/Answer'
-
-
-export default function index() {
+import Log from '../components/Log'
+export default function login() {
     return (
         <div>
-            <Navbar />
-            <Question/>
-            <Answer/>
             <div>
-                <Submit />
+                <Head>
+                    <meta charset="UTF-8"/>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit:no"/>
+                    <title>Screencast</title>
+                    <link rel = "stylesheet" type="text/css" href="question.css"/>
+                </Head>
             </div>
-            <br/>
             <div>
-                <Hint/>
+                <Navbar />
+            
+           <div>
+               <Log/>
+           </div>
             </div>
-
-            
-           
-      
-            
         </div>
     )
 }
