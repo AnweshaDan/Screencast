@@ -145,7 +145,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _Leadertable_module_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Leadertable.module.css */ "./components/Leadertable.module.css");
 /* harmony import */ var _Leadertable_module_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_Leadertable_module_css__WEBPACK_IMPORTED_MODULE_9__);
-var _jsxFileName = "/home/anwesha/Desktop/screencast/components/Leadertable.js";
+var _jsxFileName = "/home/rishav/screencast/Screencast/components/Leadertable.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -159,32 +159,45 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 const StyledTableCell = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["withStyles"])(theme => ({
   head: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white
+    backgroundColor: "#000033",
+    color: "white",
+    border: "none"
   },
   body: {
-    fontSize: 14
+    fontSize: 14,
+    color: "white",
+    border: "none"
   }
 }))(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_4___default.a);
 const StyledTableRow = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["withStyles"])(theme => ({
   root: {
     '&:nth-of-type(odd)': {
-      backgroundColor: theme.palette.background.default
+      backgroundColor: "rgba(255,255,255,0.4)"
+    },
+    '&:nth-of-type(even)': {
+      backgroundColor: "rgba(0,0,0,0.5)",
+      color: "white"
     }
   }
 }))(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7___default.a);
 
-function createData(No, Player) {
+function createData(Rank, Player, Points) {
   return {
-    No,
-    Player
+    Rank,
+    Player,
+    Points
   };
 }
 
-const rows = [createData(1, 'A'), createData(1, 'A'), createData(1, 'A'), createData(1, 'A')];
+const rows = [createData(1, 'A', 50), createData(1, 'A', 50), createData(1, 'A', 50), createData(1, 'A', 50), createData(1, 'A', 50), createData(1, 'A', 50), createData(1, 'A', 50), createData(1, 'A', 50)];
 const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])({
   table: {
-    minWidth: 700
+    marginTop: "10px",
+    marginLeft: "auto",
+    marginRight: "auto",
+    display: "auto",
+    maxWidth: '700px',
+    position: "relative"
   }
 });
 function CustomizedTables() {
@@ -193,24 +206,16 @@ function CustomizedTables() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 70,
+      columnNumber: 5
+    }
+  }, __jsx("div", {
+    className: "rtable",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72,
       columnNumber: 7
-    }
-  }, __jsx("h1", {
-    className: _Leadertable_module_css__WEBPACK_IMPORTED_MODULE_9___default.a.hello,
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 54,
-      columnNumber: 11
-    }
-  }, " LEADERBOARD"), __jsx(_material_ui_core_TableContainer__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    component: _material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_8___default.a,
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 55,
-      columnNumber: 13
     }
   }, __jsx(_material_ui_core_Table__WEBPACK_IMPORTED_MODULE_2___default.a, {
     className: classes.table,
@@ -218,52 +223,60 @@ function CustomizedTables() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
-      columnNumber: 13
+      lineNumber: 73,
+      columnNumber: 9
     }
   }, __jsx(_material_ui_core_TableHead__WEBPACK_IMPORTED_MODULE_6___default.a, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
-      columnNumber: 17
+      lineNumber: 74,
+      columnNumber: 11
     }
   }, __jsx(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7___default.a, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
-      columnNumber: 17
+      lineNumber: 75,
+      columnNumber: 13
     }
   }, __jsx(StyledTableCell, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
-      columnNumber: 21
+      lineNumber: 76,
+      columnNumber: 15
     }
-  }, "No"), __jsx(StyledTableCell, {
+  }, "Rank"), __jsx(StyledTableCell, {
     align: "left",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
-      columnNumber: 21
+      lineNumber: 77,
+      columnNumber: 15
     }
-  }, "Player"))), __jsx(_material_ui_core_TableBody__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, "Player"), __jsx(StyledTableCell, {
+    align: "left",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
-      columnNumber: 17
+      lineNumber: 78,
+      columnNumber: 15
+    }
+  }, "Points"))), __jsx(_material_ui_core_TableBody__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 82,
+      columnNumber: 11
     }
   }, rows.map(row => __jsx(StyledTableRow, {
     key: row.name,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
-      columnNumber: 21
+      lineNumber: 84,
+      columnNumber: 15
     }
   }, __jsx(StyledTableCell, {
     component: "th",
@@ -271,18 +284,26 @@ function CustomizedTables() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
-      columnNumber: 21
+      lineNumber: 85,
+      columnNumber: 17
     }
-  }, row.No), __jsx(StyledTableCell, {
+  }, row.Rank), __jsx(StyledTableCell, {
     align: "left",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
-      columnNumber: 21
+      lineNumber: 88,
+      columnNumber: 17
     }
-  }, row.Player)))))));
+  }, row.Player), __jsx(StyledTableCell, {
+    align: "left",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 89,
+      columnNumber: 17
+    }
+  }, row.Points)))))));
 }
 
 /***/ }),
@@ -294,10 +315,7 @@ function CustomizedTables() {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// Exports
-module.exports = {
-	"hello": "Leadertable_hello__2xiPF"
-};
+
 
 /***/ }),
 
@@ -311,22 +329,25 @@ module.exports = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return FadeMenu; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _material_ui_core_Menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/Menu */ "@material-ui/core/Menu");
-/* harmony import */ var _material_ui_core_Menu__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Menu__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/MenuItem */ "@material-ui/core/MenuItem");
-/* harmony import */ var _material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Fade */ "@material-ui/core/Fade");
-/* harmony import */ var _material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/icons/Menu */ "@material-ui/icons/Menu");
-/* harmony import */ var _material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_6__);
-var _jsxFileName = "/home/anwesha/Desktop/screencast/components/Mymenu.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-jsx/style */ "styled-jsx/style");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _material_ui_core_Menu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Menu */ "@material-ui/core/Menu");
+/* harmony import */ var _material_ui_core_Menu__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Menu__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/MenuItem */ "@material-ui/core/MenuItem");
+/* harmony import */ var _material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Fade */ "@material-ui/core/Fade");
+/* harmony import */ var _material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/icons/Menu */ "@material-ui/icons/Menu");
+/* harmony import */ var _material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_7__);
+var _jsxFileName = "/home/rishav/screencast/Screencast/components/Mymenu.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
@@ -335,7 +356,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 function FadeMenu() {
-  const [anchorEl, setAnchorEl] = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(null);
+  const [anchorEl, setAnchorEl] = react__WEBPACK_IMPORTED_MODULE_1___default.a.useState(null);
   const open = Boolean(anchorEl);
 
   const handleClick = event => {
@@ -347,91 +368,124 @@ function FadeMenu() {
   };
 
   return __jsx("div", {
+    className: "jsx-2057463881",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 25,
       columnNumber: 5
     }
-  }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
     "aria-controls": "fade-menu",
+    style: {
+      color: 'white'
+    },
     "aria-haspopup": "true",
     onClick: handleClick,
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 23,
-      columnNumber: 7
-    }
-  }, __jsx(_material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 24,
-      columnNumber: 7
-    }
-  })), __jsx(_material_ui_core_Menu__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    id: "fade-menu",
-    anchorEl: anchorEl,
-    keepMounted: true,
-    open: open,
-    onClose: handleClose,
-    TransitionComponent: _material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_4___default.a,
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 26,
       columnNumber: 7
     }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
+  }, __jsx(_material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_6___default.a, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27,
+      columnNumber: 9
+    }
+  })), __jsx(_material_ui_core_Menu__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    id: "fade-menu",
+    anchorEl: anchorEl,
+    keepMounted: true,
+    open: open,
+    onClose: handleClose,
+    TransitionComponent: _material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_5___default.a,
+    marginThreshold: "0px",
+    anchorOrigin: {
+      vertical: "top",
+      horizontal: "left"
+    },
+    anchorPosition: {
+      left: "0",
+      top: "0"
+    },
+    transformOrigin: {
+      top: "0px",
+      left: "0px"
+    },
+    PaperProps: {
+      style: {
+        top: 0,
+        left: 0,
+        backgroundColor: '#cc0044',
+        borderRadius: '6px',
+        color: 'white',
+        marginTop: '0',
+        paddingTop: ['0px'],
+        width: '400px',
+        maxHeight: '100%'
+      }
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29,
+      columnNumber: 7
+    }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
     href: "/",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 58,
       columnNumber: 9
     }
-  }, __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4___default.a, {
     onClick: handleClose,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
-      columnNumber: 26
+      lineNumber: 58,
+      columnNumber: 24
     }
-  }, "Home")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
+  }, "Home")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
     href: "/game",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 59,
       columnNumber: 9
     }
-  }, __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4___default.a, {
     onClick: handleClose,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
-      columnNumber: 30
+      lineNumber: 59,
+      columnNumber: 28
     }
-  }, "Game")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
+  }, "Game")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
     href: "/leaderboard",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 60,
       columnNumber: 9
     }
-  }, __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_4___default.a, {
     onClick: handleClose,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
-      columnNumber: 37
+      lineNumber: 60,
+      columnNumber: 35
     }
-  }, "Leaderboard"))));
+  }, "Leaderboard"))), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+    id: "2057463881",
+    __self: this
+  }, ".jsx-2057463881{margin:0;padding:0;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3Jpc2hhdi9zY3JlZW5jYXN0L1NjcmVlbmNhc3QvY29tcG9uZW50cy9NeW1lbnUuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBK0RrQixBQUVlLFNBQ0MsVUFFVCIsImZpbGUiOiIvaG9tZS9yaXNoYXYvc2NyZWVuY2FzdC9TY3JlZW5jYXN0L2NvbXBvbmVudHMvTXltZW51LmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCBCdXR0b24gZnJvbSAnQG1hdGVyaWFsLXVpL2NvcmUvQnV0dG9uJztcbmltcG9ydCBNZW51IGZyb20gJ0BtYXRlcmlhbC11aS9jb3JlL01lbnUnO1xuaW1wb3J0IE1lbnVJdGVtIGZyb20gJ0BtYXRlcmlhbC11aS9jb3JlL01lbnVJdGVtJztcbmltcG9ydCBGYWRlIGZyb20gJ0BtYXRlcmlhbC11aS9jb3JlL0ZhZGUnO1xuaW1wb3J0IE1lbnVJY29uIGZyb20gJ0BtYXRlcmlhbC11aS9pY29ucy9NZW51JztcbmltcG9ydCBMaW5rIGZyb20gJ25leHQvbGluaydcblxuXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBGYWRlTWVudSgpIHtcbiAgY29uc3QgW2FuY2hvckVsLCBzZXRBbmNob3JFbF0gPSBSZWFjdC51c2VTdGF0ZShudWxsKTtcbiAgY29uc3Qgb3BlbiA9IEJvb2xlYW4oYW5jaG9yRWwpO1xuXG4gIGNvbnN0IGhhbmRsZUNsaWNrID0gKGV2ZW50KSA9PiB7XG4gICAgc2V0QW5jaG9yRWwoZXZlbnQuY3VycmVudFRhcmdldCk7XG4gIH07XG5cbiAgY29uc3QgaGFuZGxlQ2xvc2UgPSAoKSA9PiB7XG4gICAgc2V0QW5jaG9yRWwobnVsbCk7XG4gIH07XG5cblxuXG4gIHJldHVybiAoXG4gICAgPGRpdj5cbiAgICAgIDxCdXR0b24gYXJpYS1jb250cm9scz1cImZhZGUtbWVudVwiIHN0eWxlPXt7IGNvbG9yOiAnd2hpdGUnIH19IGFyaWEtaGFzcG9wdXA9XCJ0cnVlXCIgb25DbGljaz17aGFuZGxlQ2xpY2t9PlxuICAgICAgICA8TWVudUljb24gLz5cbiAgICAgIDwvQnV0dG9uPlxuICAgICAgPE1lbnVcblxuICAgICAgICBpZD1cImZhZGUtbWVudVwiXG4gICAgICAgIGFuY2hvckVsPXthbmNob3JFbH1cbiAgICAgICAga2VlcE1vdW50ZWRcbiAgICAgICAgb3Blbj17b3Blbn1cbiAgICAgICAgb25DbG9zZT17aGFuZGxlQ2xvc2V9XG4gICAgICAgIFRyYW5zaXRpb25Db21wb25lbnQ9e0ZhZGV9XG4gICAgICAgIG1hcmdpblRocmVzaG9sZD0nMHB4J1xuICAgICAgICBhbmNob3JPcmlnaW49e3sgdmVydGljYWw6IFwidG9wXCIsIGhvcml6b250YWw6IFwibGVmdFwiIH19XG4gICAgICAgIGFuY2hvclBvc2l0aW9uPXt7IGxlZnQ6IFwiMFwiLCB0b3A6IFwiMFwiIH19XG4gICAgICAgIHRyYW5zZm9ybU9yaWdpbj17eyB0b3A6IFwiMHB4XCIsIGxlZnQ6IFwiMHB4XCIgfX1cblxuICAgICAgICBQYXBlclByb3BzPXt7XG4gICAgICAgICAgc3R5bGU6IHtcbiAgICAgICAgICAgIHRvcDogMCxcbiAgICAgICAgICAgIGxlZnQ6IDAsXG4gICAgICAgICAgICBiYWNrZ3JvdW5kQ29sb3I6ICcjY2MwMDQ0JyxcbiAgICAgICAgICAgIGJvcmRlclJhZGl1czogJzZweCcsXG4gICAgICAgICAgICBjb2xvcjogJ3doaXRlJyxcbiAgICAgICAgICAgIG1hcmdpblRvcDogJzAnLFxuICAgICAgICAgICAgcGFkZGluZ1RvcDogWycwcHgnXSxcbiAgICAgICAgICAgIHdpZHRoOiAnNDAwcHgnLFxuICAgICAgICAgICAgbWF4SGVpZ2h0OiAnMTAwJSdcbiAgICAgICAgICB9LFxuICAgICAgICB9fVxuICAgICAgPlxuXG5cbiAgICAgICAgPExpbmsgaHJlZj1cIi9cIj48TWVudUl0ZW0gb25DbGljaz17aGFuZGxlQ2xvc2V9PkhvbWU8L01lbnVJdGVtPjwvTGluaz5cbiAgICAgICAgPExpbmsgaHJlZj1cIi9nYW1lXCI+PE1lbnVJdGVtIG9uQ2xpY2s9e2hhbmRsZUNsb3NlfT5HYW1lPC9NZW51SXRlbT48L0xpbms+XG4gICAgICAgIDxMaW5rIGhyZWY9XCIvbGVhZGVyYm9hcmRcIj48TWVudUl0ZW0gb25DbGljaz17aGFuZGxlQ2xvc2V9PkxlYWRlcmJvYXJkPC9NZW51SXRlbT48L0xpbms+XG5cblxuICAgICAgPC9NZW51PlxuICAgICAgPHN0eWxlIGpzeD57YFxuICAgICAgbWFyZ2luOjA7XG4gICAgICBwYWRkaW5nOjA7XG5cbiAgICAgIGB9PC9zdHlsZT5cbiAgICA8L2RpdiA+XG4gICk7XG59XG4iXX0= */\n/*@ sourceURL=/home/rishav/screencast/Screencast/components/Mymenu.js */"));
 }
 
 /***/ }),
@@ -459,8 +513,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/IconButton */ "@material-ui/core/IconButton");
 /* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _Mymenu__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Mymenu */ "./components/Mymenu.js");
-var _jsxFileName = "/home/anwesha/Desktop/screencast/components/Navbar.js";
+/* harmony import */ var _Navbar_module_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Navbar.module.css */ "./components/Navbar.module.css");
+/* harmony import */ var _Navbar_module_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_Navbar_module_css__WEBPACK_IMPORTED_MODULE_7__);
+var _jsxFileName = "/home/rishav/screencast/Screencast/components/Navbar.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -470,13 +527,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(theme => ({
   root: {
-    flexGrow: 1
+    flexGrow: 0,
+    backgroundColor: "#000033"
   },
   menuButton: {
-    marginRight: theme.spacing(2)
+    marginRight: theme.spacing(0)
   },
   title: {
-    flexGrow: 1
+    flexGrow: 0
   }
 }));
 function ButtonAppBar() {
@@ -486,40 +544,42 @@ function ButtonAppBar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 32,
       columnNumber: 5
     }
   }, __jsx(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_2___default.a, {
     position: "static",
+    className: _Navbar_module_css__WEBPACK_IMPORTED_MODULE_7___default.a.navv,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 33,
       columnNumber: 7
     }
   }, __jsx(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    className: _Navbar_module_css__WEBPACK_IMPORTED_MODULE_7___default.a.navcontent,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 34,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_5___default.a, {
     edge: "start",
     className: classes.menuButton,
-    color: "inherit",
+    color: "white",
     "aria-label": "menu",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 35,
       columnNumber: 11
     }
   }, __jsx(_Mymenu__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 36,
       columnNumber: 13
     }
   })), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -528,11 +588,26 @@ function ButtonAppBar() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 38,
       columnNumber: 11
     }
   }, "SCREENCAST 2020"))));
 }
+
+/***/ }),
+
+/***/ "./components/Navbar.module.css":
+/*!**************************************!*\
+  !*** ./components/Navbar.module.css ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {
+	"navv": "Navbar_navv__3g5e0",
+	"navcontent": "Navbar_navcontent__3817V"
+};
 
 /***/ }),
 
@@ -2219,9 +2294,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Navbar */ "./components/Navbar.js");
 /* harmony import */ var _components_Leadertable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Leadertable */ "./components/Leadertable.js");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/head */ "next/head");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/home/anwesha/Desktop/screencast/pages/leaderboard.js";
+/* harmony import */ var react_particles_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-particles-js */ "react-particles-js");
+/* harmony import */ var react_particles_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_particles_js__WEBPACK_IMPORTED_MODULE_3__);
+var _jsxFileName = "/home/rishav/screencast/Screencast/pages/leaderboard.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -2232,35 +2307,79 @@ function leaderboard() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8,
+      lineNumber: 9,
       columnNumber: 5
     }
-  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9,
-      columnNumber: 7
-    }
-  }, __jsx("title", {
+  }, __jsx(react_particles_js__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    params: {
+      particles: {
+        number: {
+          value: 200,
+          density: {
+            enable: true,
+            value_area: 900
+          }
+        },
+        color: {
+          value: ['#cc0000']
+        },
+        line_linked: {
+          color: '#aa0044',
+          opacity: 1
+        }
+      }
+    },
+    style: {
+      width: "100%",
+      height: "100%",
+      top: 0,
+      left: 0,
+      position: "fixed",
+      index: "-10"
+    },
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 10,
-      columnNumber: 9
-    }
-  }, "Leaderboard")), __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14,
       columnNumber: 7
     }
-  }), __jsx(_components_Leadertable__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }), __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 42,
+      columnNumber: 7
+    }
+  }), __jsx("div", {
+    className: "head",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43,
+      columnNumber: 7
+    }
+  }, __jsx("div", {
+    className: "container neon-box",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44,
+      columnNumber: 9
+    }
+  }, __jsx("div", {
+    class: "glitch2",
+    "data-text": "LEADERBOARD",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45,
+      columnNumber: 11
+    }
+  }, "LEADERBOARD"))), __jsx(_components_Leadertable__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49,
       columnNumber: 7
     }
   }));
@@ -2275,7 +2394,7 @@ function leaderboard() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/anwesha/Desktop/screencast/pages/leaderboard.js */"./pages/leaderboard.js");
+module.exports = __webpack_require__(/*! /home/rishav/screencast/Screencast/pages/leaderboard.js */"./pages/leaderboard.js");
 
 
 /***/ }),
@@ -2467,17 +2586,6 @@ module.exports = require("@material-ui/icons/Menu");
 
 /***/ }),
 
-/***/ "next/head":
-/*!****************************!*\
-  !*** external "next/head" ***!
-  \****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("next/head");
-
-/***/ }),
-
 /***/ "prop-types":
 /*!*****************************!*\
   !*** external "prop-types" ***!
@@ -2519,6 +2627,28 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-is");
+
+/***/ }),
+
+/***/ "react-particles-js":
+/*!*************************************!*\
+  !*** external "react-particles-js" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-particles-js");
+
+/***/ }),
+
+/***/ "styled-jsx/style":
+/*!***********************************!*\
+  !*** external "styled-jsx/style" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("styled-jsx/style");
 
 /***/ }),
 

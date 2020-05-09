@@ -7,42 +7,59 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import css from './Leadertable.module.css'
+import styles from './Leadertable.module.css'
 
 
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
+    backgroundColor: "#000033",
+    color: "white",
+    border: "none",
   },
   body: {
     fontSize: 14,
+    color: "white",
+    border: "none",
   },
 }))(TableCell);
 
 const StyledTableRow = withStyles((theme) => ({
   root: {
     '&:nth-of-type(odd)': {
-      backgroundColor: theme.palette.background.default,
+      backgroundColor: "rgba(255,255,255,0.4)",
+    },
+    '&:nth-of-type(even)': {
+      backgroundColor: "rgba(0,0,0,0.5)",
+      color: "white",
     },
   },
 }))(TableRow);
 
-function createData(No,Player) {
-  return { No,Player};
+function createData(Rank, Player, Points) {
+  return { Rank, Player, Points };
 }
 
 const rows = [
-  createData(1, 'A'),
-  createData(1, 'A'),
-  createData(1, 'A'),
-  createData(1, 'A')
+  createData(1, 'A', 50),
+  createData(1, 'A', 50),
+  createData(1, 'A', 50),
+  createData(1, 'A', 50),
+  createData(1, 'A', 50),
+  createData(1, 'A', 50),
+  createData(1, 'A', 50),
+  createData(1, 'A', 50),
+
 ];
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 700,
+    marginTop: "10px",
+    marginLeft: "auto",
+    marginRight: "auto",
+    display: "auto",
+    maxWidth: '700px',
+    position: "relative"
   },
 });
 
@@ -50,31 +67,35 @@ export default function CustomizedTables() {
   const classes = useStyles();
 
   return (
-      <div>
-          <h1 className={css.hello}> LEADERBOARD</h1>
-            <TableContainer component={Paper}>
-            <Table className={classes.table} aria-label="customized table">
-                <TableHead>
-                <TableRow>
-                    <StyledTableCell>No</StyledTableCell>
-                    <StyledTableCell align="left">Player</StyledTableCell>
-                
-                </TableRow>
-                </TableHead>
-                <TableBody>
-                {rows.map((row) => (
-                    <StyledTableRow key={row.name}>
-                    <StyledTableCell component="th" scope="row">
-                        {row.No}
-                    </StyledTableCell>
-                    <StyledTableCell align="left">{row.Player}</StyledTableCell>
-                    
-                    
-                    </StyledTableRow>
-                ))}
-                </TableBody>
-            </Table>
-            </TableContainer>
-        </div>
+    <div>
+
+      <div className="rtable">
+        <Table className={classes.table} aria-label="customized table">
+          <TableHead>
+            <TableRow>
+              <StyledTableCell>Rank</StyledTableCell>
+              <StyledTableCell align="left">Player</StyledTableCell>
+              <StyledTableCell align="left">Points</StyledTableCell>
+
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {rows.map((row) => (
+              <StyledTableRow key={row.name}>
+                <StyledTableCell component="th" scope="row">
+                  {row.Rank}
+                </StyledTableCell>
+                <StyledTableCell align="left">{row.Player}</StyledTableCell>
+                <StyledTableCell align="left">{row.Points}</StyledTableCell>
+
+
+              </StyledTableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
+
+
+    </div>
   );
 }
