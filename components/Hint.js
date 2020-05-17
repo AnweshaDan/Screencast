@@ -31,9 +31,7 @@ export default function SimplePopover() {
         Hint
       </Button>
       &nbsp;&nbsp;
-      <Button className="btnSubmit" variant="contained" color="primary" disableElevation>
-        Submit
-    </Button>
+    
       <Popover
         id={id}
         open={open}
@@ -54,3 +52,6 @@ export default function SimplePopover() {
     </div>
   );
 }
+//   <Button className="btnSubmit" variant="contained" color="primary" disableElevation>
+//Submit
+//</Button>

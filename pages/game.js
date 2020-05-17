@@ -3,12 +3,38 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import Question from '../components/Question'
 import Hint from '../components/Hint'
-//import Submit from '../components/Submit'
+import Submit from '../components/Submit'
 import Particles from 'react-particles-js';
 import Answer from '../components/Answer'
 
 
-export default function index() {
+class game extends React.Component{
+    constructor(props)
+    {
+        super(props);
+        this.state={
+            answer:""
+        }
+        this.submit=this.submit.bind(this);
+        this.change=this.change.bind(this);
+        
+    }
+    submit=(event)=>{
+        console.log(this.state.answer);
+    }
+    change=(event)=>{
+        let e= event.target.value; 
+        this.setState(prevState=> {
+        return { ...prevState, answer:e }
+    });
+    console.log(e);
+    
+    }
+    
+    render()
+    {
+
+    
     return (
         <div>
             <Particles
@@ -46,7 +72,9 @@ export default function index() {
 
             <Navbar />
             <Question />
-            <Answer />
+            <Answer change={this.change} />
+            <Submit submit={this.submit} />
+            
             <div>
 
 
@@ -63,7 +91,9 @@ export default function index() {
 
 
         </div >
-    )
+    );
 }
+}
+export default game;
 
 

@@ -1,24 +1,40 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React , {Component} from 'react';
+import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = (theme) => ({
   root: {
     '& > *': {
       margin: theme.spacing(1),
       width: '25ch',
     },
   },
-}));
+});
 
-export default function BasicTextFields() {
-  const classes = useStyles();
+class Answer extends Component{
 
-  return (
-    <form className="ans-div" noValidate autoComplete="off">
+  constructor(props)
+  {
+    super(props);
+    
+    
+  }
+  
 
-      <TextField id="filled-basic" label="Type your answer here." variant="filled" />
+  render()
+  {
+    const {classes} = this.props;
+    return (
+      <div>
+      <form className="ans-div" noValidate autoComplete="off"  >
 
-    </form>
-  );
+         <TextField id="filled-basic" label="Type your answer here." variant="filled" onChange={this.props.change} />
+
+      </form>
+     
+    </div>
+    );
+  }
 }
+export default withStyles(useStyles)(Answer)

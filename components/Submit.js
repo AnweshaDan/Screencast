@@ -1,10 +1,13 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 
-export default function DisableElevation() {
+
+function Submit(props) {
+  
   return (
-    <Button className="btnSubmit" variant="contained" color="primary" disableElevation>
+    <Button className="btnSubmit" variant="contained" color="primary" disableElevation onClick={props.submit}>
       Submit
     </Button>
   );
 }
+export default Submit;
