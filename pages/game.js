@@ -40,9 +40,7 @@ class game extends React.Component{
           this.setState(prevState=>{
             return{ ...prevState, questions:r}
           });
-          this.setState(prevState=>{
-            return{ ...prevState, qsNo:prevState.qsNo+1}
-          });
+          
           
 
     });
@@ -67,15 +65,33 @@ class game extends React.Component{
 
     checkAns(answer)//check answer from api and send for correct alert
     {
+        
         console.log(answer);
         console.log(this.state.qsNo)
+        axios.get('https://jsonplaceholder.typicode.com/posts/'+this.state.qsNo).then((response)=>
+        {
+             let r=response.data.id;
+             console.log(r);
+        
         if(this.state.qsNo < 5)
         {
-            this.getQuestions();
+            if(answer==r)
+            {
+                
+                this.setState(prevState=>{
+                    return{ ...prevState, qsNo:prevState.qsNo+1}
+                  });
+                  this.getQuestions();
+            }
+            else{
+                this.getQuestions();
+            }
+                
         }
         else{
             Router.push('/');
         }
+    });
 
     }
     
