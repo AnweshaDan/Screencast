@@ -5,7 +5,8 @@ import Question from '../components/Question'
 import Hint from '../components/Hint'
 import Submit from '../components/Submit'
 import Particles from 'react-particles-js';
-import Answer from '../components/Answer'
+import Answer from '../components/Answer';
+import Router from 'next/router';
 
 
 class game extends React.Component{
@@ -14,8 +15,9 @@ class game extends React.Component{
         super(props);
         this.state={
             answer:"",
-            questions:"Hola. This is the question.This is the question.This is the question.This is the question.This is the question.This is the question.This is the question."
-            //to store the questions from api
+            questions:"",
+            qsNo:1
+            
         }
         this.submit=this.submit.bind(this);
         this.change=this.change.bind(this);
@@ -23,19 +25,23 @@ class game extends React.Component{
         this.getQuestions=this.getQuestions.bind(this);
     }
 
-    componentDidMount()
+    componentDidMount()//at the beginning sets the first qs
     {
+        console.log(this.state.qsNo);
         this.getQuestions();
     }
 
     getQuestions(){
-        console.log("YO");//get questions from api
-        axios.get('https://jsonplaceholder.typicode.com/posts/1').then((response)=>
+        console.log("YO");//get questions from api and updates state
+        axios.get('https://jsonplaceholder.typicode.com/posts/'+this.state.qsNo).then((response)=>
         {
           let r=response.data.title;
           console.log(r);
           this.setState(prevState=>{
             return{ ...prevState, questions:r}
+          });
+          this.setState(prevState=>{
+            return{ ...prevState, qsNo:prevState.qsNo+1}
           });
           
 
@@ -61,7 +67,15 @@ class game extends React.Component{
 
     checkAns(answer)//check answer from api and send for correct alert
     {
-        console.log(answer);//
+        console.log(answer);
+        console.log(this.state.qsNo)
+        if(this.state.qsNo < 5)
+        {
+            this.getQuestions();
+        }
+        else{
+            Router.push('/');
+        }
 
     }
     
