@@ -30,26 +30,31 @@ export default function OutlinedCard() {
   const bull = <span className={classes.bullet}>•</span>;
 
   return (
-      <div>
-          <h2> ROUND 1 </h2>
-            <Card className={classes.root} variant="outlined">
-            <CardContent>
-                <Typography className={classes.title} color="textSecondary" gutterBottom>
-                Question 1
-                </Typography>
-                
-                <Typography className={classes.pos} color="textSecondary">
-                This is the question.This is the question.This is the question.This is the question.
-                This is the question.This is the question.This is the question.This is the question.
-                This is the question.This is the question.This is the question.This is the question.
-                This is the question.This is the question.This is the question.This is the question.
-                </Typography>
-               
-            </CardContent>
-            
-            
-            </Card>
+    <div>
+      <div className="head">
+        <div className="container neon-box">
+          <div class="glitch1" data-text="ROUND 1">ROUND 1</div>
         </div>
+      </div>
+
+
+      <CardContent className="question">
+        <Typography className={classes.title} color="white" gutterBottom>
+          Question 1
+                </Typography>
+
+        <Typography className={classes.pos} color="#f0f0f0">
+          This is the question.This is the question.This is the question.This is the question.
+          This is the question.This is the question.This is the question.This is the question.
+          This is the question.This is the question.This is the question.This is the question.
+          This is the question.This is the question.This is the question.This is the question.
+                </Typography>
+
+      </CardContent>
+
+
+
+    </div>
   );
 }
 

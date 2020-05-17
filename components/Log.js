@@ -17,10 +17,10 @@ export default function ContainedButtons() {
     <div className={classes.root}>
      
       <Button variant="contained" color="primary">
-        Login
+        Login with Facebook
       </Button>
       <Button variant="contained" color="secondary">
-        SignUp
+        Login with Google
       </Button>
      
     </div>

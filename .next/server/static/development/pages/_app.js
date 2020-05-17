@@ -122,7 +122,7 @@ function MyApp({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 4,
+      lineNumber: 7,
       columnNumber: 10
     }
   }));

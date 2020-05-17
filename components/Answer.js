@@ -15,10 +15,10 @@ export default function BasicTextFields() {
   const classes = useStyles();
 
   return (
-    <form className={classes.root} noValidate autoComplete="off">
-      
+    <form className="ans-div" noValidate autoComplete="off">
+
       <TextField id="filled-basic" label="Type your answer here." variant="filled" />
-      
+
     </form>
   );
 }

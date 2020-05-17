@@ -27,9 +27,13 @@ export default function SimplePopover() {
 
   return (
     <div>
-      <Button aria-describedby={id} variant="contained" color="primary" onClick={handleClick}>
+      <Button className="btnSubmit" aria-describedby={id} variant="contained" color="secondary" onClick={handleClick}>
         Hint
       </Button>
+      &nbsp;&nbsp;
+      <Button className="btnSubmit" variant="contained" color="primary" disableElevation>
+        Submit
+    </Button>
       <Popover
         id={id}
         open={open}
