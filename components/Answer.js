@@ -19,6 +19,7 @@ class Answer extends Component{
     super(props);
     
     
+    
   }
   
 
@@ -27,9 +28,9 @@ class Answer extends Component{
     const {classes} = this.props;
     return (
       <div>
-      <form className="ans-div" noValidate autoComplete="off"  >
+      <form className="ans-div" noValidate autoComplete="off"   >
 
-         <TextField id="filled-basic" label="Type your answer here." variant="filled" onChange={this.props.change} />
+         <TextField id="filled-basic" label="Type your answer here." variant="filled" onChange={this.props.change}  />
 
       </form>
      

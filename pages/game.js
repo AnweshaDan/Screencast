@@ -1,4 +1,4 @@
-
+import axios from'axios'
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Question from '../components/Question'
@@ -13,22 +13,56 @@ class game extends React.Component{
     {
         super(props);
         this.state={
-            answer:""
+            answer:"",
+            questions:"Hola. This is the question.This is the question.This is the question.This is the question.This is the question.This is the question.This is the question."
+            //to store the questions from api
         }
         this.submit=this.submit.bind(this);
         this.change=this.change.bind(this);
+        this.checkAns=this.checkAns.bind(this);
+        this.getQuestions=this.getQuestions.bind(this);
+    }
+
+    componentDidMount()
+    {
+        this.getQuestions();
+    }
+
+    getQuestions(){
+        console.log("YO");//get questions from api
+        axios.get('https://jsonplaceholder.typicode.com/posts/1').then((response)=>
+        {
+          let r=response.data.title;
+          console.log(r);
+          this.setState(prevState=>{
+            return{ ...prevState, questions:r}
+          });
+          
+
+    });
+    }
+
+    submit=()=>{//send final answer for checking
         
-    }
-    submit=(event)=>{
         console.log(this.state.answer);
+        this.checkAns(this.state.answer);
     }
-    change=(event)=>{
+
+    change=(event)=>{//keep updating answer
         let e= event.target.value; 
         this.setState(prevState=> {
         return { ...prevState, answer:e }
     });
-    console.log(e);
     
+
+    
+    
+    }
+
+    checkAns(answer)//check answer from api and send for correct alert
+    {
+        console.log(answer);//
+
     }
     
     render()
@@ -71,7 +105,7 @@ class game extends React.Component{
             />
 
             <Navbar />
-            <Question />
+            <Question qs={this.state.questions} />
             <Answer change={this.change} />
             <Submit submit={this.submit} />
             

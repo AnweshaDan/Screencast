@@ -25,7 +25,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function OutlinedCard() {
+export default function OutlinedCard(props) {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
 
@@ -44,10 +44,7 @@ export default function OutlinedCard() {
                 </Typography>
 
         <Typography className={classes.pos} color="#f0f0f0">
-          This is the question.This is the question.This is the question.This is the question.
-          This is the question.This is the question.This is the question.This is the question.
-          This is the question.This is the question.This is the question.This is the question.
-          This is the question.This is the question.This is the question.This is the question.
+          {props.qs}
                 </Typography>
 
       </CardContent>
