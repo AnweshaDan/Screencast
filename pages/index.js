@@ -5,6 +5,7 @@ import Log from '../components/Log'
 import Particles from 'react-particles-js';
 import Img from 'react-image'
 import Logo from '../glug.png'
+import GoogleLog from '../components/GoogleLog'
 
 console.log(Logo);
 
@@ -68,7 +69,7 @@ export default function login() {
                         <h1>Login to play</h1>
                     </div>
                     <div>
-                        <Log />
+                        <GoogleLog />
                     </div>
                     <style jsx>{`
     div{

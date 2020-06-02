@@ -9,6 +9,7 @@ import Answer from '../components/Answer';
 import Router from 'next/router';
 
 
+
 class game extends React.Component{
     constructor(props)
     {
@@ -16,14 +17,20 @@ class game extends React.Component{
         this.state={
             answer:"",
             questions:"",
-            qsNo:1
+            qsNo:1,
+            correct:0,
+            alert_title:"",
+            alert_text:"hola",
+            open:false
             
         }
+
         this.submit=this.submit.bind(this);
         this.change=this.change.bind(this);
         this.checkAns=this.checkAns.bind(this);
         this.getQuestions=this.getQuestions.bind(this);
     }
+    
 
     componentDidMount()//at the beginning sets the first qs
     {
@@ -79,11 +86,14 @@ class game extends React.Component{
             {
                 
                 this.setState(prevState=>{
-                    return{ ...prevState, qsNo:prevState.qsNo+1}
+                    return{ ...prevState, qsNo:prevState.qsNo+1,correct:1}
                   });
                   this.getQuestions();
             }
             else{
+                this.setState(prevState=>{
+                    return{ ...prevState,correct:0}
+                  });
                 this.getQuestions();
             }
                 
@@ -91,6 +101,7 @@ class game extends React.Component{
         else{
             Router.push('/');
         }
+        console.log(this.state.correct)
     });
 
     }
@@ -137,7 +148,8 @@ class game extends React.Component{
             <Navbar />
             <Question qs={this.state.questions} />
             <Answer change={this.change} />
-            <Submit submit={this.submit} />
+            <Submit submit={this.submit} correct={this.correct}/>
+            
             
             <div>
 
