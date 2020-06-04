@@ -26,12 +26,16 @@ class GoogleLog2 extends React.Component {
 
   responseGoogle = response => {
     this.setState({ userDetails: response.profileObj, isUserLoggedIn: true });
-    Router.push('/game')
+    //Router.push('/game')//use href with button later
   };
 
   logout = () => {
     this.setState({isUserLoggedIn: false})
   };
+
+  play=()=>{
+      Router.push('/game')
+  }
 
   render() {
     const { classes } = this.props;
@@ -55,6 +59,7 @@ class GoogleLog2 extends React.Component {
                 >
                   Log In with Google
                 </Button>
+
               </div>
             )}
             onSuccess={this.responseGoogle}
@@ -75,10 +80,15 @@ class GoogleLog2 extends React.Component {
                   >
                     Log Out
                   </Button>
+                  <Button variant="contained" color="secondary" onClick={this.play}>
+                    Play
+                  </Button>
                 </div>
+                
                 )}
                 onLogoutSuccess={this.logout}
               />
+
 
               <div className="image">
                 <img src={this.state.userDetails.imageUrl} />

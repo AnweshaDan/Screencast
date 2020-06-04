@@ -163,14 +163,17 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
       this.setState({
         userDetails: response.profileObj,
         isUserLoggedIn: true
-      });
-      next_router__WEBPACK_IMPORTED_MODULE_2___default.a.push('/game');
+      }); //Router.push('/game')//use href with button later
     });
 
     _defineProperty(this, "logout", () => {
       this.setState({
         isUserLoggedIn: false
       });
+    });
+
+    _defineProperty(this, "play", () => {
+      next_router__WEBPACK_IMPORTED_MODULE_2___default.a.push('/game');
     });
 
     this.state = {
@@ -188,7 +191,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44,
+        lineNumber: 48,
         columnNumber: 7
       }
     }, !this.state.isUserLoggedIn && __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -198,7 +201,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49,
+          lineNumber: 53,
           columnNumber: 17
         }
       }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -209,7 +212,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50,
+          lineNumber: 54,
           columnNumber: 17
         }
       }, "Log In with Google")),
@@ -219,7 +222,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46,
+        lineNumber: 50,
         columnNumber: 11
       }
     }), this.state.isUserLoggedIn && __jsx("div", {
@@ -227,7 +230,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65,
+        lineNumber: 70,
         columnNumber: 11
       }
     }, __jsx("div", {
@@ -235,7 +238,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66,
+        lineNumber: 71,
         columnNumber: 13
       }
     }, __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_1__["GoogleLogout"], {
@@ -244,7 +247,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69,
+          lineNumber: 74,
           columnNumber: 17
         }
       }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -255,15 +258,25 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70,
+          lineNumber: 75,
           columnNumber: 19
         }
-      }, "Log Out")),
+      }, "Log Out"), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        variant: "contained",
+        color: "secondary",
+        onClick: this.play,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 83,
+          columnNumber: 19
+        }
+      }, "Play")),
       onLogoutSuccess: this.logout,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67,
+        lineNumber: 72,
         columnNumber: 15
       }
     }), __jsx("div", {
@@ -271,7 +284,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 83,
+        lineNumber: 93,
         columnNumber: 15
       }
     }, __jsx("img", {
@@ -279,7 +292,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 84,
+        lineNumber: 94,
         columnNumber: 17
       }
     })), __jsx("div", {
@@ -287,7 +300,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86,
+        lineNumber: 96,
         columnNumber: 15
       }
     }, "Welcome Mr. ", this.state.userDetails.givenName, " ", this.state.userDetails.familyName), __jsx("div", {
@@ -295,14 +308,14 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 90,
+        lineNumber: 100,
         columnNumber: 15
       }
     }, __jsx("i", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 90,
+        lineNumber: 100,
         columnNumber: 38
       }
     }, this.state.userDetails.email))), __jsx("div", {
@@ -310,7 +323,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92,
+        lineNumber: 102,
         columnNumber: 13
       }
     }), __jsx("div", {
@@ -318,7 +331,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 93,
+        lineNumber: 103,
         columnNumber: 13
       }
     })));

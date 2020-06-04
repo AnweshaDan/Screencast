@@ -72,15 +72,18 @@ var GoogleLog2 = /*#__PURE__*/function (_React$Component) {
       _this.setState({
         userDetails: response.profileObj,
         isUserLoggedIn: true
-      });
+      }); //Router.push('/game')//use href with button later
 
-      next_router__WEBPACK_IMPORTED_MODULE_9___default.a.push('/game');
     });
 
     Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this), "logout", function () {
       _this.setState({
         isUserLoggedIn: false
       });
+    });
+
+    Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this), "play", function () {
+      next_router__WEBPACK_IMPORTED_MODULE_9___default.a.push('/game');
     });
 
     _this.state = {
@@ -101,7 +104,7 @@ var GoogleLog2 = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44,
+          lineNumber: 48,
           columnNumber: 7
         }
       }, !this.state.isUserLoggedIn && __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -112,7 +115,7 @@ var GoogleLog2 = /*#__PURE__*/function (_React$Component) {
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 49,
+              lineNumber: 53,
               columnNumber: 17
             }
           }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -123,7 +126,7 @@ var GoogleLog2 = /*#__PURE__*/function (_React$Component) {
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 50,
+              lineNumber: 54,
               columnNumber: 17
             }
           }, "Log In with Google"));
@@ -134,7 +137,7 @@ var GoogleLog2 = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46,
+          lineNumber: 50,
           columnNumber: 11
         }
       }), this.state.isUserLoggedIn && __jsx("div", {
@@ -142,7 +145,7 @@ var GoogleLog2 = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65,
+          lineNumber: 70,
           columnNumber: 11
         }
       }, __jsx("div", {
@@ -150,7 +153,7 @@ var GoogleLog2 = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66,
+          lineNumber: 71,
           columnNumber: 13
         }
       }, __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_8__["GoogleLogout"], {
@@ -160,7 +163,7 @@ var GoogleLog2 = /*#__PURE__*/function (_React$Component) {
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 69,
+              lineNumber: 74,
               columnNumber: 17
             }
           }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -171,16 +174,26 @@ var GoogleLog2 = /*#__PURE__*/function (_React$Component) {
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 70,
+              lineNumber: 75,
               columnNumber: 19
             }
-          }, "Log Out"));
+          }, "Log Out"), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10__["default"], {
+            variant: "contained",
+            color: "secondary",
+            onClick: _this2.play,
+            __self: _this2,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 83,
+              columnNumber: 19
+            }
+          }, "Play"));
         },
         onLogoutSuccess: this.logout,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67,
+          lineNumber: 72,
           columnNumber: 15
         }
       }), __jsx("div", {
@@ -188,7 +201,7 @@ var GoogleLog2 = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83,
+          lineNumber: 93,
           columnNumber: 15
         }
       }, __jsx("img", {
@@ -196,7 +209,7 @@ var GoogleLog2 = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 84,
+          lineNumber: 94,
           columnNumber: 17
         }
       })), __jsx("div", {
@@ -204,7 +217,7 @@ var GoogleLog2 = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 86,
+          lineNumber: 96,
           columnNumber: 15
         }
       }, "Welcome Mr. ", this.state.userDetails.givenName, " ", this.state.userDetails.familyName), __jsx("div", {
@@ -212,14 +225,14 @@ var GoogleLog2 = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90,
+          lineNumber: 100,
           columnNumber: 15
         }
       }, __jsx("i", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90,
+          lineNumber: 100,
           columnNumber: 38
         }
       }, this.state.userDetails.email))), __jsx("div", {
@@ -227,7 +240,7 @@ var GoogleLog2 = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 92,
+          lineNumber: 102,
           columnNumber: 13
         }
       }), __jsx("div", {
@@ -235,7 +248,7 @@ var GoogleLog2 = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93,
+          lineNumber: 103,
           columnNumber: 13
         }
       })));
