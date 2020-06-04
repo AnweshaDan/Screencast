@@ -2,7 +2,7 @@
 import React from "react";
 import GoogleLogin from "react-google-login";
 import { GoogleLogout } from "react-google-login";
-import Router from 'next/router';
+
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -33,9 +33,7 @@ class GoogleLog2 extends React.Component {
     this.setState({isUserLoggedIn: false})
   };
 
-  play=()=>{
-      Router.push('/game')
-  }
+ 
 
   render() {
     const { classes } = this.props;
@@ -63,6 +61,7 @@ class GoogleLog2 extends React.Component {
               </div>
             )}
             onSuccess={this.responseGoogle}
+            isSignedIn={true}
             onFailure={this.responseGoogle}//handle later
           />
         )}
@@ -80,7 +79,7 @@ class GoogleLog2 extends React.Component {
                   >
                     Log Out
                   </Button>
-                  <Button variant="contained" color="secondary" onClick={this.play}>
+                  <Button variant="contained" color="secondary" href='/game'>
                     Play
                   </Button>
                 </div>
@@ -94,7 +93,7 @@ class GoogleLog2 extends React.Component {
                 <img src={this.state.userDetails.imageUrl} />
               </div>
               <div className="name">
-                Welcome Mr. {this.state.userDetails.givenName}{" "}
+                Welcome {this.state.userDetails.givenName}{" "}
                 {this.state.userDetails.familyName}
               </div>
               <div className="email"><i>{this.state.userDetails.email}</i></div>

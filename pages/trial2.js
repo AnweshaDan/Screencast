@@ -1,16 +1,60 @@
-import React from "react";
-import GoogleLog2 from '../components/GoogleLog2'
-import Navbar from '../components/Navbar'
+
+
+import React,{Component} from 'react'
 import Head from 'next/head'
+import Navbar from '../components/Navbar'
+import Log from '../components/Log'
+import Particles from 'react-particles-js';
+import Img from 'react-image'
 import Logo from '../glug.png'
+import GoogleLog2 from '../components/GoogleLog2'
+import { render } from 'react-dom';
+
+console.log(Logo);
+class login extends Component {
+    
 
 
 
 
-function trial2() {
+
+
+    render()
+    {
     return (
         <div>
-        <div>
+            <Particles
+
+                params={{
+                    particles: {
+                        number: {
+                            value: 200,
+                            density: {
+                                enable: true,
+                                value_area: 900,
+                            }
+
+                        },
+                        color: {
+                            value: ['#cc0000']
+                        },
+                        line_linked: {
+                            color: '#aa0044',
+                            opacity: 1
+                        }
+                    },
+                }}
+                style={{
+                    width: "100%",
+                    height: "100%",
+                    top: 0,
+                    left: 0,
+                    position: "fixed",
+                    index: "-10"
+
+
+                }}
+            />
             <div>
                 <Head>
                     <meta charset="UTF-8" />
@@ -19,12 +63,9 @@ function trial2() {
                     <link rel="stylesheet" type="text/css" href="question.css" />
                 </Head>
             </div>
-            
-                    
-                
-            
-            <Navbar/>
-            <div style={{
+            <div>
+                <Navbar/>
+                <div style={{
                     marginRight: "auto", marginLeft: "auto", textAlign: "center", marginTop: "100px"
                 }}>
                     <img src={Logo} alt="logo" style={{ position: "relative", float: "bottom", height: "120px", width: "auto" }} />
@@ -38,20 +79,24 @@ function trial2() {
                     <div className="login-head">
                         <h1>Login to play</h1>
                     </div>
+                    <div>
+                        <GoogleLog2 />
+                    </div>
+                    <style jsx>{`
+    div{
+        text-align:center;
+        content-align:center;
+        margin-top:20px;
+    }
+    
+    `}</style>
                 </div>
-            <GoogleLog2/>
-            
+            </div>
+
+
+
         </div>
-         <style jsx>{`
-         div{
-             text-align:center;
-             content-align:center;
-             margin-top:20px;
-         }
-         
-         `}</style>
-         </div>
     )
 }
-
-export default trial2
+}
+export default login

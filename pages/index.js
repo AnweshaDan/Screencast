@@ -1,58 +1,16 @@
-import React,{Component} from 'react'
-import Head from 'next/head'
-import Navbar from '../components/Navbar'
-import Log from '../components/Log'
-import Particles from 'react-particles-js';
-import Img from 'react-image'
-import Logo from '../glug.png'
+import React from "react";
 import GoogleLog2 from '../components/GoogleLog2'
-import { render } from 'react-dom';
-
-console.log(Logo);
-class login extends Component {
-    
+import Navbar from '../components/Navbar'
+import Head from 'next/head'
+import Logo from '../glug.png'
 
 
 
 
-
-
-    render()
-    {
+function trial2() {
     return (
         <div>
-            <Particles
-
-                params={{
-                    particles: {
-                        number: {
-                            value: 200,
-                            density: {
-                                enable: true,
-                                value_area: 900,
-                            }
-
-                        },
-                        color: {
-                            value: ['#cc0000']
-                        },
-                        line_linked: {
-                            color: '#aa0044',
-                            opacity: 1
-                        }
-                    },
-                }}
-                style={{
-                    width: "100%",
-                    height: "100%",
-                    top: 0,
-                    left: 0,
-                    position: "fixed",
-                    index: "-10"
-
-
-                }}
-            />
+        <div>
             <div>
                 <Head>
                     <meta charset="UTF-8" />
@@ -61,9 +19,12 @@ class login extends Component {
                     <link rel="stylesheet" type="text/css" href="question.css" />
                 </Head>
             </div>
-            <div>
-                <Navbar/>
-                <div style={{
+            
+                    
+                
+            
+            <Navbar/>
+            <div style={{
                     marginRight: "auto", marginLeft: "auto", textAlign: "center", marginTop: "100px"
                 }}>
                     <img src={Logo} alt="logo" style={{ position: "relative", float: "bottom", height: "120px", width: "auto" }} />
@@ -77,24 +38,20 @@ class login extends Component {
                     <div className="login-head">
                         <h1>Login to play</h1>
                     </div>
-                    <div>
-                        <GoogleLog2 />
-                    </div>
-                    <style jsx>{`
-    div{
-        text-align:center;
-        content-align:center;
-        margin-top:20px;
-    }
-    
-    `}</style>
                 </div>
-            </div>
-
-
-
+            <GoogleLog2/>
+            
         </div>
+         <style jsx>{`
+         div{
+             text-align:center;
+             content-align:center;
+             margin-top:20px;
+         }
+         
+         `}</style>
+         </div>
     )
 }
-}
-export default login
+
+export default trial2
