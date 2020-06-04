@@ -1,3 +1,4 @@
+//was a trial version
 import React from 'react'
 import Button from '@material-ui/core/Button';
 import Head from 'next/head'
@@ -6,13 +7,9 @@ class GoogleLog extends React.Component {
     constructor(props){
         super(props)
 
-        this.state={
-            isSignedIn:true
-        }
+        
     } 
-
-
-    componentDidMount()
+    initializeGoogleSignIn()
     {
         console.log('Loading');
 
@@ -36,6 +33,15 @@ class GoogleLog extends React.Component {
                 window.gapi.signin2.render('loginButton',params)
             })
         })
+    }
+
+    componentDidMount()
+    {
+     const script=document.createElement('script')
+     script.src='https://apis.google.com/js/platform.js'
+     script.onload=()=> this.initializeGoogleSignin()
+     document.body.appendChild(script);
+            
 
     }
     render(){

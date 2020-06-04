@@ -3,11 +3,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
 
+import IconButton from '@material-ui/core/IconButton';
+import AccountCircle from '@material-ui/icons/AccountCircle';
 import Mymenu from './Mymenu'
 import styles from './Navbar.module.css'
+
+import MenuItem from '@material-ui/core/MenuItem';
+import Menu from '@material-ui/core/Menu';
 
 
 
@@ -27,8 +30,21 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-export default function ButtonAppBar() {
+export default function NAvbar(props) {
   const classes = useStyles();
+ // console.log(props.sign)//available state of signin
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
 
   return (
     <div className={classes.root}>
@@ -40,7 +56,8 @@ export default function ButtonAppBar() {
           <Typography variant="h6" className={classes.title}>
             SCREENCAST 2020
           </Typography>
-          <Button color="inherit">Login</Button>
+          
+          
         </Toolbar>
       </AppBar>
 
