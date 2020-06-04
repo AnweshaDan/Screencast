@@ -3,8 +3,19 @@ import React from "react";
 import GoogleLogin from "react-google-login";
 import { GoogleLogout } from "react-google-login";
 import Router from 'next/router';
+import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
 
-class App extends React.Component {
+const useStyles = theme => ({
+    root: {
+      '& > *': {
+        margin: theme.spacing(1),
+      },
+    },
+  });
+  
+
+class GoogleLog2 extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -23,19 +34,28 @@ class App extends React.Component {
   };
 
   render() {
+    const { classes } = this.props;
+
+
+
+
+
     return (
       <div className="App">
         {!this.state.isUserLoggedIn && (
           <GoogleLogin
             clientId="1091948986515-evn13uscvig9k6olefvrkdk3q374iumi.apps.googleusercontent.com" 
             render={renderProps => (
-              <button
-                className="button"
-                onClick={renderProps.onClick}
-                
-              >
-                Log in with Google
-              </button>
+                <div className={classes.root}>
+                <Button
+                variant="contained"
+                color="secondary"
+                  className="button"
+                  onClick={renderProps.onClick}
+                >
+                  Log In with Google
+                </Button>
+              </div>
             )}
             onSuccess={this.responseGoogle}
             onFailure={this.responseGoogle}//handle later
@@ -46,12 +66,16 @@ class App extends React.Component {
             <div className="details-wrapper">
               <GoogleLogout
                 render={renderProps => (
-                  <button
+                <div className={classes.root}>
+                  <Button
+                  variant="contained"
+                  color="secondary"
                     className="logout-button"
                     onClick={renderProps.onClick}
                   >
                     Log Out
-                  </button>
+                  </Button>
+                </div>
                 )}
                 onLogoutSuccess={this.logout}
               />
@@ -74,4 +98,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withStyles(useStyles)(GoogleLog2);

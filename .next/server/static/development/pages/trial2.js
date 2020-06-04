@@ -130,6 +130,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_google_login__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/home/anwesha/Desktop/screencast/components/GoogleLog2.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -141,7 +145,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+
+
+const useStyles = theme => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1)
+    }
+  }
+});
+
+class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   constructor() {
     super();
 
@@ -166,33 +180,46 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   }
 
   render() {
+    const {
+      classes
+    } = this.props;
     return __jsx("div", {
       className: "App",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27,
+        lineNumber: 44,
         columnNumber: 7
       }
     }, !this.state.isUserLoggedIn && __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_1___default.a, {
       clientId: "1091948986515-evn13uscvig9k6olefvrkdk3q374iumi.apps.googleusercontent.com",
-      render: renderProps => __jsx("button", {
+      render: renderProps => __jsx("div", {
+        className: classes.root,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 49,
+          columnNumber: 17
+        }
+      }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        variant: "contained",
+        color: "secondary",
         className: "button",
         onClick: renderProps.onClick,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32,
-          columnNumber: 15
+          lineNumber: 50,
+          columnNumber: 17
         }
-      }, "Log in with Google"),
+      }, "Log In with Google")),
       onSuccess: this.responseGoogle,
       onFailure: this.responseGoogle //handle later
       ,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29,
+        lineNumber: 46,
         columnNumber: 11
       }
     }), this.state.isUserLoggedIn && __jsx("div", {
@@ -200,7 +227,7 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45,
+        lineNumber: 65,
         columnNumber: 11
       }
     }, __jsx("div", {
@@ -208,25 +235,35 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46,
+        lineNumber: 66,
         columnNumber: 13
       }
     }, __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_1__["GoogleLogout"], {
-      render: renderProps => __jsx("button", {
+      render: renderProps => __jsx("div", {
+        className: classes.root,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 69,
+          columnNumber: 17
+        }
+      }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        variant: "contained",
+        color: "secondary",
         className: "logout-button",
         onClick: renderProps.onClick,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49,
+          lineNumber: 70,
           columnNumber: 19
         }
-      }, "Log Out"),
+      }, "Log Out")),
       onLogoutSuccess: this.logout,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47,
+        lineNumber: 67,
         columnNumber: 15
       }
     }), __jsx("div", {
@@ -234,7 +271,7 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59,
+        lineNumber: 83,
         columnNumber: 15
       }
     }, __jsx("img", {
@@ -242,7 +279,7 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60,
+        lineNumber: 84,
         columnNumber: 17
       }
     })), __jsx("div", {
@@ -250,7 +287,7 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62,
+        lineNumber: 86,
         columnNumber: 15
       }
     }, "Welcome Mr. ", this.state.userDetails.givenName, " ", this.state.userDetails.familyName), __jsx("div", {
@@ -258,14 +295,14 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66,
+        lineNumber: 90,
         columnNumber: 15
       }
     }, __jsx("i", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66,
+        lineNumber: 90,
         columnNumber: 38
       }
     }, this.state.userDetails.email))), __jsx("div", {
@@ -273,7 +310,7 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68,
+        lineNumber: 92,
         columnNumber: 13
       }
     }), __jsx("div", {
@@ -281,7 +318,7 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69,
+        lineNumber: 93,
         columnNumber: 13
       }
     })));
@@ -289,7 +326,7 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (App);
+/* harmony default export */ __webpack_exports__["default"] = (Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["withStyles"])(useStyles)(GoogleLog2));
 
 /***/ }),
 

@@ -22,6 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_google_login__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
 
 
 
@@ -42,15 +44,27 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 
 
-var App = /*#__PURE__*/function (_React$Component) {
-  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_3__["default"])(App, _React$Component);
 
-  var _super = _createSuper(App);
 
-  function App() {
+var useStyles = function useStyles(theme) {
+  return {
+    root: {
+      '& > *': {
+        margin: theme.spacing(1)
+      }
+    }
+  };
+};
+
+var GoogleLog2 = /*#__PURE__*/function (_React$Component) {
+  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_3__["default"])(GoogleLog2, _React$Component);
+
+  var _super = _createSuper(GoogleLog2);
+
+  function GoogleLog2() {
     var _this;
 
-    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, App);
+    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, GoogleLog2);
 
     _this = _super.call(this);
 
@@ -76,32 +90,43 @@ var App = /*#__PURE__*/function (_React$Component) {
     return _this;
   }
 
-  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(App, [{
+  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(GoogleLog2, [{
     key: "render",
     value: function render() {
       var _this2 = this;
 
+      var classes = this.props.classes;
       return __jsx("div", {
         className: "App",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27,
+          lineNumber: 44,
           columnNumber: 7
         }
       }, !this.state.isUserLoggedIn && __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_8___default.a, {
         clientId: "1091948986515-evn13uscvig9k6olefvrkdk3q374iumi.apps.googleusercontent.com",
         render: function render(renderProps) {
-          return __jsx("button", {
+          return __jsx("div", {
+            className: classes.root,
+            __self: _this2,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 49,
+              columnNumber: 17
+            }
+          }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10__["default"], {
+            variant: "contained",
+            color: "secondary",
             className: "button",
             onClick: renderProps.onClick,
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 32,
-              columnNumber: 15
+              lineNumber: 50,
+              columnNumber: 17
             }
-          }, "Log in with Google");
+          }, "Log In with Google"));
         },
         onSuccess: this.responseGoogle,
         onFailure: this.responseGoogle //handle later
@@ -109,7 +134,7 @@ var App = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29,
+          lineNumber: 46,
           columnNumber: 11
         }
       }), this.state.isUserLoggedIn && __jsx("div", {
@@ -117,7 +142,7 @@ var App = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45,
+          lineNumber: 65,
           columnNumber: 11
         }
       }, __jsx("div", {
@@ -125,27 +150,37 @@ var App = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46,
+          lineNumber: 66,
           columnNumber: 13
         }
       }, __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_8__["GoogleLogout"], {
         render: function render(renderProps) {
-          return __jsx("button", {
+          return __jsx("div", {
+            className: classes.root,
+            __self: _this2,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 69,
+              columnNumber: 17
+            }
+          }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10__["default"], {
+            variant: "contained",
+            color: "secondary",
             className: "logout-button",
             onClick: renderProps.onClick,
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 49,
+              lineNumber: 70,
               columnNumber: 19
             }
-          }, "Log Out");
+          }, "Log Out"));
         },
         onLogoutSuccess: this.logout,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47,
+          lineNumber: 67,
           columnNumber: 15
         }
       }), __jsx("div", {
@@ -153,7 +188,7 @@ var App = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59,
+          lineNumber: 83,
           columnNumber: 15
         }
       }, __jsx("img", {
@@ -161,7 +196,7 @@ var App = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60,
+          lineNumber: 84,
           columnNumber: 17
         }
       })), __jsx("div", {
@@ -169,7 +204,7 @@ var App = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62,
+          lineNumber: 86,
           columnNumber: 15
         }
       }, "Welcome Mr. ", this.state.userDetails.givenName, " ", this.state.userDetails.familyName), __jsx("div", {
@@ -177,14 +212,14 @@ var App = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66,
+          lineNumber: 90,
           columnNumber: 15
         }
       }, __jsx("i", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66,
+          lineNumber: 90,
           columnNumber: 38
         }
       }, this.state.userDetails.email))), __jsx("div", {
@@ -192,7 +227,7 @@ var App = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68,
+          lineNumber: 92,
           columnNumber: 13
         }
       }), __jsx("div", {
@@ -200,17 +235,17 @@ var App = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69,
+          lineNumber: 93,
           columnNumber: 13
         }
       })));
     }
   }]);
 
-  return App;
+  return GoogleLog2;
 }(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (App);
+/* harmony default export */ __webpack_exports__["default"] = (Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_11__["withStyles"])(useStyles)(GoogleLog2));
 
 /***/ }),
 
