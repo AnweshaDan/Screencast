@@ -3,6 +3,7 @@ import GoogleLog2 from '../components/GoogleLog2'
 import Navbar from '../components/Navbar'
 import Head from 'next/head'
 import Logo from '../glug.png'
+import FbLog from '../components/FbLog'
 
 
 

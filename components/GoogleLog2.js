@@ -25,6 +25,7 @@ class GoogleLog2 extends React.Component {
   }
 
   responseGoogle = response => {
+    console.log(response);
     this.setState({ userDetails: response.profileObj, isUserLoggedIn: true });
     //Router.push('/game')//use href with button later
   };

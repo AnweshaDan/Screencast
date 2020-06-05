@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -112,6 +112,64 @@ module.exports = require("next/dist/next-server/lib/router-context.js");
 /***/ (function(module, exports) {
 
 module.exports = require("next/dist/next-server/lib/utils.js");
+
+/***/ }),
+
+/***/ "./components/FbLog.js":
+/*!*****************************!*\
+  !*** ./components/FbLog.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_facebook_login_dist_facebook_login_render_props__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-facebook-login/dist/facebook-login-render-props */ "react-facebook-login/dist/facebook-login-render-props");
+/* harmony import */ var react_facebook_login_dist_facebook_login_render_props__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_facebook_login_dist_facebook_login_render_props__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/home/anwesha/Desktop/screencast/components/FbLog.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+
+
+class FbLog extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
+  render() {
+    return __jsx("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 9,
+        columnNumber: 13
+      }
+    }, __jsx(react_facebook_login_dist_facebook_login_render_props__WEBPACK_IMPORTED_MODULE_0___default.a, {
+      appId: "1860867024050477",
+      autoLoad: true,
+      callback: responseFacebook,
+      render: renderProps => __jsx("button", {
+        onClick: renderProps.onClick,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 16,
+          columnNumber: 21
+        }
+      }, "This is my custom FB button"),
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 11,
+        columnNumber: 17
+      }
+    }));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (FbLog);
 
 /***/ }),
 
@@ -157,6 +215,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
     super();
 
     _defineProperty(this, "responseGoogle", response => {
+      console.log(response);
       this.setState({
         userDetails: response.profileObj,
         isUserLoggedIn: true
@@ -184,7 +243,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46,
+        lineNumber: 47,
         columnNumber: 7
       }
     }, !this.state.isUserLoggedIn && __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -194,7 +253,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51,
+          lineNumber: 52,
           columnNumber: 17
         }
       }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -205,7 +264,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52,
+          lineNumber: 53,
           columnNumber: 17
         }
       }, "Log In with Google")),
@@ -216,7 +275,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48,
+        lineNumber: 49,
         columnNumber: 11
       }
     }), this.state.isUserLoggedIn && __jsx("div", {
@@ -224,7 +283,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69,
+        lineNumber: 70,
         columnNumber: 11
       }
     }, __jsx("div", {
@@ -232,7 +291,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70,
+        lineNumber: 71,
         columnNumber: 13
       }
     }, __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_1__["GoogleLogout"], {
@@ -241,7 +300,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73,
+          lineNumber: 74,
           columnNumber: 17
         }
       }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -252,7 +311,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74,
+          lineNumber: 75,
           columnNumber: 19
         }
       }, "Log Out"), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -262,7 +321,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 82,
+          lineNumber: 83,
           columnNumber: 19
         }
       }, "Play")),
@@ -270,7 +329,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 71,
+        lineNumber: 72,
         columnNumber: 15
       }
     }), __jsx("div", {
@@ -278,7 +337,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92,
+        lineNumber: 93,
         columnNumber: 15
       }
     }, __jsx("img", {
@@ -286,7 +345,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 93,
+        lineNumber: 94,
         columnNumber: 17
       }
     })), __jsx("div", {
@@ -294,7 +353,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 95,
+        lineNumber: 96,
         columnNumber: 15
       }
     }, "Welcome ", this.state.userDetails.givenName, " ", this.state.userDetails.familyName), __jsx("div", {
@@ -302,14 +361,14 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 99,
+        lineNumber: 100,
         columnNumber: 15
       }
     }, __jsx("i", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 99,
+        lineNumber: 100,
         columnNumber: 38
       }
     }, this.state.userDetails.email))), __jsx("div", {
@@ -317,7 +376,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 101,
+        lineNumber: 102,
         columnNumber: 13
       }
     }), __jsx("div", {
@@ -325,7 +384,7 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 102,
+        lineNumber: 103,
         columnNumber: 13
       }
     })));
@@ -2349,6 +2408,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _glug_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../glug.png */ "./glug.png");
 /* harmony import */ var _glug_png__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_glug_png__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _components_FbLog__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/FbLog */ "./components/FbLog.js");
 var _jsxFileName = "/home/anwesha/Desktop/screencast/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
@@ -2358,16 +2418,9 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
+
 function trial2() {
   return __jsx("div", {
-    className: "jsx-126617128",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12,
-      columnNumber: 9
-    }
-  }, __jsx("div", {
     className: "jsx-126617128",
     __self: this,
     __source: {
@@ -2381,13 +2434,21 @@ function trial2() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 14,
+      columnNumber: 9
+    }
+  }, __jsx("div", {
+    className: "jsx-126617128",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15,
       columnNumber: 13
     }
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 16,
       columnNumber: 17
     }
   }, __jsx("meta", {
@@ -2396,7 +2457,7 @@ function trial2() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 17,
       columnNumber: 21
     }
   }), __jsx("meta", {
@@ -2406,7 +2467,7 @@ function trial2() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 18,
       columnNumber: 21
     }
   }), __jsx("title", {
@@ -2414,7 +2475,7 @@ function trial2() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 19,
       columnNumber: 21
     }
   }, "Screencast"), __jsx("link", {
@@ -2425,14 +2486,14 @@ function trial2() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 20,
       columnNumber: 21
     }
   }))), __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 27,
       columnNumber: 13
     }
   }), __jsx("div", {
@@ -2446,7 +2507,7 @@ function trial2() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 28,
       columnNumber: 13
     }
   }, __jsx("img", {
@@ -2462,7 +2523,7 @@ function trial2() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 31,
       columnNumber: 21
     }
   })), __jsx("div", {
@@ -2470,7 +2531,7 @@ function trial2() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 35,
       columnNumber: 17
     }
   }, __jsx("div", {
@@ -2478,7 +2539,7 @@ function trial2() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 36,
       columnNumber: 21
     }
   }, __jsx("span", {
@@ -2486,7 +2547,7 @@ function trial2() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 37,
       columnNumber: 25
     }
   }, "screen"), "cast ", __jsx("span", {
@@ -2494,7 +2555,7 @@ function trial2() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 37,
       columnNumber: 74
     }
   }, "2020 ")), __jsx("div", {
@@ -2502,7 +2563,7 @@ function trial2() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 39,
       columnNumber: 21
     }
   }, __jsx("h1", {
@@ -2510,27 +2571,27 @@ function trial2() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 40,
       columnNumber: 25
     }
   }, "Login to play"))), __jsx(_components_GoogleLog2__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 43,
       columnNumber: 13
     }
   })), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
     id: "126617128",
     __self: this
-  }, "div.jsx-126617128{text-align:center;content-align:center;margin-top:20px;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2Fud2VzaGEvRGVza3RvcC9zY3JlZW5jYXN0L3BhZ2VzL2luZGV4LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQTRDcUIsQUFHK0Isa0JBQ0cscUJBQ0wsZ0JBQ25CIiwiZmlsZSI6Ii9ob21lL2Fud2VzaGEvRGVza3RvcC9zY3JlZW5jYXN0L3BhZ2VzL2luZGV4LmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gXCJyZWFjdFwiO1xuaW1wb3J0IEdvb2dsZUxvZzIgZnJvbSAnLi4vY29tcG9uZW50cy9Hb29nbGVMb2cyJ1xuaW1wb3J0IE5hdmJhciBmcm9tICcuLi9jb21wb25lbnRzL05hdmJhcidcbmltcG9ydCBIZWFkIGZyb20gJ25leHQvaGVhZCdcbmltcG9ydCBMb2dvIGZyb20gJy4uL2dsdWcucG5nJ1xuXG5cblxuXG5mdW5jdGlvbiB0cmlhbDIoKSB7XG4gICAgcmV0dXJuIChcbiAgICAgICAgPGRpdj5cbiAgICAgICAgPGRpdj5cbiAgICAgICAgICAgIDxkaXY+XG4gICAgICAgICAgICAgICAgPEhlYWQ+XG4gICAgICAgICAgICAgICAgICAgIDxtZXRhIGNoYXJzZXQ9XCJVVEYtOFwiIC8+XG4gICAgICAgICAgICAgICAgICAgIDxtZXRhIG5hbWU9XCJ2aWV3cG9ydFwiIGNvbnRlbnQ9XCJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MS4wLCBzaHJpbmstdG8tZml0Om5vXCIgLz5cbiAgICAgICAgICAgICAgICAgICAgPHRpdGxlPlNjcmVlbmNhc3Q8L3RpdGxlPlxuICAgICAgICAgICAgICAgICAgICA8bGluayByZWw9XCJzdHlsZXNoZWV0XCIgdHlwZT1cInRleHQvY3NzXCIgaHJlZj1cInF1ZXN0aW9uLmNzc1wiIC8+XG4gICAgICAgICAgICAgICAgPC9IZWFkPlxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICBcbiAgICAgICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgXG4gICAgICAgICAgICBcbiAgICAgICAgICAgIDxOYXZiYXIvPlxuICAgICAgICAgICAgPGRpdiBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgICBtYXJnaW5SaWdodDogXCJhdXRvXCIsIG1hcmdpbkxlZnQ6IFwiYXV0b1wiLCB0ZXh0QWxpZ246IFwiY2VudGVyXCIsIG1hcmdpblRvcDogXCIxMDBweFwiXG4gICAgICAgICAgICAgICAgfX0+XG4gICAgICAgICAgICAgICAgICAgIDxpbWcgc3JjPXtMb2dvfSBhbHQ9XCJsb2dvXCIgc3R5bGU9e3sgcG9zaXRpb246IFwicmVsYXRpdmVcIiwgZmxvYXQ6IFwiYm90dG9tXCIsIGhlaWdodDogXCIxMjBweFwiLCB3aWR0aDogXCJhdXRvXCIgfX0gLz5cblxuICAgICAgICAgICAgICAgIDwvZGl2PlxuXG4gICAgICAgICAgICAgICAgPGRpdj5cbiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJzaWduXCI+XG4gICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJmYXN0LWZsaWNrZXJcIj5zY3JlZW48L3NwYW4+Y2FzdCA8c3BhbiBjbGFzc05hbWU9XCJmbGlja2VyXCI+MjAyMCA8L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImxvZ2luLWhlYWRcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxoMT5Mb2dpbiB0byBwbGF5PC9oMT5cbiAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICA8R29vZ2xlTG9nMi8+XG4gICAgICAgICAgICBcbiAgICAgICAgPC9kaXY+XG4gICAgICAgICA8c3R5bGUganN4PntgXG4gICAgICAgICBkaXZ7XG4gICAgICAgICAgICAgdGV4dC1hbGlnbjpjZW50ZXI7XG4gICAgICAgICAgICAgY29udGVudC1hbGlnbjpjZW50ZXI7XG4gICAgICAgICAgICAgbWFyZ2luLXRvcDoyMHB4O1xuICAgICAgICAgfVxuICAgICAgICAgXG4gICAgICAgICBgfTwvc3R5bGU+XG4gICAgICAgICA8L2Rpdj5cbiAgICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IHRyaWFsMiJdfQ== */\n/*@ sourceURL=/home/anwesha/Desktop/screencast/pages/index.js */"));
+  }, "div.jsx-126617128{text-align:center;content-align:center;margin-top:20px;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2Fud2VzaGEvRGVza3RvcC9zY3JlZW5jYXN0L3BhZ2VzL2luZGV4LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQTZDcUIsQUFHK0Isa0JBQ0cscUJBQ0wsZ0JBQ25CIiwiZmlsZSI6Ii9ob21lL2Fud2VzaGEvRGVza3RvcC9zY3JlZW5jYXN0L3BhZ2VzL2luZGV4LmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gXCJyZWFjdFwiO1xuaW1wb3J0IEdvb2dsZUxvZzIgZnJvbSAnLi4vY29tcG9uZW50cy9Hb29nbGVMb2cyJ1xuaW1wb3J0IE5hdmJhciBmcm9tICcuLi9jb21wb25lbnRzL05hdmJhcidcbmltcG9ydCBIZWFkIGZyb20gJ25leHQvaGVhZCdcbmltcG9ydCBMb2dvIGZyb20gJy4uL2dsdWcucG5nJ1xuaW1wb3J0IEZiTG9nIGZyb20gJy4uL2NvbXBvbmVudHMvRmJMb2cnXG5cblxuXG5cbmZ1bmN0aW9uIHRyaWFsMigpIHtcbiAgICByZXR1cm4gKFxuICAgICAgICA8ZGl2PlxuICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgPGRpdj5cbiAgICAgICAgICAgICAgICA8SGVhZD5cbiAgICAgICAgICAgICAgICAgICAgPG1ldGEgY2hhcnNldD1cIlVURi04XCIgLz5cbiAgICAgICAgICAgICAgICAgICAgPG1ldGEgbmFtZT1cInZpZXdwb3J0XCIgY29udGVudD1cIndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xLjAsIHNocmluay10by1maXQ6bm9cIiAvPlxuICAgICAgICAgICAgICAgICAgICA8dGl0bGU+U2NyZWVuY2FzdDwvdGl0bGU+XG4gICAgICAgICAgICAgICAgICAgIDxsaW5rIHJlbD1cInN0eWxlc2hlZXRcIiB0eXBlPVwidGV4dC9jc3NcIiBocmVmPVwicXVlc3Rpb24uY3NzXCIgLz5cbiAgICAgICAgICAgICAgICA8L0hlYWQ+XG4gICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIFxuICAgICAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgIFxuICAgICAgICAgICAgPE5hdmJhci8+XG4gICAgICAgICAgICA8ZGl2IHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICAgIG1hcmdpblJpZ2h0OiBcImF1dG9cIiwgbWFyZ2luTGVmdDogXCJhdXRvXCIsIHRleHRBbGlnbjogXCJjZW50ZXJcIiwgbWFyZ2luVG9wOiBcIjEwMHB4XCJcbiAgICAgICAgICAgICAgICB9fT5cbiAgICAgICAgICAgICAgICAgICAgPGltZyBzcmM9e0xvZ299IGFsdD1cImxvZ29cIiBzdHlsZT17eyBwb3NpdGlvbjogXCJyZWxhdGl2ZVwiLCBmbG9hdDogXCJib3R0b21cIiwgaGVpZ2h0OiBcIjEyMHB4XCIsIHdpZHRoOiBcImF1dG9cIiB9fSAvPlxuXG4gICAgICAgICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInNpZ25cIj5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cImZhc3QtZmxpY2tlclwiPnNjcmVlbjwvc3Bhbj5jYXN0IDxzcGFuIGNsYXNzTmFtZT1cImZsaWNrZXJcIj4yMDIwIDwvc3Bhbj5cbiAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwibG9naW4taGVhZFwiPlxuICAgICAgICAgICAgICAgICAgICAgICAgPGgxPkxvZ2luIHRvIHBsYXk8L2gxPlxuICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIDxHb29nbGVMb2cyLz5cbiAgICAgICAgICAgIFxuICAgICAgICA8L2Rpdj5cbiAgICAgICAgIDxzdHlsZSBqc3g+e2BcbiAgICAgICAgIGRpdntcbiAgICAgICAgICAgICB0ZXh0LWFsaWduOmNlbnRlcjtcbiAgICAgICAgICAgICBjb250ZW50LWFsaWduOmNlbnRlcjtcbiAgICAgICAgICAgICBtYXJnaW4tdG9wOjIwcHg7XG4gICAgICAgICB9XG4gICAgICAgICBcbiAgICAgICAgIGB9PC9zdHlsZT5cbiAgICAgICAgIDwvZGl2PlxuICAgIClcbn1cblxuZXhwb3J0IGRlZmF1bHQgdHJpYWwyIl19 */\n/*@ sourceURL=/home/anwesha/Desktop/screencast/pages/index.js */"));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (trial2);
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -2704,6 +2765,17 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-facebook-login/dist/facebook-login-render-props":
+/*!************************************************************************!*\
+  !*** external "react-facebook-login/dist/facebook-login-render-props" ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-facebook-login/dist/facebook-login-render-props");
 
 /***/ }),
 
