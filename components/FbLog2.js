@@ -2,6 +2,8 @@
 
 import React from 'react';
 import FacebookLoginWithButton from 'react-facebook-login';
+import Button from '@material-ui/core/Button';
+import Router from 'next/dist/next-server/server/router';
 
 const componentClicked = () => {
   console.log( "Clicked!" )
@@ -40,13 +42,43 @@ class App extends React.Component {
        console.log( response ); 
        this.setState( {...this.state, user: response,isSignedIn:true } ) }
 
+    logout=()=>
+    {
+        console.log("yo");
+        FB.logout()
+        
+    }
+
   render() {
     return (
-      <div style={{ margin: "auto", textAlign: "center", paddingTop: "2em" }}>
-        { this.state.user ? <UserScreen user={this.state.user}/> :
-          <LoginButton facebookResponse={this.facebookResponse}/>
-        }
-      </div>
+        <div>
+            <div style={{ margin: "auto", textAlign: "center", paddingTop: "2em" }}>
+            { this.state.user ? 
+            <div> 
+                <UserScreen user={this.state.user}/> 
+                <Button
+                  variant="contained"
+                  color="secondary"
+                   onClick={this.logout}
+                    href='/'
+                  >
+                    Log Out
+                  </Button>
+                  
+                  <Button variant="contained" color="secondary" href='/game'>
+                    Play
+                  </Button>
+            </div>
+            :
+            <LoginButton facebookResponse={this.facebookResponse}/>
+            }
+        </div>
+        
+        
+            
+        </div>
+       
+            
     )
   }
 }

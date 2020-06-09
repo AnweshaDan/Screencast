@@ -27,7 +27,7 @@ class GoogleLog2 extends React.Component {
   responseGoogle = response => {
     console.log(response);
     this.setState({ userDetails: response.profileObj, isUserLoggedIn: true });
-    Router.push('/game')
+    
     localStorage.email = response.profileObj.email;
     localStorage.image = response.profileObj.imageUrl;
     localStorage.name = response.profileObj.name;

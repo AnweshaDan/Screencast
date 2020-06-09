@@ -128,6 +128,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_facebook_login__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-facebook-login */ "react-facebook-login");
 /* harmony import */ var react_facebook_login__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_facebook_login__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_dist_next_server_server_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/dist/next-server/server/router */ "next/dist/next-server/server/router");
+/* harmony import */ var next_dist_next_server_server_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_dist_next_server_server_router__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/home/anwesha/Desktop/screencast/components/FbLog2.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -136,6 +140,8 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -156,7 +162,7 @@ const LoginButton = ({
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 11,
+    lineNumber: 13,
     columnNumber: 3
   }
 });
@@ -167,14 +173,14 @@ const UserScreen = ({
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 23,
+    lineNumber: 25,
     columnNumber: 5
   }
 }, "Welcome ", user.name, "!"), __jsx("p", {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 24,
+    lineNumber: 26,
     columnNumber: 5
   }
 }, user.email), __jsx("img", {
@@ -185,7 +191,7 @@ const UserScreen = ({
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 25,
+    lineNumber: 27,
     columnNumber: 5
   }
 }));
@@ -202,6 +208,11 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       }));
     });
 
+    _defineProperty(this, "logout", () => {
+      console.log("yo");
+      FB.logout();
+    });
+
     this.state = {
       user: false,
       isSignedIn: false
@@ -210,6 +221,13 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
   render() {
     return __jsx("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 54,
+        columnNumber: 9
+      }
+    }, __jsx("div", {
       style: {
         margin: "auto",
         textAlign: "center",
@@ -218,26 +236,54 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45,
-        columnNumber: 7
+        lineNumber: 55,
+        columnNumber: 13
       }
-    }, this.state.user ? __jsx(UserScreen, {
+    }, this.state.user ? __jsx("div", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 57,
+        columnNumber: 13
+      }
+    }, __jsx(UserScreen, {
       user: this.state.user,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46,
-        columnNumber: 29
+        lineNumber: 58,
+        columnNumber: 17
       }
-    }) : __jsx(LoginButton, {
+    }), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      variant: "contained",
+      color: "secondary",
+      onClick: this.logout,
+      href: "/",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 59,
+        columnNumber: 17
+      }
+    }, "Log Out"), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      variant: "contained",
+      color: "secondary",
+      href: "/game",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 68,
+        columnNumber: 19
+      }
+    }, "Play")) : __jsx(LoginButton, {
       facebookResponse: this.facebookResponse,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47,
-        columnNumber: 11
+        lineNumber: 73,
+        columnNumber: 13
       }
-    }));
+    })));
   }
 
 }
@@ -293,7 +339,6 @@ class GoogleLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
         userDetails: response.profileObj,
         isUserLoggedIn: true
       });
-      Router.push('/game');
       localStorage.email = response.profileObj.email;
       localStorage.image = response.profileObj.imageUrl;
       localStorage.name = response.profileObj.name;
@@ -2805,6 +2850,17 @@ module.exports = require("@material-ui/icons/AccountCircle");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/icons/Menu");
+
+/***/ }),
+
+/***/ "next/dist/next-server/server/router":
+/*!******************************************************!*\
+  !*** external "next/dist/next-server/server/router" ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/dist/next-server/server/router");
 
 /***/ }),
 
