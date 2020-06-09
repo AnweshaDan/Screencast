@@ -3,7 +3,7 @@ import GoogleLog2 from '../components/GoogleLog2'
 import Navbar from '../components/Navbar'
 import Head from 'next/head'
 import Logo from '../glug.png'
-import FbLog from '../components/FbLog'
+import FbLog2 from '../components/FbLog2'
 
 
 
@@ -40,7 +40,12 @@ function trial2() {
                         <h1>Login to play</h1>
                     </div>
                 </div>
-            <GoogleLog2/>
+            <GoogleLog2 />
+            <FbLog2/>
+            
+
+            
+            
             
         </div>
          <style jsx>{`
