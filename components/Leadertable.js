@@ -8,8 +8,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import styles from './Leadertable.module.css'
-import axios from 'axios';
-
+import axios from 'axios'
 
 
 const StyledTableCell = withStyles((theme) => ({

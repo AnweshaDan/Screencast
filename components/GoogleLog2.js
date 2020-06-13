@@ -35,13 +35,18 @@ class GoogleLog2 extends React.Component {
       console.log(res);
 
     })
-    localStorage.email = response.profileObj.email;
-    localStorage.image = response.profileObj.imageUrl;
-    localStorage.name = response.profileObj.name;
+    console.log(typeof(response.profileObj.name))//string
+    localStorage.setItem('email',response.profileObj.email);
+    localStorage.setItem('name',response.profileObj.name);
+    console.log(localStorage.getItem('name'));//returns name
   };
-
+  //{localStorage.getItem('name')}
   logout = () => {
     this.setState({isUserLoggedIn: false})
+    localStorage.removeItem('email');
+    localStorage.removeItem('name');
+    console.log(localStorage.getITem('email'));
+    
   };
 
  
@@ -71,8 +76,7 @@ class GoogleLog2 extends React.Component {
 
               </div>
             )}
-            onSuccess={this.responseGoogle}
-            isSignedIn={true}
+            onSuccess={this.responseGoogle}//isSignedIn ??
             onFailure={this.responseGoogle}//handle later
           />
         )}

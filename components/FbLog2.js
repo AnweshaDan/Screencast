@@ -12,7 +12,7 @@ const componentClicked = () => {
 const LoginButton = ({facebookResponse}) => (
   <FacebookLoginWithButton
     appId="330897641228705"
-    //autoload
+    autoload={false}
     fields="name,email,picture"
     onClick={componentClicked}
     callback={facebookResponse}
@@ -40,9 +40,9 @@ class App extends React.Component {
   
   facebookResponse = (response) => {
        console.log( response ); 
-
-       localStorage.email=result.email;
-       localStorage.name=result.name;
+       localStorage.setItem('email',response.email);
+       localStorage.setItem('name',response.name);
+       console.log(localStorage.getItem('email'))
       
        this.setState( {...this.state, user: response,isSignedIn:true } )
        axios.post('http://dummy.restapiexample.com/api/v1/create',{
@@ -63,6 +63,8 @@ class App extends React.Component {
     }
 
   render() {
+   
+    
     return (
         <div>
             <div style={{ margin: "auto", textAlign: "center", paddingTop: "2em" }}>

@@ -1,14 +1,15 @@
 import React from "react";
-import GoogleLog2 from '../components/GoogleLog2'
+import GoogleLog3 from '../components/GoogleLog3'
 import Navbar from '../components/Navbar'
 import Head from 'next/head'
 import Logo from '../glug.png'
 import FbLog2 from '../components/FbLog2'
 import Footer from '../components/Footer'
+import fbtrial from '../components/fbtrial'
 
 
 
-function trial2() {
+function index() {
     return (
         <div>
         <div>
@@ -16,7 +17,7 @@ function trial2() {
                 <Head>
                     <meta charset="UTF-8" />
                     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit:no" />
-                    <title>Screencast</title>
+                    <title>Screencast </title>
                     <link rel="stylesheet" type="text/css" href="question.css" />
                 </Head>
             </div>
@@ -37,11 +38,16 @@ function trial2() {
                         <span className="fast-flicker">screen</span>cast <span className="flicker">2020 </span>
                     </div>
                     <div className="login-head">
-                        <h1>Login to play</h1>
+                        <h1>Login to play </h1>
                     </div>
                 </div>
-            <GoogleLog2 />
+
+                
+            <GoogleLog3 />
             <FbLog2/>
+            
+            
+
             
 
             
@@ -50,6 +56,7 @@ function trial2() {
         </div>
         <div>
                 <Footer/>
+                
         </div>
          <style jsx>{`
          div{
@@ -63,5 +70,5 @@ function trial2() {
     )
 }
 
-export default trial2
+export default index
 //"proxy" : "http://screencast2020.azurewebsites.net/api/googlelogin"

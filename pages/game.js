@@ -22,7 +22,8 @@ class game extends React.Component{
             correct:0,
             alert_title:"",
             alert_text:"hola",
-            open:false
+            open:false,
+            isLoggedIn:false
             
         }
 
@@ -145,6 +146,7 @@ class game extends React.Component{
 
                 }}
             />
+            
 
             <Navbar />
             <Question qs={this.state.questions} />

@@ -1,17 +1,17 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Fade from '@material-ui/core/Fade';
 import MenuIcon from '@material-ui/icons/Menu';
 import Link from 'next/link'
-
+import Router from 'next/router'
 
 
 export default function FadeMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-
+  const [Log, setLog]= useState(false)
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -19,6 +19,19 @@ export default function FadeMenu() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const goBack=()=>{
+    localStorage.removeItem('email');
+    localStorage.removeItem('name');
+    localStorage.clear();
+    console.log(localStorage.getItem('email'));
+    
+  }
+
+  useEffect(()=>{
+    setLog(localStorage.getItem('email'));
+    console.log(Log);
+  })
 
 
 
@@ -57,9 +70,18 @@ export default function FadeMenu() {
 
 
         <Link href="/"><MenuItem onClick={handleClose}>Home</MenuItem></Link>
-        <Link href="/game"><MenuItem onClick={handleClose}>Game</MenuItem></Link>
+       
         <Link href="/leaderboard"><MenuItem onClick={handleClose}>Leaderboard</MenuItem></Link>
-
+         {Log ?
+         <Link href='/'><MenuItem onClick={goBack}>Logout</MenuItem></Link>
+         :
+         <Link href="/game"><MenuItem onClick={handleClose}>Game</MenuItem></Link>
+         }
+         
+         
+         <div></div>
+        
+       
 
       </Menu>
       <style jsx>{`

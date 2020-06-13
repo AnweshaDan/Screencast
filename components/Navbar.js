@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 
 import IconButton from '@material-ui/core/IconButton';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import Mymenu from './Mymenu'
+import Mymenu2 from './Mymenu2'
 import styles from './Navbar.module.css'
 
 import MenuItem from '@material-ui/core/MenuItem';
@@ -51,7 +51,7 @@ export default function NAvbar(props) {
       <AppBar position="static" className={styles.navv}>
         <Toolbar className={styles.navcontent}>
           <IconButton edge="start" className={classes.menuButton} color="white" aria-label="menu">
-            <Mymenu />
+            <Mymenu2 />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
             SCREENCAST 2020
