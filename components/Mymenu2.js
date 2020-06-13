@@ -1,12 +1,15 @@
 import React, {useState,useEffect} from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Fade from '@material-ui/core/Fade';
 import MenuIcon from '@material-ui/icons/Menu';
+
 import Link from 'next/link'
-import { makeStyles } from '@material-ui/core/styles';
 import Router from 'next/router';
+
 import { GoogleLogout } from "react-google-login";
 
 const useStyles = makeStyles((theme) => ({
@@ -18,12 +21,11 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 
-export default function FadeMenu() {
+export default function Mymenu2() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const classes = useStyles();
   
-
   const [Log, setLog]= useState(false)
 
   const handleClick = (event) => {
@@ -90,35 +92,25 @@ export default function FadeMenu() {
         <Link href="/leaderboard"><MenuItem onClick={handleClose}>Leaderboard</MenuItem></Link>
          {Log ?
          <div className="userDetails-wrapper">
-         <div className="details-wrapper">
-           <GoogleLogout
-             render={renderProps => (
-             <div className={classes.root}>
-              
-              <Link href="/"><MenuItem onClick={logout}>Logout</MenuItem></Link>
-              
-             </div>
-             
-             )}
-             onLogoutSuccess={logout}
-           />
-
-
-          
-           
-           
+            <div className="details-wrapper">
+            <GoogleLogout
+                render={renderProps => (
+                <div className={classes.root}>
+                
+                <Link href="/"><MenuItem onClick={logout}>Logout</MenuItem></Link>
+                
+                </div>
+                
+                )}
+                onLogoutSuccess={logout}
+            />
+            </div>
+            <div className="bar" />
+            <div className="stand" />
          </div>
-         <div className="bar" />
-         <div className="stand" />
-       </div>
          :
          <Link href="/game"><MenuItem onClick={handleClick}>Game</MenuItem></Link>
-         }
-         
-         
-         <div></div>
-        
-       
+         }     
 
       </Menu>
       <style jsx>{`
