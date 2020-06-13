@@ -21,8 +21,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_facebook_login__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-facebook-login */ "./node_modules/react-facebook-login/dist/facebook-login-with-button.js");
 /* harmony import */ var react_facebook_login__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_facebook_login__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
-/* harmony import */ var next_dist_next_server_server_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! next/dist/next-server/server/router */ "./node_modules/next/dist/next-server/server/router.js");
-/* harmony import */ var next_dist_next_server_server_router__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(next_dist_next_server_server_router__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_11__);
 
@@ -48,6 +48,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 
 
+ //import Router from 'next/dist/next-server/server/router';
 
 
 
@@ -68,7 +69,7 @@ var LoginButton = function LoginButton(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13,
+      lineNumber: 15,
       columnNumber: 3
     }
   });
@@ -80,14 +81,14 @@ var UserScreen = function UserScreen(_ref2) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 27,
       columnNumber: 5
     }
   }, "Welcome ", user.name, "!"), __jsx("p", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 28,
       columnNumber: 5
     }
   }, user.email), __jsx("img", {
@@ -98,7 +99,7 @@ var UserScreen = function UserScreen(_ref2) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 29,
       columnNumber: 5
     }
   }));
@@ -133,11 +134,7 @@ var App = /*#__PURE__*/function (_React$Component) {
       }).then(function (res) {
         console.log(res);
       });
-    });
-
-    Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this2), "logout", function () {
-      console.log("yo");
-      FB.logout();
+      next_router__WEBPACK_IMPORTED_MODULE_10___default.a.push('/game');
     });
 
     _this2.state = {
@@ -154,7 +151,7 @@ var App = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69,
+          lineNumber: 67,
           columnNumber: 9
         }
       }, __jsx("div", {
@@ -166,51 +163,15 @@ var App = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70,
+          lineNumber: 68,
           columnNumber: 13
         }
-      }, this.state.user ? __jsx("div", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 72,
-          columnNumber: 13
-        }
-      }, __jsx(UserScreen, {
-        user: this.state.user,
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 73,
-          columnNumber: 17
-        }
-      }), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_9__["default"], {
-        variant: "contained",
-        color: "secondary",
-        onClick: this.logout,
-        href: "/",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 74,
-          columnNumber: 17
-        }
-      }, "Log Out"), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_9__["default"], {
-        variant: "contained",
-        color: "secondary",
-        href: "/game",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 83,
-          columnNumber: 19
-        }
-      }, "Play")) : __jsx(LoginButton, {
+      }, __jsx(LoginButton, {
         facebookResponse: this.facebookResponse,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88,
+          lineNumber: 70,
           columnNumber: 13
         }
       })));
@@ -501,6 +462,7 @@ function FadeMenu() {
     localStorage.removeItem('email');
     localStorage.removeItem('name');
     console.log(localStorage.getItem('email'));
+    FB.logout();
     next_router__WEBPACK_IMPORTED_MODULE_10___default.a.push('/');
   };
 
@@ -509,7 +471,7 @@ function FadeMenu() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 55,
       columnNumber: 5
     }
   }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -522,14 +484,14 @@ function FadeMenu() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 56,
       columnNumber: 7
     }
   }, __jsx(_material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_7___default.a, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 57,
       columnNumber: 9
     }
   })), __jsx(_material_ui_core_Menu__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -568,7 +530,7 @@ function FadeMenu() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 59,
       columnNumber: 7
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -576,7 +538,7 @@ function FadeMenu() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
+      lineNumber: 88,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -584,7 +546,7 @@ function FadeMenu() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
+      lineNumber: 88,
       columnNumber: 24
     }
   }, "Home")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -592,7 +554,7 @@ function FadeMenu() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89,
+      lineNumber: 90,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -600,7 +562,7 @@ function FadeMenu() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89,
+      lineNumber: 90,
       columnNumber: 35
     }
   }, "Leaderboard")), Log ? __jsx("div", {
@@ -608,7 +570,7 @@ function FadeMenu() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91,
+      lineNumber: 92,
       columnNumber: 10
     }
   }, __jsx("div", {
@@ -616,7 +578,7 @@ function FadeMenu() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92,
+      lineNumber: 93,
       columnNumber: 10
     }
   }, __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_11__["GoogleLogout"], {
@@ -626,7 +588,7 @@ function FadeMenu() {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95,
+          lineNumber: 96,
           columnNumber: 14
         }
       }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -634,7 +596,7 @@ function FadeMenu() {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 97,
+          lineNumber: 98,
           columnNumber: 15
         }
       }, __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -642,7 +604,7 @@ function FadeMenu() {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 97,
+          lineNumber: 98,
           columnNumber: 30
         }
       }, "Logout")));
@@ -651,7 +613,7 @@ function FadeMenu() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93,
+      lineNumber: 94,
       columnNumber: 12
     }
   })), __jsx("div", {
@@ -659,7 +621,7 @@ function FadeMenu() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110,
+      lineNumber: 111,
       columnNumber: 10
     }
   }), __jsx("div", {
@@ -667,7 +629,7 @@ function FadeMenu() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111,
+      lineNumber: 112,
       columnNumber: 10
     }
   })) : __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -675,7 +637,7 @@ function FadeMenu() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114,
+      lineNumber: 115,
       columnNumber: 10
     }
   }, __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -683,7 +645,7 @@ function FadeMenu() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114,
+      lineNumber: 115,
       columnNumber: 29
     }
   }, "Game")), __jsx("div", {
@@ -691,13 +653,13 @@ function FadeMenu() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118,
+      lineNumber: 119,
       columnNumber: 10
     }
   })), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_1___default.a, {
     id: "2057463881",
     __self: this
-  }, ".jsx-2057463881{margin:0;padding:0;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2Fud2VzaGEvRGVza3RvcC9zY3JlZW5jYXN0L2NvbXBvbmVudHMvTXltZW51Mi5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUEwSGtCLEFBRWUsU0FDQyxVQUVUIiwiZmlsZSI6Ii9ob21lL2Fud2VzaGEvRGVza3RvcC9zY3JlZW5jYXN0L2NvbXBvbmVudHMvTXltZW51Mi5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwge3VzZVN0YXRlLHVzZUVmZmVjdH0gZnJvbSAncmVhY3QnO1xuaW1wb3J0IEJ1dHRvbiBmcm9tICdAbWF0ZXJpYWwtdWkvY29yZS9CdXR0b24nO1xuaW1wb3J0IE1lbnUgZnJvbSAnQG1hdGVyaWFsLXVpL2NvcmUvTWVudSc7XG5pbXBvcnQgTWVudUl0ZW0gZnJvbSAnQG1hdGVyaWFsLXVpL2NvcmUvTWVudUl0ZW0nO1xuaW1wb3J0IEZhZGUgZnJvbSAnQG1hdGVyaWFsLXVpL2NvcmUvRmFkZSc7XG5pbXBvcnQgTWVudUljb24gZnJvbSAnQG1hdGVyaWFsLXVpL2ljb25zL01lbnUnO1xuaW1wb3J0IExpbmsgZnJvbSAnbmV4dC9saW5rJ1xuaW1wb3J0IHsgbWFrZVN0eWxlcyB9IGZyb20gJ0BtYXRlcmlhbC11aS9jb3JlL3N0eWxlcyc7XG5pbXBvcnQgUm91dGVyIGZyb20gJ25leHQvcm91dGVyJztcbmltcG9ydCB7IEdvb2dsZUxvZ291dCB9IGZyb20gXCJyZWFjdC1nb29nbGUtbG9naW5cIjtcblxuY29uc3QgdXNlU3R5bGVzID0gbWFrZVN0eWxlcygodGhlbWUpID0+ICh7XG4gICAgcm9vdDoge1xuICAgICAgJyYgPiAqJzoge1xuICAgICAgICBtYXJnaW46IHRoZW1lLnNwYWNpbmcoMSksXG4gICAgICB9LFxuICAgIH0sXG4gIH0pKTtcblxuXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBGYWRlTWVudSgpIHtcbiAgY29uc3QgW2FuY2hvckVsLCBzZXRBbmNob3JFbF0gPSBSZWFjdC51c2VTdGF0ZShudWxsKTtcbiAgY29uc3Qgb3BlbiA9IEJvb2xlYW4oYW5jaG9yRWwpO1xuICBjb25zdCBjbGFzc2VzID0gdXNlU3R5bGVzKCk7XG4gIFxuXG4gIGNvbnN0IFtMb2csIHNldExvZ109IHVzZVN0YXRlKGZhbHNlKVxuXG4gIGNvbnN0IGhhbmRsZUNsaWNrID0gKGV2ZW50KSA9PiB7XG4gICAgc2V0QW5jaG9yRWwoZXZlbnQuY3VycmVudFRhcmdldCk7XG4gIH07XG5cbiAgY29uc3QgaGFuZGxlQ2xvc2UgPSAoKSA9PiB7XG4gICAgc2V0QW5jaG9yRWwobnVsbCk7XG4gIH07XG5cblxuICB1c2VFZmZlY3QoKCk9PntcbiAgICBzZXRMb2cobG9jYWxTdG9yYWdlLmdldEl0ZW0oJ2VtYWlsJykpO1xuICAgIGNvbnNvbGUubG9nKExvZyk7XG4gIH0pXG4gIFxuICBjb25zdCBsb2dvdXQgPSAoKSA9PiB7XG4gICAgbG9jYWxTdG9yYWdlLmNsZWFyKCk7XG4gICAgbG9jYWxTdG9yYWdlLnJlbW92ZUl0ZW0oJ2VtYWlsJyk7XG4gICAgbG9jYWxTdG9yYWdlLnJlbW92ZUl0ZW0oJ25hbWUnKTtcbiAgICBjb25zb2xlLmxvZyhsb2NhbFN0b3JhZ2UuZ2V0SXRlbSgnZW1haWwnKSk7XG4gICAgUm91dGVyLnB1c2goJy8nKVxuICAgIFxuICB9O1xuXG5cbiAgcmV0dXJuIChcbiAgICA8ZGl2PlxuICAgICAgPEJ1dHRvbiBhcmlhLWNvbnRyb2xzPVwiZmFkZS1tZW51XCIgc3R5bGU9e3sgY29sb3I6ICd3aGl0ZScgfX0gYXJpYS1oYXNwb3B1cD1cInRydWVcIiBvbkNsaWNrPXtoYW5kbGVDbGlja30+XG4gICAgICAgIDxNZW51SWNvbiAvPlxuICAgICAgPC9CdXR0b24+XG4gICAgICA8TWVudVxuXG4gICAgICAgIGlkPVwiZmFkZS1tZW51XCJcbiAgICAgICAgYW5jaG9yRWw9e2FuY2hvckVsfVxuICAgICAgICBrZWVwTW91bnRlZFxuICAgICAgICBvcGVuPXtvcGVufVxuICAgICAgICBvbkNsb3NlPXtoYW5kbGVDbG9zZX1cbiAgICAgICAgVHJhbnNpdGlvbkNvbXBvbmVudD17RmFkZX1cbiAgICAgICAgbWFyZ2luVGhyZXNob2xkPScwcHgnXG4gICAgICAgIGFuY2hvck9yaWdpbj17eyB2ZXJ0aWNhbDogXCJ0b3BcIiwgaG9yaXpvbnRhbDogXCJsZWZ0XCIgfX1cbiAgICAgICAgYW5jaG9yUG9zaXRpb249e3sgbGVmdDogXCIwXCIsIHRvcDogXCIwXCIgfX1cbiAgICAgICAgdHJhbnNmb3JtT3JpZ2luPXt7IHRvcDogXCIwcHhcIiwgbGVmdDogXCIwcHhcIiB9fVxuXG4gICAgICAgIFBhcGVyUHJvcHM9e3tcbiAgICAgICAgICBzdHlsZToge1xuICAgICAgICAgICAgdG9wOiAwLFxuICAgICAgICAgICAgbGVmdDogMCxcbiAgICAgICAgICAgIGJhY2tncm91bmRDb2xvcjogJyNjYzAwNDQnLFxuICAgICAgICAgICAgYm9yZGVyUmFkaXVzOiAnNnB4JyxcbiAgICAgICAgICAgIGNvbG9yOiAnd2hpdGUnLFxuICAgICAgICAgICAgbWFyZ2luVG9wOiAnMCcsXG4gICAgICAgICAgICBwYWRkaW5nVG9wOiBbJzBweCddLFxuICAgICAgICAgICAgd2lkdGg6ICc0MDBweCcsXG4gICAgICAgICAgICBtYXhIZWlnaHQ6ICcxMDAlJ1xuICAgICAgICAgIH0sXG4gICAgICAgIH19XG4gICAgICA+XG5cblxuICAgICAgICA8TGluayBocmVmPVwiL1wiPjxNZW51SXRlbSBvbkNsaWNrPXtoYW5kbGVDbG9zZX0+SG9tZTwvTWVudUl0ZW0+PC9MaW5rPlxuICAgICAgIFxuICAgICAgICA8TGluayBocmVmPVwiL2xlYWRlcmJvYXJkXCI+PE1lbnVJdGVtIG9uQ2xpY2s9e2hhbmRsZUNsb3NlfT5MZWFkZXJib2FyZDwvTWVudUl0ZW0+PC9MaW5rPlxuICAgICAgICAge0xvZyA/XG4gICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInVzZXJEZXRhaWxzLXdyYXBwZXJcIj5cbiAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZGV0YWlscy13cmFwcGVyXCI+XG4gICAgICAgICAgIDxHb29nbGVMb2dvdXRcbiAgICAgICAgICAgICByZW5kZXI9e3JlbmRlclByb3BzID0+IChcbiAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT17Y2xhc3Nlcy5yb290fT5cbiAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgIDxMaW5rIGhyZWY9XCIvXCI+PE1lbnVJdGVtIG9uQ2xpY2s9e2xvZ291dH0+TG9nb3V0PC9NZW51SXRlbT48L0xpbms+XG4gICAgICAgICAgICAgIFxuICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgIFxuICAgICAgICAgICAgICl9XG4gICAgICAgICAgICAgb25Mb2dvdXRTdWNjZXNzPXtsb2dvdXR9XG4gICAgICAgICAgIC8+XG5cblxuICAgICAgICAgIFxuICAgICAgICAgICBcbiAgICAgICAgICAgXG4gICAgICAgICA8L2Rpdj5cbiAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiYmFyXCIgLz5cbiAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwic3RhbmRcIiAvPlxuICAgICAgIDwvZGl2PlxuICAgICAgICAgOlxuICAgICAgICAgPExpbmsgaHJlZj1cIi9nYW1lXCI+PE1lbnVJdGVtIG9uQ2xpY2s9e2hhbmRsZUNsaWNrfT5HYW1lPC9NZW51SXRlbT48L0xpbms+XG4gICAgICAgICB9XG4gICAgICAgICBcbiAgICAgICAgIFxuICAgICAgICAgPGRpdj48L2Rpdj5cbiAgICAgICAgXG4gICAgICAgXG5cbiAgICAgIDwvTWVudT5cbiAgICAgIDxzdHlsZSBqc3g+e2BcbiAgICAgIG1hcmdpbjowO1xuICAgICAgcGFkZGluZzowO1xuXG4gICAgICBgfTwvc3R5bGU+XG4gICAgPC9kaXYgPlxuICApO1xufVxuIl19 */\n/*@ sourceURL=/home/anwesha/Desktop/screencast/components/Mymenu2.js */"));
+  }, ".jsx-2057463881{margin:0;padding:0;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2Fud2VzaGEvRGVza3RvcC9zY3JlZW5jYXN0L2NvbXBvbmVudHMvTXltZW51Mi5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUEySGtCLEFBRWUsU0FDQyxVQUVUIiwiZmlsZSI6Ii9ob21lL2Fud2VzaGEvRGVza3RvcC9zY3JlZW5jYXN0L2NvbXBvbmVudHMvTXltZW51Mi5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwge3VzZVN0YXRlLHVzZUVmZmVjdH0gZnJvbSAncmVhY3QnO1xuaW1wb3J0IEJ1dHRvbiBmcm9tICdAbWF0ZXJpYWwtdWkvY29yZS9CdXR0b24nO1xuaW1wb3J0IE1lbnUgZnJvbSAnQG1hdGVyaWFsLXVpL2NvcmUvTWVudSc7XG5pbXBvcnQgTWVudUl0ZW0gZnJvbSAnQG1hdGVyaWFsLXVpL2NvcmUvTWVudUl0ZW0nO1xuaW1wb3J0IEZhZGUgZnJvbSAnQG1hdGVyaWFsLXVpL2NvcmUvRmFkZSc7XG5pbXBvcnQgTWVudUljb24gZnJvbSAnQG1hdGVyaWFsLXVpL2ljb25zL01lbnUnO1xuaW1wb3J0IExpbmsgZnJvbSAnbmV4dC9saW5rJ1xuaW1wb3J0IHsgbWFrZVN0eWxlcyB9IGZyb20gJ0BtYXRlcmlhbC11aS9jb3JlL3N0eWxlcyc7XG5pbXBvcnQgUm91dGVyIGZyb20gJ25leHQvcm91dGVyJztcbmltcG9ydCB7IEdvb2dsZUxvZ291dCB9IGZyb20gXCJyZWFjdC1nb29nbGUtbG9naW5cIjtcblxuY29uc3QgdXNlU3R5bGVzID0gbWFrZVN0eWxlcygodGhlbWUpID0+ICh7XG4gICAgcm9vdDoge1xuICAgICAgJyYgPiAqJzoge1xuICAgICAgICBtYXJnaW46IHRoZW1lLnNwYWNpbmcoMSksXG4gICAgICB9LFxuICAgIH0sXG4gIH0pKTtcblxuXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBGYWRlTWVudSgpIHtcbiAgY29uc3QgW2FuY2hvckVsLCBzZXRBbmNob3JFbF0gPSBSZWFjdC51c2VTdGF0ZShudWxsKTtcbiAgY29uc3Qgb3BlbiA9IEJvb2xlYW4oYW5jaG9yRWwpO1xuICBjb25zdCBjbGFzc2VzID0gdXNlU3R5bGVzKCk7XG4gIFxuXG4gIGNvbnN0IFtMb2csIHNldExvZ109IHVzZVN0YXRlKGZhbHNlKVxuXG4gIGNvbnN0IGhhbmRsZUNsaWNrID0gKGV2ZW50KSA9PiB7XG4gICAgc2V0QW5jaG9yRWwoZXZlbnQuY3VycmVudFRhcmdldCk7XG4gIH07XG5cbiAgY29uc3QgaGFuZGxlQ2xvc2UgPSAoKSA9PiB7XG4gICAgc2V0QW5jaG9yRWwobnVsbCk7XG4gIH07XG5cblxuICB1c2VFZmZlY3QoKCk9PntcbiAgICBzZXRMb2cobG9jYWxTdG9yYWdlLmdldEl0ZW0oJ2VtYWlsJykpO1xuICAgIGNvbnNvbGUubG9nKExvZyk7XG4gIH0pXG4gIFxuICBjb25zdCBsb2dvdXQgPSAoKSA9PiB7XG4gICAgbG9jYWxTdG9yYWdlLmNsZWFyKCk7XG4gICAgbG9jYWxTdG9yYWdlLnJlbW92ZUl0ZW0oJ2VtYWlsJyk7XG4gICAgbG9jYWxTdG9yYWdlLnJlbW92ZUl0ZW0oJ25hbWUnKTtcbiAgICBjb25zb2xlLmxvZyhsb2NhbFN0b3JhZ2UuZ2V0SXRlbSgnZW1haWwnKSk7XG4gICAgRkIubG9nb3V0KCk7XG4gICAgUm91dGVyLnB1c2goJy8nKVxuICAgIFxuICB9O1xuXG5cbiAgcmV0dXJuIChcbiAgICA8ZGl2PlxuICAgICAgPEJ1dHRvbiBhcmlhLWNvbnRyb2xzPVwiZmFkZS1tZW51XCIgc3R5bGU9e3sgY29sb3I6ICd3aGl0ZScgfX0gYXJpYS1oYXNwb3B1cD1cInRydWVcIiBvbkNsaWNrPXtoYW5kbGVDbGlja30+XG4gICAgICAgIDxNZW51SWNvbiAvPlxuICAgICAgPC9CdXR0b24+XG4gICAgICA8TWVudVxuXG4gICAgICAgIGlkPVwiZmFkZS1tZW51XCJcbiAgICAgICAgYW5jaG9yRWw9e2FuY2hvckVsfVxuICAgICAgICBrZWVwTW91bnRlZFxuICAgICAgICBvcGVuPXtvcGVufVxuICAgICAgICBvbkNsb3NlPXtoYW5kbGVDbG9zZX1cbiAgICAgICAgVHJhbnNpdGlvbkNvbXBvbmVudD17RmFkZX1cbiAgICAgICAgbWFyZ2luVGhyZXNob2xkPScwcHgnXG4gICAgICAgIGFuY2hvck9yaWdpbj17eyB2ZXJ0aWNhbDogXCJ0b3BcIiwgaG9yaXpvbnRhbDogXCJsZWZ0XCIgfX1cbiAgICAgICAgYW5jaG9yUG9zaXRpb249e3sgbGVmdDogXCIwXCIsIHRvcDogXCIwXCIgfX1cbiAgICAgICAgdHJhbnNmb3JtT3JpZ2luPXt7IHRvcDogXCIwcHhcIiwgbGVmdDogXCIwcHhcIiB9fVxuXG4gICAgICAgIFBhcGVyUHJvcHM9e3tcbiAgICAgICAgICBzdHlsZToge1xuICAgICAgICAgICAgdG9wOiAwLFxuICAgICAgICAgICAgbGVmdDogMCxcbiAgICAgICAgICAgIGJhY2tncm91bmRDb2xvcjogJyNjYzAwNDQnLFxuICAgICAgICAgICAgYm9yZGVyUmFkaXVzOiAnNnB4JyxcbiAgICAgICAgICAgIGNvbG9yOiAnd2hpdGUnLFxuICAgICAgICAgICAgbWFyZ2luVG9wOiAnMCcsXG4gICAgICAgICAgICBwYWRkaW5nVG9wOiBbJzBweCddLFxuICAgICAgICAgICAgd2lkdGg6ICc0MDBweCcsXG4gICAgICAgICAgICBtYXhIZWlnaHQ6ICcxMDAlJ1xuICAgICAgICAgIH0sXG4gICAgICAgIH19XG4gICAgICA+XG5cblxuICAgICAgICA8TGluayBocmVmPVwiL1wiPjxNZW51SXRlbSBvbkNsaWNrPXtoYW5kbGVDbG9zZX0+SG9tZTwvTWVudUl0ZW0+PC9MaW5rPlxuICAgICAgIFxuICAgICAgICA8TGluayBocmVmPVwiL2xlYWRlcmJvYXJkXCI+PE1lbnVJdGVtIG9uQ2xpY2s9e2hhbmRsZUNsb3NlfT5MZWFkZXJib2FyZDwvTWVudUl0ZW0+PC9MaW5rPlxuICAgICAgICAge0xvZyA/XG4gICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInVzZXJEZXRhaWxzLXdyYXBwZXJcIj5cbiAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZGV0YWlscy13cmFwcGVyXCI+XG4gICAgICAgICAgIDxHb29nbGVMb2dvdXRcbiAgICAgICAgICAgICByZW5kZXI9e3JlbmRlclByb3BzID0+IChcbiAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT17Y2xhc3Nlcy5yb290fT5cbiAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgIDxMaW5rIGhyZWY9XCIvXCI+PE1lbnVJdGVtIG9uQ2xpY2s9e2xvZ291dH0+TG9nb3V0PC9NZW51SXRlbT48L0xpbms+XG4gICAgICAgICAgICAgIFxuICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgIFxuICAgICAgICAgICAgICl9XG4gICAgICAgICAgICAgb25Mb2dvdXRTdWNjZXNzPXtsb2dvdXR9XG4gICAgICAgICAgIC8+XG5cblxuICAgICAgICAgIFxuICAgICAgICAgICBcbiAgICAgICAgICAgXG4gICAgICAgICA8L2Rpdj5cbiAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiYmFyXCIgLz5cbiAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwic3RhbmRcIiAvPlxuICAgICAgIDwvZGl2PlxuICAgICAgICAgOlxuICAgICAgICAgPExpbmsgaHJlZj1cIi9nYW1lXCI+PE1lbnVJdGVtIG9uQ2xpY2s9e2hhbmRsZUNsaWNrfT5HYW1lPC9NZW51SXRlbT48L0xpbms+XG4gICAgICAgICB9XG4gICAgICAgICBcbiAgICAgICAgIFxuICAgICAgICAgPGRpdj48L2Rpdj5cbiAgICAgICAgXG4gICAgICAgXG5cbiAgICAgIDwvTWVudT5cbiAgICAgIDxzdHlsZSBqc3g+e2BcbiAgICAgIG1hcmdpbjowO1xuICAgICAgcGFkZGluZzowO1xuXG4gICAgICBgfTwvc3R5bGU+XG4gICAgPC9kaXYgPlxuICApO1xufVxuIl19 */\n/*@ sourceURL=/home/anwesha/Desktop/screencast/components/Mymenu2.js */"));
 }
 
 /***/ }),
@@ -24037,423 +23999,6 @@ function withRouter(ComposedComponent) {
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/compiled/path-to-regexp/index.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/next/dist/compiled/path-to-regexp/index.js ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-/**
- * Tokenize input string.
- */
-function lexer(str) {
-    var tokens = [];
-    var i = 0;
-    while (i < str.length) {
-        var char = str[i];
-        if (char === "*" || char === "+" || char === "?") {
-            tokens.push({ type: "MODIFIER", index: i, value: str[i++] });
-            continue;
-        }
-        if (char === "\\") {
-            tokens.push({ type: "ESCAPED_CHAR", index: i++, value: str[i++] });
-            continue;
-        }
-        if (char === "{") {
-            tokens.push({ type: "OPEN", index: i, value: str[i++] });
-            continue;
-        }
-        if (char === "}") {
-            tokens.push({ type: "CLOSE", index: i, value: str[i++] });
-            continue;
-        }
-        if (char === ":") {
-            var name = "";
-            var j = i + 1;
-            while (j < str.length) {
-                var code = str.charCodeAt(j);
-                if (
-                // `0-9`
-                (code >= 48 && code <= 57) ||
-                    // `A-Z`
-                    (code >= 65 && code <= 90) ||
-                    // `a-z`
-                    (code >= 97 && code <= 122) ||
-                    // `_`
-                    code === 95) {
-                    name += str[j++];
-                    continue;
-                }
-                break;
-            }
-            if (!name)
-                throw new TypeError("Missing parameter name at " + i);
-            tokens.push({ type: "NAME", index: i, value: name });
-            i = j;
-            continue;
-        }
-        if (char === "(") {
-            var count = 1;
-            var pattern = "";
-            var j = i + 1;
-            if (str[j] === "?") {
-                throw new TypeError("Pattern cannot start with \"?\" at " + j);
-            }
-            while (j < str.length) {
-                if (str[j] === "\\") {
-                    pattern += str[j++] + str[j++];
-                    continue;
-                }
-                if (str[j] === ")") {
-                    count--;
-                    if (count === 0) {
-                        j++;
-                        break;
-                    }
-                }
-                else if (str[j] === "(") {
-                    count++;
-                    if (str[j + 1] !== "?") {
-                        throw new TypeError("Capturing groups are not allowed at " + j);
-                    }
-                }
-                pattern += str[j++];
-            }
-            if (count)
-                throw new TypeError("Unbalanced pattern at " + i);
-            if (!pattern)
-                throw new TypeError("Missing pattern at " + i);
-            tokens.push({ type: "PATTERN", index: i, value: pattern });
-            i = j;
-            continue;
-        }
-        tokens.push({ type: "CHAR", index: i, value: str[i++] });
-    }
-    tokens.push({ type: "END", index: i, value: "" });
-    return tokens;
-}
-/**
- * Parse a string for the raw tokens.
- */
-function parse(str, options) {
-    if (options === void 0) { options = {}; }
-    var tokens = lexer(str);
-    var _a = options.prefixes, prefixes = _a === void 0 ? "./" : _a;
-    var defaultPattern = "[^" + escapeString(options.delimiter || "/#?") + "]+?";
-    var result = [];
-    var key = 0;
-    var i = 0;
-    var path = "";
-    var tryConsume = function (type) {
-        if (i < tokens.length && tokens[i].type === type)
-            return tokens[i++].value;
-    };
-    var mustConsume = function (type) {
-        var value = tryConsume(type);
-        if (value !== undefined)
-            return value;
-        var _a = tokens[i], nextType = _a.type, index = _a.index;
-        throw new TypeError("Unexpected " + nextType + " at " + index + ", expected " + type);
-    };
-    var consumeText = function () {
-        var result = "";
-        var value;
-        // tslint:disable-next-line
-        while ((value = tryConsume("CHAR") || tryConsume("ESCAPED_CHAR"))) {
-            result += value;
-        }
-        return result;
-    };
-    while (i < tokens.length) {
-        var char = tryConsume("CHAR");
-        var name = tryConsume("NAME");
-        var pattern = tryConsume("PATTERN");
-        if (name || pattern) {
-            var prefix = char || "";
-            if (prefixes.indexOf(prefix) === -1) {
-                path += prefix;
-                prefix = "";
-            }
-            if (path) {
-                result.push(path);
-                path = "";
-            }
-            result.push({
-                name: name || key++,
-                prefix: prefix,
-                suffix: "",
-                pattern: pattern || defaultPattern,
-                modifier: tryConsume("MODIFIER") || ""
-            });
-            continue;
-        }
-        var value = char || tryConsume("ESCAPED_CHAR");
-        if (value) {
-            path += value;
-            continue;
-        }
-        if (path) {
-            result.push(path);
-            path = "";
-        }
-        var open = tryConsume("OPEN");
-        if (open) {
-            var prefix = consumeText();
-            var name_1 = tryConsume("NAME") || "";
-            var pattern_1 = tryConsume("PATTERN") || "";
-            var suffix = consumeText();
-            mustConsume("CLOSE");
-            result.push({
-                name: name_1 || (pattern_1 ? key++ : ""),
-                pattern: name_1 && !pattern_1 ? defaultPattern : pattern_1,
-                prefix: prefix,
-                suffix: suffix,
-                modifier: tryConsume("MODIFIER") || ""
-            });
-            continue;
-        }
-        mustConsume("END");
-    }
-    return result;
-}
-exports.parse = parse;
-/**
- * Compile a string to a template function for the path.
- */
-function compile(str, options) {
-    return tokensToFunction(parse(str, options), options);
-}
-exports.compile = compile;
-/**
- * Expose a method for transforming tokens into the path function.
- */
-function tokensToFunction(tokens, options) {
-    if (options === void 0) { options = {}; }
-    var reFlags = flags(options);
-    var _a = options.encode, encode = _a === void 0 ? function (x) { return x; } : _a, _b = options.validate, validate = _b === void 0 ? true : _b;
-    // Compile all the tokens into regexps.
-    var matches = tokens.map(function (token) {
-        if (typeof token === "object") {
-            return new RegExp("^(?:" + token.pattern + ")$", reFlags);
-        }
-    });
-    return function (data) {
-        var path = "";
-        for (var i = 0; i < tokens.length; i++) {
-            var token = tokens[i];
-            if (typeof token === "string") {
-                path += token;
-                continue;
-            }
-            var value = data ? data[token.name] : undefined;
-            var optional = token.modifier === "?" || token.modifier === "*";
-            var repeat = token.modifier === "*" || token.modifier === "+";
-            if (Array.isArray(value)) {
-                if (!repeat) {
-                    throw new TypeError("Expected \"" + token.name + "\" to not repeat, but got an array");
-                }
-                if (value.length === 0) {
-                    if (optional)
-                        continue;
-                    throw new TypeError("Expected \"" + token.name + "\" to not be empty");
-                }
-                for (var j = 0; j < value.length; j++) {
-                    var segment = encode(value[j], token);
-                    if (validate && !matches[i].test(segment)) {
-                        throw new TypeError("Expected all \"" + token.name + "\" to match \"" + token.pattern + "\", but got \"" + segment + "\"");
-                    }
-                    path += token.prefix + segment + token.suffix;
-                }
-                continue;
-            }
-            if (typeof value === "string" || typeof value === "number") {
-                var segment = encode(String(value), token);
-                if (validate && !matches[i].test(segment)) {
-                    throw new TypeError("Expected \"" + token.name + "\" to match \"" + token.pattern + "\", but got \"" + segment + "\"");
-                }
-                path += token.prefix + segment + token.suffix;
-                continue;
-            }
-            if (optional)
-                continue;
-            var typeOfMessage = repeat ? "an array" : "a string";
-            throw new TypeError("Expected \"" + token.name + "\" to be " + typeOfMessage);
-        }
-        return path;
-    };
-}
-exports.tokensToFunction = tokensToFunction;
-/**
- * Create path match function from `path-to-regexp` spec.
- */
-function match(str, options) {
-    var keys = [];
-    var re = pathToRegexp(str, keys, options);
-    return regexpToFunction(re, keys, options);
-}
-exports.match = match;
-/**
- * Create a path match function from `path-to-regexp` output.
- */
-function regexpToFunction(re, keys, options) {
-    if (options === void 0) { options = {}; }
-    var _a = options.decode, decode = _a === void 0 ? function (x) { return x; } : _a;
-    return function (pathname) {
-        var m = re.exec(pathname);
-        if (!m)
-            return false;
-        var path = m[0], index = m.index;
-        var params = Object.create(null);
-        var _loop_1 = function (i) {
-            // tslint:disable-next-line
-            if (m[i] === undefined)
-                return "continue";
-            var key = keys[i - 1];
-            if (key.modifier === "*" || key.modifier === "+") {
-                params[key.name] = m[i].split(key.prefix + key.suffix).map(function (value) {
-                    return decode(value, key);
-                });
-            }
-            else {
-                params[key.name] = decode(m[i], key);
-            }
-        };
-        for (var i = 1; i < m.length; i++) {
-            _loop_1(i);
-        }
-        return { path: path, index: index, params: params };
-    };
-}
-exports.regexpToFunction = regexpToFunction;
-/**
- * Escape a regular expression string.
- */
-function escapeString(str) {
-    return str.replace(/([.+*?=^!:${}()[\]|/\\])/g, "\\$1");
-}
-/**
- * Get the flags for a regexp from the options.
- */
-function flags(options) {
-    return options && options.sensitive ? "" : "i";
-}
-/**
- * Pull out keys from a regexp.
- */
-function regexpToRegexp(path, keys) {
-    if (!keys)
-        return path;
-    // Use a negative lookahead to match only capturing groups.
-    var groups = path.source.match(/\((?!\?)/g);
-    if (groups) {
-        for (var i = 0; i < groups.length; i++) {
-            keys.push({
-                name: i,
-                prefix: "",
-                suffix: "",
-                modifier: "",
-                pattern: ""
-            });
-        }
-    }
-    return path;
-}
-/**
- * Transform an array into a regexp.
- */
-function arrayToRegexp(paths, keys, options) {
-    var parts = paths.map(function (path) { return pathToRegexp(path, keys, options).source; });
-    return new RegExp("(?:" + parts.join("|") + ")", flags(options));
-}
-/**
- * Create a path regexp from string input.
- */
-function stringToRegexp(path, keys, options) {
-    return tokensToRegexp(parse(path, options), keys, options);
-}
-/**
- * Expose a function for taking tokens and returning a RegExp.
- */
-function tokensToRegexp(tokens, keys, options) {
-    if (options === void 0) { options = {}; }
-    var _a = options.strict, strict = _a === void 0 ? false : _a, _b = options.start, start = _b === void 0 ? true : _b, _c = options.end, end = _c === void 0 ? true : _c, _d = options.encode, encode = _d === void 0 ? function (x) { return x; } : _d;
-    var endsWith = "[" + escapeString(options.endsWith || "") + "]|$";
-    var delimiter = "[" + escapeString(options.delimiter || "/#?") + "]";
-    var route = start ? "^" : "";
-    // Iterate over the tokens and create our regexp string.
-    for (var _i = 0, tokens_1 = tokens; _i < tokens_1.length; _i++) {
-        var token = tokens_1[_i];
-        if (typeof token === "string") {
-            route += escapeString(encode(token));
-        }
-        else {
-            var prefix = escapeString(encode(token.prefix));
-            var suffix = escapeString(encode(token.suffix));
-            if (token.pattern) {
-                if (keys)
-                    keys.push(token);
-                if (prefix || suffix) {
-                    if (token.modifier === "+" || token.modifier === "*") {
-                        var mod = token.modifier === "*" ? "?" : "";
-                        route += "(?:" + prefix + "((?:" + token.pattern + ")(?:" + suffix + prefix + "(?:" + token.pattern + "))*)" + suffix + ")" + mod;
-                    }
-                    else {
-                        route += "(?:" + prefix + "(" + token.pattern + ")" + suffix + ")" + token.modifier;
-                    }
-                }
-                else {
-                    route += "(" + token.pattern + ")" + token.modifier;
-                }
-            }
-            else {
-                route += "(?:" + prefix + suffix + ")" + token.modifier;
-            }
-        }
-    }
-    if (end) {
-        if (!strict)
-            route += delimiter + "?";
-        route += !options.endsWith ? "$" : "(?=" + endsWith + ")";
-    }
-    else {
-        var endToken = tokens[tokens.length - 1];
-        var isEndDelimited = typeof endToken === "string"
-            ? delimiter.indexOf(endToken[endToken.length - 1]) > -1
-            : // tslint:disable-next-line
-                endToken === undefined;
-        if (!strict) {
-            route += "(?:" + delimiter + "(?=" + endsWith + "))?";
-        }
-        if (!isEndDelimited) {
-            route += "(?=" + delimiter + "|" + endsWith + ")";
-        }
-    }
-    return new RegExp(route, flags(options));
-}
-exports.tokensToRegexp = tokensToRegexp;
-/**
- * Normalize the given path string, returning a regular expression.
- *
- * An empty array can be passed in for the keys, which will hold the
- * placeholder key descriptions. For example, using `/user/:id`, `keys` will
- * contain `[{ name: 'id', delimiter: '/', optional: false, repeat: false }]`.
- */
-function pathToRegexp(path, keys, options) {
-    if (path instanceof RegExp)
-        return regexpToRegexp(path, keys);
-    if (Array.isArray(path))
-        return arrayToRegexp(path, keys, options);
-    return stringToRegexp(path, keys, options);
-}
-exports.pathToRegexp = pathToRegexp;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
 /***/ "./node_modules/next/dist/next-server/lib/amp-context.js":
 /*!***************************************************************!*\
   !*** ./node_modules/next/dist/next-server/lib/amp-context.js ***!
@@ -26041,252 +25586,6 @@ function formatWithValidation(url, options) {
 exports.formatWithValidation = formatWithValidation;
 exports.SP = typeof performance !== 'undefined';
 exports.ST = exports.SP && typeof performance.mark === 'function' && typeof performance.measure === 'function';
-
-/***/ }),
-
-/***/ "./node_modules/next/dist/next-server/server/lib/path-match.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/next/dist/next-server/server/lib/path-match.js ***!
-  \*********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const pathToRegexp = __importStar(__webpack_require__(/*! next/dist/compiled/path-to-regexp */ "./node_modules/next/dist/compiled/path-to-regexp/index.js"));
-exports.pathToRegexp = pathToRegexp;
-exports.default = (customRoute = false) => {
-    return (path) => {
-        const keys = [];
-        const matcherOptions = Object.assign(Object.assign({ sensitive: false, delimiter: '/' }, (customRoute ? { strict: true } : undefined)), { decode: decodeParam });
-        const matcherRegex = pathToRegexp.pathToRegexp(path, keys, matcherOptions);
-        const matcher = pathToRegexp.regexpToFunction(matcherRegex, keys, matcherOptions);
-        return (pathname, params) => {
-            const res = pathname == null ? false : matcher(pathname);
-            if (!res) {
-                return false;
-            }
-            if (customRoute) {
-                for (const key of keys) {
-                    // unnamed params should be removed as they
-                    // are not allowed to be used in the destination
-                    if (typeof key.name === 'number') {
-                        delete res.params[key.name];
-                    }
-                }
-            }
-            return Object.assign(Object.assign({}, params), res.params);
-        };
-    };
-};
-function decodeParam(param) {
-    try {
-        return decodeURIComponent(param);
-    }
-    catch (_) {
-        const err = new Error('failed to decode param');
-        err.code = 'DECODE_FAILED';
-        throw err;
-    }
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/next/dist/next-server/server/router.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/next/dist/next-server/server/router.js ***!
-  \*************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const url_1 = __webpack_require__(/*! url */ "./node_modules/native-url/dist/index.js");
-const path_to_regexp_1 = __webpack_require__(/*! next/dist/compiled/path-to-regexp */ "./node_modules/next/dist/compiled/path-to-regexp/index.js");
-const path_match_1 = __importDefault(__webpack_require__(/*! ./lib/path-match */ "./node_modules/next/dist/next-server/server/lib/path-match.js"));
-exports.route = path_match_1.default();
-exports.prepareDestination = (destination, params, query, isRedirect) => {
-    const parsedDestination = url_1.parse(destination, true);
-    const destQuery = parsedDestination.query;
-    let destinationCompiler = path_to_regexp_1.compile(`${parsedDestination.pathname}${parsedDestination.hash || ''}`, 
-    // we don't validate while compiling the destination since we should
-    // have already validated before we got to this point and validating
-    // breaks compiling destinations with named pattern params from the source
-    // e.g. /something:hello(.*) -> /another/:hello is broken with validation
-    // since compile validation is meant for reversing and not for inserting
-    // params from a separate path-regex into another
-    { validate: false });
-    let newUrl;
-    // update any params in query values
-    for (const [key, strOrArray] of Object.entries(destQuery)) {
-        let value = Array.isArray(strOrArray) ? strOrArray[0] : strOrArray;
-        if (value) {
-            const queryCompiler = path_to_regexp_1.compile(value, { validate: false });
-            value = queryCompiler(params);
-        }
-        destQuery[key] = value;
-    }
-    // add path params to query if it's not a redirect and not
-    // already defined in destination query
-    if (!isRedirect) {
-        for (const [name, value] of Object.entries(params)) {
-            if (!(name in destQuery)) {
-                destQuery[name] = Array.isArray(value) ? value.join('/') : value;
-            }
-        }
-    }
-    try {
-        newUrl = encodeURI(destinationCompiler(params));
-        const [pathname, hash] = newUrl.split('#');
-        parsedDestination.pathname = pathname;
-        parsedDestination.hash = `${hash ? '#' : ''}${hash || ''}`;
-        parsedDestination.path = `${pathname}${parsedDestination.search}`;
-        delete parsedDestination.search;
-    }
-    catch (err) {
-        if (err.message.match(/Expected .*? to not repeat, but got an array/)) {
-            throw new Error(`To use a multi-match in the destination you must add \`*\` at the end of the param name to signify it should repeat. https://err.sh/zeit/next.js/invalid-multi-match`);
-        }
-        throw err;
-    }
-    // Query merge order lowest priority to highest
-    // 1. initial URL query values
-    // 2. path segment values
-    // 3. destination specified query values
-    parsedDestination.query = Object.assign(Object.assign({}, query), parsedDestination.query);
-    return {
-        newUrl,
-        parsedDestination,
-    };
-};
-class Router {
-    constructor({ headers = [], fsRoutes = [], rewrites = [], redirects = [], catchAllRoute, dynamicRoutes = [], pageChecker, useFileSystemPublicRoutes, }) {
-        this.headers = headers;
-        this.fsRoutes = fsRoutes;
-        this.rewrites = rewrites;
-        this.redirects = redirects;
-        this.pageChecker = pageChecker;
-        this.catchAllRoute = catchAllRoute;
-        this.dynamicRoutes = dynamicRoutes;
-        this.useFileSystemPublicRoutes = useFileSystemPublicRoutes;
-    }
-    setDynamicRoutes(routes = []) {
-        this.dynamicRoutes = routes;
-    }
-    addFsRoute(route) {
-        this.fsRoutes.unshift(route);
-    }
-    async execute(req, res, parsedUrl) {
-        // memoize page check calls so we don't duplicate checks for pages
-        const pageChecks = {};
-        const memoizedPageChecker = async (p) => {
-            if (pageChecks[p]) {
-                return pageChecks[p];
-            }
-            const result = await this.pageChecker(p);
-            pageChecks[p] = result;
-            return result;
-        };
-        let parsedUrlUpdated = parsedUrl;
-        /*
-          Desired routes order
-          - headers
-          - redirects
-          - Check filesystem (including pages), if nothing found continue
-          - User rewrites (checking filesystem and pages each match)
-        */
-        const routes = [
-            ...this.headers,
-            ...this.redirects,
-            ...this.fsRoutes,
-            // We only check the catch-all route if public page routes hasn't been
-            // disabled
-            ...(this.useFileSystemPublicRoutes
-                ? [
-                    {
-                        type: 'route',
-                        name: 'Page checker',
-                        match: exports.route('/:path*'),
-                        fn: async (req, res, params, parsedUrl) => {
-                            const { pathname } = parsedUrl;
-                            if (!pathname) {
-                                return { finished: false };
-                            }
-                            if (await this.pageChecker(pathname)) {
-                                return this.catchAllRoute.fn(req, res, params, parsedUrl);
-                            }
-                            return { finished: false };
-                        },
-                    },
-                ]
-                : []),
-            ...this.rewrites,
-            // We only check the catch-all route if public page routes hasn't been
-            // disabled
-            ...(this.useFileSystemPublicRoutes ? [this.catchAllRoute] : []),
-        ];
-        for (const route of routes) {
-            const newParams = route.match(parsedUrlUpdated.pathname);
-            // Check if the match function matched
-            if (newParams) {
-                const result = await route.fn(req, res, newParams, parsedUrlUpdated);
-                // The response was handled
-                if (result.finished) {
-                    return true;
-                }
-                if (result.pathname) {
-                    parsedUrlUpdated.pathname = result.pathname;
-                }
-                if (result.query) {
-                    parsedUrlUpdated.query = Object.assign(Object.assign({}, parsedUrlUpdated.query), result.query);
-                }
-                // check filesystem
-                if (route.check === true) {
-                    for (const fsRoute of this.fsRoutes) {
-                        const fsParams = fsRoute.match(parsedUrlUpdated.pathname);
-                        if (fsParams) {
-                            const result = await fsRoute.fn(req, res, fsParams, parsedUrlUpdated);
-                            if (result.finished) {
-                                return true;
-                            }
-                        }
-                    }
-                    let matchedPage = await memoizedPageChecker(parsedUrlUpdated.pathname);
-                    // If we didn't match a page check dynamic routes
-                    if (!matchedPage) {
-                        for (const dynamicRoute of this.dynamicRoutes) {
-                            if (dynamicRoute.match(parsedUrlUpdated.pathname)) {
-                                matchedPage = true;
-                            }
-                        }
-                    }
-                    // Matched a page or dynamic route so render it using catchAllRoute
-                    if (matchedPage) {
-                        const pageParams = this.catchAllRoute.match(parsedUrlUpdated.pathname);
-                        await this.catchAllRoute.fn(req, res, pageParams, parsedUrlUpdated);
-                        return true;
-                    }
-                }
-            }
-        }
-        return false;
-    }
-}
-exports.default = Router;
-
 
 /***/ }),
 

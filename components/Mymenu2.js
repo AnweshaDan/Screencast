@@ -45,6 +45,7 @@ export default function FadeMenu() {
     localStorage.removeItem('email');
     localStorage.removeItem('name');
     console.log(localStorage.getItem('email'));
+    FB.logout();
     Router.push('/')
     
   };

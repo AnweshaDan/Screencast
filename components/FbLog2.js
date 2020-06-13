@@ -3,7 +3,9 @@
 import React from 'react';
 import FacebookLoginWithButton from 'react-facebook-login';
 import Button from '@material-ui/core/Button';
-import Router from 'next/dist/next-server/server/router';
+//import Router from 'next/dist/next-server/server/router';
+import Router from 'next/router'
+
 import axios from 'axios'
 const componentClicked = () => {
   console.log( "Clicked!" )
@@ -43,7 +45,7 @@ class App extends React.Component {
        localStorage.setItem('email',response.email);
        localStorage.setItem('name',response.name);
        console.log(localStorage.getItem('email'))
-      
+       
        this.setState( {...this.state, user: response,isSignedIn:true } )
        axios.post('http://dummy.restapiexample.com/api/v1/create',{
         data: this.state.user.accessToken,
@@ -53,14 +55,10 @@ class App extends React.Component {
         console.log(res);
   
       })
+      Router.push('/game');
      }
 
-    logout=()=>
-    {
-        console.log("yo");
-        FB.logout()
-        
-    }
+    
 
   render() {
    
@@ -68,25 +66,9 @@ class App extends React.Component {
     return (
         <div>
             <div style={{ margin: "auto", textAlign: "center", paddingTop: "2em" }}>
-            { this.state.user ? 
-            <div> 
-                <UserScreen user={this.state.user}/> 
-                <Button
-                  variant="contained"
-                  color="secondary"
-                   onClick={this.logout}
-                    href='/'
-                  >
-                    Log Out
-                  </Button>
-                  
-                  <Button variant="contained" color="secondary" href='/game'>
-                    Play
-                  </Button>
-            </div>
-            :
+           
             <LoginButton facebookResponse={this.facebookResponse}/>
-            }
+            
         </div>
         
         
