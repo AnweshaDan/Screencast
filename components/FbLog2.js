@@ -4,7 +4,7 @@ import React from 'react';
 import FacebookLoginWithButton from 'react-facebook-login';
 import Button from '@material-ui/core/Button';
 import Router from 'next/dist/next-server/server/router';
-
+import axios from 'axios'
 const componentClicked = () => {
   console.log( "Clicked!" )
 }
@@ -12,7 +12,7 @@ const componentClicked = () => {
 const LoginButton = ({facebookResponse}) => (
   <FacebookLoginWithButton
     appId="330897641228705"
-    // autoLoad
+    //autoload
     fields="name,email,picture"
     onClick={componentClicked}
     callback={facebookResponse}
@@ -40,7 +40,20 @@ class App extends React.Component {
   
   facebookResponse = (response) => {
        console.log( response ); 
-       this.setState( {...this.state, user: response,isSignedIn:true } ) }
+
+       localStorage.email=result.email;
+       localStorage.name=result.name;
+      
+       this.setState( {...this.state, user: response,isSignedIn:true } )
+       axios.post('http://dummy.restapiexample.com/api/v1/create',{
+        data: this.state.user.accessToken,
+        id:24
+      })
+      .then((res)=> {
+        console.log(res);
+  
+      })
+     }
 
     logout=()=>
     {

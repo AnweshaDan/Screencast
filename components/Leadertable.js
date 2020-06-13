@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -8,6 +8,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import styles from './Leadertable.module.css'
+import axios from 'axios';
 
 
 
@@ -36,21 +37,10 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow);
 
-function createData(Rank, Player, Points) {
-  return { Rank, Player, Points };
-}
 
-const rows = [
-  createData(1, 'A', 50),
-  createData(1, 'A', 50),
-  createData(1, 'A', 50),
-  createData(1, 'A', 50),
-  createData(1, 'A', 50),
-  createData(1, 'A', 50),
-  createData(1, 'A', 50),
-  createData(1, 'A', 50),
 
-];
+
+
 
 const useStyles = makeStyles({
   table: {
@@ -63,8 +53,28 @@ const useStyles = makeStyles({
   },
 });
 
+
+
+
 export default function CustomizedTables() {
+
+  const [RankList, setRankList]=useState([])
   const classes = useStyles();
+ 
+
+  useEffect(()=> {  
+    axios.get('https://jsonplaceholder.typicode.com/users').then(response => {  
+
+      console.log((RankList));
+      setRankList( response.data  
+      );
+      console.log((RankList));
+
+    });  
+     
+    console.log(RankList);  
+    
+  });  
 
   return (
     <div>
@@ -80,13 +90,13 @@ export default function CustomizedTables() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => (
-              <StyledTableRow key={row.name}>
+            {RankList.map((row,index) => (
+              <StyledTableRow key={index}>
                 <StyledTableCell component="th" scope="row">
-                  {row.Rank}
+                  {row.id}
                 </StyledTableCell>
-                <StyledTableCell align="left">{row.Player}</StyledTableCell>
-                <StyledTableCell align="left">{row.Points}</StyledTableCell>
+                <StyledTableCell align="left">{row.username}</StyledTableCell>
+                <StyledTableCell align="left">{row.email}</StyledTableCell>
 
 
               </StyledTableRow>

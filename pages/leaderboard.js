@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Leadertable from '../components/Leadertable'
-
+import Footer from '../components/Footer'
 import Particles from 'react-particles-js';
 
 export default function leaderboard() {
@@ -47,6 +47,9 @@ export default function leaderboard() {
       </div>
 
       <Leadertable />
+      <div>
+                <Footer/>
+        </div>
     </div>
   )
 }

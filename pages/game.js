@@ -1,6 +1,7 @@
 import axios from'axios'
 import React from 'react'
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 import Question from '../components/Question'
 import Hint from '../components/Hint'
 import Submit from '../components/Submit'
@@ -162,6 +163,9 @@ class game extends React.Component{
     }
     `}</style>
 
+            </div>
+            <div>
+                <Footer/>
             </div>
 
 

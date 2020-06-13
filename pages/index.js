@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar'
 import Head from 'next/head'
 import Logo from '../glug.png'
 import FbLog2 from '../components/FbLog2'
-
+import Footer from '../components/Footer'
 
 
 
@@ -48,6 +48,9 @@ function trial2() {
             
             
         </div>
+        <div>
+                <Footer/>
+        </div>
          <style jsx>{`
          div{
              text-align:center;
@@ -61,3 +64,4 @@ function trial2() {
 }
 
 export default trial2
+//"proxy" : "http://screencast2020.azurewebsites.net/api/googlelogin"

@@ -2,7 +2,7 @@
 import React from "react";
 import GoogleLogin from "react-google-login";
 import { GoogleLogout } from "react-google-login";
-
+import axios from 'axios'
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -27,7 +27,14 @@ class GoogleLog2 extends React.Component {
   responseGoogle = response => {
     console.log(response);
     this.setState({ userDetails: response.profileObj, isUserLoggedIn: true });
-    
+    axios.post('http://dummy.restapiexample.com/api/v1/create',{
+      data: response.tokenObj.id_token,
+      id:24
+    })
+    .then((res)=> {
+      console.log(res);
+
+    })
     localStorage.email = response.profileObj.email;
     localStorage.image = response.profileObj.imageUrl;
     localStorage.name = response.profileObj.name;
