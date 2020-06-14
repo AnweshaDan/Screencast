@@ -8,6 +8,7 @@ import Submit from '../components/Submit'
 import Particles from 'react-particles-js';
 import Answer from '../components/Answer';
 import Router from 'next/router';
+import AnsAlert from '../components/AnsAlert'
 
 
 
@@ -23,7 +24,8 @@ class game extends React.Component{
             alert_title:"",
             alert_text:"hola",
             open:false,
-            isLoggedIn:false
+            isLoggedIn:false,
+            hint:""
             
         }
 
@@ -31,23 +33,40 @@ class game extends React.Component{
         this.change=this.change.bind(this);
         this.checkAns=this.checkAns.bind(this);
         this.getQuestions=this.getQuestions.bind(this);
+        this.keypress=this.keypress.bind(this);
     }
     
 
-    componentDidMount()//at the beginning sets the first qs
-    {
+    componentDidMount()//at the beginning sets the qs
+    {//after getting appropiate data from backend about that email in local storage
         console.log(this.state.qsNo);
+        console.log(localStorage.getItem('email'));//email available here
+
+        /*   axios.get('https://jsonplaceholder.typicode.com/users/email?=Nathan@yesenia.net').then((response)=>
+        {
+            console.log("yesssss"+this.state.qsNo+response.json);
+            this.setState(prevState=>{
+                return{ ...prevState, questions:response.data.id}
+              });
+        }
+        )*/
+
+        //next qs/completed/error
+
         this.getQuestions();
+        
+        
     }
 
     getQuestions(){
+        console.log(this.state.qsNo);
         console.log("YO");//get questions from api and updates state
         axios.get('https://jsonplaceholder.typicode.com/posts/'+this.state.qsNo).then((response)=>
         {
           let r=response.data.title;
           console.log(r);
           this.setState(prevState=>{
-            return{ ...prevState, questions:r}
+            return{ ...prevState, questions:r,hint:response.data.body}
           });
           
           
@@ -66,11 +85,19 @@ class game extends React.Component{
         this.setState(prevState=> {
         return { ...prevState, answer:e }
     });
-    
-
-    
-    
     }
+
+    keypress=(event)=>{//not done
+        if(event.key==="Enter")
+        {
+            console.log("jo"+this.state.answer);
+            this.checkAnswer(this.state.answer);
+            console.log("jo"+this.state.answer);
+            
+        }
+    }
+
+   
 
     checkAns(answer)//check answer from api and send for correct alert
     {
@@ -91,12 +118,14 @@ class game extends React.Component{
                     return{ ...prevState, qsNo:prevState.qsNo+1,correct:1}
                   });
                   this.getQuestions();
+                  
             }
             else{
                 this.setState(prevState=>{
                     return{ ...prevState,correct:0}
                   });
                 this.getQuestions();
+                
             }
                 
         }
@@ -150,14 +179,16 @@ class game extends React.Component{
 
             <Navbar />
             <Question qs={this.state.questions} />
-            <Answer change={this.change} />
+            
+            <Answer change={this.change} press={this.keypress} />
+            
+            
             <Submit submit={this.submit} correct={this.correct}/>
             
             
             <div>
 
-
-                <Hint />
+                <Hint hint={this.state.hint}/>
                 <style jsx>{`
     div{
         text-align:center;
