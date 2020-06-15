@@ -30,8 +30,10 @@ class Answer extends Component{
       <div>
       <form className="ans-div" noValidate autoComplete="off">
 
-         <TextField id="filled-basic" label="Type your answer here." variant="filled" onChange={this.props.change} onKeyPress={this.props.press}  />
-
+         <TextField id="filled-basic" label="Type your answer here." variant="filled" onChange={this.props.change}  />
+         <Button className="btnSubmit" variant="contained" color="primary"  disableElevation onClick={this.props.submit}>
+          Submit
+        </Button>
       </form>
      
     </div>
