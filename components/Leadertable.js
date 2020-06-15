@@ -3,11 +3,9 @@ import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-import styles from './Leadertable.module.css'
+
 import axios from 'axios'
 
 
@@ -55,7 +53,7 @@ const useStyles = makeStyles({
 
 
 
-export default function CustomizedTables() {
+export default function Leadertable() {
 
   const [RankList, setRankList]=useState([])
   const classes = useStyles();
@@ -64,16 +62,14 @@ export default function CustomizedTables() {
   useEffect(()=> {  
     axios.get('https://jsonplaceholder.typicode.com/users').then(response => {  
 
-      console.log((RankList));
+      
       setRankList( response.data  
       );
-      console.log((RankList));
+      console.log(response.data); 
+      console.log(RankList);
 
-    });  
-     
-    console.log(RankList);  
-    
-  });  
+    });     
+  },[]);  
 
   return (
     <div>
@@ -88,8 +84,10 @@ export default function CustomizedTables() {
 
             </TableRow>
           </TableHead>
-          <TableBody>
-            {RankList.map((row,index) => (
+          
+            { RankList.length ?            
+              <TableBody>
+              {RankList.map((row,index) => (
               <StyledTableRow key={index}>
                 <StyledTableCell component="th" scope="row">
                   {row.id}
@@ -99,8 +97,14 @@ export default function CustomizedTables() {
 
 
               </StyledTableRow>
-            ))}
-          </TableBody>
+              ))}
+              </TableBody>
+            :
+              <div>LOADING......</div>
+              
+            }
+            
+            
         </Table>
       </div>
 

@@ -1,7 +1,7 @@
 //using this
 import React from "react";
 import GoogleLogin from "react-google-login";
-import { GoogleLogout } from "react-google-login";
+
 import axios from 'axios'
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
@@ -22,6 +22,11 @@ class GoogleLog3 extends React.Component {
       userDetails: {},
       isUserLoggedIn: false
     };
+    
+  }
+  componentDidMount(){
+    if(localStorage.getItem('email'))
+      Router.push('/game');
   }
 
   responseGoogle = response => {
@@ -38,10 +43,11 @@ class GoogleLog3 extends React.Component {
     console.log(typeof(response.profileObj.name))//string
     localStorage.setItem('email',response.profileObj.email);
     localStorage.setItem('name',response.profileObj.name);
+    localStorage.setItem('image',response.profileObj.imageUrl)
     console.log(localStorage.getItem('name'));//returns name
     Router.push('/game')
   };
-  //{localStorage.getItem('name')}
+  
   
 
  
@@ -74,6 +80,7 @@ class GoogleLog3 extends React.Component {
             )}
             onSuccess={this.responseGoogle}//isSignedIn ??
             onFailure={this.responseGoogle}//handle later
+            cookiePolicy={'single_host_origin'}
           />
         )}
       

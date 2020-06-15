@@ -40,14 +40,14 @@ export default function Mymenu2() {
   useEffect(()=>{
     setLog(localStorage.getItem('email'));
     console.log(Log);
-  })
+  },[])
   
   const logout = () => {
     localStorage.clear();
     localStorage.removeItem('email');
     localStorage.removeItem('name');
     console.log(localStorage.getItem('email'));
-    FB.logout();
+    //FB.logout();
     Router.push('/')
     
   };

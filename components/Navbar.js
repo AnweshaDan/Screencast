@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
-
+import Avatar from '@material-ui/core/Avatar';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -33,6 +33,19 @@ export default function Navbar(props) {
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+  const [isSignedIn,setIsSigned] = useState(false);
+  const [name,setName] = useState("");
+  const [image, setImage] = useState("")
+
+  useEffect(()=>{
+    if(localStorage.getItem('email'))
+    {
+      setIsSigned(true);
+      setName(localStorage.getItem('name'));
+      setImage(localStorage.getItem('image'));
+    }
+  })
+
 
   return (
     <div className={classes.root}>
@@ -49,6 +62,17 @@ export default function Navbar(props) {
           </Typography>          
         </Toolbar>
       </AppBar>
+      {
+        isSignedIn ?
+        <div>
+        <Avatar alt = {name} src={image} />
+        <div>Welcome {name} !</div>
+        </div>
+        :
+        <div></div>
+      }
+      
+
 
     </div>
   );
