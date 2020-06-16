@@ -3,12 +3,12 @@
 import React,{Component} from 'react'
 import Head from 'next/head'
 import Navbar from '../components/Navbar'
-import Log from '../components/Log'
+
 import Particles from 'react-particles-js';
-import Img from 'react-image'
+
 import Logo from '../glug.png'
 import GoogleLog2 from '../components/GoogleLog2'
-import { render } from 'react-dom';
+
 
 console.log(Logo);
 class login extends Component {
