@@ -31038,7 +31038,7 @@ function index() {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!****************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fanwesha%2FDesktop%2Fscreencast%2Fpages%2Findex.js ***!
   \****************************************************************************************************************************/
@@ -31061,5 +31061,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

@@ -29,10 +29,11 @@ class game extends React.Component{
         }
 
         this.submit=this.submit.bind(this);
+        this.submit2=this.submit2.bind(this);
         this.change=this.change.bind(this);
         this.checkAns=this.checkAns.bind(this);
         this.getQuestions=this.getQuestions.bind(this);
-        this.keypress=this.keypress.bind(this);
+        
     }
     
 
@@ -59,10 +60,9 @@ class game extends React.Component{
 
     getQuestions(){
         console.log(this.state.qsNo);
-        this.setState(prevState=>{
-            return{ ...prevState, ans_alert:false}});
+        
     
-        console.log("YO");//get questions from api and updates state
+        console.log("CLAUS");//get questions from api and updates state
         axios.get('https://jsonplaceholder.typicode.com/posts/'+this.state.qsNo).then((response)=>
         {
           let r=response.data.title;
@@ -76,13 +76,25 @@ class game extends React.Component{
     });
     }
 
-    submit=()=>{//send final answer for checking
-        
-        console.log(this.state.answer);
-        this.setState(prevState=>{
-            return{ ...prevState, ans_alert:true}})
+    submit=(event)=>{//send final answer for checking
+        if(event.key==="Enter")
+        {
+            console.log(this.state.answer);
+            console.log("JOJOJOJOJOJ");
         this.checkAns(this.state.answer);
+        }
+        
     }
+   submit2=()=>{//send final answer for checking
+        
+        
+            console.log(this.state.answer);
+        
+        this.checkAns(this.state.answer);
+        
+        
+    }
+
 
     change=(event)=>{//keep updating answer
         let e= event.target.value; 
@@ -93,15 +105,7 @@ class game extends React.Component{
     
     }
 
-    keypress=(event)=>{//not done
-        if(event.keyCode==13)
-        {
-            console.log("jo"+this.state.answer);
-            this.checkAnswer(this.state.answer);
-            console.log("jo"+this.state.answer);
-            
-        }
-    }
+    
      
    
 
@@ -123,7 +127,8 @@ class game extends React.Component{
                 this.setState(prevState=>{
                     return{ ...prevState, qsNo:prevState.qsNo+1}
                   });
-                  alert("Correct");
+                  alert("Correct");//where does the effing control go after this?
+                  console.log("SANTA");
                   this.getQuestions();
                   
             }
@@ -187,7 +192,7 @@ class game extends React.Component{
             <Navbar />
             <Question qs={this.state.questions} />
             
-            <Answer change={this.change} submit={this.submit} />
+            <Answer change={this.change} submit={this.submit} submit2={this.submit2} />
             
             
           
