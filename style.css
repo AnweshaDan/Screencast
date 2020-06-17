@@ -10,7 +10,20 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
-
+.fbbutton {
+    margin: 0 auto;
+    position: relative;
+    text-decoration: none;
+    height: 35px;
+    width: 190px;
+    text-transform: uppercase;
+    color: #f0f0f0;
+    background-color: rgb(32, 32, 177);
+    border: none;
+    border-radius: 6px;
+    z-index: 1000;
+  }
+  
 .head {
     margin: 0 auto;
     padding: 10px;

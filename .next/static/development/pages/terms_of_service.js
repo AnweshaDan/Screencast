@@ -270,7 +270,7 @@ function terms_of_service() {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!*******************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fterms_of_service&absolutePagePath=%2Fhome%2Fanwesha%2FDesktop%2Fscreencast%2Fpages%2Fterms_of_service.js ***!
   \*******************************************************************************************************************************************************/
@@ -293,5 +293,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=terms_of_service.js.map

@@ -15,7 +15,8 @@ const LoginButton = ({facebookResponse}) => (
     fields="name,email,picture"
     
     callback={facebookResponse}
-    icon="fa-facebook"/>
+    cssClass="fbbutton"
+    />
   )
 
 class FbLog2 extends React.Component {

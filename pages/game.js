@@ -154,7 +154,9 @@ class game extends React.Component{
 
     
     return (
-        <div>
+        <div
+            style={{ marginRight: "auto", marginLeft: "auto", textAlign: "center" }}
+            >
             <Particles
 
                 params={{

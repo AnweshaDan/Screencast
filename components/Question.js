@@ -32,8 +32,11 @@ export default function OutlinedCard(props) {
   return (
     <div>
       <div className="head">
-        <div className="container neon-box">
-          <div class="glitch1" data-text="ROUND 1">ROUND 1</div>
+      <div
+          className="container neon-box"
+          style={{ textAlign: "center", fontSize: "22px" }}
+        >
+          <span className="flicker" >ROUND 1</span>
         </div>
       </div>
 

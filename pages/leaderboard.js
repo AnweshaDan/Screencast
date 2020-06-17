@@ -41,8 +41,10 @@ export default function leaderboard() {
       />
       <Navbar />
       <div className="head">
-        <div className="container neon-box">
-          <div class="glitch2" data-text="LEADERBOARD">LEADERBOARD</div>
+        <div className="container neon-box"
+        style={{ textAlign: "center", fontSize: "20px" }}
+        >
+          <span className="flicker">LEADERBOARD</span>
         </div>
       </div>
 
