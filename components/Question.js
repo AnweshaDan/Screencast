@@ -1,24 +1,22 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-
-
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
   },
   bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
+    display: "inline-block",
+    margin: "0 2px",
+    transform: "scale(0.8)",
   },
   title: {
-    fontSize: 14,
+    fontSize: 15,
   },
   pos: {
     marginBottom: 12,
@@ -32,29 +30,27 @@ export default function OutlinedCard(props) {
   return (
     <div>
       <div className="head">
-      <div
+        <div
           className="container neon-box"
           style={{ textAlign: "center", fontSize: "22px" }}
         >
-          <span className="flicker" >ROUND 1</span>
+          <span className="flicker">ROUND 1</span>
         </div>
       </div>
-
 
       <CardContent className="question">
         <Typography className={classes.title} color="white" gutterBottom>
           Question 1
-                </Typography>
+        </Typography>
 
-        <Typography className={classes.pos} color="#f0f0f0">
+        <Typography
+          className={classes.pos}
+          color="#f0f0f0"
+          style={{ fontSize: "14px" }}
+        >
           {props.qs}
-                </Typography>
-
+        </Typography>
       </CardContent>
-
-
-
     </div>
   );
 }
-

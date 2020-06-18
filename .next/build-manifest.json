@@ -39,10 +39,6 @@
     "/next/dist/pages/_error": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
-    ],
-    "/terms_of_service": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
     ]
   }
 }
