@@ -61,6 +61,7 @@ class game extends React.Component{
     getQuestions(){
         console.log(this.state.qsNo);
         console.log(localStorage.getItem('token'));//get questions from api and updates state
+
         
         
         axios.get('https://screencast20.azurewebsites.net/api/question',{
@@ -71,6 +72,8 @@ class game extends React.Component{
         {
           
           console.log(response);
+          if(response.data.quiz_finished)
+          Router.push('/finale');
           this.setState(prevState=>{
             return{ ...prevState, questions:response.data.question,hint:response.data.hint,qsNo:response.data.question_no}
           });
