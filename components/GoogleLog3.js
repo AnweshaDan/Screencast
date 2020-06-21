@@ -34,7 +34,7 @@ class GoogleLog3 extends React.Component {
     console.log(localStorage.getItem("token"));
      const t=setInterval(()=>{
       alert("Refreshing");
-      axios.post("http://screencast20.azurewebsites.net/api/refresh",{
+      axios.post("https://screencast20.azurewebsites.net/api/refresh",{
         refresh:res.data.refresh_token
       }).then((r)=>{
         console.log(r);
@@ -55,7 +55,7 @@ class GoogleLog3 extends React.Component {
     console.log(localStorage.getItem('token'));
     this.setState({ userDetails: response.profileObj, isUserLoggedIn: true,access:response.tokenObj.access_token });
     axios
-      .post("http://screencast20.azurewebsites.net/api/googlelogin", {
+      .post("https://screencast20.azurewebsites.net/api/googlelogin", {
         token: response.tokenObj.access_token
        
       })
