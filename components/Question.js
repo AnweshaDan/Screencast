@@ -40,7 +40,7 @@ export default function OutlinedCard(props) {
 
       <CardContent className="question">
         <Typography className={classes.title} color="white" gutterBottom>
-          Question 1
+          Question {props.qsNo}
         </Typography>
 
         <Typography

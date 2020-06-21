@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Question from '../components/Question'
 import Hint from '../components/Hint'
-import Submit from '../components/Submit'
+
 import Particles from 'react-particles-js';
 import Answer from '../components/Answer';
 import Router from 'next/router';
@@ -72,7 +72,7 @@ class game extends React.Component{
           
           console.log(response);
           this.setState(prevState=>{
-            return{ ...prevState, questions:response.data.question,hint:response.data.hint}
+            return{ ...prevState, questions:response.data.question,hint:response.data.hint,qsNo:response.data.question_no}
           });
        
           
@@ -133,7 +133,7 @@ class game extends React.Component{
         
         
             
-                if(r && !response.data.quiz_finished)
+                if(r && !response.data.quiz_finished )
                 {
                     this.setState(prevState=>{
                         return{ ...prevState, qsNo:prevState.qsNo+1}
@@ -144,14 +144,15 @@ class game extends React.Component{
                       this.getQuestions();
                       
                 }
-                else if(!r && !response.data.quiz_finished){
-                    alert("Wrong");
-                    this.getQuestions();
+                else if(r && response.data.quiz_finished){
+                    alert("Completed!!!");
+                    Router.push('/finale')
                 }
                 else{
-                    alert("completed");
-                    Router.push('/finale');
+                    alert("Wrong");
+                    
                 }
+               
                 
                
            
@@ -173,7 +174,7 @@ class game extends React.Component{
     
     return (
         <div
-            style={{ marginRight: "auto", marginLeft: "auto", textAlign: "center" }}
+            style={{ marginRight: "auto", marginLeft: "auto", textAlign: "center" }}questions
             >
             <Particles
 
@@ -210,7 +211,7 @@ class game extends React.Component{
             
 
             <Navbar />
-            <Question qs={this.state.questions} />
+            <Question qs={this.state.questions} qsNo={this.state.qsNo}/>
             
             <Answer change={this.change} submit={this.submit} submit2={this.submit2} />
             
