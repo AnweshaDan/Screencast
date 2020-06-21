@@ -43,11 +43,15 @@ export default function Mymenu2() {
   },[])
   
   const logout = () => {
-    localStorage.clear();
+    console.log(localStorage.getItem('email'));
+    
     localStorage.removeItem('email');
     localStorage.removeItem('name');
-    console.log(localStorage.getItem('email'));
+    
     //FB.logout();
+    console.log(localStorage.getItem("interval_id"));
+    clearTimeout(localStorage.getItem("interval_id"));
+    localStorage.clear();
     Router.push('/')
     
   };

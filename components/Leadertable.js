@@ -60,7 +60,11 @@ export default function Leadertable() {
  
 
   useEffect(()=> {  
-    axios.get('https://jsonplaceholder.typicode.com/users').then(response => {  
+    axios.get('https://screencast20.azurewebsites.net/api/leaderboard',{
+      headers:{
+          'Authorization': 'Bearer '+localStorage.getItem('token')}
+  })
+  .then(response => {  
 
       
       setRankList( response.data  
@@ -90,10 +94,10 @@ export default function Leadertable() {
               {RankList.map((row,index) => (
               <StyledTableRow key={index}>
                 <StyledTableCell component="th" scope="row">
-                  {row.id}
+                  {row.rank}
                 </StyledTableCell>
-                <StyledTableCell align="left">{row.username}</StyledTableCell>
-                <StyledTableCell align="left">{row.email}</StyledTableCell>
+                <StyledTableCell align="left">{row.name}</StyledTableCell>
+                <StyledTableCell align="left">{row.score}</StyledTableCell>
 
 
               </StyledTableRow>

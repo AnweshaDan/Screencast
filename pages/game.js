@@ -60,20 +60,26 @@ class game extends React.Component{
 
     getQuestions(){
         console.log(this.state.qsNo);
+        console.log(localStorage.getItem('token'));//get questions from api and updates state
         
-    
-        console.log("CLAUS");//get questions from api and updates state
-        axios.get('https://jsonplaceholder.typicode.com/posts/'+this.state.qsNo).then((response)=>
+        
+        axios.get('https://screencast20.azurewebsites.net/api/question',{
+            headers:{
+                'Authorization': 'Bearer '+localStorage.getItem('token')}
+        }
+        ).then((response)=>
         {
-          let r=response.data.title;
-          console.log(r);
+          
+          console.log(response);
           this.setState(prevState=>{
-            return{ ...prevState, questions:r,hint:response.data.body}
+            return{ ...prevState, questions:response.data.question,hint:response.data.hint}
           });
+       
           
           
 
     });
+    console.log(localStorage.getItem('token'));
     }
 
     submit=(event)=>{//send final answer for checking
@@ -109,41 +115,53 @@ class game extends React.Component{
      
    
 
-    checkAns(answer)//check answer from api and send for correct alert
+    checkAns(ans)//check answer from api and send for correct alert
     {
         
-        console.log(answer);
+        console.log(ans);
         console.log(this.state.qsNo)
-        axios.get('https://jsonplaceholder.typicode.com/posts/'+this.state.qsNo).then((response)=>
-        {
-             let r=response.data.id;
-             console.log(r);
+        axios.post('https://screencast20.azurewebsites.net/api/checkanswer',{answer:ans},{
+            headers:{
+                'Authorization': 'Bearer '+localStorage.getItem('token')}
+        },
         
-        if(this.state.qsNo < 5)
+
+        ).then((response)=>
         {
-            if(answer==r)
-            {
+             let r=response.data.result;
+             console.log(response);
+        
+        
+            
+                if(r && !response.data.quiz_finished)
+                {
+                    this.setState(prevState=>{
+                        return{ ...prevState, qsNo:prevState.qsNo+1}
+                      });
+                      alert("Correct");//where does the effing control go after this?
+                      console.log("SANTA");
+                     
+                      this.getQuestions();
+                      
+                }
+                else if(!r && !response.data.quiz_finished){
+                    alert("Wrong");
+                    this.getQuestions();
+                }
+                else{
+                    alert("completed");
+                    Router.push('/finale');
+                }
                 
-                this.setState(prevState=>{
-                    return{ ...prevState, qsNo:prevState.qsNo+1}
-                  });
-                  alert("Correct");//where does the effing control go after this?
-                  console.log("SANTA");
-                  this.getQuestions();
-                  
-            }
-            else{
                
-                  alert("Wrong");
-                this.getQuestions();
+           
+            
+        
+       
+            
                 
-            }
-                
-        }
-        else{
-            alert("Completed yay");
-            Router.push('/finale');
-        }
+        
+        
         
     });
 

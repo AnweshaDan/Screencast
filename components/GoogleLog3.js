@@ -20,29 +20,62 @@ class GoogleLog3 extends React.Component {
     this.state = {
       userDetails: {},
       isUserLoggedIn: false,
+      access:""
     };
+    this.refresh=this.refresh.bind(this);
   }
   componentDidMount() {
     if (localStorage.getItem("email")) Router.push("/game");
   }
+  
+  refresh=(res)=>{
+    console.log(res.data.refresh_token)
+    localStorage.setItem("token",res.data.access_token);
+    console.log(localStorage.getItem("token"));
+     const t=setInterval(()=>{
+      alert("Refreshing");
+      axios.post("http://screencast20.azurewebsites.net/api/refresh",{
+        refresh:res.data.refresh_token
+      }).then((r)=>{
+        console.log(r);
+        localStorage.setItem("token",r.data.access);
+        console.log(localStorage.getItem("token"));
+    
+      })
+    },50000)
+    localStorage.setItem("interval_id",t);
+    
 
+
+  }
   responseGoogle = (response) => {
+   
     console.log(response);
-    this.setState({ userDetails: response.profileObj, isUserLoggedIn: true });
+    localStorage.setItem('token',response.tokenObj.access_token)
+    console.log(localStorage.getItem('token'));
+    this.setState({ userDetails: response.profileObj, isUserLoggedIn: true,access:response.tokenObj.access_token });
     axios
-      .post("http://dummy.restapiexample.com/api/v1/create", {
-        data: response.tokenObj.id_token,
-        id: 24,
+      .post("http://screencast20.azurewebsites.net/api/googlelogin", {
+        token: response.tokenObj.access_token
+       
       })
       .then((res) => {
-        console.log(res);
+        
+        console.log((res));
+        localStorage.setItem('token',res.data.access_token)
+        this.setState({access: res.data.access_token})
+        this.refresh(res);
+        console.log(localStorage.getItem("token"));
+      console.log(this.state.access);
+      Router.push("/game");
+        
       });
+      
     console.log(typeof response.profileObj.name); //string
     localStorage.setItem("email", response.profileObj.email);
     localStorage.setItem("name", response.profileObj.name);
     localStorage.setItem("image", response.profileObj.imageUrl);
-    console.log(localStorage.getItem("name")); //returns name
-    Router.push("/game");
+    
   };
 
   render() {
