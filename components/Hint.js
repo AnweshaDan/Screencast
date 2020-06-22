@@ -1,8 +1,8 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Popover from '@material-ui/core/Popover';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Popover from "@material-ui/core/Popover";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
   typography: {
@@ -23,31 +23,39 @@ export default function SimplePopover(props) {
   };
 
   const open = Boolean(anchorEl);
-  const id = open ? 'simple-popover' : undefined;
+  const id = open ? "simple-popover" : undefined;
 
   return (
     <div>
-      <Button className="btnSubmit" aria-describedby={id} variant="contained" color="secondary" onClick={handleClick}>
+      <Button
+        className="btnSubmit"
+        aria-describedby={id}
+        variant="contained"
+        color="secondary"
+        onClick={handleClick}
+      >
         Hint
       </Button>
-      &nbsp;&nbsp;
-    
+
       <Popover
         id={id}
         open={open}
         anchorEl={anchorEl}
         onClose={handleClose}
         anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'center',
+          vertical: "bottom",
+          horizontal: "center",
         }}
         transformOrigin={{
-          vertical: 'top',
-          horizontal: 'center',
+          vertical: "top",
+          horizontal: "center",
         }}
       >
-        <Typography className={classes.typography}>{props.hint}The content of the Popover.The content of the Popover.The content of the Popover.The content of the Popover.
-        The content of the Popover.The content of the Popover.The content of the Popover.</Typography>
+        <Typography className={classes.typography}>
+          {props.hint}The content of the Popover.The content of the Popover.The
+          content of the Popover.The content of the Popover. The content of the
+          Popover.The content of the Popover.The content of the Popover.
+        </Typography>
       </Popover>
     </div>
   );

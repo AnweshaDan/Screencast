@@ -22,6 +22,9 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 0,
   },
+  ava: {
+    marginLeft: "auto",
+  },
 }));
 
 export default function Navbar(props) {
@@ -55,27 +58,48 @@ export default function Navbar(props) {
             <Mymenu2 />
           </IconButton>
 
-          <Typography variant="h6" className={classes.title}>
+          <Typography
+            variant="h6"
+            className={classes.title}
+            style={{ fontFamily: "'Russo One', sans-serif" }}
+          >
             SCREENCAST 2020
           </Typography>
-        </Toolbar>
-      </AppBar>
-      {isSignedIn ? (
-        <div
-          style={{
-            textAlign: "center",
-            margin: "0 auto",
-            position: "relative",
-          }}
-        >
-          <div style={{ textAlign: "center", margin: "0 auto" }}>
-            <Avatar
-              alt={name}
-              src={image}
-              style={{ textAlign: "center", margin: "10px auto" }}
-            />
-          </div>
-          <div
+          <div className={classes.ava}>
+            {isSignedIn ? (
+              <div
+                position="static"
+                style={{
+                  display: "block",
+                  //float: "right",
+                  //textAlign: "right",
+
+                  right: "0px",
+                  //position: "relative",
+                }}
+              >
+                <Avatar
+                  position="right"
+                  alt={name}
+                  src={image}
+                  className={styles.ava}
+                  style={{
+                    textAlign: "right",
+                  }}
+                />
+                {/* <div
+              style={{
+                display: "flex",
+                position: "relative",
+                marginLeft: "10px",
+                marginTop: "25px",
+                color: "rgb(255, 200, 240)",
+              }}
+            >
+              WELCOME, {name} !
+            </div> */}
+
+                {/* <div
             style={{
               textAlign: "center",
               margin: "10px auto",
@@ -83,11 +107,14 @@ export default function Navbar(props) {
             }}
           >
             WELCOME, {name} !
+          </div> */}
+              </div>
+            ) : (
+              <div></div>
+            )}
           </div>
-        </div>
-      ) : (
-        <div></div>
-      )}
+        </Toolbar>
+      </AppBar>
     </div>
   );
 }

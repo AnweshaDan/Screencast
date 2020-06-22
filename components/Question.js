@@ -32,21 +32,31 @@ export default function OutlinedCard(props) {
       <div className="head">
         <div
           className="container neon-box"
-          style={{ textAlign: "center", fontSize: "22px" }}
+          style={{
+            textAlign: "center",
+            fontSize: "22px",
+            fontFamily: "'Russo One', sans-serif",
+          }}
         >
           <span className="flicker">ROUND 1</span>
         </div>
       </div>
 
       <CardContent className="question">
-        <Typography className={classes.title} color="white" gutterBottom>
+        <Typography
+          className={classes.title}
+          style={{ fontFamily: "'Barlow', sans-serif" }}
+          color="white"
+          gutterBottom
+        >
           Question {props.qsNo}
         </Typography>
 
         <Typography
           className={classes.pos}
           color="#f0f0f0"
-          style={{ fontSize: "14px" }}
+          style={{ fontSize: "14px", fontFamily: "'Barlow', sans-serif" }}
+          style={{ fontFamily: "'Barlow', sans-serif" }}
         >
           {props.qs}
         </Typography>

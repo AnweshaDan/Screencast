@@ -25,10 +25,10 @@ function index() {
         params={{
           particles: {
             number: {
-              value: 200,
+              value: 100,
               density: {
                 enable: true,
-                value_area: 900,
+                value_area: 300,
               },
             },
             color: {
@@ -64,35 +64,19 @@ function index() {
 
         <Navbar />
 
-        <div
-          style={{
-            marginRight: "auto",
-            marginLeft: "auto",
-            textAlign: "center",
-          }}
-        >
-          <img
-            src={Logo}
-            alt="logo"
-            style={{
-              marginTop: "90px",
-              position: "relative",
-              float: "bottom",
-              height: "120px",
-              width: "auto",
-            }}
-          />
-        </div>
-
         <div>
           <div
             className="sign"
-            style={{ marginTop: "20px", marginBottom: "20px" }}
+            style={{
+              marginTop: "120px",
+              marginBottom: "20px",
+              fontFamily: "'Russo One', sans-serif",
+            }}
           >
             <span className="fast-flicker">screen</span>cast{" "}
             <span className="flicker">2020 </span>
           </div>
-          <div className="login-head" style={{ marginBottom: "20px" }}>
+          <div className="login-head" style={{ marginBottom: "60px" }}>
             <h1>Login to play </h1>
           </div>
         </div>
@@ -100,8 +84,26 @@ function index() {
         <GoogleLog3 />
         <FbLog2 />
       </div>
-
-      <Footer />
+      <div
+        style={{
+          marginRight: "auto",
+          marginLeft: "auto",
+          textAlign: "center",
+        }}
+      >
+        <img
+          src={Logo}
+          alt="logo"
+          style={{
+            marginTop: "90px",
+            position: "relative",
+            float: "bottom",
+            height: "50px",
+            width: "auto",
+          }}
+        />
+      </div>
+      <Footer style={{ color: "white" }} />
     </div>
   );
 }
