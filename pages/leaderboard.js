@@ -11,10 +11,10 @@ export default function leaderboard() {
         params={{
           particles: {
             number: {
-              value: 200,
+              value: 100,
               density: {
                 enable: true,
-                value_area: 900,
+                value_area: 300,
               },
             },
             color: {
@@ -39,7 +39,11 @@ export default function leaderboard() {
       <div className="head">
         <div
           className="container neon-box"
-          style={{ textAlign: "center", fontSize: "20px" }}
+          style={{
+            textAlign: "center",
+            fontSize: "20px",
+            fontFamily: "'Russo One', sans-serif",
+          }}
         >
           <span className="flicker">LEADERBOARD</span>
         </div>

@@ -14,7 +14,7 @@ function Footer() {
         textTransform: "capitalize",
       }}
     >
-      HOSTED & CREATED BY GNU/LINUX USERS' GROUP
+      <h5>HOSTED & CREATED BY GNU/LINUX USERS' GROUP</h5>
     </div>
   );
 }
