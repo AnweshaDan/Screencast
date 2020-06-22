@@ -1,4 +1,3 @@
-//using this
 import React from "react";
 import GoogleLogin from "react-google-login";
 
@@ -25,20 +24,26 @@ class GoogleLog3 extends React.Component {
     this.refresh=this.refresh.bind(this);
   }
   componentDidMount() {
-    if (localStorage.getItem("email")) Router.push("/game");
+    console.log(localStorage.getItem('ref_token'));
+    if (localStorage.getItem("email")) 
+    {
+      this.refresh(localStorage.getItem('token'),localStorage.getItem('ref_token'))
+      Router.push("/game");
+    }
   }
   
-  refresh=(res)=>{
-    console.log(res.data.refresh_token)
-    localStorage.setItem("token",res.data.access_token);
+  refresh=(a,r)=>{
+    console.log(r)
+    localStorage.setItem("token",a);
     console.log(localStorage.getItem("token"));
      const t=setInterval(()=>{
-      alert("Refreshing");
+      
       axios.post("https://screencast20.azurewebsites.net/api/refresh",{
-        refresh:res.data.refresh_token
-      }).then((r)=>{
-        console.log(r);
-        localStorage.setItem("token",r.data.access);
+        refresh:r
+      }).then((re)=>{
+        alert("Refreshing");
+        console.log(re);
+        localStorage.setItem("token",re.data.access);
         console.log(localStorage.getItem("token"));
     
       })
@@ -63,8 +68,9 @@ class GoogleLog3 extends React.Component {
         
         console.log((res));
         localStorage.setItem('token',res.data.access_token)
+        localStorage.setItem('ref_token',res.data.refresh_token)
         this.setState({access: res.data.access_token})
-        this.refresh(res);
+        this.refresh(res.data.access_token,res.data.refresh_token);
         console.log(localStorage.getItem("token"));
       console.log(this.state.access);
       Router.push("/game");

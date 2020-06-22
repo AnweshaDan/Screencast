@@ -39,6 +39,7 @@ class game extends React.Component{
 
     componentDidMount()//at the beginning sets the qs
     {//after getting appropiate data from backend about that email in local storage
+        console.log(localStorage.getItem('token'));
         console.log(this.state.qsNo);
         console.log(localStorage.getItem('email'));//email available here
 

@@ -235,7 +235,6 @@ function _createSuper(Derived) { return function () { var Super = Object(_babel_
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
-//using this
 
 
 
@@ -265,20 +264,20 @@ var GoogleLog3 = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this);
 
-    Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this), "refresh", function (res) {
-      console.log(res.data.refresh_token);
-      localStorage.setItem("token", res.data.access_token);
+    Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this), "refresh", function (a, r) {
+      console.log(r);
+      localStorage.setItem("token", a);
       console.log(localStorage.getItem("token"));
       var t = setInterval(function () {
-        alert("Refreshing");
         axios__WEBPACK_IMPORTED_MODULE_9___default.a.post("https://screencast20.azurewebsites.net/api/refresh", {
-          refresh: res.data.refresh_token
-        }).then(function (r) {
-          console.log(r);
-          localStorage.setItem("token", r.data.access);
+          refresh: r
+        }).then(function (re) {
+          alert("Refreshing");
+          console.log(re);
+          localStorage.setItem("token", re.data.access);
           console.log(localStorage.getItem("token"));
         });
-      }, 50000);
+      }, 5000);
       localStorage.setItem("interval_id", t);
     });
 
@@ -298,12 +297,13 @@ var GoogleLog3 = /*#__PURE__*/function (_React$Component) {
       }).then(function (res) {
         console.log(res);
         localStorage.setItem('token', res.data.access_token);
+        localStorage.setItem('ref_token', res.data.refresh_token);
 
         _this.setState({
           access: res.data.access_token
         });
 
-        _this.refresh(res);
+        _this.refresh(res.data.access_token, res.data.refresh_token);
 
         console.log(localStorage.getItem("token"));
         console.log(_this.state.access);
@@ -328,7 +328,12 @@ var GoogleLog3 = /*#__PURE__*/function (_React$Component) {
   Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(GoogleLog3, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      if (localStorage.getItem("email")) next_router__WEBPACK_IMPORTED_MODULE_12___default.a.push("/game");
+      console.log(localStorage.getItem('ref_token'));
+
+      if (localStorage.getItem("email")) {
+        this.refresh(localStorage.getItem('token'), localStorage.getItem('ref_token'));
+        next_router__WEBPACK_IMPORTED_MODULE_12___default.a.push("/game");
+      }
     }
   }, {
     key: "render",
@@ -341,7 +346,7 @@ var GoogleLog3 = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 85,
+          lineNumber: 91,
           columnNumber: 7
         }
       }, !this.state.isUserLoggedIn && __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -352,7 +357,7 @@ var GoogleLog3 = /*#__PURE__*/function (_React$Component) {
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 90,
+              lineNumber: 96,
               columnNumber: 15
             }
           }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -364,7 +369,7 @@ var GoogleLog3 = /*#__PURE__*/function (_React$Component) {
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 91,
+              lineNumber: 97,
               columnNumber: 17
             }
           }, "LogIn with Google"));
@@ -377,7 +382,7 @@ var GoogleLog3 = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 87,
+          lineNumber: 93,
           columnNumber: 11
         }
       }));
@@ -42380,7 +42385,7 @@ function index() {
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!****************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fanwesha%2FDesktop%2Fscreencast%2Fpages%2Findex.js ***!
   \****************************************************************************************************************************/
@@ -42403,5 +42408,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -300,7 +300,6 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//using this
 
 
 
@@ -320,20 +319,20 @@ class GoogleLog3 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
   constructor() {
     super();
 
-    _defineProperty(this, "refresh", res => {
-      console.log(res.data.refresh_token);
-      localStorage.setItem("token", res.data.access_token);
+    _defineProperty(this, "refresh", (a, r) => {
+      console.log(r);
+      localStorage.setItem("token", a);
       console.log(localStorage.getItem("token"));
       const t = setInterval(() => {
-        alert("Refreshing");
         axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("https://screencast20.azurewebsites.net/api/refresh", {
-          refresh: res.data.refresh_token
-        }).then(r => {
-          console.log(r);
-          localStorage.setItem("token", r.data.access);
+          refresh: r
+        }).then(re => {
+          alert("Refreshing");
+          console.log(re);
+          localStorage.setItem("token", re.data.access);
           console.log(localStorage.getItem("token"));
         });
-      }, 50000);
+      }, 5000);
       localStorage.setItem("interval_id", t);
     });
 
@@ -351,10 +350,11 @@ class GoogleLog3 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
       }).then(res => {
         console.log(res);
         localStorage.setItem('token', res.data.access_token);
+        localStorage.setItem('ref_token', res.data.refresh_token);
         this.setState({
           access: res.data.access_token
         });
-        this.refresh(res);
+        this.refresh(res.data.access_token, res.data.refresh_token);
         console.log(localStorage.getItem("token"));
         console.log(this.state.access);
         next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push("/game");
@@ -375,7 +375,12 @@ class GoogleLog3 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
   }
 
   componentDidMount() {
-    if (localStorage.getItem("email")) next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push("/game");
+    console.log(localStorage.getItem('ref_token'));
+
+    if (localStorage.getItem("email")) {
+      this.refresh(localStorage.getItem('token'), localStorage.getItem('ref_token'));
+      next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push("/game");
+    }
   }
 
   render() {
@@ -387,7 +392,7 @@ class GoogleLog3 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85,
+        lineNumber: 91,
         columnNumber: 7
       }
     }, !this.state.isUserLoggedIn && __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -397,7 +402,7 @@ class GoogleLog3 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90,
+          lineNumber: 96,
           columnNumber: 15
         }
       }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -409,7 +414,7 @@ class GoogleLog3 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91,
+          lineNumber: 97,
           columnNumber: 17
         }
       }, "LogIn with Google")),
@@ -421,7 +426,7 @@ class GoogleLog3 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87,
+        lineNumber: 93,
         columnNumber: 11
       }
     }));
@@ -2848,7 +2853,7 @@ function index() {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
