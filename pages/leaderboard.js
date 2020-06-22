@@ -11,10 +11,10 @@ export default function leaderboard() {
         params={{
           particles: {
             number: {
-              value: 100,
+              value: 80,
               density: {
                 enable: true,
-                value_area: 300,
+                value_area: 400,
               },
             },
             color: {

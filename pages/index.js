@@ -25,10 +25,10 @@ function index() {
         params={{
           particles: {
             number: {
-              value: 100,
+              value: 80,
               density: {
                 enable: true,
-                value_area: 300,
+                value_area: 400,
               },
             },
             color: {
@@ -68,7 +68,7 @@ function index() {
           <div
             className="sign"
             style={{
-              marginTop: "120px",
+              marginTop: "140px",
               marginBottom: "20px",
               fontFamily: "'Russo One', sans-serif",
             }}

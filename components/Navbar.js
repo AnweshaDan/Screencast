@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 0,
   },
   ava: {
+    flexGrow: 0,
     marginLeft: "auto",
   },
 }));
@@ -67,17 +68,7 @@ export default function Navbar(props) {
           </Typography>
           <div className={classes.ava}>
             {isSignedIn ? (
-              <div
-                position="static"
-                style={{
-                  display: "block",
-                  //float: "right",
-                  //textAlign: "right",
-
-                  right: "0px",
-                  //position: "relative",
-                }}
-              >
+              <div>
                 <Avatar
                   position="right"
                   alt={name}
