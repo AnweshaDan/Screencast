@@ -1,17 +1,32 @@
-import React from 'react'
+import React from "react";
 
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function finale() {
-    return (
-        <div>
-            <Navbar/>
-            YOU WON YAYAYAYAYA !!
-            Congratulations !
-            <Footer/>
+  return (
+    <div>
+      <Navbar />
+
+      <div>
+        <div
+          style={{
+            textAlign: "center",
+            fontSize: "22px",
+            fontFamily: "'Russo One', sans-serif",
+            margin: "190px auto",
+          }}
+        >
+          <span className="flicker">Congratulations!</span>
+          <br />
+          <span className="flicker">You have completed all Questions.</span>
+          <br />
+          <span className="flicker">Wait for more exciting ones.</span>
         </div>
-    )
+      </div>
+      <Footer />
+    </div>
+  );
 }
 
-export default finale
+export default finale;
