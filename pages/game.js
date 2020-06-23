@@ -9,6 +9,8 @@ import Particles from "react-particles-js";
 import Answer from "../components/Answer";
 import Router from "next/router";
 
+import AudioHint from '../components/AudioHint'
+
 class game extends React.Component {
   constructor(props) {
     super(props);
@@ -16,7 +18,8 @@ class game extends React.Component {
       answer: "",
       questions: "",
       qsNo: 1,
-
+      audio:"",
+      image:"",
       isLoggedIn: false,
       hint: "",
     };
@@ -68,6 +71,8 @@ class game extends React.Component {
             questions: response.data.question,
             hint: response.data.hint,
             qsNo: response.data.question_no,
+            audio:response.data.audio,
+            image:response.data.image
           };
         });
       });
@@ -170,7 +175,10 @@ class game extends React.Component {
         />
 
         <Navbar />
-        <Question qs={this.state.questions} qsNo={this.state.qsNo} />
+        
+        <Question qs={this.state.questions} qsNo={this.state.qsNo} image={this.state.image} audio={this.state.audio} />
+       
+       
         <div>
           <Answer
             change={this.change}

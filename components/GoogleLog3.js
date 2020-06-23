@@ -44,6 +44,7 @@ class GoogleLog3 extends React.Component {
         alert("Refreshing");
         console.log(re);
         localStorage.setItem("token",re.data.access);
+        this.setState({access:re.data.access})
         console.log(localStorage.getItem("token"));
     
       })
