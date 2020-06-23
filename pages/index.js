@@ -25,10 +25,10 @@ function index() {
         params={{
           particles: {
             number: {
-              value: 80,
+              value: 40,
               density: {
-                enable: true,
-                value_area: 400,
+                enable: false,
+                value_area: 500,
               },
             },
             color: {

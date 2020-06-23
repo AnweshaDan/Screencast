@@ -5,18 +5,18 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import CardMedia from '@material-ui/core/CardMedia';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core';
-import AudioPlayer from 'material-ui-audio-player';
-import AudioHint from'./AudioHint'
+import CardMedia from "@material-ui/core/CardMedia";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core";
+import AudioPlayer from "material-ui-audio-player";
+import AudioHint from "./AudioHint";
 
 const muiTheme = createMuiTheme({});
 
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
-    maxwidth:345
+    maxwidth: 345,
   },
   bullet: {
     display: "inline-block",
@@ -29,8 +29,9 @@ const useStyles = makeStyles({
   pos: {
     marginBottom: 12,
   },
-  media:{
-    height:140,
+  media: {
+    height: 140,
+    width: "auto",
   },
 });
 
@@ -52,9 +53,8 @@ export default function OutlinedCard(props) {
           <span className="flicker">ROUND 1</span>
         </div>
       </div>
-      
-        
-        <CardContent className="question">
+
+      <CardContent className="question">
         <Typography
           className={classes.title}
           style={{ fontFamily: "'Barlow', sans-serif" }}
@@ -72,30 +72,29 @@ export default function OutlinedCard(props) {
         >
           {props.qs}
         </Typography>
-        { (props.image) ?
-        (
+        {props.image ? (
           <CardMedia
-          className={classes.media}
-          image={"https://screencast20.azurewebsites.net"+props.image}
-          title="Image Hint"
-        />
-        )
-        :
-        (<div></div>)
-        }
-        
-        <br/>
-        { (props.audio) ?
-        (<AudioHint audio={"https://screencast20.azurewebsites.net"+props.audio}/>)
-        :
-        (<div></div>)
-        }
-        
+            className={classes.media}
+            style={{ textAlign: "center", margin: "0 auto" }}
+            image={"https://screencast20.azurewebsites.net" + props.image}
+            title="Image Hint"
+          />
+        ) : (
+          <div></div>
+        )}
+
+        <br />
+        {props.audio ? (
+          <div style={{ textAlign: "center", margin: "0 auto" }}>
+            <AudioHint
+              style={{ textAlign: "center", margin: "0 auto" }}
+              audio={"https://screencast20.azurewebsites.net" + props.audio}
+            />
+          </div>
+        ) : (
+          <div></div>
+        )}
       </CardContent>
-      
-        
-     
-      
     </div>
   );
 }
