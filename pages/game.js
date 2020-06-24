@@ -11,7 +11,7 @@ import Particles from "react-particles-js";
 import Answer from "../components/Answer";
 import Router from "next/router";
 
-import AudioHint from "../components/AudioHint";
+
 
 class game extends React.Component {
   constructor(props) {
@@ -38,7 +38,7 @@ class game extends React.Component {
     //revert back to index if not logged in
     if(!localStorage.getItem('email'))
     {
-      alert("You are not logged in. ;_;")
+      AnsAlert(-1)
       Router.push('/');
     }
     
@@ -70,21 +70,19 @@ class game extends React.Component {
           };
         });
       });
-    console.log(localStorage.getItem("token"));
+  
   }
 
   submit = (event) => {
     //send final answer for checking
     if (event.key === "Enter") {
-      console.log(this.state.answer);
-      console.log("JOJOJOJOJOJ");
+     
       this.checkAns(this.state.answer);
     }
   };
   submit2 = () => {
     //send final answer for checking
 
-    console.log(this.state.answer);
 
     this.checkAns(this.state.answer);
   };
@@ -121,11 +119,11 @@ class game extends React.Component {
             return { ...prevState, qsNo: prevState.qsNo + 1 };
           });
           AnsAlert(1) ;//where does the effing control go after this?
-          console.log("SANTA");
+          
 
           this.getQuestions();
         } else if (r && response.data.quiz_finished) {
-          AnsAlert(-1);
+          AnsAlert(1);
           Router.push("/finale");
         } else {
           AnsAlert(0);
