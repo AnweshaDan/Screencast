@@ -387,7 +387,6 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
         ,
         onFailure: this.responseGoogle //handle later
         ,
-        isSignedIn: true,
         cookiePolicy: "single_host_origin",
         __self: this,
         __source: {

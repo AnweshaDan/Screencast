@@ -4,14 +4,10 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Question from "../components/Question";
 import Hint from "../components/Hint";
-import AnsAlert from '../components/AnsAlert';
-
-
+import AnsAlert from "../components/AnsAlert"
 import Particles from "react-particles-js";
 import Answer from "../components/Answer";
 import Router from "next/router";
-
-
 
 class game extends React.Component {
   constructor(props) {
@@ -20,8 +16,7 @@ class game extends React.Component {
       answer: "",
       questions: "",
       qsNo: 1,
-      audio: "",
-      image: "",
+
       isLoggedIn: false,
       hint: "",
     };
@@ -32,24 +27,32 @@ class game extends React.Component {
     this.checkAns = this.checkAns.bind(this);
     this.getQuestions = this.getQuestions.bind(this);
   }
-  
 
   componentDidMount() {
-    //revert back to index if not logged in
-    if(!localStorage.getItem('email'))
-    {
-      AnsAlert(-1)
-      Router.push('/');
-    }
-    
     //at the beginning sets the qs
     //after getting appropiate data from backend about that email in local storage
+    console.log(localStorage.getItem("token"));
     console.log(this.state.qsNo);
+    console.log(localStorage.getItem("email")); //email available here
+
+    /*   axios.get('https://jsonplaceholder.typicode.com/users/email?=Nathan@yesenia.net').then((response)=>
+        {
+            console.log("yesssss"+this.state.qsNo+response.json);
+            this.setState(prevState=>{
+                return{ ...prevState, questions:response.data.id}
+              });
+        }
+        )*/
+
+    //next qs/completed/error
+
     this.getQuestions();
   }
 
   getQuestions() {
-   //get questions from api and updates state
+    console.log(this.state.qsNo);
+    console.log(localStorage.getItem("token")); //get questions from api and updates state
+
     axios
       .get("https://screencast20.azurewebsites.net/api/question", {
         headers: {
@@ -65,24 +68,24 @@ class game extends React.Component {
             questions: response.data.question,
             hint: response.data.hint,
             qsNo: response.data.question_no,
-            audio: response.data.audio,
-            image: response.data.image,
           };
         });
       });
-  
+    console.log(localStorage.getItem("token"));
   }
 
   submit = (event) => {
     //send final answer for checking
     if (event.key === "Enter") {
-     
+      console.log(this.state.answer);
+      console.log("JOJOJOJOJOJ");
       this.checkAns(this.state.answer);
     }
   };
   submit2 = () => {
     //send final answer for checking
 
+    console.log(this.state.answer);
 
     this.checkAns(this.state.answer);
   };
@@ -118,8 +121,8 @@ class game extends React.Component {
           this.setState((prevState) => {
             return { ...prevState, qsNo: prevState.qsNo + 1 };
           });
-          AnsAlert(1) ;//where does the effing control go after this?
-          
+          AnsAlert(1); //where does the effing control go after this?
+          console.log("SANTA");
 
           this.getQuestions();
         } else if (r && response.data.quiz_finished) {
@@ -127,13 +130,11 @@ class game extends React.Component {
           Router.push("/finale");
         } else {
           AnsAlert(0);
-          
         }
       });
   }
 
   render() {
-    
     return (
       <div
         style={{ marginRight: "auto", marginLeft: "auto", textAlign: "center" }}
@@ -143,10 +144,10 @@ class game extends React.Component {
           params={{
             particles: {
               number: {
-                value: 40,
+                value: 80,
                 density: {
-                  enable: false,
-                  value_area: 500,
+                  enable: true,
+                  value_area: 400,
                 },
               },
               color: {
@@ -169,19 +170,12 @@ class game extends React.Component {
         />
 
         <Navbar />
-
-        <Question
-          qs={this.state.questions}
-          qsNo={this.state.qsNo}
-          image={this.state.image}
-          audio={this.state.audio}
-        />
-
+        <Question qs={this.state.questions} qsNo={this.state.qsNo} />
         <div>
           <Answer
             change={this.change}
-            submit={this.submit2}
-            submit2={this.submit}
+            submit={this.submit}
+            submit2={this.submit2}
           />
 
           <Hint hint={this.state.hint} />

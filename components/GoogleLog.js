@@ -110,7 +110,7 @@ class GoogleLog extends React.Component {
             )}
             onSuccess={this.responseGoogle} //isSignedIn ??
             onFailure={this.responseGoogle} //handle later
-            isSignedIn={true}
+            
             cookiePolicy={"single_host_origin"}
           />
         )}

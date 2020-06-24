@@ -429,7 +429,6 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       ,
       onFailure: this.responseGoogle //handle later
       ,
-      isSignedIn: true,
       cookiePolicy: "single_host_origin",
       __self: this,
       __source: {
