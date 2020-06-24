@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import { makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
 import AppBar from "@material-ui/core/AppBar";
@@ -7,7 +6,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 
-import Mymenu2 from "./Mymenu2";
+import MyMenu from "./MyMenu";
+import Rules from './Rules'
 
 import styles from "./Navbar.module.css";
 
@@ -29,16 +29,19 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Navbar(props) {
+
   const classes = useStyles();
-  // console.log(props.sign)//available state of signin
+  
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+  //to display avatar in logged in state
   const [isSignedIn, setIsSigned] = useState(false);
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
 
   useEffect(() => {
+    
     if (localStorage.getItem("email")) {
       setIsSigned(true);
       setName(localStorage.getItem("name"));
@@ -56,7 +59,7 @@ export default function Navbar(props) {
             color="white"
             aria-label="menu"
           >
-            <Mymenu2 />
+            <MyMenu />
           </IconButton>
 
           <Typography
@@ -66,6 +69,7 @@ export default function Navbar(props) {
           >
             SCREENCAST 2020
           </Typography>
+          
           <div className={classes.ava}>
             {isSignedIn ? (
               <div>
@@ -104,8 +108,15 @@ export default function Navbar(props) {
               <div></div>
             )}
           </div>
+          
         </Toolbar>
+       
       </AppBar>
+      <div>
+      <Rules/>
+      </div>
+      
+      
     </div>
   );
 }

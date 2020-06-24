@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Head from "next/head";
 import Logo from "../glug.png";
@@ -6,9 +6,11 @@ import Logo from "../glug.png";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-import GoogleLog3 from "../components/GoogleLog3";
+import GoogleLog from "../components/GoogleLog";
 import FbLog2 from "../components/FbLog2";
+
 import Particles from "react-particles-js";
+
 
 function index() {
   return (
@@ -81,7 +83,7 @@ function index() {
           </div>
         </div>
 
-        <GoogleLog3 />
+        <GoogleLog />
         <FbLog2 />
       </div>
       <div

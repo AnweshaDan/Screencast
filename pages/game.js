@@ -4,6 +4,8 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Question from "../components/Question";
 import Hint from "../components/Hint";
+import AnsAlert from '../components/AnsAlert';
+
 
 import Particles from "react-particles-js";
 import Answer from "../components/Answer";
@@ -30,32 +32,24 @@ class game extends React.Component {
     this.checkAns = this.checkAns.bind(this);
     this.getQuestions = this.getQuestions.bind(this);
   }
+  
 
   componentDidMount() {
+    //revert back to index if not logged in
+    if(!localStorage.getItem('email'))
+    {
+      alert("You are not logged in. ;_;")
+      Router.push('/');
+    }
+    
     //at the beginning sets the qs
     //after getting appropiate data from backend about that email in local storage
-    console.log(localStorage.getItem("token"));
     console.log(this.state.qsNo);
-    console.log(localStorage.getItem("email")); //email available here
-
-    /*   axios.get('https://jsonplaceholder.typicode.com/users/email?=Nathan@yesenia.net').then((response)=>
-        {
-            console.log("yesssss"+this.state.qsNo+response.json);
-            this.setState(prevState=>{
-                return{ ...prevState, questions:response.data.id}
-              });
-        }
-        )*/
-
-    //next qs/completed/error
-
     this.getQuestions();
   }
 
   getQuestions() {
-    console.log(this.state.qsNo);
-    console.log(localStorage.getItem("token")); //get questions from api and updates state
-
+   //get questions from api and updates state
     axios
       .get("https://screencast20.azurewebsites.net/api/question", {
         headers: {
@@ -126,20 +120,22 @@ class game extends React.Component {
           this.setState((prevState) => {
             return { ...prevState, qsNo: prevState.qsNo + 1 };
           });
-          alert("Correct"); //where does the effing control go after this?
+          AnsAlert(1) ;//where does the effing control go after this?
           console.log("SANTA");
 
           this.getQuestions();
         } else if (r && response.data.quiz_finished) {
-          alert("Completed!!!");
+          AnsAlert(-1);
           Router.push("/finale");
         } else {
-          alert("Wrong");
+          AnsAlert(0);
+          
         }
       });
   }
 
   render() {
+    
     return (
       <div
         style={{ marginRight: "auto", marginLeft: "auto", textAlign: "center" }}
@@ -186,8 +182,8 @@ class game extends React.Component {
         <div>
           <Answer
             change={this.change}
-            submit={this.submit}
-            submit2={this.submit2}
+            submit={this.submit2}
+            submit2={this.submit}
           />
 
           <Hint hint={this.state.hint} />
