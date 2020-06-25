@@ -69,10 +69,11 @@ export default function Navbar(props) {
           >
             SCREENCAST 2020
           </Typography>
-          
+          <Rules/>
           <div className={classes.ava}>
             {isSignedIn ? (
               <div>
+                 
                 <Avatar
                   position="right"
                   alt={name}
@@ -113,7 +114,7 @@ export default function Navbar(props) {
        
       </AppBar>
       <div>
-      <Rules/>
+     
       </div>
       
       

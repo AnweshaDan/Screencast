@@ -933,7 +933,14 @@ function Navbar(props) {
       lineNumber: 65,
       columnNumber: 11
     }
-  }, "SCREENCAST 2020"), __jsx("div", {
+  }, "SCREENCAST 2020"), __jsx(_Rules__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72,
+      columnNumber: 11
+    }
+  }), __jsx("div", {
     className: classes.ava,
     __self: this,
     __source: {
@@ -959,31 +966,24 @@ function Navbar(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 77,
       columnNumber: 17
     }
   })) : __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108,
+      lineNumber: 109,
       columnNumber: 15
     }
   })))), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115,
-      columnNumber: 7
-    }
-  }, __jsx(_Rules__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 116,
       columnNumber: 7
     }
-  })));
+  }));
 }
 
 /***/ }),
