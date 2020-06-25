@@ -518,7 +518,7 @@ function SimplePopover(props) {
       lineNumber: 54,
       columnNumber: 9
     }
-  }, props.hint, "The content of the Popover.The content of the Popover.The content of the Popover.The content of the Popover. The content of the Popover.The content of the Popover.The content of the Popover.")));
+  }, props.hint)));
 } //   <Button className="btnSubmit" variant="contained" color="primary" disableElevation>
 //Submit
 //</Button>
@@ -1360,13 +1360,6 @@ function SimpleExpansionPanel() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 40,
-      columnNumber: 15
-    }
-  }, "Answers should be in lowercase and without spaces."), __jsx("li", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41,
       columnNumber: 15
     }
   }, "A level can be played only between its start and end timings."))))));

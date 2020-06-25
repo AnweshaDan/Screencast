@@ -52,9 +52,7 @@ export default function SimplePopover(props) {
         }}
       >
         <Typography className={classes.typography}>
-          {props.hint}The content of the Popover.The content of the Popover.The
-          content of the Popover.The content of the Popover. The content of the
-          Popover.The content of the Popover.The content of the Popover.
+          {props.hint}
         </Typography>
       </Popover>
     </div>
