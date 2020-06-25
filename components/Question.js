@@ -82,7 +82,7 @@ export default function OutlinedCard(props) {
         ) : (
           <div></div>
         )}
-
+        
         <br />
         {props.audio ? (
           <div style={{ textAlign: "center", margin: "0 auto" }}>

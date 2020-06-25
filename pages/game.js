@@ -16,7 +16,8 @@ class game extends React.Component {
       answer: "",
       questions: "",
       qsNo: 1,
-
+      audio:"",
+      image:"",
       isLoggedIn: false,
       hint: "",
     };
@@ -68,6 +69,8 @@ class game extends React.Component {
             questions: response.data.question,
             hint: response.data.hint,
             qsNo: response.data.question_no,
+            audio:response.data.audio,
+            image:response.data.image
           };
         });
       });
@@ -170,7 +173,7 @@ class game extends React.Component {
         />
 
         <Navbar />
-        <Question qs={this.state.questions} qsNo={this.state.qsNo} />
+        <Question qs={this.state.questions} qsNo={this.state.qsNo} audio={this.state.audio} image={this.state.image} />
         <div>
           <Answer
             change={this.change}
