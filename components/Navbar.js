@@ -69,7 +69,7 @@ export default function Navbar(props) {
           >
             SCREENCAST 2020
           </Typography>
-          <Rules/>
+         
           <div className={classes.ava}>
             {isSignedIn ? (
               <div>

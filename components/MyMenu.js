@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-
+import Rules from './Rules'
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -90,7 +90,9 @@ export default function MyMenu() {
         <Link href="/">
           <MenuItem onClick={handleClose}>Home</MenuItem>
         </Link>
-
+        <Rules><MenuItem onClick={handleClose}>Rules</MenuItem></Rules>
+        
+        
         <Link href="/leaderboard">
           <MenuItem onClick={handleClose}>Leaderboard</MenuItem>
         </Link>
