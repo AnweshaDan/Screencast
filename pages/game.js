@@ -123,16 +123,21 @@ class game extends React.Component {
 
         if (r && !response.data.quiz_finished) {
           this.setState((prevState) => {
-            return { ...prevState, qsNo: prevState.qsNo + 1 };
+            return { ...prevState, qsNo: prevState.qsNo + 1,answer:"" };
           });
           AnsAlert(1); //where does the effing control go after this?
           console.log("SANTA");
-
+          this.setState({
+            answer:""
+          });
           this.getQuestions();
         } else if (r && response.data.quiz_finished) {
           AnsAlert(1);
           Router.push("/finale");
         } else {
+          this.setState({
+            answer:""
+          });
           AnsAlert(0);
         }
       });
@@ -181,6 +186,7 @@ class game extends React.Component {
             change={this.change}
             submit={this.submit}
             submit2={this.submit2}
+            answer={this.state.answer}
           />
 
           <Hint hint={this.state.hint} />

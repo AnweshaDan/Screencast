@@ -28,6 +28,7 @@ class Answer extends Component {
             variant="filled"
             onChange={this.props.change}
             onKeyDown={this.props.submit}
+            value={this.props.answer}
             className="anstype"
           />
           <br />
