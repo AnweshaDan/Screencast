@@ -9,6 +9,7 @@ import Particles from "react-particles-js";
 import Answer from "../components/Answer";
 import Router from "next/router";
 
+
 class game extends React.Component {
   constructor(props) {
     super(props);
@@ -173,6 +174,7 @@ class game extends React.Component {
         />
 
         <Navbar />
+        
         <Question qs={this.state.questions} qsNo={this.state.qsNo} audio={this.state.audio} image={this.state.image} />
         <div>
           <Answer
