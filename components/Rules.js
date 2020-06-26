@@ -1,11 +1,11 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Slide from '@material-ui/core/Slide';
+import React from "react";
+import Button from "@material-ui/core/Button";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import Slide from "@material-ui/core/Slide";
 import Typography from "@material-ui/core/Typography";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -25,9 +25,9 @@ export default function AlertDialogSlide() {
 
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+      <div style={{ color: "white", width: "370px" }} onClick={handleClickOpen}>
         Rules
-      </Button>
+      </div>
       <Dialog
         open={open}
         TransitionComponent={Transition}
@@ -39,20 +39,23 @@ export default function AlertDialogSlide() {
         <DialogTitle id="alert-dialog-slide-title">{"Rules"}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
-          <Typography>
-       
-            <ol className="p-3">
+            <Typography>
+              <ol className="p-3">
                 <li>The quiz comprises of 3 levels with 10 questions each.</li>
                 <li>Each question carries 10 marks.</li>
                 <li>The one who finishes the quiz first is the winner.</li>
-                <li>You can go to the next question only after getting the current question correct.</li>
-                <li>A level can be played only between its start and end timings.</li>
+                <li>
+                  You can go to the next question only after getting the current
+                  question correct.
+                </li>
+                <li>
+                  A level can be played only between its start and end timings.
+                </li>
               </ol>
-       </Typography>
+            </Typography>
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-         
           <Button onClick={handleClose} color="primary">
             Got it !
           </Button>
@@ -61,6 +64,3 @@ export default function AlertDialogSlide() {
     </div>
   );
 }
-
-          
-  

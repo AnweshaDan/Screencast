@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Rules from './Rules'
+import Rules from "./Rules";
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Fade from "@material-ui/core/Fade";
 import MenuIcon from "@material-ui/icons/Menu";
-
-
-
 
 import Link from "next/link";
 import Router from "next/router";
@@ -44,7 +41,7 @@ export default function MyMenu() {
     console.log(Log);
   }, []);
 
-  const logout = () => {    
+  const logout = () => {
     //FB.logout();
     clearTimeout(localStorage.getItem("interval_id"));
     localStorage.clear();
@@ -90,9 +87,10 @@ export default function MyMenu() {
         <Link href="/">
           <MenuItem onClick={handleClose}>Home</MenuItem>
         </Link>
-        <Rules><MenuItem onClick={handleClose}>Rules</MenuItem></Rules>
-        
-        
+        <MenuItem onClick={handleClose}>
+          <Rules>Rules</Rules>
+        </MenuItem>
+
         <Link href="/leaderboard">
           <MenuItem onClick={handleClose}>Leaderboard</MenuItem>
         </Link>
@@ -118,7 +116,6 @@ export default function MyMenu() {
             <MenuItem onClick={handleClick}>Game</MenuItem>
           </Link>
         )}
-       
       </Menu>
       <style jsx>{`
         margin: 0;
