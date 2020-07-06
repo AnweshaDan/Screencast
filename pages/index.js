@@ -8,7 +8,7 @@ import Footer from "../components/Footer";
 
 import GoogleLog from "../components/GoogleLog";
 import FbLog2 from "../components/FbLog2";
-import Timer from "../components/Timer"
+//import Timer from "../components/Timer"
 import Particles from "react-particles-js";
 
 

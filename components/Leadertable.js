@@ -50,7 +50,7 @@ export default function Leadertable() {
 
   useEffect(() => {
     axios
-      .get("https://https://screencast2020.herokuapp.com/api/leaderboard", {
+      .get("https://screencast2020.herokuapp.com/api/leaderboard", {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },
