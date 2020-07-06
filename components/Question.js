@@ -76,7 +76,7 @@ export default function OutlinedCard(props) {
           <CardMedia
             className={classes.media}
             style={{ textAlign: "center", margin: "0 auto" }}
-            image={"https://screencast20.azurewebsites.net" + props.image}
+            image={"https://screencast2020.herokuapp.com" + props.image}
             title="Image Hint"
           />
         ) : (
@@ -88,7 +88,7 @@ export default function OutlinedCard(props) {
           <div style={{ textAlign: "center", margin: "0 auto" }}>
             <AudioHint
               style={{ textAlign: "center", margin: "0 auto" }}
-              audio={"https://screencast20.azurewebsites.net" + props.audio}
+              audio={"https://screencast2020.herokuapp.com" + props.audio}
             />
           </div>
         ) : (

@@ -40,7 +40,7 @@ class GoogleLog extends React.Component {
     console.log(localStorage.getItem("token"));
      const t=setInterval(()=>{
       
-      axios.post("https://screencast20.azurewebsites.net/api/refresh",{
+      axios.post("https://https://screencast2020.herokuapp.com/api/refresh",{
         refresh:r
       }).then((re)=>{
         
@@ -63,7 +63,7 @@ class GoogleLog extends React.Component {
     console.log(localStorage.getItem('token'));
     this.setState({ userDetails: response.profileObj, isUserLoggedIn: true,access:response.tokenObj.access_token });
     axios
-      .post("https://screencast20.azurewebsites.net/api/googlelogin", {
+      .post("https://screencast2020.herokuapp.com/api/googlelogin", {
         token: response.tokenObj.access_token
        
       })

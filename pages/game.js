@@ -56,7 +56,7 @@ class game extends React.Component {
     console.log(localStorage.getItem("token")); //get questions from api and updates state
 
     axios
-      .get("https://screencast20.azurewebsites.net/api/question", {
+      .get("https://screencast2020.herokuapp.com/api/question", {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },
@@ -109,7 +109,7 @@ class game extends React.Component {
     console.log(this.state.qsNo);
     axios
       .post(
-        "https://screencast20.azurewebsites.net/api/checkanswer",
+        "https://screencast2020.herokuapp.com/api/checkanswer",
         { answer: ans },
         {
           headers: {
