@@ -68,7 +68,7 @@ function index() {
         </div>
 
         <Navbar />
-        <Timer/>
+        
         
 
         <div>
