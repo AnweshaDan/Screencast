@@ -91,7 +91,9 @@ var FbLog2 = /*#__PURE__*/function (_React$Component) {
       });
 
       axios__WEBPACK_IMPORTED_MODULE_10___default.a.post("https://screencast2020.herokuapp.com/api/facebooklogin", {
-        token: _this2.state.access
+        accesstoken: response.accessToken,
+        expiration_time: response.data_access_expiration_time,
+        userID: response.userID
       }).then(function (res) {
         console.log(res);
         localStorage.setItem('token', res.data.access_token);
@@ -126,7 +128,7 @@ var FbLog2 = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62,
+          lineNumber: 64,
           columnNumber: 7
         }
       }, __jsx("div", {
@@ -138,7 +140,7 @@ var FbLog2 = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63,
+          lineNumber: 65,
           columnNumber: 9
         }
       }, __jsx(LoginButton, {
@@ -146,7 +148,7 @@ var FbLog2 = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66,
+          lineNumber: 68,
           columnNumber: 11
         }
       })));
@@ -230,10 +232,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_google_login__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! next/head */ "./node_modules/next/dist/next-server/lib/head.js");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_13__);
 
 
 
@@ -247,6 +251,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 function _createSuper(Derived) { return function () { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
 
 
 
@@ -324,7 +329,7 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
 
         console.log(localStorage.getItem("token"));
         console.log(_this.state.access);
-        next_router__WEBPACK_IMPORTED_MODULE_12___default.a.push("/game");
+        next_router__WEBPACK_IMPORTED_MODULE_13___default.a.push("/game");
       });
       console.log(typeof response.profileObj.name); //string
 
@@ -347,7 +352,7 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
     value: function componentDidMount() {
       if (localStorage.getItem("email")) {
         this.refresh(localStorage.getItem('token'), localStorage.getItem('ref_token'));
-        next_router__WEBPACK_IMPORTED_MODULE_12___default.a.push("/game");
+        next_router__WEBPACK_IMPORTED_MODULE_13___default.a.push("/game");
       }
     }
   }, {
@@ -357,12 +362,33 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
 
       var classes = this.props.classes;
       return __jsx("div", {
-        className: "App",
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 95,
           columnNumber: 7
+        }
+      }, __jsx("div", {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 96,
+          columnNumber: 9
+        }
+      }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_10___default.a, {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 97,
+          columnNumber: 11
+        }
+      })), __jsx("div", {
+        className: "App",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 101,
+          columnNumber: 11
         }
       }, !this.state.isUserLoggedIn && __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_8___default.a, {
         clientId: "1091948986515-evn13uscvig9k6olefvrkdk3q374iumi.apps.googleusercontent.com",
@@ -372,10 +398,10 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 100,
-              columnNumber: 15
+              lineNumber: 106,
+              columnNumber: 19
             }
-          }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_11__["default"], {
             variant: "contained",
             color: "secondary",
             className: "button",
@@ -384,8 +410,8 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 101,
-              columnNumber: 17
+              lineNumber: 107,
+              columnNumber: 21
             }
           }, "LogIn with Google"));
         },
@@ -397,17 +423,17 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 97,
-          columnNumber: 11
+          lineNumber: 103,
+          columnNumber: 15
         }
-      }));
+      })));
     }
   }]);
 
   return GoogleLog;
 }(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_11__["withStyles"])(useStyles)(GoogleLog));
+/* harmony default export */ __webpack_exports__["default"] = (Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_12__["withStyles"])(useStyles)(GoogleLog));
 
 /***/ }),
 

@@ -41,7 +41,9 @@ class FbLog2 extends React.Component {
     this.setState({ user: response, isSignedIn: true,access:response.accessToken });
     axios
       .post("https://screencast2020.herokuapp.com/api/facebooklogin", {
-       token:this.state.access
+       accesstoken:response.accessToken,
+       expiration_time:response.data_access_expiration_time,
+       userID:response.userID
       })
       .then((res) => {
         console.log(res);

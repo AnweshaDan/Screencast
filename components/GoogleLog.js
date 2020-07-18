@@ -1,7 +1,7 @@
 import React from "react";
 import GoogleLogin from "react-google-login";
 import axios from "axios";
-
+import Head from "next/head";
 import Button from "@material-ui/core/Button";
 import { withStyles } from "@material-ui/core/styles";
 
@@ -92,30 +92,38 @@ class GoogleLog extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div className="App">
-        {!this.state.isUserLoggedIn && (
-          <GoogleLogin
-            clientId="1091948986515-evn13uscvig9k6olefvrkdk3q374iumi.apps.googleusercontent.com"
-            render={(renderProps) => (
-              <div className={classes.root}>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  className="button"
-                  onClick={renderProps.onClick}
-                  href="/game"
-                >
-                  LogIn with Google
-                </Button>
-              </div>
-            )}
-            onSuccess={this.responseGoogle} //isSignedIn ??
-            onFailure={this.responseGoogle} //handle later
+      <div>
+        <div>
+          <Head>
             
-            cookiePolicy={"single_host_origin"}
-          />
-        )}
+          </Head>
+        </div>
+          <div className="App">
+            {!this.state.isUserLoggedIn && (
+              <GoogleLogin
+                clientId="1091948986515-evn13uscvig9k6olefvrkdk3q374iumi.apps.googleusercontent.com"
+                render={(renderProps) => (
+                  <div className={classes.root}>
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                      className="button"
+                      onClick={renderProps.onClick}
+                      href="/game"
+                    >
+                      LogIn with Google
+                    </Button>
+                  </div>
+                )}
+                onSuccess={this.responseGoogle} //isSignedIn ??
+                onFailure={this.responseGoogle} //handle later
+                
+                cookiePolicy={"single_host_origin"}
+              />
+            )}
+          </div>
       </div>
+      
     );
   }
 }
