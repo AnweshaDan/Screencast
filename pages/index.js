@@ -8,7 +8,7 @@ import Footer from "../components/Footer";
 
 import GoogleLog from "../components/GoogleLog";
 import FbLog2 from "../components/FbLog2";
-//import Timer from "../components/Timer"
+import Timer2 from "../components/Timer2"
 import Particles from "react-particles-js";
 
 
@@ -68,6 +68,7 @@ function index() {
         </div>
 
         <Navbar />
+        <Timer2/>
         
         
 

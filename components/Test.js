@@ -21,11 +21,9 @@ import Router from "next/router";
 
 const useStyles = makeStyles({
   list: {
-    width: 250,
+    width: 100,
   },
-  fullList: {
-    width: 'auto',
-  },
+
 });
 
 export default function TemporaryDrawer() {

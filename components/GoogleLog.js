@@ -34,6 +34,7 @@ class GoogleLog extends React.Component {
     }
   }
   
+  
   refresh=(a,r)=>{
     console.log(r)
     localStorage.setItem("token",a);

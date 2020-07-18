@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+/*import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Rules from "./Rules";
 import Button from "@material-ui/core/Button";
@@ -129,4 +129,4 @@ export default function MyMenu() {
       `}</style>
     </div>
   );
-}
+}*/

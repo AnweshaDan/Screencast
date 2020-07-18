@@ -21,6 +21,7 @@ class FbLog2 extends React.Component {
     this.state = {
       user: false,
       isSignedIn: false,
+      access:""
     };
   }
   componentDidMount() {
@@ -32,19 +33,28 @@ class FbLog2 extends React.Component {
     localStorage.setItem("email", response.email);
     localStorage.setItem("name", response.name);
     localStorage.setItem("image", response.picture.data.url);
+    localStorage.setItem('token',response.accessToken)
+    console.log(localStorage.getItem('email'));
 
-    console.log(localStorage.getItem("image"));
+    
 
-    this.setState({ ...this.state, user: response, isSignedIn: true });
+    this.setState({ user: response, isSignedIn: true,access:response.accessToken });
     axios
-      .post("http://dummy.restapiexample.com/api/v1/create", {
-        data: this.state.user.accessToken,
-        id: 24,
+      .post("https://screencast2020.herokuapp.com/api/facebooklogin", {
+       token:this.state.access
       })
       .then((res) => {
         console.log(res);
+        localStorage.setItem('token',res.data.access_token)
+        
+        this.setState({access: res.data.access_token})
+        
+        console.log(localStorage.getItem("token"));
+      console.log(this.state.access);
+      
+      Router.push("/game");
       });
-    Router.push("/game");
+      
   };
 
   render() {
