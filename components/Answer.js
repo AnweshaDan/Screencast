@@ -33,15 +33,7 @@ class Answer extends Component {
           />
           <br />
           <br />
-          <Button
-            className="btnSubmit"
-            variant="contained"
-            color="primary"
-            disableElevation
-            onClick={this.props.submit2}
-          >
-            Submit
-          </Button>
+          
         </form>
       </div>
     );

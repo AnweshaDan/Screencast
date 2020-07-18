@@ -18,6 +18,12 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
     },
   },
+  list: {
+    width: 250,
+  },
+  fullList: {
+    width: 'auto',
+  },
 }));
 
 export default function MyMenu() {

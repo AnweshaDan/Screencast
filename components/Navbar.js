@@ -5,7 +5,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
-
+import Test from "./Test"
 import MyMenu from "./MyMenu";
 import Rules from './Rules'
 
@@ -59,7 +59,7 @@ export default function Navbar(props) {
             color="white"
             aria-label="menu"
           >
-            <MyMenu />
+            <Test />
           </IconButton>
 
           <Typography

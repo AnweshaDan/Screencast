@@ -28,6 +28,15 @@ export default function SimplePopover(props) {
   return (
     <div>
       <Button
+            className="btnSubmit"
+            variant="contained"
+            color="primary"
+            disableElevation
+            onClick={props.submit2}
+          >
+            Submit
+          </Button>
+      <Button
         className="btnSubmit"
         aria-describedby={id}
         variant="contained"
