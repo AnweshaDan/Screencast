@@ -6,10 +6,13 @@ body {
   background-attachment: fixed;
   background-position: top;
   background-repeat: no-repeat;
-  height: 100%;
+  min-height: 100vh;
+  display:block;
+  position: relative;
   background-color: rgba(10, 10, 50, 0.97);
   background-image: url("bg.jpg");
   font-family: "Barlow", sans-serif;
+  color:"#eee";
 }
 
 .fbbutton {

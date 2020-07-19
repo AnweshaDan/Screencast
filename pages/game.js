@@ -33,9 +33,9 @@ class game extends React.Component {
     if (!(localStorage.getItem("email"))) {
       Router.push('/');
     }
-    else{
-      if(!(localStorage.getItem('start')<=Date.now()))
-      Router.push("/")
+    else {
+      if (!(localStorage.getItem('start') <= Date.now()))
+        Router.push("/")
 
     }
     this.getQuestions();
@@ -143,7 +143,7 @@ class game extends React.Component {
 
         <Navbar />
 
-        <Question qs={this.state.questions} qsNo={this.state.qsNo} audio={this.state.audio} image={this.state.image}  />
+        <Question qs={this.state.questions} qsNo={this.state.qsNo} audio={this.state.audio} image={this.state.image} />
         <div>
           <Answer
             change={this.change}
@@ -161,6 +161,7 @@ class game extends React.Component {
             div {
               text-align: center;
               margin: 5px;
+              margin-bottom:100px;
             }
           `}</style>
         </div>

@@ -7,7 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 
 import Test from "./Test"
-import logo from './scl.png';
+
 
 import styles from "./Navbar.module.css";
 
@@ -15,7 +15,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 0,
     backgroundColor: "#000066",
-    width: "100%"
+    width: "100%",
+    padding: 0,
   },
   menuButton: {
     marginRight: theme.spacing(0),
@@ -52,17 +53,18 @@ export default function Navbar(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" className={styles.navv}>
+      <AppBar position="static" className={styles.navv} style={{ padding: "0px" }}>
         <Toolbar className={styles.navcontent}>
           <IconButton
             edge="start"
             className={classes.menuButton}
             color="white"
             aria-label="menu"
+            style={{ padding: "0" }}
           >
             <Test />
           </IconButton>
-          <img src={logo} alt="." style={{ width: "45px", borderRadius: "50px", boxShadow: "1px 1px 2px #000" }} />
+          {/* <img src={logo} alt="." style={{ width: "45px", borderRadius: "50px", boxShadow: "1px 1px 2px #000" }} /> */}
           <Typography
             variant="h6"
             className={classes.title}
@@ -85,7 +87,7 @@ export default function Navbar(props) {
                     textAlign: "right",
                   }}
                 />
-               
+
               </div>
             ) : (
                 <div></div>

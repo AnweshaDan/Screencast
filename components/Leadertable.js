@@ -41,6 +41,7 @@ const useStyles = makeStyles({
     display: "auto",
     maxWidth: "700px",
     position: "relative",
+    marginBottom: "100px"
   },
 });
 
@@ -90,8 +91,8 @@ export default function Leadertable() {
               ))}
             </TableBody>
           ) : (
-            <div>LOADING......</div>
-          )}
+              <div>LOADING......</div>
+            )}
         </Table>
       </div>
     </div>

@@ -4,7 +4,7 @@ import axios from "axios";
 import Head from "next/head";
 import Button from "@material-ui/core/Button";
 import { withStyles } from "@material-ui/core/styles";
-import {SocialMediaIconsReact} from 'social-media-icons-react';
+import { SocialMediaIconsReact } from 'social-media-icons-react';
 import Router from "next/router";
 
 const useStyles = (theme) => ({
@@ -21,23 +21,22 @@ class GoogleLog extends React.Component {
     this.state = {
       userDetails: {},
       isUserLoggedIn: false,
-      access:""
+      access: ""
     };
     //this.refresh=this.refresh.bind(this);
   }
   componentDidMount() {
     console.log(Date.now());
     console.log(localStorage.getItem('start'));
-    if (localStorage.getItem("email") && ((localStorage.getItem('start')<=Date.now()))) 
-    {
+    if (localStorage.getItem("email") && ((localStorage.getItem('start') <= Date.now()))) {
       //this.refresh(localStorage.getItem('token'),localStorage.getItem('ref_token'))
-      
-     
+
+
       Router.push("/game");
     }
   }
-  
-  
+
+
   /*refresh=(a,r)=>{
     console.log(r)
     localStorage.setItem("token",a);
@@ -61,39 +60,39 @@ class GoogleLog extends React.Component {
 
   }*/
   responseGoogle = (response) => {
-   
-    
-    localStorage.setItem('token',response.tokenObj.access_token)
-    
-    this.setState({ userDetails: response.profileObj, isUserLoggedIn: true,access:response.tokenObj.access_token });
+
+
+    localStorage.setItem('token', response.tokenObj.access_token)
+
+    this.setState({ userDetails: response.profileObj, isUserLoggedIn: true, access: response.tokenObj.access_token });
     axios
       .post("https://screencast2020.herokuapp.com/api/googlelogin", {
         token: response.tokenObj.access_token
-       
+
       })
       .then((res) => {
-        
+
         console.log((res));
-        localStorage.setItem('token',res.data.access_token)
-        localStorage.setItem('ref_token',res.data.refresh_token)
-        this.setState({access: res.data.access_token})
+        localStorage.setItem('token', res.data.access_token)
+        localStorage.setItem('ref_token', res.data.refresh_token)
+        this.setState({ access: res.data.access_token })
         //this.refresh(res.data.access_token,res.data.refresh_token);
-        
-      
+
+
         localStorage.setItem("email", response.profileObj.email);
         localStorage.setItem("name", response.profileObj.name);
         localStorage.setItem("image", response.profileObj.imageUrl);
 
-        if((localStorage.getItem('start')<=Date.now()))
-        Router.push("/game");
-        
+        if ((localStorage.getItem('start') <= Date.now()))
+          Router.push("/game");
+
       });
-      
-    
-    
-    
+
+
+
+
   };
-  
+
 
   render() {
     const { classes } = this.props;
@@ -102,37 +101,37 @@ class GoogleLog extends React.Component {
       <div>
         <div>
           <Head>
-            
+
           </Head>
         </div>
-          <div className="App">
-            {!this.state.isUserLoggedIn && (
-              <GoogleLogin
-                clientId="1091948986515-evn13uscvig9k6olefvrkdk3q374iumi.apps.googleusercontent.com"
-                render={(renderProps) => (
-                  <div className={classes.root}  >
-                    
-                    <Button
-                    style={{backgroundColor:"rgba(0,0,0,0)"}}
-                      variant="contained"
-                      color="secondary"
-                      className="button"
-                      onClick={renderProps.onClick}
-                      
-                    >
-                      <SocialMediaIconsReact borderColor="rgba(0,0,0,0.25)" borderWidth="3" borderStyle="inset" icon="googleplus" iconColor="rgba(255,255,255,1)" backgroundColor="rgba(223,48,28,1)" iconSize="5" roundness="29%"  size="45" />
-                    </Button>
-                  </div>
-                )}
-                onSuccess={this.responseGoogle} //isSignedIn ??
-                onFailure={this.responseGoogle} //handle later
-                
-                cookiePolicy={"single_host_origin"}
-              />
-            )}
-          </div>
+        <div>
+          {!this.state.isUserLoggedIn && (
+            <GoogleLogin
+              clientId="1091948986515-evn13uscvig9k6olefvrkdk3q374iumi.apps.googleusercontent.com"
+              render={(renderProps) => (
+                <div className={classes.root}  >
+
+                  <Button
+                    style={{ backgroundColor: "rgba(0,0,0,0)", padding: "0" }}
+                    variant="contained"
+                    color="secondary"
+                    className="button"
+                    onClick={renderProps.onClick}
+
+                  >
+                    <SocialMediaIconsReact borderColor="rgba(0,0,0,0.25)" borderWidth="3" borderStyle="inset" icon="googleplus" iconColor="rgba(255,255,255,1)" backgroundColor="rgba(223,48,28,1)" iconSize="5" roundness="29%" size="45" />
+                  </Button>
+                </div>
+              )}
+              onSuccess={this.responseGoogle} //isSignedIn ??
+              onFailure={this.responseGoogle} //handle later
+
+              cookiePolicy={"single_host_origin"}
+            />
+          )}
+        </div>
       </div>
-      
+
     );
   }
 }

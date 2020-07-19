@@ -12,36 +12,30 @@ import Timer2 from "../components/Timer2"
 
 
 function index() {
-  
+
   const [end, setEnd] = useState(Date.now());
   const [start, setStart] = useState(Date.now());
   const [day, setDay] = useState(0);
 
   useEffect(() => {
-    
+
     axios
       .get("https://screencast2020.herokuapp.com/api/status")
       .then((response) => {
-        
-        console.log( (new Date(response.data.start_time)).getTime());//milliseconds
+
+        console.log((new Date(response.data.start_time)).getTime());//milliseconds
         setStart((new Date(response.data.start_time)).getTime())
         setEnd((new Date(response.data.end_time)).getTime())
         setDay(response.data.current_day)
-        
+
         localStorage.setItem("start", start);
         console.log(localStorage.getItem('start'));
       });
   })
 
   return (
-    <div>
-      <style jsx>{`
-        div {
-          text-align: center;
-          content-align: center;
-          margin: 0px auto;
-        }
-      `}</style>
+    <div style={{ textAlign: "center" }}>
+
 
 
       <div>
@@ -63,16 +57,16 @@ function index() {
         <Timer2 start={start} />
 
         <div>
-            <div
-              className="sign"
-              style={{
-                marginTop: "40px",
-                marginBottom: "20px",
-                fontFamily: "'Russo One', sans-serif",
-              }}
-            >
-              <span className="fast-flicker">screen</span>cast{" "}
-              <span className="flicker">2020 </span>
+          <div
+            className="sign"
+            style={{
+              marginTop: "40px",
+              marginBottom: "20px",
+              fontFamily: "'Russo One', sans-serif",
+            }}
+          >
+            <span className="fast-flicker">screen</span>cast{" "}
+            <span className="flicker">2020 </span>
           </div>
 
           <div className="login-head" style={{ marginBottom: "60px" }}>
@@ -80,12 +74,12 @@ function index() {
           </div>
         </div>
 
-        <div className='rowC' style={{margin:"0 auto"}}>
-            <GoogleLog />
-            <FbLog2 />
+        <div className='rowC' style={{ margin: "0 auto", textAlign: "center", width: "100%", justifyContent: "center" }}>
+          <GoogleLog />
+          <FbLog2 />
         </div>
-        
-        
+
+
       </div>
       <div
         style={{
@@ -97,17 +91,12 @@ function index() {
           textAlign: "center",
         }}
       >
-        <img
-          src={Logo}
-          alt="logo"
-          style={{
-            marginTop: "90px",
-            width: "50px"
 
-          }}
-        />
       </div>
-      <Footer style={{ color: "white" }} />
+      <div
+        className="footer">
+        <Footer />
+      </div>
 
     </div>
 
