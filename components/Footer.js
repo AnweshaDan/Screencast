@@ -19,5 +19,5 @@ function Footer() {
     </div>
   );
 }
-//add icons later
+
 export default Footer;

@@ -5,9 +5,8 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
+
 import Test from "./Test"
-import MyMenu from "./MyMenu";
-import Rules from './Rules';
 import logo from './scl.png';
 
 import styles from "./Navbar.module.css";
@@ -86,27 +85,7 @@ export default function Navbar(props) {
                     textAlign: "right",
                   }}
                 />
-                {/* <div
-              style={{
-                display: "flex",
-                position: "relative",
-                marginLeft: "10px",
-                marginTop: "25px",
-                color: "rgb(255, 200, 240)",
-              }}
-            >
-              WELCOME, {name} !
-            </div> */}
-
-                {/* <div
-            style={{
-              textAlign: "center",
-              margin: "10px auto",
-              color: "rgb(255, 200, 240)",
-            }}
-          >
-            WELCOME, {name} !
-          </div> */}
+               
               </div>
             ) : (
                 <div></div>

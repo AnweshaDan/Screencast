@@ -156,7 +156,7 @@ class game extends React.Component {
 
         <Navbar />
 
-        <Question qs={this.state.questions} qsNo={this.state.qsNo} audio={this.state.audio} image={this.state.image} />
+        <Question qs={this.state.questions} qsNo={this.state.qsNo} audio={this.state.audio} image={this.state.image}  />
         <div>
           <Answer
             change={this.change}

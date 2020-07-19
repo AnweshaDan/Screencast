@@ -44,7 +44,7 @@ export default function Timer(props) {
 
 
     return (
-//date={(new Date(props.start)).getTime()}
+
         <Countdown
         date={props.start}
             intervalDelay={1}
