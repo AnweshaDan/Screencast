@@ -322,6 +322,7 @@ body {
   animation: flashing 4s ease 0s infinite;
 }
 
+
 @keyframes flashing {
   0%,
   60% {

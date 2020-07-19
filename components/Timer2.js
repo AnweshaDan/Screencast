@@ -11,6 +11,7 @@ import {
 export default function Timer(props) {
     console.log(props)
     const Completionist = () => <span>You are good to go!</span>;
+
     const renderer = ({ days, hours, minutes, seconds, completed }) => {
         if (completed) {
             return <Completionist />;
@@ -43,9 +44,9 @@ export default function Timer(props) {
 
 
     return (
-
+//date={(new Date(props.start)).getTime()}
         <Countdown
-            date={Date.now() + 1000000}
+        date={props.start}
             intervalDelay={1}
             renderer={renderer}
         />

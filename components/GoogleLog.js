@@ -4,7 +4,7 @@ import axios from "axios";
 import Head from "next/head";
 import Button from "@material-ui/core/Button";
 import { withStyles } from "@material-ui/core/styles";
-
+import {SocialMediaIconsReact} from 'social-media-icons-react';
 import Router from "next/router";
 
 const useStyles = (theme) => ({
@@ -87,6 +87,7 @@ class GoogleLog extends React.Component {
     localStorage.setItem("image", response.profileObj.imageUrl);
     
   };
+  
 
   render() {
     const { classes } = this.props;
@@ -103,15 +104,17 @@ class GoogleLog extends React.Component {
               <GoogleLogin
                 clientId="1091948986515-evn13uscvig9k6olefvrkdk3q374iumi.apps.googleusercontent.com"
                 render={(renderProps) => (
-                  <div className={classes.root}>
+                  <div className={classes.root}  >
+                    
                     <Button
+                    style={{backgroundColor:"rgba(0,0,0,0)"}}
                       variant="contained"
                       color="secondary"
                       className="button"
                       onClick={renderProps.onClick}
                       href="/game"
                     >
-                      LogIn with Google
+                      <SocialMediaIconsReact borderColor="rgba(0,0,0,0.25)" borderWidth="3" borderStyle="inset" icon="googleplus" iconColor="rgba(255,255,255,1)" backgroundColor="rgba(223,48,28,1)" iconSize="5" roundness="29%" url="http://localhost:3000/game" size="45" />
                     </Button>
                   </div>
                 )}

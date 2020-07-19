@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 
 import Head from "next/head";
 import Logo from "../glug.png";
-
+import axios from "axios";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
+import {SocialMediaIconsReact} from 'social-media-icons-react';
 import GoogleLog from "../components/GoogleLog";
 import FbLog2 from "../components/FbLog2";
 import Timer2 from "../components/Timer2"
@@ -17,7 +17,25 @@ import Particles from "react-particles-js";
 
 
 function index() {
-  const [Stop, setStop] = useState(Date.now());
+
+  
+  const [end, setEnd] = useState(Date.now());
+  const [start, setStart] = useState(Date.now());
+  const [day, setDay] = useState(0);
+
+  useEffect(() => {
+    console.log(Date.now());
+    axios
+      .get("https://screencast2020.herokuapp.com/api/status")
+      .then((response) => {
+        
+        console.log( (new Date(response.data.start_time)).getTime());
+        setStart((new Date(response.data.start_time)).getTime())
+        setEnd((new Date(response.data.end_time)).getTime())
+        setDay(response.data.current_day)
+      });
+  })
+
   return (
     <div>
       <style jsx>{`
@@ -73,7 +91,7 @@ function index() {
 
         <Navbar />
 
-        <Timer2 />
+        <Timer2 start={start} />
 
 
 
@@ -95,7 +113,7 @@ function index() {
         </div>
 
         <GoogleLog />
-        <FbLog2 />
+        <FbLog2 ></FbLog2>
       </div>
       <div
         style={{

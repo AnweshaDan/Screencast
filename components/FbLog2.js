@@ -1,18 +1,27 @@
 import React from "react";
-import FacebookLoginWithButton from "react-facebook-login";
-
+import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
+import {SocialMediaIconsReact} from 'social-media-icons-react';
 //import Router from 'next/dist/next-server/server/router';
 import Router from "next/router";
 import axios from "axios";
 
 const LoginButton = ({ facebookResponse }) => (
-  <FacebookLoginWithButton
+  
+  <FacebookLogin
     appId="330897641228705"
     autoload={false}
     fields="name,email,picture"
     callback={facebookResponse}
-    cssClass="fbbutton"
-  />
+    render={renderProps => (
+      <button style={{backgroundColor:"rgba(0,0,0,0)",border:"none"}} onClick={renderProps.onClick}>
+        <SocialMediaIconsReact borderColor="rgba(0,0,0,0.25)" borderWidth="3" borderStyle="inset" icon="facebook" iconColor="rgba(255,255,255,1)" backgroundColor="rgba(28,149,223,1)" iconSize="5" roundness="29%" url="http://localhost:3000/game" size="45" />
+      </button>)}
+    
+  
+    
+  >
+  </FacebookLogin>
+ 
 );
 
 class FbLog2 extends React.Component {
@@ -65,7 +74,8 @@ class FbLog2 extends React.Component {
         <div
           style={{ margin: "auto", textAlign: "center", paddingTop: "10px" }}
         >
-          <LoginButton facebookResponse={this.facebookResponse} />
+          <LoginButton facebookResponse={this.facebookResponse} ></LoginButton>
+          
         </div>
       </div>
     );

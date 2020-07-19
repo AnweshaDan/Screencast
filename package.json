@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-free-brands": "^5.0.13",
     "@material-ui/core": "^4.9.12",
     "@material-ui/icons": "^4.9.1",
     "axios": "^0.19.2",
@@ -20,6 +21,7 @@
     "next-images": "^1.4.0",
     "react": "^16.13.1",
     "react-alert": "^7.0.1",
+    "react-countdown": "2.2.1",
     "react-dom": "^16.13.1",
     "react-f": "^0.1.2",
     "react-facebook-login": "^4.1.1",
@@ -30,7 +32,6 @@
     "react-window": "^1.8.5",
     "sweetalert": "^2.1.2",
     "sweetalert2": "^9.10.13",
-    "typeface-roboto": "0.0.75",
-    "react-countdown": "2.2.1"
+    "typeface-roboto": "0.0.75"
   }
 }
