@@ -72,15 +72,17 @@ function index() {
               <span className="fast-flicker">screen</span>cast{" "}
               <span className="flicker">2020 </span>
           </div>
+
           <div className="login-head" style={{ marginBottom: "60px" }}>
             <h1>Login to play </h1>
           </div>
         </div>
-        
-        <div className='rowC'>
-        <GoogleLog />
-        <FbLog2 />
+
+        <div className='rowC' style={{margin:"0 auto"}}>
+            <GoogleLog />
+            <FbLog2 />
         </div>
+        
         
       </div>
       <div

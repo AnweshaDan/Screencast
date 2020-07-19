@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "static/media/bg.0e2225181a491640f7b8d2054b678b2d.jpg";
+module.exports = __webpack_require__.p + "static/media/bg.8ac99ad10d544c699af8724529349ba8.jpg";
 
 /***/ }),
 
