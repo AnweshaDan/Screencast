@@ -1,4 +1,4 @@
- 
+
 import React from 'react'
 import Countdown, { zeroPad } from 'react-countdown';
 import {
@@ -11,24 +11,22 @@ import {
 export default function Timer(props) {
     console.log(props)
     const Completionist = () => <span>You are good to go!</span>;
-    const renderer = ({ days, hours, minutes, seconds,completed}) => {
-        if(completed){
-            return <Completionist/>;
-        }else{
+    const renderer = ({ days, hours, minutes, seconds, completed }) => {
+        if (completed) {
+            return <Completionist />;
+        } else {
             return (
-                <span>
-                    <Card style={{
-                        marginBottom: 30
-                    }}>
+                <span className="sign">
+                    <Card style={{ backgroundColor: "rgba(0,0,0,0)", color: "white", padding: "0", margin: "0 auto" }}>
                         <CardHeader
                             style={{ textAlign: "center" }}
-                            title={props.message}>
-    
+                            title=" ">
+
                         </CardHeader>
                         <CardContent>
-                            <Typography style={{ textAlign: "center" }}>
+                            <Typography style={{ textAlign: "center", fontSize: "17px" }}>
                                 <h1>
-                                    {zeroPad(days, 3)}:{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
+                                    {props.message}&nbsp;&nbsp;{zeroPad(days, 3)}:{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
                                 </h1>
                             </Typography>
                         </CardContent>
@@ -36,9 +34,9 @@ export default function Timer(props) {
                 </span>)
 
         }
-        
 
-       
+
+
 
     };
 
@@ -47,7 +45,7 @@ export default function Timer(props) {
     return (
 
         <Countdown
-            date={Date.now()+1000000}
+            date={Date.now() + 1000000}
             intervalDelay={1}
             renderer={renderer}
         />

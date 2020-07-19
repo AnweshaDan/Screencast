@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Head from "next/head";
 import Logo from "../glug.png";
@@ -10,6 +10,8 @@ import GoogleLog from "../components/GoogleLog";
 import FbLog2 from "../components/FbLog2";
 import Timer2 from "../components/Timer2"
 import Particles from "react-particles-js";
+
+
 
 
 
@@ -26,7 +28,7 @@ function index() {
         }
       `}</style>
 
-      <Particles
+      {/* <Particles
         params={{
           particles: {
             number: {
@@ -53,11 +55,13 @@ function index() {
           position: "fixed",
           index: "-10",
         }}
-      />
+      /> */}
+
       <div>
+
         <div>
           <Head>
-            <meta charset="UTF-8" />
+            <meta charSet="UTF-8" />
             <meta
               name="viewport"
               content="width=device-width, initial-scale=1.0, shrink-to-fit:no"
@@ -68,15 +72,16 @@ function index() {
         </div>
 
         <Navbar />
-        <Timer2/>
-        
-        
+
+        <Timer2 />
+
+
 
         <div>
           <div
             className="sign"
             style={{
-              marginTop: "140px",
+              marginTop: "40px",
               marginBottom: "20px",
               fontFamily: "'Russo One', sans-serif",
             }}
@@ -96,6 +101,9 @@ function index() {
         style={{
           marginRight: "auto",
           marginLeft: "auto",
+          width: "100%",
+          bottom: "25px",
+          position: "fixed",
           textAlign: "center",
         }}
       >
@@ -104,15 +112,15 @@ function index() {
           alt="logo"
           style={{
             marginTop: "90px",
-            position: "relative",
-            float: "bottom",
-            height: "50px",
-            width: "auto",
+            width: "50px"
+
           }}
         />
       </div>
       <Footer style={{ color: "white" }} />
+
     </div>
+
   );
 }
 

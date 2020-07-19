@@ -17,8 +17,8 @@ class game extends React.Component {
       answer: "",
       questions: "",
       qsNo: 1,
-      audio:"",
-      image:"",
+      audio: "",
+      image: "",
       isLoggedIn: false,
       hint: "",
     };
@@ -31,8 +31,7 @@ class game extends React.Component {
   }
 
   componentDidMount() {
-    if(!(localStorage.getItem("email")))
-    {
+    if (!(localStorage.getItem("email"))) {
       Router.push('/');
     }
     //at the beginning sets the qs
@@ -74,8 +73,8 @@ class game extends React.Component {
             questions: response.data.question,
             hint: response.data.hint,
             qsNo: response.data.question_no,
-            audio:response.data.audio,
-            image:response.data.image
+            audio: response.data.audio,
+            image: response.data.image
           };
         });
       });
@@ -127,12 +126,12 @@ class game extends React.Component {
 
         if (r && !response.data.quiz_finished) {
           this.setState((prevState) => {
-            return { ...prevState, qsNo: prevState.qsNo + 1,answer:"" };
+            return { ...prevState, qsNo: prevState.qsNo + 1, answer: "" };
           });
           AnsAlert(1); //where does the effing control go after this?
           console.log("SANTA");
           this.setState({
-            answer:""
+            answer: ""
           });
           this.getQuestions();
         } else if (r && response.data.quiz_finished) {
@@ -140,7 +139,7 @@ class game extends React.Component {
           Router.push("/finale");
         } else {
           this.setState({
-            answer:""
+            answer: ""
           });
           AnsAlert(0);
         }
@@ -153,50 +152,23 @@ class game extends React.Component {
         style={{ marginRight: "auto", marginLeft: "auto", textAlign: "center" }}
         questions
       >
-        <Particles
-          params={{
-            particles: {
-              number: {
-                value: 80,
-                density: {
-                  enable: true,
-                  value_area: 400,
-                },
-              },
-              color: {
-                value: ["#cc0000"],
-              },
-              line_linked: {
-                color: "#aa0044",
-                opacity: 1,
-              },
-            },
-          }}
-          style={{
-            width: "100%",
-            height: "100%",
-            top: 0,
-            left: 0,
-            position: "fixed",
-            index: "-10",
-          }}
-        />
+
 
         <Navbar />
-        
+
         <Question qs={this.state.questions} qsNo={this.state.qsNo} audio={this.state.audio} image={this.state.image} />
         <div>
           <Answer
             change={this.change}
-           
+
             answer={this.state.answer}
           />
 
           <Hint hint={this.state.hint}
-          submit={this.submit}
-          submit2={this.submit2}
-          
-           />
+            submit={this.submit}
+            submit2={this.submit2}
+
+          />
 
           <style jsx>{`
             div {
@@ -207,7 +179,7 @@ class game extends React.Component {
         </div>
         <div>
           <Footer />
-          
+
         </div>
       </div>
     );

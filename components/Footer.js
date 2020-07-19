@@ -8,10 +8,11 @@ function Footer() {
         alignContent: "center",
         textAlign: "center",
         color: "#d0d0d0",
-        position: "relative",
+        position: "fixed",
         bottom: "0px",
         fontSize: "10px",
         textTransform: "capitalize",
+        width: "100%"
       }}
     >
       <h5>HOSTED & CREATED BY GNU/LINUX USERS' GROUP</h5>

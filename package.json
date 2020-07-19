@@ -20,6 +20,7 @@
     "next-images": "^1.4.0",
     "react": "^16.13.1",
     "react-alert": "^7.0.1",
+    "react-countdown": "^2.2.1",
     "react-dom": "^16.13.1",
     "react-f": "^0.1.2",
     "react-facebook-login": "^4.1.1",

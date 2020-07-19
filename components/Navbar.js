@@ -7,14 +7,16 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import Test from "./Test"
 import MyMenu from "./MyMenu";
-import Rules from './Rules'
+import Rules from './Rules';
+import logo from './scl.png';
 
 import styles from "./Navbar.module.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 0,
-    backgroundColor: "#000033",
+    backgroundColor: "#000066",
+    width: "100%"
   },
   menuButton: {
     marginRight: theme.spacing(0),
@@ -31,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Navbar(props) {
 
   const classes = useStyles();
-  
+
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -41,7 +43,7 @@ export default function Navbar(props) {
   const [image, setImage] = useState("");
 
   useEffect(() => {
-    
+
     if (localStorage.getItem("email")) {
       setIsSigned(true);
       setName(localStorage.getItem("name"));
@@ -61,19 +63,20 @@ export default function Navbar(props) {
           >
             <Test />
           </IconButton>
-
+          <img src={logo} alt="." style={{ width: "45px", borderRadius: "50px", boxShadow: "1px 1px 2px #000" }} />
           <Typography
             variant="h6"
             className={classes.title}
             style={{ fontFamily: "'Russo One', sans-serif" }}
           >
-            SCREENCAST 2020
+
+            &nbsp;&nbsp;&nbsp;SCREENCAST 2020
           </Typography>
-         
+
           <div className={classes.ava}>
             {isSignedIn ? (
               <div>
-                 
+
                 <Avatar
                   position="right"
                   alt={name}
@@ -106,18 +109,18 @@ export default function Navbar(props) {
           </div> */}
               </div>
             ) : (
-              <div></div>
-            )}
+                <div></div>
+              )}
           </div>
-          
+
         </Toolbar>
-       
+
       </AppBar>
       <div>
-     
+
       </div>
-      
-      
+
+
     </div>
   );
 }

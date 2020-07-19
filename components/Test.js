@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -21,19 +21,19 @@ import Router from "next/router";
 
 const useStyles = makeStyles({
   list: {
-    width: 100,
+    width: 300,
   },
 
 });
 
 export default function TemporaryDrawer() {
-    const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = React.useState(null);
   const classes = useStyles();
   const [Log, setLog] = useState(false);
   const [state, setState] = React.useState({
-    
+
     left: false
-   
+
   });
   const handleClose = () => {
     setAnchorEl(null);
@@ -68,17 +68,17 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-       
+
         <ListItem button key='Home'>
-            <Link href='/'>
+          <Link href='/'>
             <ListItemText primary='Home' />
-            </Link>
+          </Link>
         </ListItem>
 
         <ListItem button key='Leaderboard'>
-            <Link href='/leaderboard'>
+          <Link href='/leaderboard'>
             <ListItemText primary='Leaderboard' />
-            </Link>
+          </Link>
         </ListItem>
 
         {Log ? (
@@ -100,14 +100,14 @@ export default function TemporaryDrawer() {
           </div>
         ) : (
             <ListItem button key='Game'>
-            <Link href='/game'>
-            <ListItemText primary='Game' />
-            </Link>
-        </ListItem>
-        )}
+              <Link href='/game'>
+                <ListItemText primary='Game' />
+              </Link>
+            </ListItem>
+          )}
 
-       
-     </List>
+
+      </List>
     </div>
   );
 
@@ -115,33 +115,34 @@ export default function TemporaryDrawer() {
     <div>
       {['left'].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}><MenuIcon/></Button>
-          <Drawer 
-          id="fade-menu"
-          TransitionComponent={Fade}
-        marginThreshold="0px"
-        anchorOrigin={{ vertical: "top", horizontal: "left" }}
-        anchorPosition={{ left: "0", top: "0" }}
-        transformOrigin={{ top: "0px", left: "0px" }}
-        style={{ fontFamily: "'Barlow', sans-serif" }}
-        PaperProps={{
-          style: {
-            top: 0,
-            left: 0,
-            backgroundColor: "#cc0044",
-            borderRadius: "6px",
-            color: "white",
-            marginTop: "0",
-            paddingTop: ["0px"],
-            width: "400px",
-            maxHeight: "100%",
-          },
-        }}
-          anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
+          <Button onClick={toggleDrawer(anchor, true)}><MenuIcon style={{ color: "#fff" }} /></Button>
+          <Drawer
+            id="fade-menu"
+            TransitionComponent={Fade}
+            marginThreshold="0px"
+            anchorOrigin={{ vertical: "top", horizontal: "left" }}
+            anchorPosition={{ left: "0", top: "0" }}
+            transformOrigin={{ top: "0px", left: "0px" }}
+            style={{ fontFamily: "'Barlow', sans-serif", backgroundColor: "rgba(0,0,0,0.5)" }}
+            PaperProps={{
+              style: {
+                top: 0,
+                left: 0,
+                backgroundColor: "rgb(32, 32, 107)",
+                borderRadius: "0px",
+                color: "white",
+                marginTop: "0",
+                paddingTop: ["0px"],
+                width: "300px",
+                maxHeight: "100%",
+
+              },
+            }}
+            anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
             {list(anchor)}
             <MenuItem onClick={handleClose}>
-          <Rules>Rules</Rules>
-        </MenuItem>
+              <Rules>Rules</Rules>
+            </MenuItem>
           </Drawer>
         </React.Fragment>
       ))}

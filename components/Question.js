@@ -24,7 +24,7 @@ const useStyles = makeStyles({
     transform: "scale(0.8)",
   },
   title: {
-    fontSize: 15,
+    fontSize: 21,
   },
   pos: {
     marginBottom: 12,
@@ -46,7 +46,7 @@ export default function OutlinedCard(props) {
           className="container neon-box"
           style={{
             textAlign: "center",
-            fontSize: "22px",
+            fontSize: "29px",
             fontFamily: "'Russo One', sans-serif",
           }}
         >
@@ -67,8 +67,8 @@ export default function OutlinedCard(props) {
         <Typography
           className={classes.pos}
           color="#f0f0f0"
-          style={{ fontSize: "14px", fontFamily: "'Barlow', sans-serif" }}
-          style={{ fontFamily: "'Barlow', sans-serif" }}
+          style={{ fontSize: "17px", fontFamily: "'Barlow', sans-serif" }}
+
         >
           {props.qs}
         </Typography>
@@ -80,9 +80,9 @@ export default function OutlinedCard(props) {
             title="Image Hint"
           />
         ) : (
-          <div></div>
-        )}
-        
+            <div></div>
+          )}
+
         <br />
         {props.audio ? (
           <div style={{ textAlign: "center", margin: "0 auto" }}>
@@ -92,8 +92,8 @@ export default function OutlinedCard(props) {
             />
           </div>
         ) : (
-          <div></div>
-        )}
+            <div></div>
+          )}
       </CardContent>
     </div>
   );

@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://screencast.anweshadan.vercel.app/">
-    <img alt="logo" src="screencastlogo.jpeg" width="150" />
+    <img alt="logo" src="screencastlogo.png" width="150" />
   </a>
 </p>
 <h1 align="center">

@@ -29,7 +29,7 @@ body {
 .head {
   margin: 0 auto;
   padding: 10px;
-  padding-top: 20px;
+  padding-top: 40px;
 }
 .rtable {
   display: absolute;
@@ -40,16 +40,17 @@ body {
 .question {
   position: relative;
   z-index: 20;
-  background-color: rgba(3, 3, 65, 0.7);
+  background-color: rgba(3, 3, 65, 0.8);
   color: white;
   box-sizing: border-box;
   box-shadow: 10px 10px 7px rgba(10, 10, 10, 0.9);
-  max-width: 700px;
+  max-width: 1000px;
   min-width: 100px;
-  margin: 20px auto;
+  margin: 40px auto;
   padding: 20px;
   border-bottom-left-radius: 20px;
   border-top-right-radius: 20px;
+  
 }
 @media only screen and (max-width: 700px) {
   .question {

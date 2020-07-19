@@ -9,6 +9,13 @@ const useStyles = (theme) => ({
       margin: theme.spacing(0),
       width: "10px",
     },
+    anstype: {
+      width: "600px"
+    },
+    ansdiv: {
+      width: "600px"
+    }
+
   },
 });
 
@@ -21,7 +28,7 @@ class Answer extends Component {
     const { classes } = this.props;
     return (
       <div>
-        <form className="ans-div" noValidate autoComplete="off">
+        <form className={classes.ansdiv} noValidate autoComplete="off">
           <TextField
             id="filled-basic"
             label="Type your answer here."
@@ -29,11 +36,12 @@ class Answer extends Component {
             onChange={this.props.change}
             onKeyDown={this.props.submit}
             value={this.props.answer}
-            className="anstype"
+            className={classes.anstype}
+            style={{ maxWidth: "600px", width: "80%", }}
           />
           <br />
           <br />
-          
+
         </form>
       </div>
     );
