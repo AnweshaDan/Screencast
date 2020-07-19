@@ -18,16 +18,18 @@ function index() {
   const [day, setDay] = useState(0);
 
   useEffect(() => {
-    console.log(Date.now());
+    
     axios
       .get("https://screencast2020.herokuapp.com/api/status")
       .then((response) => {
         
-        console.log( (new Date(response.data.start_time)).getTime());
+        console.log( (new Date(response.data.start_time)).getTime());//milliseconds
         setStart((new Date(response.data.start_time)).getTime())
         setEnd((new Date(response.data.end_time)).getTime())
         setDay(response.data.current_day)
-        //localStorage.setItem("day", day);
+        
+        localStorage.setItem("start", start);
+        console.log(localStorage.getItem('start'));
       });
   })
 

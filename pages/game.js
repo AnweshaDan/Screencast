@@ -5,7 +5,6 @@ import Footer from "../components/Footer";
 import Question from "../components/Question";
 import Hint from "../components/Hint";
 import AnsAlert from "../components/AnsAlert"
-import Particles from "react-particles-js";
 import Answer from "../components/Answer";
 import Router from "next/router";
 
@@ -34,23 +33,11 @@ class game extends React.Component {
     if (!(localStorage.getItem("email"))) {
       Router.push('/');
     }
-    //at the beginning sets the qs
-    //after getting appropiate data from backend about that email in local storage
-    console.log(localStorage.getItem("token"));
-    console.log(this.state.qsNo);
-    console.log(localStorage.getItem("email")); //email available here
+    else{
+      if(!(localStorage.getItem('start')<=Date.now()))
+      Router.push("/")
 
-    /*   axios.get('https://jsonplaceholder.typicode.com/users/email?=Nathan@yesenia.net').then((response)=>
-        {
-            console.log("yesssss"+this.state.qsNo+response.json);
-            this.setState(prevState=>{
-                return{ ...prevState, questions:response.data.id}
-              });
-        }
-        )*/
-
-    //next qs/completed/error
-
+    }
     this.getQuestions();
   }
 

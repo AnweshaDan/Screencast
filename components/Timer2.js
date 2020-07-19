@@ -1,5 +1,6 @@
 
 import React from 'react'
+import Router from "next/router";
 import Countdown, { zeroPad } from 'react-countdown';
 import {
     Typography,
@@ -11,7 +12,7 @@ import {
 export default function Timer(props) {
     console.log(props)
     const Completionist = () => <span>You are good to go!</span>;
-
+    
     const renderer = ({ days, hours, minutes, seconds, completed }) => {
         if (completed) {
             return <Completionist />;
@@ -41,6 +42,9 @@ export default function Timer(props) {
 
     };
 
+  
+    
+
 
 
     return (
@@ -49,6 +53,7 @@ export default function Timer(props) {
         date={props.start}
             intervalDelay={1}
             renderer={renderer}
+            
         />
     )
 

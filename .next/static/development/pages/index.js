@@ -319,31 +319,8 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this);
 
-    Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this), "refresh", function (a, r) {
-      console.log(r);
-      localStorage.setItem("token", a);
-      console.log(localStorage.getItem("token"));
-      var t = setInterval(function () {
-        axios__WEBPACK_IMPORTED_MODULE_9___default.a.post("https://https://screencast2020.herokuapp.com/api/refresh", {
-          refresh: r
-        }).then(function (re) {
-          console.log(re);
-          localStorage.setItem("token", re.data.access);
-
-          _this.setState({
-            access: re.data.access
-          });
-
-          console.log(localStorage.getItem("token"));
-        });
-      }, 50000);
-      localStorage.setItem("interval_id", t);
-    });
-
     Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this), "responseGoogle", function (response) {
-      console.log(response);
       localStorage.setItem('token', response.tokenObj.access_token);
-      console.log(localStorage.getItem('token'));
 
       _this.setState({
         userDetails: response.profileObj,
@@ -360,38 +337,57 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
 
         _this.setState({
           access: res.data.access_token
-        });
+        }); //this.refresh(res.data.access_token,res.data.refresh_token);
 
-        _this.refresh(res.data.access_token, res.data.refresh_token);
 
-        console.log(localStorage.getItem("token"));
-        console.log(_this.state.access);
-        next_router__WEBPACK_IMPORTED_MODULE_14___default.a.push("/game");
+        localStorage.setItem("email", response.profileObj.email);
+        localStorage.setItem("name", response.profileObj.name);
+        localStorage.setItem("image", response.profileObj.imageUrl);
+        if (localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_14___default.a.push("/game");
       });
-      console.log(typeof response.profileObj.name); //string
-
-      localStorage.setItem("email", response.profileObj.email);
-      localStorage.setItem("name", response.profileObj.name);
-      localStorage.setItem("image", response.profileObj.imageUrl);
     });
 
     _this.state = {
       userDetails: {},
       isUserLoggedIn: false,
       access: ""
-    };
-    _this.refresh = _this.refresh.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this));
+    }; //this.refresh=this.refresh.bind(this);
+
     return _this;
   }
 
   Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(GoogleLog, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      if (localStorage.getItem("email")) {
-        this.refresh(localStorage.getItem('token'), localStorage.getItem('ref_token'));
+      console.log(Date.now());
+      console.log(localStorage.getItem('start'));
+
+      if (localStorage.getItem("email") && localStorage.getItem('start') <= Date.now()) {
+        //this.refresh(localStorage.getItem('token'),localStorage.getItem('ref_token'))
         next_router__WEBPACK_IMPORTED_MODULE_14___default.a.push("/game");
       }
     }
+    /*refresh=(a,r)=>{
+      console.log(r)
+      localStorage.setItem("token",a);
+      console.log(localStorage.getItem("token"));
+       const t=setInterval(()=>{
+        
+        axios.post("https://https://screencast2020.herokuapp.com/api/refresh",{
+          refresh:r
+        }).then((re)=>{
+          
+          console.log(re);
+          localStorage.setItem("token",re.data.access);
+          this.setState({access:re.data.access})
+          console.log(localStorage.getItem("token"));
+      
+        })
+      },50000)
+      localStorage.setItem("interval_id",t);
+      
+      }*/
+
   }, {
     key: "render",
     value: function render() {
@@ -402,21 +398,21 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96,
+          lineNumber: 102,
           columnNumber: 7
         }
       }, __jsx("div", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 97,
+          lineNumber: 103,
           columnNumber: 9
         }
       }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_10___default.a, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 98,
+          lineNumber: 104,
           columnNumber: 11
         }
       })), __jsx("div", {
@@ -424,7 +420,7 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 102,
+          lineNumber: 108,
           columnNumber: 11
         }
       }, !this.state.isUserLoggedIn && __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -435,7 +431,7 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 107,
+              lineNumber: 113,
               columnNumber: 19
             }
           }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -446,11 +442,10 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
             color: "secondary",
             className: "button",
             onClick: renderProps.onClick,
-            href: "/game",
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 109,
+              lineNumber: 115,
               columnNumber: 21
             }
           }, __jsx(social_media_icons_react__WEBPACK_IMPORTED_MODULE_13__["SocialMediaIconsReact"], {
@@ -462,12 +457,11 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
             backgroundColor: "rgba(223,48,28,1)",
             iconSize: "5",
             roundness: "29%",
-            url: "http://localhost:3000/game",
             size: "45",
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 117,
+              lineNumber: 123,
               columnNumber: 23
             }
           })));
@@ -480,7 +474,7 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 104,
+          lineNumber: 110,
           columnNumber: 15
         }
       })));
@@ -1337,10 +1331,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Timer; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_countdown__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-countdown */ "./node_modules/react-countdown/dist/index.es.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_countdown__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-countdown */ "./node_modules/react-countdown/dist/index.es.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
 var _jsxFileName = "/home/anwesha/Desktop/screencast/components/Timer2.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -1354,7 +1351,7 @@ function Timer(props) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 13,
+        lineNumber: 14,
         columnNumber: 33
       }
     }, "You are good to go!");
@@ -1372,7 +1369,7 @@ function Timer(props) {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 17,
+          lineNumber: 18,
           columnNumber: 20
         }
       });
@@ -1382,10 +1379,10 @@ function Timer(props) {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20,
+          lineNumber: 21,
           columnNumber: 17
         }
-      }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Card"], {
+      }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Card"], {
         style: {
           backgroundColor: "rgba(0,0,0,0)",
           color: "white",
@@ -1395,10 +1392,10 @@ function Timer(props) {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21,
+          lineNumber: 22,
           columnNumber: 21
         }
-      }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["CardHeader"], {
+      }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["CardHeader"], {
         style: {
           textAlign: "center"
         },
@@ -1406,17 +1403,17 @@ function Timer(props) {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22,
+          lineNumber: 23,
           columnNumber: 25
         }
-      }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["CardContent"], {
+      }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["CardContent"], {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27,
+          lineNumber: 28,
           columnNumber: 25
         }
-      }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
+      }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Typography"], {
         style: {
           textAlign: "center",
           fontSize: "17px"
@@ -1424,28 +1421,28 @@ function Timer(props) {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28,
+          lineNumber: 29,
           columnNumber: 29
         }
       }, __jsx("h1", {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29,
+          lineNumber: 30,
           columnNumber: 33
         }
-      }, props.message, "\xA0\xA0", Object(react_countdown__WEBPACK_IMPORTED_MODULE_1__["zeroPad"])(days, 3), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_1__["zeroPad"])(hours), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_1__["zeroPad"])(minutes), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_1__["zeroPad"])(seconds))))));
+      }, props.message, "\xA0\xA0", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(days, 3), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(hours), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(minutes), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(seconds))))));
     }
   };
 
-  return __jsx(react_countdown__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return __jsx(react_countdown__WEBPACK_IMPORTED_MODULE_2__["default"], {
     date: props.start,
     intervalDelay: 1,
     renderer: renderer,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 52,
       columnNumber: 9
     }
   });
@@ -62785,12 +62782,14 @@ function index() {
       setDay = _useState3[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
-    console.log(Date.now());
     axios__WEBPACK_IMPORTED_MODULE_4___default.a.get("https://screencast2020.herokuapp.com/api/status").then(function (response) {
-      console.log(new Date(response.data.start_time).getTime());
+      console.log(new Date(response.data.start_time).getTime()); //milliseconds
+
       setStart(new Date(response.data.start_time).getTime());
       setEnd(new Date(response.data.end_time).getTime());
-      setDay(response.data.current_day); //localStorage.setItem("day", day);
+      setDay(response.data.current_day);
+      localStorage.setItem("start", start);
+      console.log(localStorage.getItem('start'));
     });
   });
   return __jsx("div", {
@@ -62798,18 +62797,18 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 37,
       columnNumber: 5
     }
   }, __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
     id: "2094082217",
     __self: this
-  }, "div.jsx-2094082217{text-align:center;content-align:center;margin:0px auto;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2Fud2VzaGEvRGVza3RvcC9zY3JlZW5jYXN0L3BhZ2VzL2luZGV4LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQW1Da0IsQUFHNkIsa0JBQ0cscUJBQ0wsZ0JBQ2xCIiwiZmlsZSI6Ii9ob21lL2Fud2VzaGEvRGVza3RvcC9zY3JlZW5jYXN0L3BhZ2VzL2luZGV4LmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IHVzZUVmZmVjdCwgdXNlU3RhdGUgfSBmcm9tIFwicmVhY3RcIjtcblxuaW1wb3J0IEhlYWQgZnJvbSBcIm5leHQvaGVhZFwiO1xuaW1wb3J0IExvZ28gZnJvbSBcIi4uL2dsdWcucG5nXCI7XG5pbXBvcnQgYXhpb3MgZnJvbSBcImF4aW9zXCI7XG5cbmltcG9ydCBOYXZiYXIgZnJvbSBcIi4uL2NvbXBvbmVudHMvTmF2YmFyXCI7XG5pbXBvcnQgRm9vdGVyIGZyb20gXCIuLi9jb21wb25lbnRzL0Zvb3RlclwiO1xuaW1wb3J0IEdvb2dsZUxvZyBmcm9tIFwiLi4vY29tcG9uZW50cy9Hb29nbGVMb2dcIjtcbmltcG9ydCBGYkxvZzIgZnJvbSBcIi4uL2NvbXBvbmVudHMvRmJMb2cyXCI7XG5pbXBvcnQgVGltZXIyIGZyb20gXCIuLi9jb21wb25lbnRzL1RpbWVyMlwiXG5cblxuZnVuY3Rpb24gaW5kZXgoKSB7XG4gIFxuICBjb25zdCBbZW5kLCBzZXRFbmRdID0gdXNlU3RhdGUoRGF0ZS5ub3coKSk7XG4gIGNvbnN0IFtzdGFydCwgc2V0U3RhcnRdID0gdXNlU3RhdGUoRGF0ZS5ub3coKSk7XG4gIGNvbnN0IFtkYXksIHNldERheV0gPSB1c2VTdGF0ZSgwKTtcblxuICB1c2VFZmZlY3QoKCkgPT4ge1xuICAgIGNvbnNvbGUubG9nKERhdGUubm93KCkpO1xuICAgIGF4aW9zXG4gICAgICAuZ2V0KFwiaHR0cHM6Ly9zY3JlZW5jYXN0MjAyMC5oZXJva3VhcHAuY29tL2FwaS9zdGF0dXNcIilcbiAgICAgIC50aGVuKChyZXNwb25zZSkgPT4ge1xuICAgICAgICBcbiAgICAgICAgY29uc29sZS5sb2coIChuZXcgRGF0ZShyZXNwb25zZS5kYXRhLnN0YXJ0X3RpbWUpKS5nZXRUaW1lKCkpO1xuICAgICAgICBzZXRTdGFydCgobmV3IERhdGUocmVzcG9uc2UuZGF0YS5zdGFydF90aW1lKSkuZ2V0VGltZSgpKVxuICAgICAgICBzZXRFbmQoKG5ldyBEYXRlKHJlc3BvbnNlLmRhdGEuZW5kX3RpbWUpKS5nZXRUaW1lKCkpXG4gICAgICAgIHNldERheShyZXNwb25zZS5kYXRhLmN1cnJlbnRfZGF5KVxuICAgICAgICAvL2xvY2FsU3RvcmFnZS5zZXRJdGVtKFwiZGF5XCIsIGRheSk7XG4gICAgICB9KTtcbiAgfSlcblxuICByZXR1cm4gKFxuICAgIDxkaXY+XG4gICAgICA8c3R5bGUganN4PntgXG4gICAgICAgIGRpdiB7XG4gICAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgICAgIGNvbnRlbnQtYWxpZ246IGNlbnRlcjtcbiAgICAgICAgICBtYXJnaW46IDBweCBhdXRvO1xuICAgICAgICB9XG4gICAgICBgfTwvc3R5bGU+XG5cblxuICAgICAgPGRpdj5cblxuICAgICAgICA8ZGl2PlxuICAgICAgICAgIDxIZWFkPlxuICAgICAgICAgICAgPG1ldGEgY2hhclNldD1cIlVURi04XCIgLz5cbiAgICAgICAgICAgIDxtZXRhXG4gICAgICAgICAgICAgIG5hbWU9XCJ2aWV3cG9ydFwiXG4gICAgICAgICAgICAgIGNvbnRlbnQ9XCJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MS4wLCBzaHJpbmstdG8tZml0Om5vXCJcbiAgICAgICAgICAgIC8+XG4gICAgICAgICAgICA8dGl0bGU+U2NyZWVuY2FzdCA8L3RpdGxlPlxuICAgICAgICAgICAgPGxpbmsgcmVsPVwic3R5bGVzaGVldFwiIHR5cGU9XCJ0ZXh0L2Nzc1wiIGhyZWY9XCJxdWVzdGlvbi5jc3NcIiAvPlxuICAgICAgICAgIDwvSGVhZD5cbiAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgPE5hdmJhciAvPlxuXG4gICAgICAgIDxUaW1lcjIgc3RhcnQ9e3N0YXJ0fSAvPlxuXG4gICAgICAgIDxkaXY+XG4gICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgIGNsYXNzTmFtZT1cInNpZ25cIlxuICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgIG1hcmdpblRvcDogXCI0MHB4XCIsXG4gICAgICAgICAgICAgICAgbWFyZ2luQm90dG9tOiBcIjIwcHhcIixcbiAgICAgICAgICAgICAgICBmb250RmFtaWx5OiBcIidSdXNzbyBPbmUnLCBzYW5zLXNlcmlmXCIsXG4gICAgICAgICAgICAgIH19XG4gICAgICAgICAgICA+XG4gICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cImZhc3QtZmxpY2tlclwiPnNjcmVlbjwvc3Bhbj5jYXN0e1wiIFwifVxuICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJmbGlja2VyXCI+MjAyMCA8L3NwYW4+XG4gICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImxvZ2luLWhlYWRcIiBzdHlsZT17eyBtYXJnaW5Cb3R0b206IFwiNjBweFwiIH19PlxuICAgICAgICAgICAgPGgxPkxvZ2luIHRvIHBsYXkgPC9oMT5cbiAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9J3Jvd0MnIHN0eWxlPXt7bWFyZ2luOlwiMCBhdXRvXCJ9fT5cbiAgICAgICAgICAgIDxHb29nbGVMb2cgLz5cbiAgICAgICAgICAgIDxGYkxvZzIgLz5cbiAgICAgICAgPC9kaXY+XG4gICAgICAgIFxuICAgICAgICBcbiAgICAgIDwvZGl2PlxuICAgICAgPGRpdlxuICAgICAgICBzdHlsZT17e1xuICAgICAgICAgIG1hcmdpblJpZ2h0OiBcImF1dG9cIixcbiAgICAgICAgICBtYXJnaW5MZWZ0OiBcImF1dG9cIixcbiAgICAgICAgICB3aWR0aDogXCIxMDAlXCIsXG4gICAgICAgICAgYm90dG9tOiBcIjI1cHhcIixcbiAgICAgICAgICBwb3NpdGlvbjogXCJmaXhlZFwiLFxuICAgICAgICAgIHRleHRBbGlnbjogXCJjZW50ZXJcIixcbiAgICAgICAgfX1cbiAgICAgID5cbiAgICAgICAgPGltZ1xuICAgICAgICAgIHNyYz17TG9nb31cbiAgICAgICAgICBhbHQ9XCJsb2dvXCJcbiAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgbWFyZ2luVG9wOiBcIjkwcHhcIixcbiAgICAgICAgICAgIHdpZHRoOiBcIjUwcHhcIlxuXG4gICAgICAgICAgfX1cbiAgICAgICAgLz5cbiAgICAgIDwvZGl2PlxuICAgICAgPEZvb3RlciBzdHlsZT17eyBjb2xvcjogXCJ3aGl0ZVwiIH19IC8+XG5cbiAgICA8L2Rpdj5cblxuICApO1xufVxuXG5leHBvcnQgZGVmYXVsdCBpbmRleDtcbiJdfQ== */\n/*@ sourceURL=/home/anwesha/Desktop/screencast/pages/index.js */"), __jsx("div", {
+  }, "div.jsx-2094082217{text-align:center;content-align:center;margin:0px auto;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2Fud2VzaGEvRGVza3RvcC9zY3JlZW5jYXN0L3BhZ2VzL2luZGV4LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXFDa0IsQUFHNkIsa0JBQ0cscUJBQ0wsZ0JBQ2xCIiwiZmlsZSI6Ii9ob21lL2Fud2VzaGEvRGVza3RvcC9zY3JlZW5jYXN0L3BhZ2VzL2luZGV4LmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IHVzZUVmZmVjdCwgdXNlU3RhdGUgfSBmcm9tIFwicmVhY3RcIjtcblxuaW1wb3J0IEhlYWQgZnJvbSBcIm5leHQvaGVhZFwiO1xuaW1wb3J0IExvZ28gZnJvbSBcIi4uL2dsdWcucG5nXCI7XG5pbXBvcnQgYXhpb3MgZnJvbSBcImF4aW9zXCI7XG5cbmltcG9ydCBOYXZiYXIgZnJvbSBcIi4uL2NvbXBvbmVudHMvTmF2YmFyXCI7XG5pbXBvcnQgRm9vdGVyIGZyb20gXCIuLi9jb21wb25lbnRzL0Zvb3RlclwiO1xuaW1wb3J0IEdvb2dsZUxvZyBmcm9tIFwiLi4vY29tcG9uZW50cy9Hb29nbGVMb2dcIjtcbmltcG9ydCBGYkxvZzIgZnJvbSBcIi4uL2NvbXBvbmVudHMvRmJMb2cyXCI7XG5pbXBvcnQgVGltZXIyIGZyb20gXCIuLi9jb21wb25lbnRzL1RpbWVyMlwiXG5cblxuZnVuY3Rpb24gaW5kZXgoKSB7XG4gIFxuICBjb25zdCBbZW5kLCBzZXRFbmRdID0gdXNlU3RhdGUoRGF0ZS5ub3coKSk7XG4gIGNvbnN0IFtzdGFydCwgc2V0U3RhcnRdID0gdXNlU3RhdGUoRGF0ZS5ub3coKSk7XG4gIGNvbnN0IFtkYXksIHNldERheV0gPSB1c2VTdGF0ZSgwKTtcblxuICB1c2VFZmZlY3QoKCkgPT4ge1xuICAgIFxuICAgIGF4aW9zXG4gICAgICAuZ2V0KFwiaHR0cHM6Ly9zY3JlZW5jYXN0MjAyMC5oZXJva3VhcHAuY29tL2FwaS9zdGF0dXNcIilcbiAgICAgIC50aGVuKChyZXNwb25zZSkgPT4ge1xuICAgICAgICBcbiAgICAgICAgY29uc29sZS5sb2coIChuZXcgRGF0ZShyZXNwb25zZS5kYXRhLnN0YXJ0X3RpbWUpKS5nZXRUaW1lKCkpOy8vbWlsbGlzZWNvbmRzXG4gICAgICAgIHNldFN0YXJ0KChuZXcgRGF0ZShyZXNwb25zZS5kYXRhLnN0YXJ0X3RpbWUpKS5nZXRUaW1lKCkpXG4gICAgICAgIHNldEVuZCgobmV3IERhdGUocmVzcG9uc2UuZGF0YS5lbmRfdGltZSkpLmdldFRpbWUoKSlcbiAgICAgICAgc2V0RGF5KHJlc3BvbnNlLmRhdGEuY3VycmVudF9kYXkpXG4gICAgICAgIFxuICAgICAgICBsb2NhbFN0b3JhZ2Uuc2V0SXRlbShcInN0YXJ0XCIsIHN0YXJ0KTtcbiAgICAgICAgY29uc29sZS5sb2cobG9jYWxTdG9yYWdlLmdldEl0ZW0oJ3N0YXJ0JykpO1xuICAgICAgfSk7XG4gIH0pXG5cbiAgcmV0dXJuIChcbiAgICA8ZGl2PlxuICAgICAgPHN0eWxlIGpzeD57YFxuICAgICAgICBkaXYge1xuICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgICAgICBjb250ZW50LWFsaWduOiBjZW50ZXI7XG4gICAgICAgICAgbWFyZ2luOiAwcHggYXV0bztcbiAgICAgICAgfVxuICAgICAgYH08L3N0eWxlPlxuXG5cbiAgICAgIDxkaXY+XG5cbiAgICAgICAgPGRpdj5cbiAgICAgICAgICA8SGVhZD5cbiAgICAgICAgICAgIDxtZXRhIGNoYXJTZXQ9XCJVVEYtOFwiIC8+XG4gICAgICAgICAgICA8bWV0YVxuICAgICAgICAgICAgICBuYW1lPVwidmlld3BvcnRcIlxuICAgICAgICAgICAgICBjb250ZW50PVwid2lkdGg9ZGV2aWNlLXdpZHRoLCBpbml0aWFsLXNjYWxlPTEuMCwgc2hyaW5rLXRvLWZpdDpub1wiXG4gICAgICAgICAgICAvPlxuICAgICAgICAgICAgPHRpdGxlPlNjcmVlbmNhc3QgPC90aXRsZT5cbiAgICAgICAgICAgIDxsaW5rIHJlbD1cInN0eWxlc2hlZXRcIiB0eXBlPVwidGV4dC9jc3NcIiBocmVmPVwicXVlc3Rpb24uY3NzXCIgLz5cbiAgICAgICAgICA8L0hlYWQ+XG4gICAgICAgIDwvZGl2PlxuXG4gICAgICAgIDxOYXZiYXIgLz5cblxuICAgICAgICA8VGltZXIyIHN0YXJ0PXtzdGFydH0gLz5cblxuICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgPGRpdlxuICAgICAgICAgICAgICBjbGFzc05hbWU9XCJzaWduXCJcbiAgICAgICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgICAgICBtYXJnaW5Ub3A6IFwiNDBweFwiLFxuICAgICAgICAgICAgICAgIG1hcmdpbkJvdHRvbTogXCIyMHB4XCIsXG4gICAgICAgICAgICAgICAgZm9udEZhbWlseTogXCInUnVzc28gT25lJywgc2Fucy1zZXJpZlwiLFxuICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgPlxuICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJmYXN0LWZsaWNrZXJcIj5zY3JlZW48L3NwYW4+Y2FzdHtcIiBcIn1cbiAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwiZmxpY2tlclwiPjIwMjAgPC9zcGFuPlxuICAgICAgICAgIDwvZGl2PlxuXG4gICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJsb2dpbi1oZWFkXCIgc3R5bGU9e3sgbWFyZ2luQm90dG9tOiBcIjYwcHhcIiB9fT5cbiAgICAgICAgICAgIDxoMT5Mb2dpbiB0byBwbGF5IDwvaDE+XG4gICAgICAgICAgPC9kaXY+XG4gICAgICAgIDwvZGl2PlxuXG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPSdyb3dDJyBzdHlsZT17e21hcmdpbjpcIjAgYXV0b1wifX0+XG4gICAgICAgICAgICA8R29vZ2xlTG9nIC8+XG4gICAgICAgICAgICA8RmJMb2cyIC8+XG4gICAgICAgIDwvZGl2PlxuICAgICAgICBcbiAgICAgICAgXG4gICAgICA8L2Rpdj5cbiAgICAgIDxkaXZcbiAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICBtYXJnaW5SaWdodDogXCJhdXRvXCIsXG4gICAgICAgICAgbWFyZ2luTGVmdDogXCJhdXRvXCIsXG4gICAgICAgICAgd2lkdGg6IFwiMTAwJVwiLFxuICAgICAgICAgIGJvdHRvbTogXCIyNXB4XCIsXG4gICAgICAgICAgcG9zaXRpb246IFwiZml4ZWRcIixcbiAgICAgICAgICB0ZXh0QWxpZ246IFwiY2VudGVyXCIsXG4gICAgICAgIH19XG4gICAgICA+XG4gICAgICAgIDxpbWdcbiAgICAgICAgICBzcmM9e0xvZ299XG4gICAgICAgICAgYWx0PVwibG9nb1wiXG4gICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgIG1hcmdpblRvcDogXCI5MHB4XCIsXG4gICAgICAgICAgICB3aWR0aDogXCI1MHB4XCJcblxuICAgICAgICAgIH19XG4gICAgICAgIC8+XG4gICAgICA8L2Rpdj5cbiAgICAgIDxGb290ZXIgc3R5bGU9e3sgY29sb3I6IFwid2hpdGVcIiB9fSAvPlxuXG4gICAgPC9kaXY+XG5cbiAgKTtcbn1cblxuZXhwb3J0IGRlZmF1bHQgaW5kZXg7XG4iXX0= */\n/*@ sourceURL=/home/anwesha/Desktop/screencast/pages/index.js */"), __jsx("div", {
     className: "jsx-2094082217",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 47,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -62817,14 +62816,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 49,
       columnNumber: 9
     }
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 50,
       columnNumber: 11
     }
   }, __jsx("meta", {
@@ -62833,7 +62832,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 51,
       columnNumber: 13
     }
   }), __jsx("meta", {
@@ -62843,7 +62842,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 52,
       columnNumber: 13
     }
   }), __jsx("title", {
@@ -62851,7 +62850,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 56,
       columnNumber: 13
     }
   }, "Screencast "), __jsx("link", {
@@ -62862,14 +62861,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 57,
       columnNumber: 13
     }
   }))), __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 61,
       columnNumber: 9
     }
   }), __jsx(_components_Timer2__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -62877,7 +62876,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 63,
       columnNumber: 9
     }
   }), __jsx("div", {
@@ -62885,7 +62884,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 65,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -62898,7 +62897,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 66,
       columnNumber: 13
     }
   }, __jsx("span", {
@@ -62906,7 +62905,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72,
+      lineNumber: 74,
       columnNumber: 15
     }
   }, "screen"), "cast", " ", __jsx("span", {
@@ -62914,7 +62913,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 75,
       columnNumber: 15
     }
   }, "2020 ")), __jsx("div", {
@@ -62925,7 +62924,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 78,
       columnNumber: 11
     }
   }, __jsx("h1", {
@@ -62933,7 +62932,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 79,
       columnNumber: 13
     }
   }, "Login to play "))), __jsx("div", {
@@ -62944,21 +62943,21 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 83,
       columnNumber: 9
     }
   }, __jsx(_components_GoogleLog__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 84,
       columnNumber: 13
     }
   }), __jsx(_components_FbLog2__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 85,
       columnNumber: 13
     }
   }))), __jsx("div", {
@@ -62974,7 +62973,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88,
+      lineNumber: 90,
       columnNumber: 7
     }
   }, __jsx("img", {
@@ -62988,7 +62987,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98,
+      lineNumber: 100,
       columnNumber: 9
     }
   })), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -62998,7 +62997,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108,
+      lineNumber: 110,
       columnNumber: 7
     }
   }));

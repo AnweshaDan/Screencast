@@ -23,19 +23,22 @@ class GoogleLog extends React.Component {
       isUserLoggedIn: false,
       access:""
     };
-    this.refresh=this.refresh.bind(this);
+    //this.refresh=this.refresh.bind(this);
   }
   componentDidMount() {
-  
-    if (localStorage.getItem("email")) 
+    console.log(Date.now());
+    console.log(localStorage.getItem('start'));
+    if (localStorage.getItem("email") && ((localStorage.getItem('start')<=Date.now()))) 
     {
-      this.refresh(localStorage.getItem('token'),localStorage.getItem('ref_token'))
+      //this.refresh(localStorage.getItem('token'),localStorage.getItem('ref_token'))
+      
+     
       Router.push("/game");
     }
   }
   
   
-  refresh=(a,r)=>{
+  /*refresh=(a,r)=>{
     console.log(r)
     localStorage.setItem("token",a);
     console.log(localStorage.getItem("token"));
@@ -56,12 +59,12 @@ class GoogleLog extends React.Component {
     
 
 
-  }
+  }*/
   responseGoogle = (response) => {
    
-    console.log(response);
+    
     localStorage.setItem('token',response.tokenObj.access_token)
-    console.log(localStorage.getItem('token'));
+    
     this.setState({ userDetails: response.profileObj, isUserLoggedIn: true,access:response.tokenObj.access_token });
     axios
       .post("https://screencast2020.herokuapp.com/api/googlelogin", {
@@ -74,17 +77,20 @@ class GoogleLog extends React.Component {
         localStorage.setItem('token',res.data.access_token)
         localStorage.setItem('ref_token',res.data.refresh_token)
         this.setState({access: res.data.access_token})
-        this.refresh(res.data.access_token,res.data.refresh_token);
-        console.log(localStorage.getItem("token"));
-      console.log(this.state.access);
-      Router.push("/game");
+        //this.refresh(res.data.access_token,res.data.refresh_token);
+        
+      
+        localStorage.setItem("email", response.profileObj.email);
+        localStorage.setItem("name", response.profileObj.name);
+        localStorage.setItem("image", response.profileObj.imageUrl);
+
+        if((localStorage.getItem('start')<=Date.now()))
+        Router.push("/game");
         
       });
       
-    console.log(typeof response.profileObj.name); //string
-    localStorage.setItem("email", response.profileObj.email);
-    localStorage.setItem("name", response.profileObj.name);
-    localStorage.setItem("image", response.profileObj.imageUrl);
+    
+    
     
   };
   
@@ -112,9 +118,9 @@ class GoogleLog extends React.Component {
                       color="secondary"
                       className="button"
                       onClick={renderProps.onClick}
-                      href="/game"
+                      
                     >
-                      <SocialMediaIconsReact borderColor="rgba(0,0,0,0.25)" borderWidth="3" borderStyle="inset" icon="googleplus" iconColor="rgba(255,255,255,1)" backgroundColor="rgba(223,48,28,1)" iconSize="5" roundness="29%" url="http://localhost:3000/game" size="45" />
+                      <SocialMediaIconsReact borderColor="rgba(0,0,0,0.25)" borderWidth="3" borderStyle="inset" icon="googleplus" iconColor="rgba(255,255,255,1)" backgroundColor="rgba(223,48,28,1)" iconSize="5" roundness="29%"  size="45" />
                     </Button>
                   </div>
                 )}
