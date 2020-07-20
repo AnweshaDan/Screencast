@@ -115,6 +115,47 @@ module.exports = require("next/dist/next-server/lib/utils.js");
 
 /***/ }),
 
+/***/ "./components/AnsAlert.js":
+/*!********************************!*\
+  !*** ./components/AnsAlert.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sweetalert2 */ "sweetalert2");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ __webpack_exports__["default"] = (isCorrect => {
+  if (isCorrect == -1) sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire({
+    padding: "60px",
+    position: 'center',
+    type: 'error',
+    title: 'Oops',
+    text: 'Successfully registered !',
+    showConfirmButton: false
+  });
+  if (isCorrect === 1) sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire({
+    padding: "60px",
+    position: 'center',
+    icon: 'success',
+    type: 'success',
+    title: 'You gave the correct answer',
+    showConfirmButton: false
+  });
+  if (isCorrect === 0) sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire({
+    padding: "60px",
+    position: 'center',
+    icon: 'error',
+    title: 'Oops! Wrong answer.',
+    text: 'Try again',
+    showConfirmButton: false
+  });
+});
+
+/***/ }),
+
 /***/ "./components/FbLog2.js":
 /*!******************************!*\
   !*** ./components/FbLog2.js ***!
@@ -134,7 +175,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "/home/rishav/Screencast/components/FbLog2.js";
+var _jsxFileName = "/home/anwesha/Desktop/screencast/components/FbLog2.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -286,7 +327,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _glug_png__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_glug_png__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _scl_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scl.png */ "./components/scl.png");
 /* harmony import */ var _scl_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_scl_png__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/home/rishav/Screencast/components/Footer.js";
+var _jsxFileName = "/home/anwesha/Desktop/screencast/components/Footer.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -390,10 +431,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var social_media_icons_react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(social_media_icons_react__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_7__);
-var _jsxFileName = "/home/rishav/Screencast/components/GoogleLog.js";
+/* harmony import */ var _components_AnsAlert__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/AnsAlert */ "./components/AnsAlert.js");
+var _jsxFileName = "/home/anwesha/Desktop/screencast/components/GoogleLog.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -437,6 +480,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         localStorage.setItem("email", response.profileObj.email);
         localStorage.setItem("name", response.profileObj.name);
         localStorage.setItem("image", response.profileObj.imageUrl);
+        if (localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_7___default.a.push("/game");else Object(_components_AnsAlert__WEBPACK_IMPORTED_MODULE_8__["default"])(-1);
         /* if ((localStorage.getItem('start') <= Date.now()))
             Router.push("/game");*/
       });
@@ -453,6 +497,13 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     console.log("google mounted");
     console.log(Date.now());
     console.log(localStorage.getItem('start'));
+
+    if (localStorage.getItem("email")) {
+      if (localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_7___default.a.push("/game");else {
+        Object(_components_AnsAlert__WEBPACK_IMPORTED_MODULE_8__["default"])(-1);
+        console.log("SANTA CLAUS");
+      }
+    }
     /*if (localStorage.getItem("email") && ((localStorage.getItem('start') <= Date.now()))) {
       //this.refresh(localStorage.getItem('token'),localStorage.getItem('ref_token'))
        console.log("email yes timer yes")
@@ -463,6 +514,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       console.log("timer no");
       //Router.push('/');  
     }*/
+
   }
   /*refresh=(a,r)=>{
     console.log(r)
@@ -495,28 +547,28 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 112,
+        lineNumber: 129,
         columnNumber: 7
       }
     }, __jsx("div", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 113,
+        lineNumber: 130,
         columnNumber: 9
       }
     }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 114,
+        lineNumber: 131,
         columnNumber: 11
       }
     })), __jsx("div", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 118,
+        lineNumber: 135,
         columnNumber: 9
       }
     }, !this.state.isUserLoggedIn && __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -526,7 +578,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 123,
+          lineNumber: 140,
           columnNumber: 17
         }
       }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -541,7 +593,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 125,
+          lineNumber: 142,
           columnNumber: 19
         }
       }, __jsx(social_media_icons_react__WEBPACK_IMPORTED_MODULE_6__["SocialMediaIconsReact"], {
@@ -557,7 +609,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 133,
+          lineNumber: 150,
           columnNumber: 21
         }
       }))),
@@ -569,7 +621,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 120,
+        lineNumber: 137,
         columnNumber: 13
       }
     })));
@@ -608,7 +660,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Test__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Test */ "./components/Test.js");
 /* harmony import */ var _Navbar_module_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Navbar.module.css */ "./components/Navbar.module.css");
 /* harmony import */ var _Navbar_module_css__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_Navbar_module_css__WEBPACK_IMPORTED_MODULE_8__);
-var _jsxFileName = "/home/rishav/Screencast/components/Navbar.js";
+var _jsxFileName = "/home/anwesha/Desktop/screencast/components/Navbar.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -816,7 +868,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Slide__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Slide__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Typography */ "@material-ui/core/Typography");
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8__);
-var _jsxFileName = "/home/rishav/Screencast/components/Rules.js";
+var _jsxFileName = "/home/anwesha/Desktop/screencast/components/Rules.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -1027,7 +1079,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(react_google_login__WEBPACK_IMPORTED_MODULE_17__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_18__);
-var _jsxFileName = "/home/rishav/Screencast/components/Test.js";
+var _jsxFileName = "/home/anwesha/Desktop/screencast/components/Test.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -1366,15 +1418,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Timer; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_countdown__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-countdown */ "react-countdown");
-/* harmony import */ var react_countdown__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_countdown__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/home/rishav/Screencast/components/Timer2.js";
+/* harmony import */ var react_countdown__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-countdown */ "react-countdown");
+/* harmony import */ var react_countdown__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_countdown__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/home/anwesha/Desktop/screencast/components/Timer2.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -1390,7 +1439,7 @@ function Timer(props) {
         lineNumber: 16,
         columnNumber: 13
       }
-    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Card"], {
+    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Card"], {
       style: {
         backgroundColor: "rgba(0,0,0,0)",
         color: "white",
@@ -1403,7 +1452,7 @@ function Timer(props) {
         lineNumber: 17,
         columnNumber: 13
       }
-    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["CardHeader"], {
+    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["CardHeader"], {
       style: {
         textAlign: "center"
       },
@@ -1414,14 +1463,14 @@ function Timer(props) {
         lineNumber: 18,
         columnNumber: 17
       }
-    }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["CardContent"], {
+    }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["CardContent"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 23,
         columnNumber: 17
       }
-    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Typography"], {
+    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
       style: {
         textAlign: "center",
         fontSize: "17px"
@@ -1467,7 +1516,7 @@ function Timer(props) {
           lineNumber: 42,
           columnNumber: 17
         }
-      }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Card"], {
+      }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Card"], {
         style: {
           backgroundColor: "rgba(0,0,0,0)",
           color: "white",
@@ -1480,7 +1529,7 @@ function Timer(props) {
           lineNumber: 43,
           columnNumber: 21
         }
-      }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["CardHeader"], {
+      }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["CardHeader"], {
         style: {
           textAlign: "center"
         },
@@ -1491,14 +1540,14 @@ function Timer(props) {
           lineNumber: 44,
           columnNumber: 25
         }
-      }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["CardContent"], {
+      }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["CardContent"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 49,
           columnNumber: 25
         }
-      }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Typography"], {
+      }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
         style: {
           textAlign: "center",
           fontSize: "17px"
@@ -1516,7 +1565,7 @@ function Timer(props) {
           lineNumber: 51,
           columnNumber: 33
         }
-      }, props.message, "\xA0\xA0", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(days, 3), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(hours), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(minutes), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(seconds)), __jsx("h1", {
+      }, props.message, "\xA0\xA0", Object(react_countdown__WEBPACK_IMPORTED_MODULE_1__["zeroPad"])(days, 3), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_1__["zeroPad"])(hours), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_1__["zeroPad"])(minutes), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_1__["zeroPad"])(seconds)), __jsx("h1", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
@@ -1527,7 +1576,7 @@ function Timer(props) {
     }
   };
 
-  return __jsx(react_countdown__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  return __jsx(react_countdown__WEBPACK_IMPORTED_MODULE_1___default.a, {
     date: props.start,
     intervalDelay: 1,
     renderer: renderer,
@@ -3246,20 +3295,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _glug_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../glug.png */ "./glug.png");
-/* harmony import */ var _glug_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_glug_png__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Navbar */ "./components/Navbar.js");
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
-/* harmony import */ var _components_GoogleLog__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/GoogleLog */ "./components/GoogleLog.js");
-/* harmony import */ var _components_FbLog2__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/FbLog2 */ "./components/FbLog2.js");
-/* harmony import */ var _components_Timer2__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Timer2 */ "./components/Timer2.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_9__);
-var _jsxFileName = "/home/rishav/Screencast/pages/index.js";
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Navbar */ "./components/Navbar.js");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
+/* harmony import */ var _components_GoogleLog__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/GoogleLog */ "./components/GoogleLog.js");
+/* harmony import */ var _components_FbLog2__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/FbLog2 */ "./components/FbLog2.js");
+/* harmony import */ var _components_Timer2__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Timer2 */ "./components/Timer2.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_8__);
+var _jsxFileName = "/home/anwesha/Desktop/screencast/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -3284,8 +3330,8 @@ function index() {
     1: setDay
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    console.log("index mounted");
-    axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("https://screencast2020.herokuapp.com/api/status").then(response => {
+    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://screencast2020.herokuapp.com/api/status").then(response => {
+      console.log("index mounted");
       console.log(new Date(response.data.start_time).getTime()); //milliseconds
 
       setStart(new Date(response.data.start_time).getTime());
@@ -3293,7 +3339,7 @@ function index() {
       setDay(response.data.current_day);
       localStorage.setItem("start", start);
       console.log(localStorage.getItem('start'));
-      if (localStorage.getItem('email') && localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_9___default.a.push('/game');
+      if (localStorage.getItem('email') && localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_8___default.a.push('/game');
     });
   });
   return __jsx("div", {
@@ -3355,14 +3401,14 @@ function index() {
       lineNumber: 55,
       columnNumber: 11
     }
-  }))), __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }))), __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 59,
       columnNumber: 7
     }
-  }), __jsx(_components_Timer2__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }), __jsx(_components_Timer2__WEBPACK_IMPORTED_MODULE_7__["default"], {
     start: start,
     __self: this,
     __source: {
@@ -3439,14 +3485,14 @@ function index() {
       lineNumber: 81,
       columnNumber: 7
     }
-  }, __jsx(_components_GoogleLog__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, __jsx(_components_GoogleLog__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 82,
       columnNumber: 9
     }
-  }), __jsx(_components_FbLog2__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }), __jsx(_components_FbLog2__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -3460,7 +3506,7 @@ function index() {
       lineNumber: 85,
       columnNumber: 7
     }
-  }, __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -3481,7 +3527,7 @@ function index() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/rishav/Screencast/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /home/anwesha/Desktop/screencast/pages/index.js */"./pages/index.js");
 
 
 /***/ }),
@@ -3890,6 +3936,17 @@ module.exports = require("react-is");
 /***/ (function(module, exports) {
 
 module.exports = require("social-media-icons-react");
+
+/***/ }),
+
+/***/ "sweetalert2":
+/*!******************************!*\
+  !*** external "sweetalert2" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("sweetalert2");
 
 /***/ }),
 

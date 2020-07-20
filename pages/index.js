@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import Head from "next/head";
-import Logo from "../glug.png";
+
 import axios from "axios";
 
 import Navbar from "../components/Navbar";
@@ -19,11 +19,11 @@ function index() {
   const [day, setDay] = useState(0);
 
   useEffect(() => {
-    console.log("index mounted");
+    
     axios
       .get("https://screencast2020.herokuapp.com/api/status")
       .then((response) => {
-
+        console.log("index mounted");
         console.log((new Date(response.data.start_time)).getTime());//milliseconds
         setStart((new Date(response.data.start_time)).getTime())
         setEnd((new Date(response.data.end_time)).getTime())

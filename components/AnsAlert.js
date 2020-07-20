@@ -7,7 +7,7 @@ export default (isCorrect) => {
             position: 'center',
             type: 'error',
             title: 'Oops',
-            text: 'You are not logged in',
+            text: 'Successfully registered !',
             showConfirmButton: false
 
         })

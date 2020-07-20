@@ -6,6 +6,7 @@ import Button from "@material-ui/core/Button";
 import { withStyles } from "@material-ui/core/styles";
 import { SocialMediaIconsReact } from 'social-media-icons-react';
 import Router from "next/router";
+import AnsAlert from "../components/AnsAlert"
 
 const useStyles = (theme) => ({
   root: {
@@ -29,6 +30,19 @@ class GoogleLog extends React.Component {
     console.log("google mounted")
     console.log(Date.now());
     console.log(localStorage.getItem('start'));
+    if(localStorage.getItem("email"))
+    {
+      if((localStorage.getItem('start') <= Date.now()))
+      Router.push("/game");
+      else 
+      {
+        AnsAlert(-1);
+        console.log("SANTA CLAUS");
+      }
+    }    
+  
+    
+    
     /*if (localStorage.getItem("email") && ((localStorage.getItem('start') <= Date.now()))) {
       //this.refresh(localStorage.getItem('token'),localStorage.getItem('ref_token'))
 
@@ -91,7 +105,10 @@ class GoogleLog extends React.Component {
         localStorage.setItem("email", response.profileObj.email);
         localStorage.setItem("name", response.profileObj.name);
         localStorage.setItem("image", response.profileObj.imageUrl);
-
+        if((localStorage.getItem('start') <= Date.now()))
+        Router.push("/game");
+        else
+        AnsAlert(-1);
       /* if ((localStorage.getItem('start') <= Date.now()))
           Router.push("/game");*/
       
