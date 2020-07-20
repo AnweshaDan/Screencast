@@ -26,7 +26,7 @@ function index() {
         console.log("index mounted");
         console.log(response);
         console.log((new Date(response.data.start_time)).getTime());//milliseconds
-        setStart((new Date(response.data.end_time)).getTime())
+        setStart((new Date(response.data.start_time)).getTime())
         //setStart((new Date("2020-07-20T13:16:27Z")).getTime());
         setEnd((new Date(response.data.end_time)).getTime())
         setDay(response.data.current_day)
