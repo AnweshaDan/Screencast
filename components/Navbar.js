@@ -43,14 +43,14 @@ export default function Navbar(props) {
   const [image, setImage] = useState("");
 
   useEffect(() => {
-
+    console.log("Nav mounted")
     if (localStorage.getItem("email")) {
       setIsSigned(true);
       setName(localStorage.getItem("name"));
       setImage(localStorage.getItem("image"));
     }
   });
-
+  console.log("Just b4 return of nav")
   return (
     <div className={classes.root}>
       <AppBar position="static" className={styles.navv} style={{ padding: "0px" }}>

@@ -11,7 +11,28 @@ import {
 
 export default function Timer(props) {
     console.log(props)
-    const Completionist = () => <span>You are good to go!</span>;
+    const Completionist = () => {
+        return (
+            <span className="sign">
+            <Card style={{ backgroundColor: "rgba(0,0,0,0)", color: "white", padding: "0", margin: "0 auto" }}>
+                <CardHeader
+                    style={{ textAlign: "center" }}
+                    title=" ">
+    
+                </CardHeader>
+                <CardContent>
+                    <Typography style={{ textAlign: "center", fontSize: "17px" }}>
+                       
+                        <h1>
+                            Game is live !
+                        </h1>
+                    </Typography>
+                </CardContent>
+            </Card>
+        </span>
+        )
+        
+    }
     
     const renderer = ({ days, hours, minutes, seconds, completed }) => {
         if (completed) {
@@ -30,13 +51,16 @@ export default function Timer(props) {
                                 <h1>
                                     {props.message}&nbsp;&nbsp;{zeroPad(days, 3)}:{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
                                 </h1>
+                                <h1>
+                                    Game is not live yet !
+                                </h1>
                             </Typography>
                         </CardContent>
                     </Card>
                 </span>)
 
         }
-
+      
 
 
 
@@ -48,7 +72,7 @@ export default function Timer(props) {
 
 
     return (
-
+        
         <Countdown
         date={props.start}
             intervalDelay={1}

@@ -9,6 +9,7 @@ import Footer from "../components/Footer";
 import GoogleLog from "../components/GoogleLog";
 import FbLog2 from "../components/FbLog2";
 import Timer2 from "../components/Timer2"
+import  Router  from "next/router";
 
 
 function index() {
@@ -18,7 +19,7 @@ function index() {
   const [day, setDay] = useState(0);
 
   useEffect(() => {
-
+    console.log("index mounted");
     axios
       .get("https://screencast2020.herokuapp.com/api/status")
       .then((response) => {
@@ -30,6 +31,9 @@ function index() {
 
         localStorage.setItem("start", start);
         console.log(localStorage.getItem('start'));
+
+        if( localStorage.getItem('email') && (localStorage.getItem('start')<=Date.now()) )
+        Router.push('/game')
       });
   })
 

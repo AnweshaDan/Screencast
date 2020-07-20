@@ -30,16 +30,20 @@ class game extends React.Component {
   }
 
   componentDidMount() {
-    if (!(localStorage.getItem("email"))) {
+    
+    if (!(localStorage.getItem("email"))) 
+    {
       Router.push('/');
     }
-    else {
-      if (!(localStorage.getItem('start') <= Date.now()))
-        Router.push("/")
-
+    else if(!(localStorage.getItem('start') <= Date.now()))
+    {
+      Router.push("/");
     }
+    else
+    {
     this.getQuestions();
   }
+}
 
   getQuestions() {
     console.log(this.state.qsNo);

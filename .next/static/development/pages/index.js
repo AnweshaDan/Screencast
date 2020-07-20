@@ -35,7 +35,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _this = undefined,
-    _jsxFileName = "/home/rishav/Screencast/components/FbLog2.js";
+    _jsxFileName = "/home/anwesha/Desktop/screencast/components/FbLog2.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 
@@ -211,7 +211,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _glug_png__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_glug_png__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _scl_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scl.png */ "./components/scl.png");
 /* harmony import */ var _scl_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_scl_png__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/home/rishav/Screencast/components/Footer.js";
+var _jsxFileName = "/home/anwesha/Desktop/screencast/components/Footer.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -329,7 +329,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/home/rishav/Screencast/components/GoogleLog.js";
+var _jsxFileName = "/home/anwesha/Desktop/screencast/components/GoogleLog.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 
 function _createSuper(Derived) { return function () { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, result); }; }
@@ -368,6 +368,7 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this);
 
     Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this), "responseGoogle", function (response) {
+      console.log("google response");
       localStorage.setItem('token', response.tokenObj.access_token);
 
       _this.setState({
@@ -391,7 +392,8 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
         localStorage.setItem("email", response.profileObj.email);
         localStorage.setItem("name", response.profileObj.name);
         localStorage.setItem("image", response.profileObj.imageUrl);
-        if (localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_14___default.a.push("/game");
+        /* if ((localStorage.getItem('start') <= Date.now()))
+            Router.push("/game");*/
       });
     });
 
@@ -407,13 +409,19 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
   Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(GoogleLog, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      console.log("google mounted");
       console.log(Date.now());
       console.log(localStorage.getItem('start'));
-
-      if (localStorage.getItem("email") && localStorage.getItem('start') <= Date.now()) {
+      /*if (localStorage.getItem("email") && ((localStorage.getItem('start') <= Date.now()))) {
         //this.refresh(localStorage.getItem('token'),localStorage.getItem('ref_token'))
-        next_router__WEBPACK_IMPORTED_MODULE_14___default.a.push("/game");
+         console.log("email yes timer yes")
+        //Router.push("/game");
       }
+      else
+      {
+        console.log("timer no");
+        //Router.push('/');  
+      }*/
     }
     /*refresh=(a,r)=>{
       console.log(r)
@@ -441,33 +449,34 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
+      console.log("render of google");
       var classes = this.props.classes;
       return __jsx("div", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 101,
+          lineNumber: 112,
           columnNumber: 7
         }
       }, __jsx("div", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 102,
+          lineNumber: 113,
           columnNumber: 9
         }
       }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_10___default.a, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 103,
+          lineNumber: 114,
           columnNumber: 11
         }
       })), __jsx("div", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 107,
+          lineNumber: 118,
           columnNumber: 9
         }
       }, !this.state.isUserLoggedIn && __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -478,7 +487,7 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 112,
+              lineNumber: 123,
               columnNumber: 17
             }
           }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -493,7 +502,7 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 114,
+              lineNumber: 125,
               columnNumber: 19
             }
           }, __jsx(social_media_icons_react__WEBPACK_IMPORTED_MODULE_13__["SocialMediaIconsReact"], {
@@ -509,7 +518,7 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 122,
+              lineNumber: 133,
               columnNumber: 21
             }
           })));
@@ -522,7 +531,7 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 109,
+          lineNumber: 120,
           columnNumber: 13
         }
       })));
@@ -559,7 +568,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Navbar_module_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Navbar.module.css */ "./components/Navbar.module.css");
 /* harmony import */ var _Navbar_module_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_Navbar_module_css__WEBPACK_IMPORTED_MODULE_9__);
 
-var _jsxFileName = "/home/rishav/Screencast/components/Navbar.js";
+var _jsxFileName = "/home/anwesha/Desktop/screencast/components/Navbar.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -613,12 +622,15 @@ function Navbar(props) {
       setImage = _useState3[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    console.log("Nav mounted");
+
     if (localStorage.getItem("email")) {
       setIsSigned(true);
       setName(localStorage.getItem("name"));
       setImage(localStorage.getItem("image"));
     }
   });
+  console.log("Just b4 return of nav");
   return __jsx("div", {
     className: classes.root,
     __self: this,
@@ -813,7 +825,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js");
 
 
-var _jsxFileName = "/home/rishav/Screencast/components/Rules.js";
+var _jsxFileName = "/home/anwesha/Desktop/screencast/components/Rules.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
@@ -1017,7 +1029,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_20__);
 
 
-var _jsxFileName = "/home/rishav/Screencast/components/Test.js";
+var _jsxFileName = "/home/anwesha/Desktop/screencast/components/Test.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -1074,7 +1086,7 @@ function TemporaryDrawer() {
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
-    console.log("2");
+    console.log("menu mounted");
     setLog(localStorage.getItem("email"));
     console.log(Log);
   }, []);
@@ -1260,6 +1272,7 @@ function TemporaryDrawer() {
     })))));
   };
 
+  console.log("return b4 menu");
   return __jsx("div", {
     __self: this,
     __source: {
@@ -1373,7 +1386,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_countdown__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-countdown */ "./node_modules/react-countdown/dist/index.es.js");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
-var _jsxFileName = "/home/rishav/Screencast/components/Timer2.js";
+var _jsxFileName = "/home/anwesha/Desktop/screencast/components/Timer2.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -1386,13 +1399,63 @@ function Timer(props) {
 
   var Completionist = function Completionist() {
     return __jsx("span", {
+      className: "sign",
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 14,
-        columnNumber: 33
+        lineNumber: 16,
+        columnNumber: 13
       }
-    }, "You are good to go!");
+    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Card"], {
+      style: {
+        backgroundColor: "rgba(0,0,0,0)",
+        color: "white",
+        padding: "0",
+        margin: "0 auto"
+      },
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17,
+        columnNumber: 13
+      }
+    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["CardHeader"], {
+      style: {
+        textAlign: "center"
+      },
+      title: " ",
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18,
+        columnNumber: 17
+      }
+    }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["CardContent"], {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23,
+        columnNumber: 17
+      }
+    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Typography"], {
+      style: {
+        textAlign: "center",
+        fontSize: "17px"
+      },
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24,
+        columnNumber: 21
+      }
+    }, __jsx("h1", {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 26,
+        columnNumber: 25
+      }
+    }, "Game is live !")))));
   };
 
   var renderer = function renderer(_ref) {
@@ -1407,7 +1470,7 @@ function Timer(props) {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 18,
+          lineNumber: 39,
           columnNumber: 20
         }
       });
@@ -1417,7 +1480,7 @@ function Timer(props) {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21,
+          lineNumber: 42,
           columnNumber: 17
         }
       }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Card"], {
@@ -1430,7 +1493,7 @@ function Timer(props) {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22,
+          lineNumber: 43,
           columnNumber: 21
         }
       }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["CardHeader"], {
@@ -1441,14 +1504,14 @@ function Timer(props) {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23,
+          lineNumber: 44,
           columnNumber: 25
         }
       }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["CardContent"], {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28,
+          lineNumber: 49,
           columnNumber: 25
         }
       }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Typography"], {
@@ -1459,17 +1522,24 @@ function Timer(props) {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29,
+          lineNumber: 50,
           columnNumber: 29
         }
       }, __jsx("h1", {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30,
+          lineNumber: 51,
           columnNumber: 33
         }
-      }, props.message, "\xA0\xA0", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(days, 3), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(hours), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(minutes), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(seconds))))));
+      }, props.message, "\xA0\xA0", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(days, 3), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(hours), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(minutes), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(seconds)), __jsx("h1", {
+        __self: _this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54,
+          columnNumber: 33
+        }
+      }, "Game is not live yet !")))));
     }
   };
 
@@ -1480,7 +1550,7 @@ function Timer(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 76,
       columnNumber: 9
     }
   });
@@ -46227,7 +46297,7 @@ function toVal(mix) {
 
 exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".Navbar_navv__3g5e0 {\n  margin: 0;\n  padding: 0;\n  background-color: #000044;\n}\n.Navbar_navcontent__3817V {\n  background-color: #000044;\n  padding: 0;\n  margin: 0;\n}\n", "",{"version":3,"sources":["/home/rishav/Screencast/components/Navbar.module.css"],"names":[],"mappings":"AAAA;EACE,SAAS;EACT,UAAU;EACV,yBAAyB;AAC3B;AACA;EACE,yBAAyB;EACzB,UAAU;EACV,SAAS;AACX","file":"Navbar.module.css","sourcesContent":[".navv {\n  margin: 0;\n  padding: 0;\n  background-color: #000044;\n}\n.navcontent {\n  background-color: #000044;\n  padding: 0;\n  margin: 0;\n}\n"]}]);
+exports.push([module.i, ".Navbar_navv__3g5e0 {\n  margin: 0;\n  padding: 0;\n  background-color: #000044;\n}\n.Navbar_navcontent__3817V {\n  background-color: #000044;\n  padding: 0;\n  margin: 0;\n}\n", "",{"version":3,"sources":["/home/anwesha/Desktop/screencast/components/Navbar.module.css"],"names":[],"mappings":"AAAA;EACE,SAAS;EACT,UAAU;EACV,yBAAyB;AAC3B;AACA;EACE,yBAAyB;EACzB,UAAU;EACV,SAAS;AACX","file":"Navbar.module.css","sourcesContent":[".navv {\n  margin: 0;\n  padding: 0;\n  background-color: #000044;\n}\n.navcontent {\n  background-color: #000044;\n  padding: 0;\n  margin: 0;\n}\n"]}]);
 // Exports
 exports.locals = {
 	"navv": "Navbar_navv__3g5e0",
@@ -50511,10 +50581,10 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Frishav%2FScreencast%2Fpages%2Findex.js!./":
-/*!*************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Frishav%2FScreencast%2Fpages%2Findex.js ***!
-  \*************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Fanwesha%2FDesktop%2Fscreencast%2Fpages%2Findex.js!./":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Fanwesha%2FDesktop%2Fscreencast%2Fpages%2Findex.js ***!
+  \************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -62098,8 +62168,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_GoogleLog__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/GoogleLog */ "./components/GoogleLog.js");
 /* harmony import */ var _components_FbLog2__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/FbLog2 */ "./components/FbLog2.js");
 /* harmony import */ var _components_Timer2__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Timer2 */ "./components/Timer2.js");
-var _jsxFileName = "/home/rishav/Screencast/pages/index.js";
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_9__);
+var _jsxFileName = "/home/anwesha/Desktop/screencast/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -62124,6 +62197,7 @@ function index() {
       setDay = _useState3[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    console.log("index mounted");
     axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("https://screencast2020.herokuapp.com/api/status").then(function (response) {
       console.log(new Date(response.data.start_time).getTime()); //milliseconds
 
@@ -62132,6 +62206,7 @@ function index() {
       setDay(response.data.current_day);
       localStorage.setItem("start", start);
       console.log(localStorage.getItem('start'));
+      if (localStorage.getItem('email') && localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_9___default.a.push('/game');
     });
   });
   return __jsx("div", {
@@ -62141,28 +62216,28 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 41,
       columnNumber: 5
     }
   }, __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 45,
       columnNumber: 7
     }
   }, __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 47,
       columnNumber: 9
     }
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 48,
       columnNumber: 11
     }
   }, __jsx("meta", {
@@ -62170,7 +62245,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 49,
       columnNumber: 13
     }
   }), __jsx("meta", {
@@ -62179,14 +62254,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 50,
       columnNumber: 13
     }
   }), __jsx("title", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 54,
       columnNumber: 13
     }
   }, "Screencast "), __jsx("link", {
@@ -62196,14 +62271,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 55,
       columnNumber: 13
     }
   }))), __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 59,
       columnNumber: 9
     }
   }), __jsx(_components_Timer2__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -62211,14 +62286,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 61,
       columnNumber: 9
     }
   }), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 63,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -62231,7 +62306,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 64,
       columnNumber: 11
     }
   }, __jsx("span", {
@@ -62239,7 +62314,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 72,
       columnNumber: 13
     }
   }, "screen"), "cast", " ", __jsx("span", {
@@ -62247,7 +62322,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 73,
       columnNumber: 13
     }
   }, "2020 ")), __jsx("div", {
@@ -62258,14 +62333,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72,
+      lineNumber: 76,
       columnNumber: 11
     }
   }, __jsx("h1", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 77,
       columnNumber: 13
     }
   }, "Login to play "))), __jsx("div", {
@@ -62279,21 +62354,21 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 81,
       columnNumber: 9
     }
   }, __jsx(_components_GoogleLog__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78,
+      lineNumber: 82,
       columnNumber: 11
     }
   }), __jsx(_components_FbLog2__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79,
+      lineNumber: 83,
       columnNumber: 11
     }
   }))), __jsx("div", {
@@ -62308,7 +62383,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84,
+      lineNumber: 88,
       columnNumber: 7
     }
   }), __jsx("div", {
@@ -62316,14 +62391,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96,
+      lineNumber: 100,
       columnNumber: 7
     }
   }, __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98,
+      lineNumber: 102,
       columnNumber: 9
     }
   })));
@@ -62334,13 +62409,13 @@ function index() {
 /***/ }),
 
 /***/ 1:
-/*!*****************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Frishav%2FScreencast%2Fpages%2Findex.js ***!
-  \*****************************************************************************************************************/
+/*!****************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fanwesha%2FDesktop%2Fscreencast%2Fpages%2Findex.js ***!
+  \****************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Frishav%2FScreencast%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Frishav%2FScreencast%2Fpages%2Findex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fanwesha%2FDesktop%2Fscreencast%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Fanwesha%2FDesktop%2Fscreencast%2Fpages%2Findex.js!./");
 
 
 /***/ }),

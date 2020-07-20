@@ -26,14 +26,23 @@ class GoogleLog extends React.Component {
     //this.refresh=this.refresh.bind(this);
   }
   componentDidMount() {
+    console.log("google mounted")
     console.log(Date.now());
     console.log(localStorage.getItem('start'));
-    if (localStorage.getItem("email") && ((localStorage.getItem('start') <= Date.now()))) {
+    /*if (localStorage.getItem("email") && ((localStorage.getItem('start') <= Date.now()))) {
       //this.refresh(localStorage.getItem('token'),localStorage.getItem('ref_token'))
 
-
-      Router.push("/game");
+      console.log("email yes timer yes")
+      //Router.push("/game");
     }
+    else
+    {
+      console.log("timer no");
+      //Router.push('/');  
+    }*/
+    
+    
+    
   }
 
 
@@ -61,7 +70,7 @@ class GoogleLog extends React.Component {
   }*/
   responseGoogle = (response) => {
 
-
+     console.log("google response")
     localStorage.setItem('token', response.tokenObj.access_token)
 
     this.setState({ userDetails: response.profileObj, isUserLoggedIn: true, access: response.tokenObj.access_token });
@@ -83,8 +92,9 @@ class GoogleLog extends React.Component {
         localStorage.setItem("name", response.profileObj.name);
         localStorage.setItem("image", response.profileObj.imageUrl);
 
-        if ((localStorage.getItem('start') <= Date.now()))
-          Router.push("/game");
+      /* if ((localStorage.getItem('start') <= Date.now()))
+          Router.push("/game");*/
+      
 
       });
 
@@ -95,6 +105,7 @@ class GoogleLog extends React.Component {
 
 
   render() {
+    console.log("render of google")
     const { classes } = this.props;
 
     return (

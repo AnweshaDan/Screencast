@@ -39,7 +39,7 @@ export default function TemporaryDrawer() {
     setAnchorEl(null);
   };
   useEffect(() => {
-    console.log("2");
+    console.log("menu mounted");
     setLog(localStorage.getItem("email"));
     console.log(Log);
   }, []);
@@ -110,7 +110,7 @@ export default function TemporaryDrawer() {
       </List>
     </div>
   );
-
+  console.log("return b4 menu")
   return (
     <div>
       {['left'].map((anchor) => (
