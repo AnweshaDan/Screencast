@@ -6,14 +6,20 @@ function Footer() {
     <div
       style={{
         textAlign: "center",
-        bottom: "0",
+        backgroundColor: "rgba(0,0,0,0)",
         color: "#eee",
-        height: "100%"
+        height: "100px",
+        bottom: "0",
+        right: "0", left: "0",
+        position: "relative",
+        padding: "0",
+        marginBottom: "0"
+
       }}
     >
       <div style={{
 
-        bottom: "30px", position: "absolute", left: "0", right: "0", textAlign: "center", margin: "0 auto"
+        // bottom: "30px", position: "absolute", left: "0", right: "0", textAlign: "center", margin: "0 auto"
 
       }}>
         <img
@@ -28,7 +34,7 @@ function Footer() {
           style={{ width: "50px", borderRadius: "50px" }}
         />
       </div>
-      <h5 style={{ bottom: "0", position: "absolute", left: "0", right: "0", color: "#eee", }}>HOSTED & CREATED BY GNU/LINUX USERS' GROUP</h5>
+      <h5 style={{ left: "0", right: "0", color: "#eee", }}>HOSTED & CREATED BY GNU/LINUX USERS' GROUP</h5>
     </div>
   );
 }

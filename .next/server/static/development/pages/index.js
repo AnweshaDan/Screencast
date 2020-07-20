@@ -134,7 +134,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "/home/anwesha/Desktop/screencast/components/FbLog2.js";
+var _jsxFileName = "/home/rishav/Screencast/components/FbLog2.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -286,7 +286,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _glug_png__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_glug_png__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _scl_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scl.png */ "./components/scl.png");
 /* harmony import */ var _scl_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_scl_png__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/home/anwesha/Desktop/screencast/components/Footer.js";
+var _jsxFileName = "/home/rishav/Screencast/components/Footer.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -296,9 +296,15 @@ function Footer() {
   return __jsx("div", {
     style: {
       textAlign: "center",
-      bottom: "0",
+      backgroundColor: "rgba(0,0,0,0)",
       color: "#eee",
-      height: "100%"
+      height: "100px",
+      bottom: "0",
+      right: "0",
+      left: "0",
+      position: "relative",
+      padding: "0",
+      marginBottom: "0"
     },
     __self: this,
     __source: {
@@ -307,18 +313,12 @@ function Footer() {
       columnNumber: 5
     }
   }, __jsx("div", {
-    style: {
-      bottom: "30px",
-      position: "absolute",
-      left: "0",
-      right: "0",
-      textAlign: "center",
-      margin: "0 auto"
+    style: {// bottom: "30px", position: "absolute", left: "0", right: "0", textAlign: "center", margin: "0 auto"
     },
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14,
+      lineNumber: 20,
       columnNumber: 7
     }
   }, __jsx("img", {
@@ -330,7 +330,7 @@ function Footer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 25,
       columnNumber: 9
     }
   }), "\xA0\xA0", __jsx("img", {
@@ -343,13 +343,11 @@ function Footer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 31,
       columnNumber: 9
     }
   })), __jsx("h5", {
     style: {
-      bottom: "0",
-      position: "absolute",
       left: "0",
       right: "0",
       color: "#eee"
@@ -357,7 +355,7 @@ function Footer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 37,
       columnNumber: 7
     }
   }, "HOSTED & CREATED BY GNU/LINUX USERS' GROUP"));
@@ -392,7 +390,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var social_media_icons_react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(social_media_icons_react__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_7__);
-var _jsxFileName = "/home/anwesha/Desktop/screencast/components/GoogleLog.js";
+var _jsxFileName = "/home/rishav/Screencast/components/GoogleLog.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -610,7 +608,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Test__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Test */ "./components/Test.js");
 /* harmony import */ var _Navbar_module_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Navbar.module.css */ "./components/Navbar.module.css");
 /* harmony import */ var _Navbar_module_css__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_Navbar_module_css__WEBPACK_IMPORTED_MODULE_8__);
-var _jsxFileName = "/home/anwesha/Desktop/screencast/components/Navbar.js";
+var _jsxFileName = "/home/rishav/Screencast/components/Navbar.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -818,7 +816,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Slide__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Slide__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Typography */ "@material-ui/core/Typography");
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8__);
-var _jsxFileName = "/home/anwesha/Desktop/screencast/components/Rules.js";
+var _jsxFileName = "/home/rishav/Screencast/components/Rules.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -1029,7 +1027,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(react_google_login__WEBPACK_IMPORTED_MODULE_17__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_18__);
-var _jsxFileName = "/home/anwesha/Desktop/screencast/components/Test.js";
+var _jsxFileName = "/home/rishav/Screencast/components/Test.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -1374,7 +1372,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_countdown__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_countdown__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/home/anwesha/Desktop/screencast/components/Timer2.js";
+var _jsxFileName = "/home/rishav/Screencast/components/Timer2.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -3259,7 +3257,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Timer2__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Timer2 */ "./components/Timer2.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_9__);
-var _jsxFileName = "/home/anwesha/Desktop/screencast/pages/index.js";
+var _jsxFileName = "/home/rishav/Screencast/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -3300,34 +3298,28 @@ function index() {
   });
   return __jsx("div", {
     style: {
-      textAlign: "center"
+      textAlign: "center",
+      minHeight: "100vh"
     },
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 45,
       columnNumber: 5
     }
   }, __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
-      columnNumber: 7
-    }
-  }, __jsx("div", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 47,
-      columnNumber: 9
+      columnNumber: 7
     }
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 48,
-      columnNumber: 11
+      columnNumber: 9
     }
   }, __jsx("meta", {
     charSet: "UTF-8",
@@ -3335,7 +3327,7 @@ function index() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 49,
-      columnNumber: 13
+      columnNumber: 11
     }
   }), __jsx("meta", {
     name: "viewport",
@@ -3344,14 +3336,14 @@ function index() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 50,
-      columnNumber: 13
+      columnNumber: 11
     }
   }), __jsx("title", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 54,
-      columnNumber: 13
+      columnNumber: 11
     }
   }, "Screencast "), __jsx("link", {
     rel: "stylesheet",
@@ -3361,14 +3353,14 @@ function index() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 55,
-      columnNumber: 13
+      columnNumber: 11
     }
   }))), __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 59,
-      columnNumber: 9
+      columnNumber: 7
     }
   }), __jsx(_components_Timer2__WEBPACK_IMPORTED_MODULE_8__["default"], {
     start: start,
@@ -3376,14 +3368,14 @@ function index() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 61,
-      columnNumber: 9
+      columnNumber: 7
     }
   }), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 63,
-      columnNumber: 9
+      columnNumber: 7
     }
   }, __jsx("div", {
     className: "sign",
@@ -3396,7 +3388,7 @@ function index() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 64,
-      columnNumber: 11
+      columnNumber: 9
     }
   }, __jsx("span", {
     className: "fast-flicker",
@@ -3404,7 +3396,7 @@ function index() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 72,
-      columnNumber: 13
+      columnNumber: 11
     }
   }, "screen"), "cast", " ", __jsx("span", {
     className: "flicker",
@@ -3412,7 +3404,7 @@ function index() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 73,
-      columnNumber: 13
+      columnNumber: 11
     }
   }, "2020 ")), __jsx("div", {
     className: "login-head",
@@ -3423,19 +3415,20 @@ function index() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 76,
-      columnNumber: 11
+      columnNumber: 9
     }
   }, __jsx("h1", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 77,
-      columnNumber: 13
+      columnNumber: 11
     }
   }, "Login to play "))), __jsx("div", {
     className: "rowC",
     style: {
       margin: "0 auto",
+      marginBottom: '100px',
       textAlign: "center",
       width: "100%",
       justifyContent: "center"
@@ -3444,50 +3437,34 @@ function index() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 81,
-      columnNumber: 9
+      columnNumber: 7
     }
   }, __jsx(_components_GoogleLog__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 82,
-      columnNumber: 11
+      columnNumber: 9
     }
   }), __jsx(_components_FbLog2__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 83,
-      columnNumber: 11
+      columnNumber: 9
     }
-  }))), __jsx("div", {
-    style: {
-      marginRight: "auto",
-      marginLeft: "auto",
-      width: "100%",
-      bottom: "25px",
-      position: "fixed",
-      textAlign: "center"
-    },
+  })), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88,
-      columnNumber: 7
-    }
-  }), __jsx("div", {
-    className: "footer",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 100,
+      lineNumber: 85,
       columnNumber: 7
     }
   }, __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 86,
       columnNumber: 9
     }
   })));
@@ -3504,7 +3481,7 @@ function index() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/anwesha/Desktop/screencast/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /home/rishav/Screencast/pages/index.js */"./pages/index.js");
 
 
 /***/ }),

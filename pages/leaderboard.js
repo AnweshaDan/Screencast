@@ -6,7 +6,7 @@ import Particles from "react-particles-js";
 
 export default function leaderboard() {
   return (
-    <div>
+    <div style={{ textAlign: "center", minHeight: "100vh" }}>
 
       <Navbar />
       <div className="head">

@@ -7,8 +7,8 @@ body {
   background-position: top;
   background-repeat: no-repeat;
   min-height: 100vh;
-  display:block;
-  position: relative;
+  display:flex;
+  flex-direction: column;
   background-color: rgba(10, 10, 50, 0.97);
   background-image: url("bg.jpg");
   font-family: "Barlow", sans-serif;

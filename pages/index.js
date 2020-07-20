@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 import GoogleLog from "../components/GoogleLog";
 import FbLog2 from "../components/FbLog2";
 import Timer2 from "../components/Timer2"
-import  Router  from "next/router";
+import Router from "next/router";
 
 
 function index() {
@@ -32,77 +32,65 @@ function index() {
         localStorage.setItem("start", start);
         console.log(localStorage.getItem('start'));
 
-        if( localStorage.getItem('email') && (localStorage.getItem('start')<=Date.now()) )
-        Router.push('/game')
+        if (localStorage.getItem('email') && (localStorage.getItem('start') <= Date.now()))
+          Router.push('/game')
       });
   })
 
   return (
-    <div style={{ textAlign: "center" }}>
 
 
+
+
+    <div style={{ textAlign: "center", minHeight: "100vh" }}>
 
       <div>
-
-        <div>
-          <Head>
-            <meta charSet="UTF-8" />
-            <meta
-              name="viewport"
-              content="width=device-width, initial-scale=1.0, shrink-to-fit:no"
-            />
-            <title>Screencast </title>
-            <link rel="stylesheet" type="text/css" href="question.css" />
-          </Head>
-        </div>
-
-        <Navbar />
-
-        <Timer2 start={start} />
-
-        <div>
-          <div
-            className="sign"
-            style={{
-              marginTop: "40px",
-              marginBottom: "20px",
-              fontFamily: "'Russo One', sans-serif",
-            }}
-          >
-            <span className="fast-flicker">screen</span>cast{" "}
-            <span className="flicker">2020 </span>
-          </div>
-
-          <div className="login-head" style={{ marginBottom: "60px" }}>
-            <h1>Login to play </h1>
-          </div>
-        </div>
-
-        <div className='rowC' style={{ margin: "0 auto", textAlign: "center", width: "100%", justifyContent: "center" }}>
-          <GoogleLog />
-          <FbLog2 />
-        </div>
-
-
+        <Head>
+          <meta charSet="UTF-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, shrink-to-fit:no"
+          />
+          <title>Screencast </title>
+          <link rel="stylesheet" type="text/css" href="question.css" />
+        </Head>
       </div>
-      <div
-        style={{
-          marginRight: "auto",
-          marginLeft: "auto",
-          width: "100%",
-          bottom: "25px",
-          position: "fixed",
-          textAlign: "center",
-        }}
-      >
 
+      <Navbar />
+
+      <Timer2 start={start} />
+
+      <div>
+        <div
+          className="sign"
+          style={{
+            marginTop: "40px",
+            marginBottom: "20px",
+            fontFamily: "'Russo One', sans-serif",
+          }}
+        >
+          <span className="fast-flicker">screen</span>cast{" "}
+          <span className="flicker">2020 </span>
+        </div>
+
+        <div className="login-head" style={{ marginBottom: "60px" }}>
+          <h1>Login to play </h1>
+        </div>
       </div>
-      <div
-        className="footer">
+
+      <div className='rowC' style={{ margin: "0 auto", marginBottom: '100px', textAlign: "center", width: "100%", justifyContent: "center" }}>
+        <GoogleLog />
+        <FbLog2 />
+      </div>
+      <div>
         <Footer />
       </div>
 
     </div>
+
+
+
+
 
   );
 }

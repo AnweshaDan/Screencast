@@ -30,20 +30,17 @@ class game extends React.Component {
   }
 
   componentDidMount() {
-    
-    if (!(localStorage.getItem("email"))) 
-    {
+
+    if (!(localStorage.getItem("email"))) {
       Router.push('/');
     }
-    else if(!(localStorage.getItem('start') <= Date.now()))
-    {
+    else if (!(localStorage.getItem('start') <= Date.now())) {
       Router.push("/");
     }
-    else
-    {
-    this.getQuestions();
+    else {
+      this.getQuestions();
+    }
   }
-}
 
   getQuestions() {
     console.log(this.state.qsNo);
@@ -140,7 +137,7 @@ class game extends React.Component {
   render() {
     return (
       <div
-        style={{ marginRight: "auto", marginLeft: "auto", textAlign: "center" }}
+        style={{ marginRight: "auto", marginLeft: "auto", textAlign: "center", minHeight: "100vh-100px" }}
         questions
       >
 
