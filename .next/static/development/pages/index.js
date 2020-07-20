@@ -16,8 +16,8 @@ __webpack_require__.r(__webpack_exports__);
   if (isCorrect == -1) sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire({
     padding: "60px",
     position: 'center',
-    type: 'error',
-    title: 'Oops',
+    type: 'success',
+    title: 'Yay',
     text: 'Successfully registered !',
     showConfirmButton: false
   });
@@ -67,6 +67,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _components_AnsAlert__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/AnsAlert */ "./components/AnsAlert.js");
 
 
 
@@ -87,6 +88,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 
  //import Router from 'next/dist/next-server/server/router';
+
 
 
 
@@ -120,7 +122,6 @@ var LoginButton = function LoginButton(_ref) {
         backgroundColor: "rgba(28,149,223,1)",
         iconSize: "5",
         roundness: "29%",
-        url: "http://localhost:3000/game",
         size: "45",
         __self: _this,
         __source: {
@@ -179,7 +180,7 @@ var FbLog2 = /*#__PURE__*/function (_React$Component) {
 
         console.log(localStorage.getItem("token"));
         console.log(_this2.state.access);
-        next_router__WEBPACK_IMPORTED_MODULE_10___default.a.push("/game");
+        if (localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_10___default.a.push("/game");else Object(_components_AnsAlert__WEBPACK_IMPORTED_MODULE_12__["default"])(-1);
       });
     });
 
@@ -194,7 +195,13 @@ var FbLog2 = /*#__PURE__*/function (_React$Component) {
   Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(FbLog2, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      if (localStorage.getItem("email")) next_router__WEBPACK_IMPORTED_MODULE_10___default.a.push("/game");
+      //this.setState({isSignedIn : true});
+      if (localStorage.getItem("email")) {
+        if (localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_10___default.a.push("/game");else {
+          Object(_components_AnsAlert__WEBPACK_IMPORTED_MODULE_12__["default"])(-1);
+          console.log("SANTA CLAUS");
+        }
+      }
     }
   }, {
     key: "render",
@@ -203,10 +210,10 @@ var FbLog2 = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73,
+          lineNumber: 88,
           columnNumber: 7
         }
-      }, __jsx("div", {
+      }, !this.state.isSignedIn && __jsx("div", {
         style: {
           margin: "0 auto",
           textAlign: "center",
@@ -215,16 +222,16 @@ var FbLog2 = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74,
-          columnNumber: 9
+          lineNumber: 90,
+          columnNumber: 11
         }
       }, __jsx(LoginButton, {
         facebookResponse: this.facebookResponse,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77,
-          columnNumber: 11
+          lineNumber: 93,
+          columnNumber: 13
         }
       })));
     }
@@ -1432,10 +1439,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Timer; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_countdown__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-countdown */ "./node_modules/react-countdown/dist/index.es.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_countdown__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-countdown */ "./node_modules/react-countdown/dist/index.es.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
 var _jsxFileName = "/home/anwesha/Desktop/screencast/components/Timer2.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -1444,16 +1454,20 @@ function Timer(props) {
 
   console.log(props);
 
+  var complete = function complete() {
+    if (localStorage.getItem('email')) next_router__WEBPACK_IMPORTED_MODULE_1___default.a.push('/game');
+  };
+
   var Completionist = function Completionist() {
     return __jsx("span", {
       className: "sign",
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16,
+        lineNumber: 20,
         columnNumber: 13
       }
-    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Card"], {
+    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Card"], {
       style: {
         backgroundColor: "rgba(0,0,0,0)",
         color: "white",
@@ -1463,10 +1477,10 @@ function Timer(props) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17,
+        lineNumber: 21,
         columnNumber: 13
       }
-    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["CardHeader"], {
+    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["CardHeader"], {
       style: {
         textAlign: "center"
       },
@@ -1474,17 +1488,17 @@ function Timer(props) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18,
+        lineNumber: 22,
         columnNumber: 17
       }
-    }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["CardContent"], {
+    }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["CardContent"], {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23,
+        lineNumber: 27,
         columnNumber: 17
       }
-    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
+    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Typography"], {
       style: {
         textAlign: "center",
         fontSize: "17px"
@@ -1492,14 +1506,14 @@ function Timer(props) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24,
+        lineNumber: 28,
         columnNumber: 21
       }
     }, __jsx("h1", {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26,
+        lineNumber: 30,
         columnNumber: 25
       }
     }, "Game is live !")))));
@@ -1517,7 +1531,7 @@ function Timer(props) {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39,
+          lineNumber: 43,
           columnNumber: 20
         }
       });
@@ -1527,10 +1541,10 @@ function Timer(props) {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42,
+          lineNumber: 46,
           columnNumber: 17
         }
-      }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Card"], {
+      }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Card"], {
         style: {
           backgroundColor: "rgba(0,0,0,0)",
           color: "white",
@@ -1540,10 +1554,10 @@ function Timer(props) {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43,
+          lineNumber: 47,
           columnNumber: 21
         }
-      }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["CardHeader"], {
+      }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["CardHeader"], {
         style: {
           textAlign: "center"
         },
@@ -1551,17 +1565,17 @@ function Timer(props) {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44,
+          lineNumber: 48,
           columnNumber: 25
         }
-      }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["CardContent"], {
+      }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["CardContent"], {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49,
+          lineNumber: 53,
           columnNumber: 25
         }
-      }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
+      }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Typography"], {
         style: {
           textAlign: "center",
           fontSize: "17px"
@@ -1569,35 +1583,35 @@ function Timer(props) {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50,
+          lineNumber: 54,
           columnNumber: 29
         }
       }, __jsx("h1", {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51,
+          lineNumber: 55,
           columnNumber: 33
         }
-      }, props.message, "\xA0\xA0", Object(react_countdown__WEBPACK_IMPORTED_MODULE_1__["zeroPad"])(days, 3), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_1__["zeroPad"])(hours), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_1__["zeroPad"])(minutes), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_1__["zeroPad"])(seconds)), __jsx("h1", {
+      }, props.message, "\xA0\xA0", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(days, 3), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(hours), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(minutes), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(seconds)), __jsx("h1", {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54,
+          lineNumber: 58,
           columnNumber: 33
         }
       }, "Game is not live yet !")))));
     }
   };
 
-  return __jsx(react_countdown__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return __jsx(react_countdown__WEBPACK_IMPORTED_MODULE_2__["default"], {
     date: props.start,
-    intervalDelay: 1,
     renderer: renderer,
+    onComplete: complete,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 80,
       columnNumber: 9
     }
   });
@@ -65365,9 +65379,11 @@ function index() {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://screencast2020.herokuapp.com/api/status").then(function (response) {
       console.log("index mounted");
+      console.log(response);
       console.log(new Date(response.data.start_time).getTime()); //milliseconds
 
-      setStart(new Date(response.data.start_time).getTime());
+      setStart(new Date(response.data.end_time).getTime()); //setStart((new Date("2020-07-20T13:16:27Z")).getTime());
+
       setEnd(new Date(response.data.end_time).getTime());
       setDay(response.data.current_day);
       localStorage.setItem("start", start);
@@ -65383,21 +65399,21 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 47,
       columnNumber: 5
     }
   }, __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 49,
       columnNumber: 7
     }
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 50,
       columnNumber: 9
     }
   }, __jsx("meta", {
@@ -65405,7 +65421,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 51,
       columnNumber: 11
     }
   }), __jsx("meta", {
@@ -65414,14 +65430,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 52,
       columnNumber: 11
     }
   }), __jsx("title", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 56,
       columnNumber: 11
     }
   }, "Screencast "), __jsx("link", {
@@ -65431,14 +65447,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 57,
       columnNumber: 11
     }
   }))), __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 61,
       columnNumber: 7
     }
   }), __jsx(_components_Timer2__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -65446,14 +65462,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 63,
       columnNumber: 7
     }
   }), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 65,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -65466,7 +65482,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 66,
       columnNumber: 9
     }
   }, __jsx("span", {
@@ -65474,7 +65490,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72,
+      lineNumber: 74,
       columnNumber: 11
     }
   }, "screen"), "cast", " ", __jsx("span", {
@@ -65482,7 +65498,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 75,
       columnNumber: 11
     }
   }, "2020 ")), __jsx("div", {
@@ -65493,14 +65509,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 78,
       columnNumber: 9
     }
   }, __jsx("h1", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 79,
       columnNumber: 11
     }
   }, "Login to play "))), __jsx("div", {
@@ -65515,35 +65531,35 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 83,
       columnNumber: 7
     }
   }, __jsx(_components_GoogleLog__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 84,
       columnNumber: 9
     }
   }), __jsx(_components_FbLog2__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 85,
       columnNumber: 9
     }
   })), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
+      lineNumber: 87,
       columnNumber: 7
     }
   }, __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 88,
       columnNumber: 9
     }
   })));

@@ -4,7 +4,7 @@ import { SocialMediaIconsReact } from 'social-media-icons-react';
 //import Router from 'next/dist/next-server/server/router';
 import Router from "next/router";
 import axios from "axios";
-
+import AnsAlert from "../components/AnsAlert"
 const LoginButton = ({ facebookResponse }) => (
 
   <FacebookLogin
@@ -14,7 +14,7 @@ const LoginButton = ({ facebookResponse }) => (
     callback={facebookResponse}
     render={renderProps => (
       <button style={{ backgroundColor: "rgba(0,0,0,0)", border: "none" }} onClick={renderProps.onClick}>
-        <SocialMediaIconsReact borderColor="rgba(0,0,0,0.25)" borderWidth="3" borderStyle="inset" icon="facebook" iconColor="rgba(255,255,255,1)" backgroundColor="rgba(28,149,223,1)" iconSize="5" roundness="29%" url="http://localhost:3000/game" size="45" />
+        <SocialMediaIconsReact borderColor="rgba(0,0,0,0.25)" borderWidth="3" borderStyle="inset" icon="facebook" iconColor="rgba(255,255,255,1)" backgroundColor="rgba(28,149,223,1)" iconSize="5" roundness="29%"  size="45" />
       </button>)}
 
 
@@ -34,8 +34,20 @@ class FbLog2 extends React.Component {
     };
   }
   componentDidMount() {
-    if (localStorage.getItem("email")) Router.push("/game");
-  }
+    
+      //this.setState({isSignedIn : true});
+      if(localStorage.getItem("email"))
+      {
+        if((localStorage.getItem('start') <= Date.now()))
+        Router.push("/game");
+        else 
+        {
+          AnsAlert(-1);
+          console.log("SANTA CLAUS");
+        }
+      }    
+    }
+  
 
   facebookResponse = (response) => {
     console.log(response);
@@ -63,7 +75,10 @@ class FbLog2 extends React.Component {
         console.log(localStorage.getItem("token"));
         console.log(this.state.access);
 
+        if((localStorage.getItem('start') <= Date.now()))
         Router.push("/game");
+        else
+        AnsAlert(-1);
       });
 
   };
@@ -71,12 +86,15 @@ class FbLog2 extends React.Component {
   render() {
     return (
       <div>
-        <div
-          style={{ margin: "0 auto", textAlign: "center", paddingTop: "0px" }}
-        >
-          <LoginButton facebookResponse={this.facebookResponse} ></LoginButton>
+        { !this.state.isSignedIn && (
+          <div
+            style={{ margin: "0 auto", textAlign: "center", paddingTop: "0px" }}
+          >
+            <LoginButton facebookResponse={this.facebookResponse} ></LoginButton>
 
-        </div>
+          </div>
+        )}
+        
       </div>
     );
   }

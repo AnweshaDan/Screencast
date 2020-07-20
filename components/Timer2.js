@@ -1,6 +1,6 @@
 
 import React from 'react'
-
+import Router from "next/router";
 import Countdown, { zeroPad } from 'react-countdown';
 import {
     Typography,
@@ -11,6 +11,10 @@ import {
 
 export default function Timer(props) {
     console.log(props)
+    const complete=()=>
+    {
+        if(localStorage.getItem('email')) Router.push('/game');
+    }
     const Completionist = () => {
         return (
             <span className="sign">
@@ -75,9 +79,9 @@ export default function Timer(props) {
         
         <Countdown
         date={props.start}
-            intervalDelay={1}
+           
             renderer={renderer}
-            
+            onComplete={complete}
         />
     )
 

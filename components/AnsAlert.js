@@ -5,8 +5,8 @@ export default (isCorrect) => {
         Swal.fire({
             padding: "60px",
             position: 'center',
-            type: 'error',
-            title: 'Oops',
+            type: 'success',
+            title: 'Yay',
             text: 'Successfully registered !',
             showConfirmButton: false
 
