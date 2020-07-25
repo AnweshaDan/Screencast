@@ -8,7 +8,7 @@ import AnsAlert from "../components/AnsAlert"
 const LoginButton = ({ facebookResponse }) => (
 
   <FacebookLogin
-    appId="330897641228705"
+    appId="1285489205143716"
     autoload={false}
     fields="name,email,picture"
     callback={facebookResponse}
