@@ -96,7 +96,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 var LoginButton = function LoginButton(_ref) {
   var facebookResponse = _ref.facebookResponse;
   return __jsx(react_facebook_login_dist_facebook_login_render_props__WEBPACK_IMPORTED_MODULE_8___default.a, {
-    appId: "330897641228705",
+    appId: "1285489205143716",
     autoload: false,
     fields: "name,email,picture",
     callback: facebookResponse,

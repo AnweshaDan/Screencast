@@ -30,6 +30,7 @@ class game extends React.Component {
   }
 
   componentDidMount() {
+    
 
     if (!(localStorage.getItem("email"))) {
       Router.push('/');
@@ -55,7 +56,7 @@ class game extends React.Component {
       })
       .then((response) => {
         console.log(response);
-        if (response.data.quiz_finished) Router.push("/finale");
+        if (response.data.error) Router.push("/finale");
         this.setState((prevState) => {
           return {
             ...prevState,
