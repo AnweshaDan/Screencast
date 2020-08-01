@@ -28283,7 +28283,7 @@ function finale() {
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /*!*************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Ffinale2&absolutePagePath=%2Fhome%2Fanwesha%2FDesktop%2Fscreencast%2Fpages%2Ffinale2.js ***!
   \*************************************************************************************************************************************/
@@ -28306,5 +28306,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[5,"static/runtime/webpack.js"]]]);
+},[[4,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=finale2.js.map

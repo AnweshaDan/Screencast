@@ -32,10 +32,13 @@ function index() {
         setDay(response.data.current_day)
 
         localStorage.setItem("start", start);
+        localStorage.setItem("end", end);
         console.log(localStorage.getItem('start'));
 
         if (localStorage.getItem('email') && (localStorage.getItem('start') <= Date.now()))
           Router.push('/game')
+
+        if(localStorage.getItem('end') < Date.now()) Router.push('/finale2');
       });
   })
 
