@@ -56,7 +56,8 @@ class game extends React.Component {
       })
       .then((response) => {
         console.log(response);
-        if (response.data.error) Router.push("/finale");
+        if (response.data.error) Router.push("/finale2");
+        if (response.data.quiz_has_finished) Router.push("/finale");
         this.setState((prevState) => {
           return {
             ...prevState,
