@@ -38,7 +38,7 @@ function index() {
         if (localStorage.getItem('email') && (localStorage.getItem('start') <= Date.now()))
           Router.push('/game')
 
-        if(localStorage.getItem('end') < Date.now()) Router.push('/finale2');
+        //if(localStorage.getItem('end') < Date.now()) Router.push('/finale2');
       });
   })
 

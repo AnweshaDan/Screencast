@@ -3356,8 +3356,7 @@ function index() {
       localStorage.setItem("start", start);
       localStorage.setItem("end", end);
       console.log(localStorage.getItem('start'));
-      if (localStorage.getItem('email') && localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_8___default.a.push('/game');
-      if (localStorage.getItem('end') < Date.now()) next_router__WEBPACK_IMPORTED_MODULE_8___default.a.push('/finale2');
+      if (localStorage.getItem('email') && localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_8___default.a.push('/game'); //if(localStorage.getItem('end') < Date.now()) Router.push('/finale2');
     });
   });
   return __jsx("div", {
