@@ -681,7 +681,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(theme => ({
   root: {
     flexGrow: 0,
-    backgroundColor: "#000066",
+    backgroundColor: "#000044",
     width: "100%",
     padding: 0
   },
@@ -1086,6 +1086,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(react_google_login__WEBPACK_IMPORTED_MODULE_17__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var _material_ui_icons_SportsEsports__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @material-ui/icons/SportsEsports */ "@material-ui/icons/SportsEsports");
+/* harmony import */ var _material_ui_icons_SportsEsports__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_SportsEsports__WEBPACK_IMPORTED_MODULE_19__);
 var _jsxFileName = "/home/anwesha/Desktop/screencast/components/Test.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -1094,6 +1096,7 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -1165,48 +1168,23 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 65,
       columnNumber: 5
     }
   }, __jsx(_material_ui_core_List__WEBPACK_IMPORTED_MODULE_5___default.a, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 71,
       columnNumber: 7
     }
   }, __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_7___default.a, {
-    button: true,
-    key: "Home",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 72,
-      columnNumber: 9
-    }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_13___default.a, {
-    href: "/",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 73,
-      columnNumber: 11
-    }
-  }, __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_9___default.a, {
-    primary: "Home",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 74,
-      columnNumber: 13
-    }
-  }))), __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_7___default.a, {
     button: true,
     key: "Leaderboard",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78,
+      lineNumber: 75,
       columnNumber: 9
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_13___default.a, {
@@ -1214,7 +1192,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79,
+      lineNumber: 76,
       columnNumber: 11
     }
   }, __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_9___default.a, {
@@ -1222,7 +1200,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 77,
       columnNumber: 13
     }
   }))), Log ? __jsx("div", {
@@ -1230,7 +1208,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
+      lineNumber: 82,
       columnNumber: 11
     }
   }, __jsx("div", {
@@ -1238,7 +1216,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 83,
       columnNumber: 13
     }
   }, __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_17__["GoogleLogout"], {
@@ -1247,7 +1225,7 @@ function TemporaryDrawer() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 89,
+        lineNumber: 86,
         columnNumber: 19
       }
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_13___default.a, {
@@ -1255,7 +1233,7 @@ function TemporaryDrawer() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 90,
+        lineNumber: 87,
         columnNumber: 21
       }
     }, __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -1263,7 +1241,7 @@ function TemporaryDrawer() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 91,
+        lineNumber: 88,
         columnNumber: 23
       }
     }, "Logout"))),
@@ -1271,7 +1249,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
+      lineNumber: 84,
       columnNumber: 15
     }
   })), __jsx("div", {
@@ -1279,7 +1257,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98,
+      lineNumber: 95,
       columnNumber: 13
     }
   }), __jsx("div", {
@@ -1287,7 +1265,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 96,
       columnNumber: 13
     }
   })) : __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -1296,7 +1274,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 99,
       columnNumber: 13
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_13___default.a, {
@@ -1304,7 +1282,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103,
+      lineNumber: 100,
       columnNumber: 15
     }
   }, __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_9___default.a, {
@@ -1312,8 +1290,8 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104,
-      columnNumber: 17
+      lineNumber: 102,
+      columnNumber: 15
     }
   })))));
 
@@ -1322,7 +1300,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115,
+      lineNumber: 113,
       columnNumber: 5
     }
   }, ['left'].map(anchor => __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
@@ -1330,7 +1308,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117,
+      lineNumber: 115,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -1338,7 +1316,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118,
+      lineNumber: 116,
       columnNumber: 11
     }
   }, __jsx(_material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_12___default.a, {
@@ -1348,7 +1326,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118,
+      lineNumber: 116,
       columnNumber: 56
     }
   })), __jsx(_material_ui_core_Drawer__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -1390,7 +1368,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119,
+      lineNumber: 117,
       columnNumber: 11
     }
   }, list(anchor), __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -1398,18 +1376,24 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 143,
+      lineNumber: 141,
       columnNumber: 13
     }
   }, __jsx(_Rules__WEBPACK_IMPORTED_MODULE_15__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 144,
+      lineNumber: 142,
       columnNumber: 15
     }
   }, "Rules"))))));
 }
+/* <ListItem button key='Home'>
+          <Link href='/'>
+            <ListItemText primary='Home' />
+          </Link>
+        </ListItem>*/
+//<ListItemIcon><SportsEsportsIcon/></ListItemIcon>
 
 /***/ }),
 
@@ -3520,14 +3504,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90,
+      lineNumber: 91,
       columnNumber: 7
     }
   }, __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91,
+      lineNumber: 92,
       columnNumber: 9
     }
   })));
@@ -3821,6 +3805,17 @@ module.exports = require("@material-ui/icons/Menu");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/icons/MoveToInbox");
+
+/***/ }),
+
+/***/ "@material-ui/icons/SportsEsports":
+/*!***************************************************!*\
+  !*** external "@material-ui/icons/SportsEsports" ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/icons/SportsEsports");
 
 /***/ }),
 

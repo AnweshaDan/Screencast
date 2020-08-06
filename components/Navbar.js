@@ -14,7 +14,7 @@ import styles from "./Navbar.module.css";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 0,
-    backgroundColor: "#000066",
+    backgroundColor: "#000044",
     width: "100%",
     padding: 0,
   },

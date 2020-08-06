@@ -17,6 +17,7 @@ import Rules from "./Rules";
 import MenuItem from "@material-ui/core/MenuItem";
 import { GoogleLogout } from "react-google-login";
 import Router from "next/router";
+import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
 
 
 const useStyles = makeStyles({
@@ -69,11 +70,7 @@ export default function TemporaryDrawer() {
     >
       <List>
 
-        <ListItem button key='Home'>
-          <Link href='/'>
-            <ListItemText primary='Home' />
-          </Link>
-        </ListItem>
+       
 
         <ListItem button key='Leaderboard'>
           <Link href='/leaderboard'>
@@ -101,7 +98,8 @@ export default function TemporaryDrawer() {
         ) : (
             <ListItem button key='Game'>
               <Link href='/game'>
-                <ListItemText primary='Game' />
+                
+              <ListItemText primary='Game' />
               </Link>
             </ListItem>
           )}
@@ -149,3 +147,12 @@ export default function TemporaryDrawer() {
     </div>
   );
 }
+
+
+/* <ListItem button key='Home'>
+          <Link href='/'>
+            <ListItemText primary='Home' />
+          </Link>
+        </ListItem>*/
+
+        //<ListItemIcon><SportsEsportsIcon/></ListItemIcon>

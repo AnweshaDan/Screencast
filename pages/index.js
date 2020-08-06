@@ -87,6 +87,7 @@ function index() {
         <GoogleLog />
         <FbLog2 />
       </div>
+    
       <div>
         <Footer />
       </div>
