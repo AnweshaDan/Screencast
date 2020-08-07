@@ -69,6 +69,11 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
+      <ListItem button key='Home'>
+          <Link href='/'>
+            <ListItemText primary='Home' />
+          </Link>
+        </ListItem>
 
        
 
@@ -78,7 +83,7 @@ export default function TemporaryDrawer() {
           </Link>
         </ListItem>
 
-        {Log ? (
+        {Log && (
           <div className="userDetails-wrapper">
             <div className="details-wrapper">
               <GoogleLogout
@@ -95,14 +100,9 @@ export default function TemporaryDrawer() {
             <div className="bar" />
             <div className="stand" />
           </div>
-        ) : (
-            <ListItem button key='Game'>
-              <Link href='/game'>
-                
-              <ListItemText primary='Game' />
-              </Link>
-            </ListItem>
-          )}
+        ) }
+            
+          
 
 
       </List>
@@ -156,3 +156,13 @@ export default function TemporaryDrawer() {
         </ListItem>*/
 
         //<ListItemIcon><SportsEsportsIcon/></ListItemIcon>
+
+
+
+        /*<ListItem button key='Game'>
+              <Link href='/game'>
+                
+                
+              <ListItemText primary='Game' />
+              </Link>
+            </ListItem>*/

@@ -350,7 +350,8 @@ function Footer() {
       bottom: "0",
       right: "0",
       left: "0",
-      position: "relative",
+      position: "fixed",
+      //changed
       padding: "0",
       marginBottom: "0"
     },
@@ -1180,11 +1181,36 @@ function TemporaryDrawer() {
     }
   }, __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_7___default.a, {
     button: true,
+    key: "Home",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72,
+      columnNumber: 7
+    }
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_13___default.a, {
+    href: "/",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73,
+      columnNumber: 11
+    }
+  }, __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_9___default.a, {
+    primary: "Home",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 74,
+      columnNumber: 13
+    }
+  }))), __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_7___default.a, {
+    button: true,
     key: "Leaderboard",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 80,
       columnNumber: 9
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_13___default.a, {
@@ -1192,7 +1218,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 81,
       columnNumber: 11
     }
   }, __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_9___default.a, {
@@ -1200,15 +1226,15 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 82,
       columnNumber: 13
     }
-  }))), Log ? __jsx("div", {
+  }))), Log && __jsx("div", {
     className: "userDetails-wrapper",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 87,
       columnNumber: 11
     }
   }, __jsx("div", {
@@ -1216,7 +1242,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 88,
       columnNumber: 13
     }
   }, __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_17__["GoogleLogout"], {
@@ -1225,7 +1251,7 @@ function TemporaryDrawer() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86,
+        lineNumber: 91,
         columnNumber: 19
       }
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_13___default.a, {
@@ -1233,7 +1259,7 @@ function TemporaryDrawer() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87,
+        lineNumber: 92,
         columnNumber: 21
       }
     }, __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -1241,7 +1267,7 @@ function TemporaryDrawer() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88,
+        lineNumber: 93,
         columnNumber: 23
       }
     }, "Logout"))),
@@ -1249,7 +1275,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84,
+      lineNumber: 89,
       columnNumber: 15
     }
   })), __jsx("div", {
@@ -1257,7 +1283,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95,
+      lineNumber: 100,
       columnNumber: 13
     }
   }), __jsx("div", {
@@ -1265,35 +1291,10 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96,
+      lineNumber: 101,
       columnNumber: 13
     }
-  })) : __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_7___default.a, {
-    button: true,
-    key: "Game",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 99,
-      columnNumber: 13
-    }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_13___default.a, {
-    href: "/game",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 100,
-      columnNumber: 15
-    }
-  }, __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_9___default.a, {
-    primary: "Game",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 102,
-      columnNumber: 15
-    }
-  })))));
+  }))));
 
   console.log("return b4 menu");
   return __jsx("div", {
@@ -1394,6 +1395,14 @@ function TemporaryDrawer() {
           </Link>
         </ListItem>*/
 //<ListItemIcon><SportsEsportsIcon/></ListItemIcon>
+
+/*<ListItem button key='Game'>
+      <Link href='/game'>
+        
+        
+      <ListItemText primary='Game' />
+      </Link>
+    </ListItem>*/
 
 /***/ }),
 

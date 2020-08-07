@@ -11,7 +11,7 @@ function Footer() {
         height: "100px",
         bottom: "0",
         right: "0", left: "0",
-        position: "relative",
+        position: "fixed",//changed
         padding: "0",
         marginBottom: "0"
 
