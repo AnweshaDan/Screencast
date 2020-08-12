@@ -1,16 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow&family=Cabin+Sketch&family=Russo+One&family=Monoton&display=swap");
 
+/* changed*/
+@media only screen and (min-width: 767px) {
+  .main_color {
+      background-attachment: fixed;
+  }
+  }
 body {
-  margin: 0;
+  margin: 0px;
   background-size: cover;
   background-attachment: fixed;
-  background-position: top;
+  background-position: top ;
   background-repeat: no-repeat;
   min-height: 100vh;
   display:flex;
   flex-direction: column;
+  /*changed*/
+  /*overflow: hidden;
+  position: relative;*/
+  will-change:scroll-position;
+  /*changed*/
   background-color: rgba(10, 10, 50, 0.97);
-  background-image: url("bg.jpg");
+  background-image: url("bg.jpg") ;
   font-family: "Barlow", sans-serif;
   color:"#eee";
 }
