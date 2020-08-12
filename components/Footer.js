@@ -22,17 +22,23 @@ function Footer() {
         // bottom: "30px", position: "absolute", left: "0", right: "0", textAlign: "center", margin: "0 auto"
 
       }}>
+        <a href="https://nitdgplug.org/">
         <img
           src={Logo}
           alt="logo"
           style={{ width: "50px" }}
         />
+        </a>
+        
         &nbsp;&nbsp;
+        <a href={Logo2}>
         <img
           src={Logo2}
           alt="logo"
           style={{ width: "50px", borderRadius: "50px" }}
         />
+        </a>
+        
       </div>
       <h5 style={{ left: "0", right: "0", color: "#eee", }}>HOSTED & CREATED BY GNU/LINUX USERS' GROUP</h5>
     </div>
