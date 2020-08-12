@@ -1,4 +1,4 @@
-import 'firebase/messaging';
+/*import 'firebase/messaging';
 import firebase from 'firebase/app';
 import localforage from 'localforage';
 const firebaseCloudMessaging = {
@@ -40,3 +40,4 @@ return null;
 },
 };
 export { firebaseCloudMessaging };
+*/

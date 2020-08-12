@@ -3317,6 +3317,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _webPush__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../webPush */ "./webPush.js");
+/* harmony import */ var _webPush__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_webPush__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "axios");
@@ -3552,64 +3553,52 @@ function index() {
 /*!********************!*\
   !*** ./webPush.js ***!
   \********************/
-/*! exports provided: firebaseCloudMessaging */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "firebaseCloudMessaging", function() { return firebaseCloudMessaging; });
-/* harmony import */ var firebase_messaging__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! firebase/messaging */ "firebase/messaging");
-/* harmony import */ var firebase_messaging__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(firebase_messaging__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/app */ "firebase/app");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var localforage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! localforage */ "localforage");
-/* harmony import */ var localforage__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(localforage__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
+/*import 'firebase/messaging';
+import firebase from 'firebase/app';
+import localforage from 'localforage';
 const firebaseCloudMessaging = {
-  //checking whether token is available in indexed DB
-  tokenInlocalforage: async () => {
-    return localforage__WEBPACK_IMPORTED_MODULE_2___default.a.getItem('fcm_token');
-  },
-  //initializing firebase app
-  init: async function () {
-    if (!firebase_app__WEBPACK_IMPORTED_MODULE_1___default.a.apps.length) {
-      firebase_app__WEBPACK_IMPORTED_MODULE_1___default.a.initializeApp({
-        messagingSenderId: "447447903811"
-      });
-
-      try {
-        const messaging = firebase_app__WEBPACK_IMPORTED_MODULE_1___default.a.messaging();
-        const tokenInLocalForage = await this.tokenInlocalforage(); //if FCM token is already there just return the token
-
-        if (tokenInLocalForage !== null) {
-          return tokenInLocalForage;
-        } //requesting notification permission from browser
-
-
-        const status = await Notification.requestPermission();
-
-        if (status && status === 'granted') {
-          //getting token from FCM
-          const fcm_token = await messaging.getToken();
-
-          if (fcm_token) {
-            //setting FCM token in indexed db using localforage
-            localforage__WEBPACK_IMPORTED_MODULE_2___default.a.setItem('fcm_token', token);
-            console.log('fcm token', token); //return the FCM token after saving it
-
-            return token;
-          }
-        }
-      } catch (error) {
-        console.error(error);
-        return null;
-      }
-    }
-  }
+//checking whether token is available in indexed DB
+tokenInlocalforage: async () => {
+return localforage.getItem('fcm_token');
+},
+//initializing firebase app
+init: async function () {
+if (!firebase.apps.length) {
+firebase.initializeApp({
+ messagingSenderId: "447447903811"
+});
+try {
+const messaging = firebase.messaging();
+const tokenInLocalForage = await this.tokenInlocalforage();
+//if FCM token is already there just return the token
+if (tokenInLocalForage !== null) {
+return tokenInLocalForage;
+}
+//requesting notification permission from browser
+const status = await Notification.requestPermission();
+if (status && status === 'granted') {
+//getting token from FCM
+const fcm_token = await messaging.getToken();
+if (fcm_token) {
+//setting FCM token in indexed db using localforage
+localforage.setItem('fcm_token', token);
+console.log('fcm token', token);
+//return the FCM token after saving it
+return token;
+}
+}
+} catch (error) {
+console.error(error);
+return null;
+}
+}
+},
 };
-
+export { firebaseCloudMessaging };
+*/
 
 /***/ }),
 
@@ -3930,39 +3919,6 @@ module.exports = require("axios");
 /***/ (function(module, exports) {
 
 module.exports = require("clsx");
-
-/***/ }),
-
-/***/ "firebase/app":
-/*!*******************************!*\
-  !*** external "firebase/app" ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("firebase/app");
-
-/***/ }),
-
-/***/ "firebase/messaging":
-/*!*************************************!*\
-  !*** external "firebase/messaging" ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("firebase/messaging");
-
-/***/ }),
-
-/***/ "localforage":
-/*!******************************!*\
-  !*** external "localforage" ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("localforage");
 
 /***/ }),
 
