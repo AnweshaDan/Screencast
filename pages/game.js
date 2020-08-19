@@ -7,6 +7,7 @@ import Hint from "../components/Hint";
 import AnsAlert from "../components/AnsAlert"
 import Answer from "../components/Answer";
 import Router from "next/router";
+import data from '../env.json';
 
 
 class game extends React.Component {
@@ -49,7 +50,7 @@ class game extends React.Component {
     console.log(localStorage.getItem("token")); //get questions from api and updates state
 
     axios
-      .get("https://screencast2020.herokuapp.com/api/question", {
+      .get(data.api+"/api/question", {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },
@@ -103,7 +104,7 @@ class game extends React.Component {
     console.log(this.state.qsNo);
     axios
       .post(
-        "https://screencast2020.herokuapp.com/api/checkanswer",
+        data.api+"/api/checkanswer",
         { answer: ans },
         {
           headers: {

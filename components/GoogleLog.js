@@ -7,6 +7,8 @@ import { withStyles } from "@material-ui/core/styles";
 import { SocialMediaIconsReact } from 'social-media-icons-react';
 import Router from "next/router";
 import AnsAlert from "../components/AnsAlert"
+import data from '../env.json';
+
 
 const useStyles = (theme) => ({
   root: {
@@ -89,7 +91,7 @@ class GoogleLog extends React.Component {
 
     this.setState({ userDetails: response.profileObj, isUserLoggedIn: true, access: response.tokenObj.access_token });
     axios
-      .post("https://screencast2020.herokuapp.com/api/googlelogin", {
+      .post(data.api+"/api/googlelogin", {
         token: response.tokenObj.access_token
 
       })

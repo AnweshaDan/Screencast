@@ -176,6 +176,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _components_AnsAlert__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/AnsAlert */ "./components/AnsAlert.js");
+/* harmony import */ var _env_json__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../env.json */ "./env.json");
+var _env_json__WEBPACK_IMPORTED_MODULE_6___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../env.json */ "./env.json", 1);
 var _jsxFileName = "/home/anwesha/Desktop/screencast/components/FbLog2.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -184,6 +186,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
  //import Router from 'next/dist/next-server/server/router';
+
 
 
 
@@ -205,7 +208,7 @@ const LoginButton = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 18,
       columnNumber: 7
     }
   }, __jsx(social_media_icons_react__WEBPACK_IMPORTED_MODULE_2__["SocialMediaIconsReact"], {
@@ -221,14 +224,14 @@ const LoginButton = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 19,
       columnNumber: 9
     }
   })),
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 10,
+    lineNumber: 12,
     columnNumber: 3
   }
 });
@@ -249,7 +252,7 @@ class FbLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         isSignedIn: true,
         access: response.accessToken
       });
-      axios__WEBPACK_IMPORTED_MODULE_4___default.a.post("https://screencast2020.herokuapp.com/api/facebooklogin", {
+      axios__WEBPACK_IMPORTED_MODULE_4___default.a.post(_env_json__WEBPACK_IMPORTED_MODULE_6__.api + "/api/facebooklogin", {
         accesstoken: response.accessToken,
         expiration_time: response.data_access_expiration_time,
         userID: response.userID
@@ -287,7 +290,7 @@ class FbLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88,
+        lineNumber: 90,
         columnNumber: 7
       }
     }, !this.state.isSignedIn && __jsx("div", {
@@ -299,7 +302,7 @@ class FbLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 90,
+        lineNumber: 92,
         columnNumber: 11
       }
     }, __jsx(LoginButton, {
@@ -307,7 +310,7 @@ class FbLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 93,
+        lineNumber: 95,
         columnNumber: 13
       }
     })));
@@ -456,10 +459,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _components_AnsAlert__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/AnsAlert */ "./components/AnsAlert.js");
+/* harmony import */ var _env_json__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../env.json */ "./env.json");
+var _env_json__WEBPACK_IMPORTED_MODULE_9___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../env.json */ "./env.json", 1);
 var _jsxFileName = "/home/anwesha/Desktop/screencast/components/GoogleLog.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -491,7 +497,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         isUserLoggedIn: true,
         access: response.tokenObj.access_token
       });
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("https://screencast2020.herokuapp.com/api/googlelogin", {
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.post(_env_json__WEBPACK_IMPORTED_MODULE_9__.api + "/api/googlelogin", {
         token: response.tokenObj.access_token
       }).then(res => {
         console.log(res);
@@ -571,28 +577,28 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 129,
+        lineNumber: 131,
         columnNumber: 7
       }
     }, __jsx("div", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 130,
+        lineNumber: 132,
         columnNumber: 9
       }
     }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 131,
+        lineNumber: 133,
         columnNumber: 11
       }
     })), __jsx("div", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 135,
+        lineNumber: 137,
         columnNumber: 9
       }
     }, !this.state.isUserLoggedIn && __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -602,7 +608,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 140,
+          lineNumber: 142,
           columnNumber: 17
         }
       }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -617,7 +623,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 142,
+          lineNumber: 144,
           columnNumber: 19
         }
       }, __jsx(social_media_icons_react__WEBPACK_IMPORTED_MODULE_6__["SocialMediaIconsReact"], {
@@ -633,7 +639,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 150,
+          lineNumber: 152,
           columnNumber: 21
         }
       }))),
@@ -645,7 +651,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 137,
+        lineNumber: 139,
         columnNumber: 13
       }
     })));
@@ -1622,6 +1628,17 @@ function Timer(props) {
 /***/ (function(module, exports) {
 
 module.exports = "/_next/static/images/scl-68257163687d3e415a6fee7af772d9d2.png";
+
+/***/ }),
+
+/***/ "./env.json":
+/*!******************!*\
+  !*** ./env.json ***!
+  \******************/
+/*! exports provided: api, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"api\":\"http://54.88.95.17\"}");
 
 /***/ }),
 
@@ -3329,8 +3346,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Timer2__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Timer2 */ "./components/Timer2.js");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _env_json__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../env.json */ "./env.json");
+var _env_json__WEBPACK_IMPORTED_MODULE_10___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../env.json */ "./env.json", 1);
 var _jsxFileName = "/home/anwesha/Desktop/screencast/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -3356,7 +3376,7 @@ function index() {
     1: setDay
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("https://screencast2020.herokuapp.com/api/status").then(response => {
+    axios__WEBPACK_IMPORTED_MODULE_3___default.a.get(_env_json__WEBPACK_IMPORTED_MODULE_10__.api + "/api/status").then(response => {
       console.log("index mounted");
       console.log(response);
       console.log(new Date(response.data.start_time).getTime()); //milliseconds

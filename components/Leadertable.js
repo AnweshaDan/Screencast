@@ -7,6 +7,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 
 import axios from "axios";
+import data from '../env.json';
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -51,7 +52,7 @@ export default function Leadertable() {
 
   useEffect(() => {
     axios
-      .get("https://screencast2020.herokuapp.com/api/leaderboard", {
+      .get(data.api+"/api/leaderboard", {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },

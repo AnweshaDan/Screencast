@@ -5,6 +5,8 @@ import { SocialMediaIconsReact } from 'social-media-icons-react';
 import Router from "next/router";
 import axios from "axios";
 import AnsAlert from "../components/AnsAlert"
+import data from '../env.json';
+
 const LoginButton = ({ facebookResponse }) => (
 
   <FacebookLogin
@@ -61,7 +63,7 @@ class FbLog2 extends React.Component {
 
     this.setState({ user: response, isSignedIn: true, access: response.accessToken });
     axios
-      .post("https://screencast2020.herokuapp.com/api/facebooklogin", {
+      .post(data.api+"/api/facebooklogin", {
         accesstoken: response.accessToken,
         expiration_time: response.data_access_expiration_time,
         userID: response.userID

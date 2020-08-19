@@ -4,8 +4,9 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import CardMedia from "@material-ui/core/CardMedia";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core";
-
+import data from '../env.json';
 import AudioHint from "./AudioHint";
+import { Data } from "react-f/lib/src/form";
 
 const useStyles = makeStyles({
   root: {
@@ -69,7 +70,7 @@ export default function Question(props) {
           <CardMedia
             className={classes.media}
             style={{ textAlign: "center", margin: "0 auto" }}
-            image={"https://screencast2020.herokuapp.com" + props.image}
+            image={data.api + props.image}
             title="Image Hint"
           />
         ) : (
@@ -81,7 +82,7 @@ export default function Question(props) {
           <div style={{ textAlign: "center", margin: "0 auto" }}>
             <AudioHint
               style={{ textAlign: "center", margin: "0 auto" }}
-              audio={"https://screencast2020.herokuapp.com" + props.audio}
+              audio={Data.api + props.audio}
             />
           </div>
         ) : (

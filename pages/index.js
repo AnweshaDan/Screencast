@@ -12,7 +12,7 @@ import GoogleLog from "../components/GoogleLog";
 import FbLog2 from "../components/FbLog2";
 import Timer2 from "../components/Timer2"
 import Router from "next/router";
-
+import data from '../env.json';
 
 function index() {
 
@@ -23,7 +23,7 @@ function index() {
   useEffect(() => {
     
     axios
-      .get("https://screencast2020.herokuapp.com/api/status")
+      .get(data.api+"/api/status")
       .then((response) => {
         console.log("index mounted");
         console.log(response);
