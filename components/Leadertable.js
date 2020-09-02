@@ -11,11 +11,14 @@ import data from '../env.json';
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
-    backgroundColor: "#000033",
+    backgroundColor: "rgba(53,35,60,1)",
     color: "white",
     border: "none",
+    fontFamily:"Russo One",
+    fontSize: 16
   },
   body: {
+    fontFamily:"Russo One",
     fontSize: 14,
     color: "white",
     border: "none",
@@ -84,7 +87,7 @@ export default function Leadertable() {
                   style={{ fontFamily: "'Barlow', sans-serif" }}
                 >
                   <StyledTableCell component="th" scope="row">
-                    {row.rank}
+                    {row.rank}.
                   </StyledTableCell>
                   <StyledTableCell align="left">{row.name}</StyledTableCell>
                   <StyledTableCell align="left">{row.score}</StyledTableCell>

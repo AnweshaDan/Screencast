@@ -147,11 +147,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var StyledTableCell = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["withStyles"])(function (theme) {
   return {
     head: {
-      backgroundColor: "#000033",
+      backgroundColor: "rgba(53,35,60,1)",
       color: "white",
-      border: "none"
+      border: "none",
+      fontFamily: "Russo One",
+      fontSize: 16
     },
     body: {
+      fontFamily: "Russo One",
       fontSize: 14,
       color: "white",
       border: "none"
@@ -205,7 +208,7 @@ function Leadertable() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 71,
       columnNumber: 5
     }
   }, __jsx("div", {
@@ -213,7 +216,7 @@ function Leadertable() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 72,
       columnNumber: 7
     }
   }, __jsx(_material_ui_core_Table__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -222,28 +225,28 @@ function Leadertable() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 73,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_TableHead__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 74,
       columnNumber: 11
     }
   }, __jsx(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72,
+      lineNumber: 75,
       columnNumber: 13
     }
   }, __jsx(StyledTableCell, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 76,
       columnNumber: 15
     }
   }, "Rank"), __jsx(StyledTableCell, {
@@ -251,7 +254,7 @@ function Leadertable() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 77,
       columnNumber: 15
     }
   }, "Player"), __jsx(StyledTableCell, {
@@ -259,7 +262,7 @@ function Leadertable() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 78,
       columnNumber: 15
     }
   }, "Points"))), RankList.length ? __jsx(_material_ui_core_TableBody__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -269,7 +272,7 @@ function Leadertable() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 83,
       columnNumber: 13
     }
   }, RankList.map(function (row, index) {
@@ -281,7 +284,7 @@ function Leadertable() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 82,
+        lineNumber: 85,
         columnNumber: 17
       }
     }, __jsx(StyledTableCell, {
@@ -290,15 +293,15 @@ function Leadertable() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86,
+        lineNumber: 89,
         columnNumber: 19
       }
-    }, row.rank), __jsx(StyledTableCell, {
+    }, row.rank, "."), __jsx(StyledTableCell, {
       align: "left",
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 89,
+        lineNumber: 92,
         columnNumber: 19
       }
     }, row.name), __jsx(StyledTableCell, {
@@ -306,7 +309,7 @@ function Leadertable() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 90,
+        lineNumber: 93,
         columnNumber: 19
       }
     }, row.score));
@@ -314,7 +317,7 @@ function Leadertable() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95,
+      lineNumber: 98,
       columnNumber: 15
     }
   }, "LOADING......"))));
@@ -461,7 +464,8 @@ function Navbar(props) {
     variant: "h6",
     className: classes.title,
     style: {
-      fontFamily: "'Russo One', sans-serif"
+      fontFamily: "'Russo One', sans-serif",
+      fontSize: 20
     },
     __self: this,
     __source: {
@@ -1029,7 +1033,19 @@ function TemporaryDrawer() {
             lineNumber: 98,
             columnNumber: 23
           }
-        }, "Logout")));
+        }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_22__["default"], {
+          style: {
+            color: '#FFFFFF',
+            fontFamily: "'Russo One', sans-serif",
+            fontSize: 18
+          },
+          __self: _this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 98,
+            columnNumber: 50
+          }
+        }, "Logout"))));
       },
       onLogoutSuccess: logout,
       __self: _this,
@@ -1116,7 +1132,7 @@ function TemporaryDrawer() {
         style: {
           top: 0,
           left: 0,
-          background: "rgba(15,3,28,1)",
+          background: "rgba(53,35,60,1)",
           borderRadius: "0px",
           color: "white",
           marginTop: "0",
@@ -42588,7 +42604,7 @@ function leaderboard() {
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!*********************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fleaderboard&absolutePagePath=%2Fhome%2Fanwesha%2FDesktop%2Fscreencast%2Fpages%2Fleaderboard.js ***!
   \*********************************************************************************************************************************************/
@@ -42611,5 +42627,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=leaderboard.js.map
