@@ -18,7 +18,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import { GoogleLogout } from "react-google-login";
 import Router from "next/router";
 import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
-
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   list: {
@@ -71,7 +71,10 @@ export default function TemporaryDrawer() {
       <List>
       <ListItem button key='Home'>
           <Link href='/'>
-            <ListItemText primary='Home' />
+            <ListItemText primary='Home'
+            disableTypography
+            primary={<Typography style={{ color: '#FFFFFF', fontFamily:"'Russo One', sans-serif", fontSize:18 }}>Home</Typography>} />
+           
           </Link>
         </ListItem>
 
@@ -79,7 +82,9 @@ export default function TemporaryDrawer() {
 
         <ListItem button key='Leaderboard'>
           <Link href='/leaderboard'>
-            <ListItemText primary='Leaderboard' />
+            <ListItemText primary='Leaderboard'
+            disableTypography
+            primary={<Typography style={{ color: '#FFFFFF', fontFamily:"'Russo One', sans-serif", fontSize:18 }}>Leaderboard</Typography>} />
           </Link>
         </ListItem>
 
@@ -121,13 +126,15 @@ export default function TemporaryDrawer() {
             anchorOrigin={{ vertical: "top", horizontal: "left" }}
             anchorPosition={{ left: "0", top: "0" }}
             transformOrigin={{ top: "0px", left: "0px" }}
-            style={{ fontFamily: "'Barlow', sans-serif", backgroundColor: "rgba(0,0,0,0.5)" }}
+            style={{ fontFamily: "'Russo One', sans-serif", backgroundColor: "rgba(0,0,0,0.5)" }}
             PaperProps={{
               style: {
+                
                 top: 0,
                 left: 0,
-                backgroundColor: "rgb(32, 32, 107)",
-                borderRadius: "0px",
+                background:"rgba(15,3,28,1)",
+
+borderRadius:"0px",
                 color: "white",
                 marginTop: "0",
                 paddingTop: ["0px"],
@@ -139,7 +146,7 @@ export default function TemporaryDrawer() {
             anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
             {list(anchor)}
             <MenuItem onClick={handleClose}>
-              <Rules>Rules</Rules>
+              <Rules >Rules</Rules>
             </MenuItem>
           </Drawer>
         </React.Fragment>

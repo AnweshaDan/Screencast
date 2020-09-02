@@ -891,22 +891,24 @@ if (true) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Rules; });
-/* harmony import */ var _babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
-/* harmony import */ var _material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Dialog */ "./node_modules/@material-ui/core/esm/Dialog/index.js");
-/* harmony import */ var _material_ui_core_DialogActions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/DialogActions */ "./node_modules/@material-ui/core/esm/DialogActions/index.js");
-/* harmony import */ var _material_ui_core_DialogContent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/DialogContent */ "./node_modules/@material-ui/core/esm/DialogContent/index.js");
-/* harmony import */ var _material_ui_core_DialogContentText__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/DialogContentText */ "./node_modules/@material-ui/core/esm/DialogContentText/index.js");
-/* harmony import */ var _material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/DialogTitle */ "./node_modules/@material-ui/core/esm/DialogTitle/index.js");
-/* harmony import */ var _material_ui_core_Slide__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Slide */ "./node_modules/@material-ui/core/esm/Slide/index.js");
-/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js");
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
+/* harmony import */ var _material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Dialog */ "./node_modules/@material-ui/core/esm/Dialog/index.js");
+/* harmony import */ var _material_ui_core_DialogActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/DialogActions */ "./node_modules/@material-ui/core/esm/DialogActions/index.js");
+/* harmony import */ var _material_ui_core_DialogContent__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/DialogContent */ "./node_modules/@material-ui/core/esm/DialogContent/index.js");
+/* harmony import */ var _material_ui_core_DialogContentText__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/DialogContentText */ "./node_modules/@material-ui/core/esm/DialogContentText/index.js");
+/* harmony import */ var _material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/DialogTitle */ "./node_modules/@material-ui/core/esm/DialogTitle/index.js");
+/* harmony import */ var _material_ui_core_Slide__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Slide */ "./node_modules/@material-ui/core/esm/Slide/index.js");
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js");
+
 
 
 var _jsxFileName = "/home/anwesha/Desktop/screencast/components/Rules.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
 
 
 
@@ -916,8 +918,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
 
-var Transition = react__WEBPACK_IMPORTED_MODULE_2___default.a.forwardRef(function Transition(props, ref) {
-  return __jsx(_material_ui_core_Slide__WEBPACK_IMPORTED_MODULE_9__["default"], Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+var Transition = react__WEBPACK_IMPORTED_MODULE_3___default.a.forwardRef(function Transition(props, ref) {
+  return __jsx(_material_ui_core_Slide__WEBPACK_IMPORTED_MODULE_10__["default"], Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({
     direction: "up",
     ref: ref
   }, props, {
@@ -930,8 +932,10 @@ var Transition = react__WEBPACK_IMPORTED_MODULE_2___default.a.forwardRef(functio
   }));
 });
 function Rules() {
-  var _React$useState = react__WEBPACK_IMPORTED_MODULE_2___default.a.useState(false),
-      _React$useState2 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_React$useState, 2),
+  var _ref;
+
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_3___default.a.useState(false),
+      _React$useState2 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(_React$useState, 2),
       open = _React$useState2[0],
       setOpen = _React$useState2[1];
 
@@ -951,10 +955,10 @@ function Rules() {
       columnNumber: 5
     }
   }, __jsx("div", {
-    style: {
+    style: (_ref = {
       color: "white",
       width: "370px"
-    },
+    }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref, "color", '#FFFFFF'), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref, "fontFamily", "'Russo One', sans-serif"), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref, "fontSize", 18), _ref),
     onClick: handleClickOpen,
     __self: this,
     __source: {
@@ -962,7 +966,7 @@ function Rules() {
       lineNumber: 28,
       columnNumber: 7
     }
-  }, "Rules"), __jsx(_material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, "Rules"), __jsx(_material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_5__["default"], {
     open: open,
     TransitionComponent: Transition,
     keepMounted: true,
@@ -975,7 +979,7 @@ function Rules() {
       lineNumber: 31,
       columnNumber: 7
     }
-  }, __jsx(_material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, __jsx(_material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_9__["default"], {
     id: "alert-dialog-slide-title",
     __self: this,
     __source: {
@@ -983,14 +987,14 @@ function Rules() {
       lineNumber: 39,
       columnNumber: 9
     }
-  }, "Rules"), __jsx(_material_ui_core_DialogContent__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, "Rules"), __jsx(_material_ui_core_DialogContent__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 40,
       columnNumber: 9
     }
-  }, __jsx(_material_ui_core_DialogContentText__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, __jsx(_material_ui_core_DialogContentText__WEBPACK_IMPORTED_MODULE_8__["default"], {
     id: "alert-dialog-slide-description",
     __self: this,
     __source: {
@@ -998,7 +1002,7 @@ function Rules() {
       lineNumber: 41,
       columnNumber: 11
     }
-  }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_11__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -1048,14 +1052,14 @@ function Rules() {
       lineNumber: 51,
       columnNumber: 17
     }
-  }, "A level can be played only between its start and end timings."))))), __jsx(_material_ui_core_DialogActions__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, "A level can be played only between its start and end timings."))))), __jsx(_material_ui_core_DialogActions__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 58,
       columnNumber: 9
     }
-  }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     onClick: handleClose,
     color: "primary",
     __self: this,
@@ -1109,6 +1113,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_20__);
 /* harmony import */ var _material_ui_icons_SportsEsports__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @material-ui/icons/SportsEsports */ "./node_modules/@material-ui/icons/SportsEsports.js");
 /* harmony import */ var _material_ui_icons_SportsEsports__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_SportsEsports__WEBPACK_IMPORTED_MODULE_21__);
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js");
 
 
 var _jsxFileName = "/home/anwesha/Desktop/screencast/components/Test.js";
@@ -1117,6 +1122,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
 
 
 
@@ -1192,6 +1198,8 @@ function TemporaryDrawer() {
   };
 
   var list = function list(anchor) {
+    var _jsx, _jsx2;
+
     return __jsx("div", {
       className: Object(clsx__WEBPACK_IMPORTED_MODULE_3__["default"])(classes.list),
       role: "presentation",
@@ -1227,21 +1235,32 @@ function TemporaryDrawer() {
         lineNumber: 73,
         columnNumber: 11
       }
-    }, __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    }, __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_11__["default"], (_jsx = {
       primary: "Home",
+      disableTypography: true
+    }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_jsx, "primary", __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_22__["default"], {
+      style: {
+        color: '#FFFFFF',
+        fontFamily: "'Russo One', sans-serif",
+        fontSize: 18
+      },
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74,
-        columnNumber: 13
+        lineNumber: 76,
+        columnNumber: 22
       }
-    }))), __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    }, "Home")), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_jsx, "__self", _this), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_jsx, "__source", {
+      fileName: _jsxFileName,
+      lineNumber: 74,
+      columnNumber: 13
+    }), _jsx)))), __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_9__["default"], {
       button: true,
       key: "Leaderboard",
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 80,
+        lineNumber: 83,
         columnNumber: 9
       }
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_15___default.a, {
@@ -1249,23 +1268,34 @@ function TemporaryDrawer() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 81,
+        lineNumber: 84,
         columnNumber: 11
       }
-    }, __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    }, __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_11__["default"], (_jsx2 = {
       primary: "Leaderboard",
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 82,
-        columnNumber: 13
-      }
-    }))), Log && __jsx("div", {
-      className: "userDetails-wrapper",
+      disableTypography: true
+    }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_jsx2, "primary", __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_22__["default"], {
+      style: {
+        color: '#FFFFFF',
+        fontFamily: "'Russo One', sans-serif",
+        fontSize: 18
+      },
       __self: _this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 87,
+        columnNumber: 22
+      }
+    }, "Leaderboard")), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_jsx2, "__self", _this), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_jsx2, "__source", {
+      fileName: _jsxFileName,
+      lineNumber: 85,
+      columnNumber: 13
+    }), _jsx2)))), Log && __jsx("div", {
+      className: "userDetails-wrapper",
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 92,
         columnNumber: 11
       }
     }, __jsx("div", {
@@ -1273,7 +1303,7 @@ function TemporaryDrawer() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88,
+        lineNumber: 93,
         columnNumber: 13
       }
     }, __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_19__["GoogleLogout"], {
@@ -1283,7 +1313,7 @@ function TemporaryDrawer() {
           __self: _this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 91,
+            lineNumber: 96,
             columnNumber: 19
           }
         }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_15___default.a, {
@@ -1291,7 +1321,7 @@ function TemporaryDrawer() {
           __self: _this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 92,
+            lineNumber: 97,
             columnNumber: 21
           }
         }, __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_18__["default"], {
@@ -1299,7 +1329,7 @@ function TemporaryDrawer() {
           __self: _this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 93,
+            lineNumber: 98,
             columnNumber: 23
           }
         }, "Logout")));
@@ -1308,7 +1338,7 @@ function TemporaryDrawer() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 89,
+        lineNumber: 94,
         columnNumber: 15
       }
     })), __jsx("div", {
@@ -1316,7 +1346,7 @@ function TemporaryDrawer() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 100,
+        lineNumber: 105,
         columnNumber: 13
       }
     }), __jsx("div", {
@@ -1324,7 +1354,7 @@ function TemporaryDrawer() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 101,
+        lineNumber: 106,
         columnNumber: 13
       }
     }))));
@@ -1335,7 +1365,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113,
+      lineNumber: 118,
       columnNumber: 5
     }
   }, ['left'].map(function (anchor) {
@@ -1344,7 +1374,7 @@ function TemporaryDrawer() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 115,
+        lineNumber: 120,
         columnNumber: 9
       }
     }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -1352,7 +1382,7 @@ function TemporaryDrawer() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 116,
+        lineNumber: 121,
         columnNumber: 11
       }
     }, __jsx(_material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_14___default.a, {
@@ -1362,7 +1392,7 @@ function TemporaryDrawer() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 116,
+        lineNumber: 121,
         columnNumber: 56
       }
     })), __jsx(_material_ui_core_Drawer__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -1382,14 +1412,14 @@ function TemporaryDrawer() {
         left: "0px"
       },
       style: {
-        fontFamily: "'Barlow', sans-serif",
+        fontFamily: "'Russo One', sans-serif",
         backgroundColor: "rgba(0,0,0,0.5)"
       },
       PaperProps: {
         style: {
           top: 0,
           left: 0,
-          backgroundColor: "rgb(32, 32, 107)",
+          background: "rgba(15,3,28,1)",
           borderRadius: "0px",
           color: "white",
           marginTop: "0",
@@ -1404,7 +1434,7 @@ function TemporaryDrawer() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 117,
+        lineNumber: 122,
         columnNumber: 11
       }
     }, list(anchor), __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_18__["default"], {
@@ -1412,14 +1442,14 @@ function TemporaryDrawer() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 141,
+        lineNumber: 148,
         columnNumber: 13
       }
     }, __jsx(_Rules__WEBPACK_IMPORTED_MODULE_17__["default"], {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 142,
+        lineNumber: 149,
         columnNumber: 15
       }
     }, "Rules"))));
@@ -46413,7 +46443,7 @@ function toVal(mix) {
 
 exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".Navbar_navv__3g5e0 {\n  margin: 0;\n  padding: 0;\n  background-color: #000044;\n}\n.Navbar_navcontent__3817V {\n  background-color: #000044;\n  padding: 0;\n  margin: 0;\n}\n", "",{"version":3,"sources":["/home/anwesha/Desktop/screencast/components/Navbar.module.css"],"names":[],"mappings":"AAAA;EACE,SAAS;EACT,UAAU;EACV,yBAAyB;AAC3B;AACA;EACE,yBAAyB;EACzB,UAAU;EACV,SAAS;AACX","file":"Navbar.module.css","sourcesContent":[".navv {\n  margin: 0;\n  padding: 0;\n  background-color: #000044;\n}\n.navcontent {\n  background-color: #000044;\n  padding: 0;\n  margin: 0;\n}\n"]}]);
+exports.push([module.i, ".Navbar_navv__3g5e0 {\n  margin: 0;\n  padding: 0;\n  \n  \n}\n.Navbar_navcontent__3817V {\n  background: rgb(2,0,36);\n  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(144,73,172,1) 25%, rgba(15,3,28,1) 100%);  padding: 0;\n  margin: 0;\n}\n", "",{"version":3,"sources":["/home/anwesha/Desktop/screencast/components/Navbar.module.css"],"names":[],"mappings":"AAAA;EACE,SAAS;EACT,UAAU;;;AAGZ;AACA;EACE,uBAAuB;EACvB,mGAAmG,GAAG,UAAU;EAChH,SAAS;AACX","file":"Navbar.module.css","sourcesContent":[".navv {\n  margin: 0;\n  padding: 0;\n  \n  \n}\n.navcontent {\n  background: rgb(2,0,36);\n  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(144,73,172,1) 25%, rgba(15,3,28,1) 100%);  padding: 0;\n  margin: 0;\n}\n"]}]);
 // Exports
 exports.locals = {
 	"navv": "Navbar_navv__3g5e0",

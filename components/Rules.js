@@ -25,7 +25,7 @@ export default function Rules() {
 
   return (
     <div>
-      <div style={{ color: "white", width: "370px" }} onClick={handleClickOpen}>
+      <div style={{ color: "white", width: "370px", color: '#FFFFFF', fontFamily:"'Russo One', sans-serif", fontSize:18 }} onClick={handleClickOpen}>
         Rules
       </div>
       <Dialog

@@ -946,7 +946,10 @@ function Rules() {
   }, __jsx("div", {
     style: {
       color: "white",
-      width: "370px"
+      width: "370px",
+      color: '#FFFFFF',
+      fontFamily: "'Russo One', sans-serif",
+      fontSize: 18
     },
     onClick: handleClickOpen,
     __self: this,
@@ -1111,6 +1114,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_18__);
 /* harmony import */ var _material_ui_icons_SportsEsports__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @material-ui/icons/SportsEsports */ "@material-ui/icons/SportsEsports");
 /* harmony import */ var _material_ui_icons_SportsEsports__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_SportsEsports__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @material-ui/core/Typography */ "@material-ui/core/Typography");
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_20__);
 var _jsxFileName = "/home/anwesha/Desktop/screencast/components/Test.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -1119,6 +1124,7 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -1220,6 +1226,20 @@ function TemporaryDrawer() {
     }
   }, __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_9___default.a, {
     primary: "Home",
+    disableTypography: true,
+    primary: __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_20___default.a, {
+      style: {
+        color: '#FFFFFF',
+        fontFamily: "'Russo One', sans-serif",
+        fontSize: 18
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 76,
+        columnNumber: 22
+      }
+    }, "Home"),
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -1232,7 +1252,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 83,
       columnNumber: 9
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_13___default.a, {
@@ -1240,15 +1260,29 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 84,
       columnNumber: 11
     }
   }, __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_9___default.a, {
     primary: "Leaderboard",
+    disableTypography: true,
+    primary: __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_20___default.a, {
+      style: {
+        color: '#FFFFFF',
+        fontFamily: "'Russo One', sans-serif",
+        fontSize: 18
+      },
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 87,
+        columnNumber: 22
+      }
+    }, "Leaderboard"),
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 85,
       columnNumber: 13
     }
   }))), Log && __jsx("div", {
@@ -1256,7 +1290,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
+      lineNumber: 92,
       columnNumber: 11
     }
   }, __jsx("div", {
@@ -1264,7 +1298,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88,
+      lineNumber: 93,
       columnNumber: 13
     }
   }, __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_17__["GoogleLogout"], {
@@ -1273,7 +1307,7 @@ function TemporaryDrawer() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 91,
+        lineNumber: 96,
         columnNumber: 19
       }
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_13___default.a, {
@@ -1281,7 +1315,7 @@ function TemporaryDrawer() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92,
+        lineNumber: 97,
         columnNumber: 21
       }
     }, __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -1289,7 +1323,7 @@ function TemporaryDrawer() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 93,
+        lineNumber: 98,
         columnNumber: 23
       }
     }, "Logout"))),
@@ -1297,7 +1331,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89,
+      lineNumber: 94,
       columnNumber: 15
     }
   })), __jsx("div", {
@@ -1305,7 +1339,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100,
+      lineNumber: 105,
       columnNumber: 13
     }
   }), __jsx("div", {
@@ -1313,7 +1347,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101,
+      lineNumber: 106,
       columnNumber: 13
     }
   }))));
@@ -1323,7 +1357,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113,
+      lineNumber: 118,
       columnNumber: 5
     }
   }, ['left'].map(anchor => __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
@@ -1331,7 +1365,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115,
+      lineNumber: 120,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -1339,7 +1373,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116,
+      lineNumber: 121,
       columnNumber: 11
     }
   }, __jsx(_material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_12___default.a, {
@@ -1349,7 +1383,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116,
+      lineNumber: 121,
       columnNumber: 56
     }
   })), __jsx(_material_ui_core_Drawer__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -1369,14 +1403,14 @@ function TemporaryDrawer() {
       left: "0px"
     },
     style: {
-      fontFamily: "'Barlow', sans-serif",
+      fontFamily: "'Russo One', sans-serif",
       backgroundColor: "rgba(0,0,0,0.5)"
     },
     PaperProps: {
       style: {
         top: 0,
         left: 0,
-        backgroundColor: "rgb(32, 32, 107)",
+        background: "rgba(15,3,28,1)",
         borderRadius: "0px",
         color: "white",
         marginTop: "0",
@@ -1391,7 +1425,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117,
+      lineNumber: 122,
       columnNumber: 11
     }
   }, list(anchor), __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -1399,14 +1433,14 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 141,
+      lineNumber: 148,
       columnNumber: 13
     }
   }, __jsx(_Rules__WEBPACK_IMPORTED_MODULE_15__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 142,
+      lineNumber: 149,
       columnNumber: 15
     }
   }, "Rules"))))));
