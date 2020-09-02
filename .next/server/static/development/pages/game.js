@@ -1636,7 +1636,7 @@ module.exports = "/_next/static/images/scl-68257163687d3e415a6fee7af772d9d2.png"
 /*! exports provided: api, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"api\":\"https://54.88.95.17\"}");
+module.exports = JSON.parse("{\"api\":\"http://54.88.95.17\"}");
 
 /***/ }),
 
