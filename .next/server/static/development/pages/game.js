@@ -928,9 +928,9 @@ function Question(props) {
   }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3___default.a, {
     className: classes.title,
     style: {
-      fontFamily: "'Barlow', sans-serif"
+      fontFamily: "'Montserrat', sans-serif",
+      color: "rgb(196, 175, 153)"
     },
-    color: "white",
     gutterBottom: true,
     __self: this,
     __source: {
