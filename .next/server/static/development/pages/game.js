@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1636,7 +1636,7 @@ module.exports = "/_next/static/images/scl-68257163687d3e415a6fee7af772d9d2.png"
 /*! exports provided: api, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"api\":\"http://54.88.95.17\"}");
+module.exports = JSON.parse("{\"api\":\"http://scapi.trennds.com\"}");
 
 /***/ }),
 
@@ -3573,7 +3573,7 @@ class game extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!*****************************!*\
   !*** multi ./pages/game.js ***!
   \*****************************/
