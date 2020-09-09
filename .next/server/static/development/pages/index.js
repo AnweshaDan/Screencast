@@ -490,27 +490,28 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     super();
 
     _defineProperty(this, "responseGoogle", response => {
-      console.log("google response");
-      localStorage.setItem('token', response.tokenObj.access_token);
-      this.setState({
-        userDetails: response.profileObj,
-        isUserLoggedIn: true,
-        access: response.tokenObj.access_token
-      });
+      console.log("google response"); //localStorage.setItem('token', response.tokenObj.access_token)
+
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.post(_env_json__WEBPACK_IMPORTED_MODULE_9__.api + "/api/googlelogin", {
         token: response.tokenObj.access_token
       }).then(res => {
         console.log(res);
-        localStorage.setItem('token', res.data.access_token);
-        localStorage.setItem('ref_token', res.data.refresh_token);
-        this.setState({
-          access: res.data.access_token
-        }); //this.refresh(res.data.access_token,res.data.refresh_token);
+        localStorage.setItem('token', res.data.access_token); //localStorage.setItem('ref_token', res.data.refresh_token)
 
         localStorage.setItem("email", response.profileObj.email);
         localStorage.setItem("name", response.profileObj.name);
         localStorage.setItem("image", response.profileObj.imageUrl);
-        if (localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_7___default.a.push("/game");else Object(_components_AnsAlert__WEBPACK_IMPORTED_MODULE_8__["default"])(-1);
+        this.setState({
+          access: res.data.access_token,
+          userDetails: response.profileObj,
+          isUserLoggedIn: true
+        }, () => {
+          if (localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_7___default.a.push("/game");else {
+            Object(_components_AnsAlert__WEBPACK_IMPORTED_MODULE_8__["default"])(-1);
+            next_router__WEBPACK_IMPORTED_MODULE_7___default.a.push('/');
+          }
+        }); //this.refresh(res.data.access_token,res.data.refresh_token);
+
         /* if ((localStorage.getItem('start') <= Date.now()))
             Router.push("/game");*/
       });
@@ -529,7 +530,10 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     console.log(localStorage.getItem('start'));
 
     if (localStorage.getItem("email")) {
-      if (localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_7___default.a.push("/game");else {
+      if (localStorage.getItem('start') < Date.now()) {
+        console.log(Date.now() + "    " + localStorage.getItem('start'));
+        next_router__WEBPACK_IMPORTED_MODULE_7___default.a.push("/game");
+      } else {
         Object(_components_AnsAlert__WEBPACK_IMPORTED_MODULE_8__["default"])(-1);
         console.log("SANTA CLAUS");
       }
@@ -577,28 +581,28 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 131,
+        lineNumber: 144,
         columnNumber: 7
       }
     }, __jsx("div", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 132,
+        lineNumber: 145,
         columnNumber: 9
       }
     }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 133,
+        lineNumber: 146,
         columnNumber: 11
       }
     })), __jsx("div", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 137,
+        lineNumber: 150,
         columnNumber: 9
       }
     }, !this.state.isUserLoggedIn && __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -608,7 +612,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 142,
+          lineNumber: 155,
           columnNumber: 17
         }
       }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -623,7 +627,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 144,
+          lineNumber: 157,
           columnNumber: 19
         }
       }, __jsx(social_media_icons_react__WEBPACK_IMPORTED_MODULE_6__["SocialMediaIconsReact"], {
@@ -639,7 +643,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 152,
+          lineNumber: 165,
           columnNumber: 21
         }
       }))),
@@ -651,7 +655,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 139,
+        lineNumber: 152,
         columnNumber: 13
       }
     })));
@@ -1685,7 +1689,7 @@ module.exports = "/_next/static/images/scl-68257163687d3e415a6fee7af772d9d2.png"
 /*! exports provided: api, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"api\":\"http://scapi.trennds.com\"}");
+module.exports = JSON.parse("{\"api\":\"https://scapi.trennds.com\"}");
 
 /***/ }),
 
@@ -3435,7 +3439,12 @@ function index() {
       localStorage.setItem("start", start);
       localStorage.setItem("end", end);
       console.log(localStorage.getItem('start'));
-      if (localStorage.getItem('email') && localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_9___default.a.push('/game'); //if(localStorage.getItem('end') < Date.now()) Router.push('/finale2');
+      console.log(Date.now());
+
+      if (localStorage.getItem('email') && localStorage.getItem('start') < Date.now()) {} //console.log(Date.now()+"    "+localStorage.getItem('start'))
+      //Router.push('/game')
+      //if(localStorage.getItem('end') < Date.now()) Router.push('/finale2');
+
     });
   });
   return __jsx("div", {
@@ -3446,21 +3455,21 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 57,
       columnNumber: 5
     }
   }, __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 59,
       columnNumber: 7
     }
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 60,
       columnNumber: 9
     }
   }, __jsx("meta", {
@@ -3468,7 +3477,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 61,
       columnNumber: 11
     }
   }), __jsx("meta", {
@@ -3477,14 +3486,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 62,
       columnNumber: 11
     }
   }), __jsx("title", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 66,
       columnNumber: 11
     }
   }, "Screencast "), __jsx("link", {
@@ -3494,14 +3503,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 67,
       columnNumber: 11
     }
   }))), __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 71,
       columnNumber: 7
     }
   }), __jsx(_components_Timer2__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -3509,14 +3518,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 73,
       columnNumber: 7
     }
   }), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 75,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -3529,7 +3538,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 76,
       columnNumber: 9
     }
   }, __jsx("span", {
@@ -3537,7 +3546,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79,
+      lineNumber: 84,
       columnNumber: 11
     }
   }, "screen"), "cast", " ", __jsx("span", {
@@ -3545,7 +3554,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 85,
       columnNumber: 11
     }
   }, "2020 ")), __jsx("div", {
@@ -3556,14 +3565,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 88,
       columnNumber: 9
     }
   }, __jsx("h1", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84,
+      lineNumber: 89,
       columnNumber: 11
     }
   }, "Login to play "))), __jsx("div", {
@@ -3578,35 +3587,35 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88,
+      lineNumber: 93,
       columnNumber: 7
     }
   }, __jsx(_components_GoogleLog__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89,
+      lineNumber: 94,
       columnNumber: 9
     }
   }), __jsx(_components_FbLog2__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90,
+      lineNumber: 95,
       columnNumber: 9
     }
   })), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93,
+      lineNumber: 98,
       columnNumber: 7
     }
   }, __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94,
+      lineNumber: 99,
       columnNumber: 9
     }
   })));

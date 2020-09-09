@@ -36,9 +36,14 @@ function index() {
         localStorage.setItem("start", start);
         localStorage.setItem("end", end);
         console.log(localStorage.getItem('start'));
-
-        if (localStorage.getItem('email') && (localStorage.getItem('start') <= Date.now()))
-          Router.push('/game')
+        console.log(Date.now());
+        if (localStorage.getItem('email') && (localStorage.getItem('start') < Date.now()))
+        {
+          //console.log(Date.now()+"    "+localStorage.getItem('start'))
+          //Router.push('/game')
+        }
+       
+         
 
         //if(localStorage.getItem('end') < Date.now()) Router.push('/finale2');
       });

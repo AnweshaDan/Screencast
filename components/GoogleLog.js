@@ -34,8 +34,13 @@ class GoogleLog extends React.Component {
     console.log(localStorage.getItem('start'));
     if(localStorage.getItem("email"))
     {
-      if((localStorage.getItem('start') <= Date.now()))
-      Router.push("/game");
+      if((localStorage.getItem('start') < Date.now()))
+      {
+        console.log(Date.now()+"    "+localStorage.getItem('start'))
+        Router.push("/game");
+        
+      }
+      
       else 
       {
         AnsAlert(-1);
@@ -86,10 +91,10 @@ class GoogleLog extends React.Component {
   }*/
   responseGoogle = (response) => {
 
-     console.log("google response")
-    localStorage.setItem('token', response.tokenObj.access_token)
+    console.log("google response")
+    //localStorage.setItem('token', response.tokenObj.access_token)
 
-    this.setState({ userDetails: response.profileObj, isUserLoggedIn: true, access: response.tokenObj.access_token });
+    
     axios
       .post(data.api+"/api/googlelogin", {
         token: response.tokenObj.access_token
@@ -99,18 +104,26 @@ class GoogleLog extends React.Component {
 
         console.log((res));
         localStorage.setItem('token', res.data.access_token)
-        localStorage.setItem('ref_token', res.data.refresh_token)
-        this.setState({ access: res.data.access_token })
-        //this.refresh(res.data.access_token,res.data.refresh_token);
-
-
+        //localStorage.setItem('ref_token', res.data.refresh_token)
         localStorage.setItem("email", response.profileObj.email);
         localStorage.setItem("name", response.profileObj.name);
         localStorage.setItem("image", response.profileObj.imageUrl);
-        if((localStorage.getItem('start') <= Date.now()))
-        Router.push("/game");
-        else
-        AnsAlert(-1);
+        this.setState({ access: res.data.access_token,userDetails: response.profileObj, isUserLoggedIn: true }, ()=>{
+          if((localStorage.getItem('start') <= Date.now())) 
+            Router.push("/game");
+            else
+            {
+              AnsAlert(-1);
+              Router.push('/');
+            }
+
+        })
+        //this.refresh(res.data.access_token,res.data.refresh_token);
+
+
+        
+        
+        
       /* if ((localStorage.getItem('start') <= Date.now()))
           Router.push("/game");*/
       
