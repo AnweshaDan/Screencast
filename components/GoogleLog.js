@@ -28,24 +28,14 @@ class GoogleLog extends React.Component {
     };
     //this.refresh=this.refresh.bind(this);
   }
+
   componentDidMount() {
-    console.log("google mounted")
-    console.log(Date.now());
-    console.log(localStorage.getItem('start'));
+    
     if(localStorage.getItem("email"))
     {
-      if((localStorage.getItem('start') < Date.now()))
-      {
-        console.log(Date.now()+"    "+localStorage.getItem('start'))
-        Router.push("/game");
-        
-      }
+      if((localStorage.getItem('start') < Date.now())) Router.push("/game");
+      else AnsAlert(-1)      
       
-      else 
-      {
-        AnsAlert(-1);
-        console.log("SANTA CLAUS");
-      }
     }    
   
     
@@ -91,18 +81,14 @@ class GoogleLog extends React.Component {
   }*/
   responseGoogle = (response) => {
 
-    console.log("google response")
+   
     //localStorage.setItem('token', response.tokenObj.access_token)
-
-    
     axios
       .post(data.api+"/api/googlelogin", {
         token: response.tokenObj.access_token
 
       })
       .then((res) => {
-
-        console.log((res));
         localStorage.setItem('token', res.data.access_token)
         //localStorage.setItem('ref_token', res.data.refresh_token)
         localStorage.setItem("email", response.profileObj.email);
@@ -119,21 +105,11 @@ class GoogleLog extends React.Component {
 
         })
         //this.refresh(res.data.access_token,res.data.refresh_token);
-
-
-        
-        
-        
-      /* if ((localStorage.getItem('start') <= Date.now()))
+        /* if ((localStorage.getItem('start') <= Date.now()))
           Router.push("/game");*/
-      
-
       });
 
-
-
-
-  };
+ };
 
 
   render() {

@@ -129,12 +129,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/TableCell */ "./node_modules/@material-ui/core/esm/TableCell/index.js");
 /* harmony import */ var _material_ui_core_TableHead__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/TableHead */ "./node_modules/@material-ui/core/esm/TableHead/index.js");
 /* harmony import */ var _material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/TableRow */ "./node_modules/@material-ui/core/esm/TableRow/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _env_json__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../env.json */ "./env.json");
-var _env_json__WEBPACK_IMPORTED_MODULE_8___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../env.json */ "./env.json", 1);
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _env_json__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../env.json */ "./env.json");
+var _env_json__WEBPACK_IMPORTED_MODULE_9___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../env.json */ "./env.json", 1);
 var _jsxFileName = "/home/anwesha/Desktop/screencast/components/Leadertable.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -194,7 +196,7 @@ function Leadertable() {
 
   var classes = useStyles();
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    axios__WEBPACK_IMPORTED_MODULE_7___default.a.get(_env_json__WEBPACK_IMPORTED_MODULE_8__.api + "/api/leaderboard", {
+    axios__WEBPACK_IMPORTED_MODULE_8___default.a.get(_env_json__WEBPACK_IMPORTED_MODULE_9__.api + "/api/leaderboard", {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("token")
       }
@@ -313,14 +315,21 @@ function Leadertable() {
         columnNumber: 19
       }
     }, row.score));
-  })) : __jsx("div", {
+  })) : __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    variant: "h6",
+    className: classes.title,
+    style: {
+      fontFamily: "'Russo One', sans-serif",
+      fontSize: 18,
+      color: 'white'
+    },
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 98,
-      columnNumber: 15
+      columnNumber: 13
     }
-  }, "LOADING......"))));
+  }, "\xA0\xA0\xA0Loading..."))));
 }
 
 /***/ }),

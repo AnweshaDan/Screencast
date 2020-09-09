@@ -241,30 +241,23 @@ class FbLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     super();
 
     _defineProperty(this, "facebookResponse", response => {
-      console.log(response);
       localStorage.setItem("email", response.email);
       localStorage.setItem("name", response.name);
       localStorage.setItem("image", response.picture.data.url);
       localStorage.setItem('token', response.accessToken);
-      console.log(localStorage.getItem('email'));
-      this.setState({
-        user: response,
-        isSignedIn: true,
-        access: response.accessToken
-      });
       axios__WEBPACK_IMPORTED_MODULE_4___default.a.post(_env_json__WEBPACK_IMPORTED_MODULE_6__.api + "/api/facebooklogin", {
         accesstoken: response.accessToken,
         expiration_time: response.data_access_expiration_time,
         userID: response.userID
       }).then(res => {
-        console.log(res);
         localStorage.setItem('token', res.data.access_token);
         this.setState({
+          user: response,
+          isSignedIn: true,
           access: res.data.access_token
+        }, () => {
+          if (localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push("/game");else Object(_components_AnsAlert__WEBPACK_IMPORTED_MODULE_5__["default"])(-1);
         });
-        console.log(localStorage.getItem("token"));
-        console.log(this.state.access);
-        if (localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push("/game");else Object(_components_AnsAlert__WEBPACK_IMPORTED_MODULE_5__["default"])(-1);
       });
     });
 
@@ -276,11 +269,9 @@ class FbLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   }
 
   componentDidMount() {
-    //this.setState({isSignedIn : true});
     if (localStorage.getItem("email")) {
       if (localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push("/game");else {
         Object(_components_AnsAlert__WEBPACK_IMPORTED_MODULE_5__["default"])(-1);
-        console.log("SANTA CLAUS");
       }
     }
   }
@@ -290,7 +281,7 @@ class FbLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 90,
+        lineNumber: 84,
         columnNumber: 7
       }
     }, !this.state.isSignedIn && __jsx("div", {
@@ -302,7 +293,7 @@ class FbLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92,
+        lineNumber: 86,
         columnNumber: 11
       }
     }, __jsx(LoginButton, {
@@ -310,7 +301,7 @@ class FbLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 95,
+        lineNumber: 89,
         columnNumber: 13
       }
     })));
@@ -490,12 +481,10 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     super();
 
     _defineProperty(this, "responseGoogle", response => {
-      console.log("google response"); //localStorage.setItem('token', response.tokenObj.access_token)
-
+      //localStorage.setItem('token', response.tokenObj.access_token)
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.post(_env_json__WEBPACK_IMPORTED_MODULE_9__.api + "/api/googlelogin", {
         token: response.tokenObj.access_token
       }).then(res => {
-        console.log(res);
         localStorage.setItem('token', res.data.access_token); //localStorage.setItem('ref_token', res.data.refresh_token)
 
         localStorage.setItem("email", response.profileObj.email);
@@ -513,7 +502,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         }); //this.refresh(res.data.access_token,res.data.refresh_token);
 
         /* if ((localStorage.getItem('start') <= Date.now()))
-            Router.push("/game");*/
+          Router.push("/game");*/
       });
     });
 
@@ -525,18 +514,8 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   }
 
   componentDidMount() {
-    console.log("google mounted");
-    console.log(Date.now());
-    console.log(localStorage.getItem('start'));
-
     if (localStorage.getItem("email")) {
-      if (localStorage.getItem('start') < Date.now()) {
-        console.log(Date.now() + "    " + localStorage.getItem('start'));
-        next_router__WEBPACK_IMPORTED_MODULE_7___default.a.push("/game");
-      } else {
-        Object(_components_AnsAlert__WEBPACK_IMPORTED_MODULE_8__["default"])(-1);
-        console.log("SANTA CLAUS");
-      }
+      if (localStorage.getItem('start') < Date.now()) next_router__WEBPACK_IMPORTED_MODULE_7___default.a.push("/game");else Object(_components_AnsAlert__WEBPACK_IMPORTED_MODULE_8__["default"])(-1);
     }
     /*if (localStorage.getItem("email") && ((localStorage.getItem('start') <= Date.now()))) {
       //this.refresh(localStorage.getItem('token'),localStorage.getItem('ref_token'))
@@ -581,28 +560,28 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 144,
+        lineNumber: 120,
         columnNumber: 7
       }
     }, __jsx("div", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 145,
+        lineNumber: 121,
         columnNumber: 9
       }
     }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 146,
+        lineNumber: 122,
         columnNumber: 11
       }
     })), __jsx("div", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 150,
+        lineNumber: 126,
         columnNumber: 9
       }
     }, !this.state.isUserLoggedIn && __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -612,7 +591,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 155,
+          lineNumber: 131,
           columnNumber: 17
         }
       }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -627,7 +606,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 157,
+          lineNumber: 133,
           columnNumber: 19
         }
       }, __jsx(social_media_icons_react__WEBPACK_IMPORTED_MODULE_6__["SocialMediaIconsReact"], {
@@ -643,7 +622,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 165,
+          lineNumber: 141,
           columnNumber: 21
         }
       }))),
@@ -655,7 +634,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 152,
+        lineNumber: 128,
         columnNumber: 13
       }
     })));
@@ -3384,24 +3363,21 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _webPush__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../webPush */ "./webPush.js");
-/* harmony import */ var _webPush__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_webPush__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Navbar */ "./components/Navbar.js");
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
-/* harmony import */ var _components_GoogleLog__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/GoogleLog */ "./components/GoogleLog.js");
-/* harmony import */ var _components_FbLog2__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/FbLog2 */ "./components/FbLog2.js");
-/* harmony import */ var _components_Timer2__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Timer2 */ "./components/Timer2.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _env_json__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../env.json */ "./env.json");
-var _env_json__WEBPACK_IMPORTED_MODULE_10___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../env.json */ "./env.json", 1);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Navbar */ "./components/Navbar.js");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
+/* harmony import */ var _components_GoogleLog__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/GoogleLog */ "./components/GoogleLog.js");
+/* harmony import */ var _components_FbLog2__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/FbLog2 */ "./components/FbLog2.js");
+/* harmony import */ var _components_Timer2__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Timer2 */ "./components/Timer2.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _env_json__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../env.json */ "./env.json");
+var _env_json__WEBPACK_IMPORTED_MODULE_9___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../env.json */ "./env.json", 1);
 var _jsxFileName = "/home/anwesha/Desktop/screencast/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -3427,7 +3403,7 @@ function index() {
     1: setDay
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    axios__WEBPACK_IMPORTED_MODULE_3___default.a.get(_env_json__WEBPACK_IMPORTED_MODULE_10__.api + "/api/status").then(response => {
+    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(_env_json__WEBPACK_IMPORTED_MODULE_9__.api + "/api/status").then(response => {
       console.log("index mounted");
       console.log(response);
       console.log(new Date(response.data.start_time).getTime()); //milliseconds
@@ -3465,7 +3441,7 @@ function index() {
       lineNumber: 59,
       columnNumber: 7
     }
-  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -3506,14 +3482,14 @@ function index() {
       lineNumber: 67,
       columnNumber: 11
     }
-  }))), __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }))), __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 71,
       columnNumber: 7
     }
-  }), __jsx(_components_Timer2__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }), __jsx(_components_Timer2__WEBPACK_IMPORTED_MODULE_7__["default"], {
     start: start,
     __self: this,
     __source: {
@@ -3590,14 +3566,14 @@ function index() {
       lineNumber: 93,
       columnNumber: 7
     }
-  }, __jsx(_components_GoogleLog__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, __jsx(_components_GoogleLog__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 94,
       columnNumber: 9
     }
-  }), __jsx(_components_FbLog2__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }), __jsx(_components_FbLog2__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -3611,7 +3587,7 @@ function index() {
       lineNumber: 98,
       columnNumber: 7
     }
-  }, __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -3622,59 +3598,6 @@ function index() {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (index);
-
-/***/ }),
-
-/***/ "./webPush.js":
-/*!********************!*\
-  !*** ./webPush.js ***!
-  \********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/*import 'firebase/messaging';
-import firebase from 'firebase/app';
-import localforage from 'localforage';
-const firebaseCloudMessaging = {
-//checking whether token is available in indexed DB
-tokenInlocalforage: async () => {
-return localforage.getItem('fcm_token');
-},
-//initializing firebase app
-init: async function () {
-if (!firebase.apps.length) {
-firebase.initializeApp({
- messagingSenderId: "447447903811"
-});
-try {
-const messaging = firebase.messaging();
-const tokenInLocalForage = await this.tokenInlocalforage();
-//if FCM token is already there just return the token
-if (tokenInLocalForage !== null) {
-return tokenInLocalForage;
-}
-//requesting notification permission from browser
-const status = await Notification.requestPermission();
-if (status && status === 'granted') {
-//getting token from FCM
-const fcm_token = await messaging.getToken();
-if (fcm_token) {
-//setting FCM token in indexed db using localforage
-localforage.setItem('fcm_token', token);
-console.log('fcm token', token);
-//return the FCM token after saving it
-return token;
-}
-}
-} catch (error) {
-console.error(error);
-return null;
-}
-}
-},
-};
-export { firebaseCloudMessaging };
-*/
 
 /***/ }),
 

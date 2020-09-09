@@ -37,7 +37,7 @@ class FbLog2 extends React.Component {
   }
   componentDidMount() {
     
-      //this.setState({isSignedIn : true});
+      
       if(localStorage.getItem("email"))
       {
         if((localStorage.getItem('start') <= Date.now()))
@@ -45,23 +45,19 @@ class FbLog2 extends React.Component {
         else 
         {
           AnsAlert(-1);
-          console.log("SANTA CLAUS");
         }
       }    
     }
   
 
   facebookResponse = (response) => {
-    console.log(response);
+
     localStorage.setItem("email", response.email);
     localStorage.setItem("name", response.name);
     localStorage.setItem("image", response.picture.data.url);
     localStorage.setItem('token', response.accessToken)
-    console.log(localStorage.getItem('email'));
 
 
-
-    this.setState({ user: response, isSignedIn: true, access: response.accessToken });
     axios
       .post(data.api+"/api/facebooklogin", {
         accesstoken: response.accessToken,
@@ -69,18 +65,16 @@ class FbLog2 extends React.Component {
         userID: response.userID
       })
       .then((res) => {
-        console.log(res);
         localStorage.setItem('token', res.data.access_token)
 
-        this.setState({ access: res.data.access_token })
+        this.setState({ user: response, isSignedIn: true,access: res.data.access_token },()=>{
+          if((localStorage.getItem('start') <= Date.now()))
+            Router.push("/game");
+            else
+            AnsAlert(-1);
 
-        console.log(localStorage.getItem("token"));
-        console.log(this.state.access);
-
-        if((localStorage.getItem('start') <= Date.now()))
-        Router.push("/game");
-        else
-        AnsAlert(-1);
+        })
+        
       });
 
   };

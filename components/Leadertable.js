@@ -5,7 +5,7 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-
+import Typography from "@material-ui/core/Typography";
 import axios from "axios";
 import data from '../env.json';
 
@@ -95,7 +95,15 @@ export default function Leadertable() {
               ))}
             </TableBody>
           ) : (
-              <div>LOADING......</div>
+            <Typography
+                variant="h6"
+                className={classes.title}
+                style={{ fontFamily: "'Russo One', sans-serif", fontSize:18, color:'white'}}
+              >
+
+                &nbsp;&nbsp;&nbsp;Loading...
+              </Typography>
+
             )}
         </Table>
       </div>

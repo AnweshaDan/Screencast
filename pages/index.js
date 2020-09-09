@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { firebaseCloudMessaging } from '../webPush';
+
 
 import Head from "next/head";
 
