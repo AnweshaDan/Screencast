@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 function finale() {
+
+ /* useEffect()
+  {
+    axios
+      .get(data.api+"/api/status")
+      .then((response) => {
+        if(!(localStorage.getItem('day')==3 || response.data.error))
+              {
+                
+                Router.push('/game_finale')
+              }
+      })
+  }*/
   return (
     <div>
       <Navbar />

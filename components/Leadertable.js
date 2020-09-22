@@ -55,11 +55,11 @@ export default function Leadertable() {
 
   useEffect(() => {
     axios
-      .get(data.api+"/api/leaderboard", {
+      .get(data.api+"/api/leaderboard"/*, {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },
-      })
+      }*/)
       .then((response) => {
         setRankList(response.data);
         console.log(response.data);

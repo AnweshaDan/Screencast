@@ -160,6 +160,14 @@ __webpack_require__.r(__webpack_exports__);
     text: 'Ahaaa sorry!',
     showConfirmButton: false
   });
+  if (isCorrect === 8) sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire({
+    padding: "60px",
+    position: 'center',
+    icon: 'info',
+    title: 'Error !',
+    text: 'Looks like you are not logged in ;_;',
+    showConfirmButton: false
+  });
 });
 
 /***/ }),

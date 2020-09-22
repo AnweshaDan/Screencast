@@ -22,7 +22,9 @@ class game extends React.Component {
       isLoggedIn: false,
       hint: "",
       day: "",
-      end:""
+      end:"",
+      message:"",
+      
     };
 
     this.submit = this.submit.bind(this);
@@ -48,7 +50,11 @@ class game extends React.Component {
             let v=setTimeout(function(){
               AnsAlert(9);
               if(localStorage.getItem('day')==3 || response.data.error)
-              Router.push('/game_finale')
+              {
+                
+                Router.push('/game_finale')
+              }
+              
               else
               Router.push('/finale2');
               
@@ -58,6 +64,7 @@ class game extends React.Component {
             {
               console.log(this.state.day+this.state.end);
               if (!(localStorage.getItem("email"))) {
+                AnsAlert(8)
                 Router.push('/');
               }
               else if (!(localStorage.getItem('start') <= Date.now())) {

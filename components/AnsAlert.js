@@ -41,6 +41,17 @@ export default (isCorrect) => {
             showConfirmButton: false
 
         })
+        if (isCorrect === 8)
+        Swal.fire({
+            padding: "60px",
+            position: 'center',
+            icon: 'info',
+            title: 'Error !',
+            text: 'Looks like you are not logged in ;_;',
+            showConfirmButton: false
+
+        })
+
 
 
 }
