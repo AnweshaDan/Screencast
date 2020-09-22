@@ -27,15 +27,18 @@ function index() {
       .then((response) => {
         console.log("index mounted");
         console.log(response);
+        if(localStorage.getItem('day')==3 && (localStorage.getItem('end') < Date.now()))
+              Router.push('/game_finale')
         console.log((new Date(response.data.start_time)).getTime());//milliseconds
         setStart((new Date(response.data.start_time)).getTime())
         //setStart((new Date("2020-07-20T13:16:27Z")).getTime());
         setEnd((new Date(response.data.end_time)).getTime())
         setDay(response.data.current_day)
-
+        console.log("YO");
         localStorage.setItem("start", start);
         localStorage.setItem("end", end);
-        console.log(localStorage.getItem('start'));
+        localStorage.setItem("day",day);
+        console.log(localStorage.getItem('day'));
         console.log(Date.now());
         if (localStorage.getItem('email') && (localStorage.getItem('start') < Date.now()))
         {

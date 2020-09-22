@@ -33,6 +33,7 @@ class GoogleLog extends React.Component {
     
     if(localStorage.getItem("email"))
     {
+      
       if((localStorage.getItem('start') < Date.now())) Router.push("/game");
       else AnsAlert(-1)      
       
@@ -95,6 +96,7 @@ class GoogleLog extends React.Component {
         localStorage.setItem("name", response.profileObj.name);
         localStorage.setItem("image", response.profileObj.imageUrl);
         this.setState({ access: res.data.access_token,userDetails: response.profileObj, isUserLoggedIn: true }, ()=>{
+          
           if((localStorage.getItem('start') <= Date.now())) 
             Router.push("/game");
             else

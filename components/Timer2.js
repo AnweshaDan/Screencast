@@ -53,7 +53,7 @@ export default function Timer(props) {
                         <CardContent>
                             <Typography style={{ textAlign: "center", fontSize: "17px" }}>
                                 <h1>
-                                    {props.message}&nbsp;&nbsp;{zeroPad(days, 3)}:{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
+                                    {props.message}&nbsp;&nbsp;{zeroPad(days, 2)}:{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}
                                 </h1>
                                 <h1>
                                     Game is not live yet !

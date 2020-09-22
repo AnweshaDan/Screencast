@@ -31,6 +31,16 @@ export default (isCorrect) => {
             showConfirmButton: false
 
         })
+        if (isCorrect === 9)
+        Swal.fire({
+            padding: "60px",
+            position: 'center',
+            icon: 'error',
+            title: 'Times up!',
+            text: 'Ahaaa sorry!',
+            showConfirmButton: false
+
+        })
 
 
 }

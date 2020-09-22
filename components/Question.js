@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
@@ -34,6 +34,7 @@ export default function Question(props) {
   const classes = useStyles();
   
   return (
+    
     <div>
       <div className="head">
         <div
@@ -44,7 +45,7 @@ export default function Question(props) {
             fontFamily: "'Russo One', sans-serif",
           }}
         >
-          <span className="flicker">ROUND 1</span>
+          <span className="flicker">ROUND {props.day}</span>
         </div>
       </div>
 
@@ -82,7 +83,7 @@ export default function Question(props) {
           <div style={{ textAlign: "center", margin: "0 auto" }}>
             <AudioHint
               style={{ textAlign: "center", margin: "0 auto" }}
-              audio={Data.api + props.audio}
+              audio={data.api + props.audio}
             />
           </div>
         ) : (

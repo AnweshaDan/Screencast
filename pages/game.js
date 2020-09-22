@@ -21,6 +21,8 @@ class game extends React.Component {
       image: "",
       isLoggedIn: false,
       hint: "",
+      day: "",
+      end:""
     };
 
     this.submit = this.submit.bind(this);
@@ -31,18 +33,43 @@ class game extends React.Component {
   }
 
   componentDidMount() {
+    axios
+      .get(data.api+"/api/status")
+      .then((response) => {
+            console.log(response);
+            localStorage.setItem('end',(new Date(response.data.end_time)).getTime())
+            let temp=localStorage.getItem('end')-Date.now();
+            localStorage.setItem("start", (new Date(response.data.start_time)).getTime());
+        
+            localStorage.setItem("day",response.data.current_day);
+            console.log(temp);
+            console.log(localStorage.getItem('end'));
+            console.log(localStorage.getItem('day'));
+            let v=setTimeout(function(){
+              AnsAlert(9);
+              if(localStorage.getItem('day')==3 || response.data.error)
+              Router.push('/game_finale')
+              else
+              Router.push('/finale2');
+              
+            },temp)
+            console.log(localStorage.getItem('end'))
+            this.setState({day:localStorage.getItem('day'), end:localStorage.getItem('end')},()=>
+            {
+              console.log(this.state.day+this.state.end);
+              if (!(localStorage.getItem("email"))) {
+                Router.push('/');
+              }
+              else if (!(localStorage.getItem('start') <= Date.now())) {
+                localStorage.clear();
+                Router.push("/");
+              }
+              else {
+                this.getQuestions();
+              }
+            });
+        })
     
-
-    if (!(localStorage.getItem("email"))) {
-      Router.push('/');
-    }
-    else if (!(localStorage.getItem('start') <= Date.now())) {
-      localStorage.clear();
-      Router.push("/");
-    }
-    else {
-      this.getQuestions();
-    }
   }
 
   getQuestions() {
@@ -58,7 +85,7 @@ class game extends React.Component {
       .then((response) => {
         console.log(response);
         //if (response.data.error) Router.push("/finale2");
-        if (response.data.quiz_has_finished) Router.push("/finale");
+        if (response.data.quiz_finished) Router.push("/finale");
         this.setState((prevState) => {
           return {
             ...prevState,
@@ -148,7 +175,7 @@ class game extends React.Component {
 
         <Navbar />
 
-        <Question qs={this.state.questions} qsNo={this.state.qsNo} audio={this.state.audio} image={this.state.image} />
+        <Question qs={this.state.questions} qsNo={this.state.qsNo} audio={this.state.audio} image={this.state.image} day={this.state.day} />
         <div>
           <Answer
             change={this.change}
