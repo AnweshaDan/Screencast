@@ -139,9 +139,9 @@ var LoginButton = function LoginButton(_ref) {
         icon: "facebook",
         iconColor: "rgba(255,255,255,1)",
         backgroundColor: "rgba(28,149,223,1)",
-        iconSize: "5",
+        iconSize: "6",
         roundness: "29%",
-        size: "45",
+        size: "54",
         __self: _this,
         __source: {
           fileName: _jsxFileName,
@@ -275,6 +275,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 function Footer() {
   return __jsx("div", {
     style: {
+      margin: "auto",
+      //changed
       textAlign: "center",
       backgroundColor: "rgba(0,0,0,0)",
       color: "#eee",
@@ -299,7 +301,7 @@ function Footer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 21,
       columnNumber: 7
     }
   }, __jsx("a", {
@@ -307,7 +309,7 @@ function Footer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 26,
       columnNumber: 9
     }
   }, __jsx("img", {
@@ -319,7 +321,7 @@ function Footer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 27,
       columnNumber: 9
     }
   })), "\xA0\xA0", __jsx("a", {
@@ -327,7 +329,7 @@ function Footer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 35,
       columnNumber: 9
     }
   }, __jsx("img", {
@@ -340,7 +342,7 @@ function Footer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 36,
       columnNumber: 9
     }
   }))), __jsx("h5", {
@@ -352,7 +354,7 @@ function Footer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 44,
       columnNumber: 7
     }
   }, "HOSTED & CREATED BY GNU/LINUX USERS' GROUP"));
@@ -581,14 +583,14 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
             }
           }, __jsx(social_media_icons_react__WEBPACK_IMPORTED_MODULE_13__["SocialMediaIconsReact"], {
             borderColor: "rgba(0,0,0,0.25)",
-            borderWidth: "3",
+            borderWidth: "4",
             borderStyle: "inset",
             icon: "googleplus",
             iconColor: "rgba(255,255,255,1)",
             backgroundColor: "rgba(223,48,28,1)",
-            iconSize: "5",
+            iconSize: "7",
             roundness: "29%",
-            size: "45",
+            size: "55",
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
@@ -65673,7 +65675,7 @@ function index() {
 
 /***/ }),
 
-/***/ 3:
+/***/ 1:
 /*!****************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fanwesha%2FDesktop%2Fscreencast%2Fpages%2Findex.js ***!
   \****************************************************************************************************************************/
@@ -65696,5 +65698,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

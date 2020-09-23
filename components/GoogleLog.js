@@ -140,7 +140,7 @@ class GoogleLog extends React.Component {
                     onClick={renderProps.onClick}
 
                   >
-                    <SocialMediaIconsReact borderColor="rgba(0,0,0,0.25)" borderWidth="3" borderStyle="inset" icon="googleplus" iconColor="rgba(255,255,255,1)" backgroundColor="rgba(223,48,28,1)" iconSize="5" roundness="29%" size="45" />
+                    <SocialMediaIconsReact borderColor="rgba(0,0,0,0.25)" borderWidth="4" borderStyle="inset" icon="googleplus" iconColor="rgba(255,255,255,1)" backgroundColor="rgba(223,48,28,1)" iconSize="7" roundness="29%" size="55" />
                   </Button>
                 </div>
               )}

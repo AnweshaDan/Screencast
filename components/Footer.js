@@ -5,6 +5,7 @@ function Footer() {
   return (
     <div
       style={{
+        margin:"auto",//changed
         textAlign: "center",
         backgroundColor: "rgba(0,0,0,0)",
         color: "#eee",

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -139,6 +139,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 function Footer() {
   return __jsx("div", {
     style: {
+      margin: "auto",
+      //changed
       textAlign: "center",
       backgroundColor: "rgba(0,0,0,0)",
       color: "#eee",
@@ -163,7 +165,7 @@ function Footer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 21,
       columnNumber: 7
     }
   }, __jsx("a", {
@@ -171,7 +173,7 @@ function Footer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 26,
       columnNumber: 9
     }
   }, __jsx("img", {
@@ -183,7 +185,7 @@ function Footer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 27,
       columnNumber: 9
     }
   })), "\xA0\xA0", __jsx("a", {
@@ -191,7 +193,7 @@ function Footer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 35,
       columnNumber: 9
     }
   }, __jsx("img", {
@@ -204,7 +206,7 @@ function Footer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 36,
       columnNumber: 9
     }
   }))), __jsx("h5", {
@@ -216,7 +218,7 @@ function Footer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 44,
       columnNumber: 7
     }
   }, "HOSTED & CREATED BY GNU/LINUX USERS' GROUP"));
@@ -1046,6 +1048,17 @@ function TemporaryDrawer() {
 /***/ (function(module, exports) {
 
 module.exports = "/_next/static/images/scl-68257163687d3e415a6fee7af772d9d2.png";
+
+/***/ }),
+
+/***/ "./env.json":
+/*!******************!*\
+  !*** ./env.json ***!
+  \******************/
+/*! exports provided: api, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"api\":\"https://scapi.trennds.com\"}");
 
 /***/ }),
 
@@ -2740,34 +2753,55 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Navbar */ "./components/Navbar.js");
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Navbar */ "./components/Navbar.js");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Footer */ "./components/Footer.js");
+/* harmony import */ var _env_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../env.json */ "./env.json");
+var _env_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../env.json */ "./env.json", 1);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
 var _jsxFileName = "/home/anwesha/Desktop/screencast/pages/finale.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 
+
+
+
 function finale() {
+  /*useEffect()
+  {
+    axios
+      .get(data.api+"/api/status")
+      .then((response) => {
+        if(localStorage.getItem('success')!=1)
+              {
+                
+                Router.push('/game')
+              }
+      })
+  }*/
   return __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8,
+      lineNumber: 21,
       columnNumber: 5
     }
-  }, __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9,
+      lineNumber: 22,
       columnNumber: 7
     }
   }), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
+      lineNumber: 24,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -2780,7 +2814,7 @@ function finale() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12,
+      lineNumber: 25,
       columnNumber: 9
     }
   }, __jsx("span", {
@@ -2788,14 +2822,14 @@ function finale() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 33,
       columnNumber: 11
     }
   }, "Congratulations!"), __jsx("br", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 34,
       columnNumber: 11
     }
   }), __jsx("span", {
@@ -2803,14 +2837,14 @@ function finale() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 35,
       columnNumber: 11
     }
   }, "You have completed all Questions."), __jsx("br", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 36,
       columnNumber: 11
     }
   }), __jsx("span", {
@@ -2818,14 +2852,14 @@ function finale() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 37,
       columnNumber: 11
     }
-  }, "Wait for more exciting ones."))), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, "Wait for more exciting ones."))), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 40,
       columnNumber: 7
     }
   }));
@@ -2835,7 +2869,7 @@ function finale() {
 
 /***/ }),
 
-/***/ 3:
+/***/ 7:
 /*!*******************************!*\
   !*** multi ./pages/finale.js ***!
   \*******************************/
@@ -3119,6 +3153,17 @@ module.exports = require("@material-ui/icons/MoveToInbox");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/icons/SportsEsports");
+
+/***/ }),
+
+/***/ "axios":
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
 
 /***/ }),
 

@@ -1,19 +1,20 @@
 import React, { useEffect } from "react";
-
+import axios from "axios";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
+import data from '../env.json';
+import Router from "next/router";
 function finale() {
 
- /* useEffect()
+ /*useEffect()
   {
     axios
       .get(data.api+"/api/status")
       .then((response) => {
-        if(!(localStorage.getItem('day')==3 || response.data.error))
+        if(!( response.data.current_day==3 && ((new Date(response.data.end_time)).getTime() < Date.now() )))
               {
                 
-                Router.push('/game_finale')
+                Router.push('/game')
               }
       })
   }*/

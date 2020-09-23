@@ -35,6 +35,7 @@ class game extends React.Component {
   }
 
   componentDidMount() {
+    
     axios
       .get(data.api+"/api/status")
       .then((response) => {
@@ -56,7 +57,11 @@ class game extends React.Component {
               }
               
               else
-              Router.push('/finale2');
+              {
+                
+                Router.push('/finale2');
+              }
+              
               
             },temp)
             console.log(localStorage.getItem('end'))
@@ -92,7 +97,11 @@ class game extends React.Component {
       .then((response) => {
         console.log(response);
         //if (response.data.error) Router.push("/finale2");
-        if (response.data.quiz_finished) Router.push("/finale");
+        if (response.data.quiz_finished)
+        {
+          localStorage.setItem('success',1);
+          Router.push("/finale");
+        } 
         this.setState((prevState) => {
           return {
             ...prevState,

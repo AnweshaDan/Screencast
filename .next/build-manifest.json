@@ -28,15 +28,15 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
+    "/finale2": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
     "/game": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
     "/index": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/leaderboard": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
