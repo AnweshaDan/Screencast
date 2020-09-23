@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow&family=Cabin+Sketch&family=Montserrat:wght@500&family=Russo+One&family=Monoton&display=swap");
 
 /* changed*/
-@media only screen and (min-width: 767px) {
+@media only screen and (max-width: 767px) {
   .main_color {
       background-attachment: fixed;
+      background-image:none;
   }
   }
 body {
