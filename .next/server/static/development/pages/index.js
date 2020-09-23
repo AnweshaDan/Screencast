@@ -636,7 +636,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         backgroundColor: "rgba(223,48,28,1)",
         iconSize: "7",
         roundness: "29%",
-        size: "55",
+        size: "53",
         __self: this,
         __source: {
           fileName: _jsxFileName,

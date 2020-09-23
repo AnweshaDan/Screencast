@@ -590,7 +590,7 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
             backgroundColor: "rgba(223,48,28,1)",
             iconSize: "7",
             roundness: "29%",
-            size: "55",
+            size: "53",
             __self: _this2,
             __source: {
               fileName: _jsxFileName,

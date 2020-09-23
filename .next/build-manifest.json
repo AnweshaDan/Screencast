@@ -24,15 +24,7 @@
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
     ],
-    "/finale": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
     "/finale2": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/game": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
