@@ -274,6 +274,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function Footer() {
   return __jsx("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6,
+      columnNumber: 5
+    }
+  }, __jsx("div", {
+    className: "footer",
     style: {
       margin: "auto",
       //changed
@@ -287,13 +295,14 @@ function Footer() {
       position: "fixed",
       //changed
       padding: "0",
-      marginBottom: "0"
+      marginTop: "100px",
+      width: "100%"
     },
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6,
-      columnNumber: 5
+      lineNumber: 9,
+      columnNumber: 7
     }
   }, __jsx("div", {
     style: {// bottom: "30px", position: "absolute", left: "0", right: "0", textAlign: "center", margin: "0 auto"
@@ -301,16 +310,16 @@ function Footer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
-      columnNumber: 7
+      lineNumber: 26,
+      columnNumber: 17
     }
   }, __jsx("a", {
     href: "https://nitdgplug.org/",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
-      columnNumber: 9
+      lineNumber: 31,
+      columnNumber: 19
     }
   }, __jsx("img", {
     src: _glug_png__WEBPACK_IMPORTED_MODULE_1___default.a,
@@ -321,16 +330,16 @@ function Footer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
-      columnNumber: 9
+      lineNumber: 32,
+      columnNumber: 19
     }
   })), "\xA0\xA0", __jsx("a", {
     href: _scl_png__WEBPACK_IMPORTED_MODULE_2___default.a,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
-      columnNumber: 9
+      lineNumber: 40,
+      columnNumber: 19
     }
   }, __jsx("img", {
     src: _scl_png__WEBPACK_IMPORTED_MODULE_2___default.a,
@@ -342,8 +351,8 @@ function Footer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
-      columnNumber: 9
+      lineNumber: 41,
+      columnNumber: 19
     }
   }))), __jsx("h5", {
     style: {
@@ -354,10 +363,10 @@ function Footer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
-      columnNumber: 7
+      lineNumber: 49,
+      columnNumber: 17
     }
-  }, "HOSTED & CREATED BY GNU/LINUX USERS' GROUP"));
+  }, "HOSTED & CREATED BY GNU/LINUX USERS' GROUP")));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Footer);

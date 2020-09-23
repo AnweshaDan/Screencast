@@ -1,16 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow&family=Cabin+Sketch&family=Montserrat:wght@500&family=Russo+One&family=Monoton&display=swap");
 
 /* changed*/
-@media only screen and (max-width: 767px) {
+/*@media only screen and (max-width: 767px) {
   .main_color {
       background-attachment: scroll;
       background-image:none;
   }
-  }
+  }*/
 body {
   margin: 0px;
+  
   background-size: cover;
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-position: top ;
   background-repeat: no-repeat;
   min-height: 100vh;
@@ -26,6 +27,9 @@ body {
   font-family: "Barlow", sans-serif;
   color:"#eee";
 }
+
+
+
 
 .fbbutton {
   margin: 0 auto;
@@ -128,6 +132,7 @@ body {
   font-family: Clip;
   src: url("https://acupoftee.github.io/fonts/Clip.ttf");
 }
+
 .sign {
   position: relative;
   display: block;
