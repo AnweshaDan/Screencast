@@ -40,10 +40,12 @@ class game extends React.Component {
       .get(data.api+"/api/status")
       .then((response) => {
             console.log(response);
-            localStorage.setItem('end',(new Date(response.data.end_time)).getTime())
+            var temp3=new Date(response.data.start_time);
+            let temp2 = new Date(response.data.end_time);
+            localStorage.setItem('end',temp2.getTime() + (temp2.getTimezoneOffset() * 60000))
+            
+            localStorage.setItem("start", temp3.getTime() + (temp3.getTimezoneOffset() * 60000));
             let temp=localStorage.getItem('end')-Date.now();
-            localStorage.setItem("start", (new Date(response.data.start_time)).getTime());
-        
             localStorage.setItem("day",response.data.current_day);
             console.log(temp);
             console.log(localStorage.getItem('end'));

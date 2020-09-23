@@ -14,7 +14,7 @@ function finale() {
         if(!( response.data.current_day==3 && ((new Date(response.data.end_time)).getTime() < Date.now() )))
               {
                 
-                Router.push('/game')
+                Router.push('/')
               }
       })
   }*/

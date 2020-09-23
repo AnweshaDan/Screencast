@@ -3431,21 +3431,16 @@ function index() {
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(_env_json__WEBPACK_IMPORTED_MODULE_9__.api + "/api/status").then(response => {
-      console.log("index mounted");
       console.log(response);
-      if (localStorage.getItem('day') == 3 && localStorage.getItem('end') < Date.now()) next_router__WEBPACK_IMPORTED_MODULE_8___default.a.push('/game_finale');
-      console.log(new Date(response.data.start_time).getTime()); //milliseconds
-
-      setStart(new Date(response.data.start_time).getTime()); //setStart((new Date("2020-07-20T13:16:27Z")).getTime());
-
-      setEnd(new Date(response.data.end_time).getTime());
+      var temp = new Date(response.data.start_time);
+      setStart(temp.getTime() + temp.getTimezoneOffset() * 60000);
+      let temp2 = new Date(response.data.end_time);
+      setEnd(temp2.getTime() + temp2.getTimezoneOffset() * 60000);
       setDay(response.data.current_day);
-      console.log("YO");
       localStorage.setItem("start", start);
       localStorage.setItem("end", end);
       localStorage.setItem("day", day);
-      console.log(localStorage.getItem('day'));
-      console.log(Date.now());
+      if (localStorage.getItem('day') == 3 && localStorage.getItem('end') < Date.now()) next_router__WEBPACK_IMPORTED_MODULE_8___default.a.push('/game_finale');
 
       if (localStorage.getItem('email') && localStorage.getItem('start') < Date.now()) {} //console.log(Date.now()+"    "+localStorage.getItem('start'))
       //Router.push('/game')
@@ -3461,21 +3456,21 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 61,
       columnNumber: 5
     }
   }, __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 63,
       columnNumber: 7
     }
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 64,
       columnNumber: 9
     }
   }, __jsx("meta", {
@@ -3483,7 +3478,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 65,
       columnNumber: 11
     }
   }), __jsx("meta", {
@@ -3492,14 +3487,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
+      lineNumber: 66,
       columnNumber: 11
     }
   }), __jsx("title", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 70,
       columnNumber: 11
     }
   }, "Screencast "), __jsx("link", {
@@ -3509,14 +3504,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 71,
       columnNumber: 11
     }
   }))), __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 75,
       columnNumber: 7
     }
   }), __jsx(_components_Timer2__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -3524,14 +3519,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 77,
       columnNumber: 7
     }
   }), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78,
+      lineNumber: 79,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -3544,7 +3539,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79,
+      lineNumber: 80,
       columnNumber: 9
     }
   }, __jsx("span", {
@@ -3552,7 +3547,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
+      lineNumber: 88,
       columnNumber: 11
     }
   }, "screen"), "cast", " ", __jsx("span", {
@@ -3560,7 +3555,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88,
+      lineNumber: 89,
       columnNumber: 11
     }
   }, "2020 ")), __jsx("div", {
@@ -3571,14 +3566,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91,
+      lineNumber: 92,
       columnNumber: 9
     }
   }, __jsx("h1", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92,
+      lineNumber: 93,
       columnNumber: 11
     }
   }, "Login to play "))), __jsx("div", {
@@ -3593,35 +3588,35 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96,
+      lineNumber: 97,
       columnNumber: 7
     }
   }, __jsx(_components_GoogleLog__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97,
+      lineNumber: 98,
       columnNumber: 9
     }
   }), __jsx(_components_FbLog2__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98,
+      lineNumber: 99,
       columnNumber: 9
     }
   })), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101,
+      lineNumber: 102,
       columnNumber: 7
     }
   }, __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 103,
       columnNumber: 9
     }
   })));
