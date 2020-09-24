@@ -81,7 +81,7 @@ class GoogleLog extends React.Component {
 
   }*/
   responseGoogle = (response) => {
-
+      console.log(response);
    
     //localStorage.setItem('token', response.tokenObj.access_token)
     axios
@@ -90,6 +90,7 @@ class GoogleLog extends React.Component {
 
       })
       .then((res) => {
+        console.log(response);
         localStorage.setItem('token', res.data.access_token)
         //localStorage.setItem('ref_token', res.data.refresh_token)
         localStorage.setItem("email", response.profileObj.email);

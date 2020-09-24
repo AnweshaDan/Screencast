@@ -51,6 +51,7 @@ class FbLog2 extends React.Component {
   
 
   facebookResponse = (response) => {
+    console.log(response);
 
     localStorage.setItem("email", response.email);
     localStorage.setItem("name", response.name);
@@ -66,7 +67,7 @@ class FbLog2 extends React.Component {
       })
       .then((res) => {
         localStorage.setItem('token', res.data.access_token)
-
+        console.log(response);
         this.setState({ user: response, isSignedIn: true,access: res.data.access_token },()=>{
           if((localStorage.getItem('start') <= Date.now()))
             Router.push("/game");

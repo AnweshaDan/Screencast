@@ -172,6 +172,7 @@ var FbLog2 = /*#__PURE__*/function (_React$Component) {
     _this2 = _super.call(this);
 
     Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this2), "facebookResponse", function (response) {
+      console.log(response);
       localStorage.setItem("email", response.email);
       localStorage.setItem("name", response.name);
       localStorage.setItem("image", response.picture.data.url);
@@ -182,6 +183,7 @@ var FbLog2 = /*#__PURE__*/function (_React$Component) {
         userID: response.userID
       }).then(function (res) {
         localStorage.setItem('token', res.data.access_token);
+        console.log(response);
 
         _this2.setState({
           user: response,
@@ -217,7 +219,7 @@ var FbLog2 = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 84,
+          lineNumber: 85,
           columnNumber: 7
         }
       }, !this.state.isSignedIn && __jsx("div", {
@@ -229,7 +231,7 @@ var FbLog2 = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 86,
+          lineNumber: 87,
           columnNumber: 11
         }
       }, __jsx(LoginButton, {
@@ -237,7 +239,7 @@ var FbLog2 = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89,
+          lineNumber: 90,
           columnNumber: 13
         }
       })));
@@ -454,10 +456,12 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this);
 
     Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this), "responseGoogle", function (response) {
-      //localStorage.setItem('token', response.tokenObj.access_token)
+      console.log(response); //localStorage.setItem('token', response.tokenObj.access_token)
+
       axios__WEBPACK_IMPORTED_MODULE_9___default.a.post(_env_json__WEBPACK_IMPORTED_MODULE_16__.api + "/api/googlelogin", {
         token: response.tokenObj.access_token
       }).then(function (res) {
+        console.log(response);
         localStorage.setItem('token', res.data.access_token); //localStorage.setItem('ref_token', res.data.refresh_token)
 
         localStorage.setItem("email", response.profileObj.email);
@@ -540,28 +544,28 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 122,
+          lineNumber: 123,
           columnNumber: 7
         }
       }, __jsx("div", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 123,
+          lineNumber: 124,
           columnNumber: 9
         }
       }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_10___default.a, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 124,
+          lineNumber: 125,
           columnNumber: 11
         }
       })), __jsx("div", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 128,
+          lineNumber: 129,
           columnNumber: 9
         }
       }, !this.state.isUserLoggedIn && __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -572,7 +576,7 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 133,
+              lineNumber: 134,
               columnNumber: 17
             }
           }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -587,7 +591,7 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 135,
+              lineNumber: 136,
               columnNumber: 19
             }
           }, __jsx(social_media_icons_react__WEBPACK_IMPORTED_MODULE_13__["SocialMediaIconsReact"], {
@@ -603,7 +607,7 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 143,
+              lineNumber: 144,
               columnNumber: 21
             }
           })));
@@ -616,7 +620,7 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 130,
+          lineNumber: 131,
           columnNumber: 13
         }
       })));
