@@ -91,7 +91,7 @@ function index() {
         </div>
 
         <div className="login-head" style={{ marginBottom: "60px" }}>
-          <h1>Get ready to play </h1>
+          <h1>Ready to play ?</h1>
         </div>
       </div>
 

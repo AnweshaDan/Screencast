@@ -92,7 +92,7 @@ class GoogleLog extends React.Component {
       })
       .then((res) => {
         console.log(response);
-        this.forceUpdate();
+        
         console.log("jajajaj")
         localStorage.setItem('token', res.data.access_token)
         //localStorage.setItem('ref_token', res.data.refresh_token)
@@ -103,6 +103,8 @@ class GoogleLog extends React.Component {
         
           if((localStorage.getItem('start') <= Date.now())) 
             Router.push("/game");
+          else
+            Router.reload();
            
 
         })

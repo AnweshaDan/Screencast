@@ -49,7 +49,7 @@ export default function TemporaryDrawer() {
     //FB.logout();
     clearTimeout(localStorage.getItem("interval_id"));
     localStorage.clear();
-    Router.push("/");
+    Router.reload("/");
   };
 
 
