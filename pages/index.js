@@ -19,6 +19,7 @@ function index() {
   const [end, setEnd] = useState(Date.now());
   const [start, setStart] = useState(Date.now());
   const [day, setDay] = useState(0);
+  const [signedIn,setSignedIn]=useState(false);
 
   useEffect(() => {
     
@@ -36,6 +37,7 @@ function index() {
         localStorage.setItem("start", start);
         localStorage.setItem("end", end);
         localStorage.setItem("day",day);
+        if(localStorage.getItem('email'))
 
         if(localStorage.getItem('day')==3 && (localStorage.getItem('end') < Date.now()))
               Router.push('/game_finale')
@@ -90,7 +92,7 @@ function index() {
         </div>
 
         <div className="login-head" style={{ marginBottom: "60px" }}>
-          <h1>Login to play </h1>
+          <h1>Get ready to play </h1>
         </div>
       </div>
 

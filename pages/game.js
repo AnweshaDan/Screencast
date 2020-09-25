@@ -24,6 +24,8 @@ class game extends React.Component {
       day: "",
       end:"",
       message:"",
+      v:""
+      
       
     };
 
@@ -33,6 +35,7 @@ class game extends React.Component {
     this.checkAns = this.checkAns.bind(this);
     this.getQuestions = this.getQuestions.bind(this);
   }
+  
 
   componentDidMount() {
     
@@ -50,7 +53,7 @@ class game extends React.Component {
             console.log(temp);
             console.log(localStorage.getItem('end'));
             console.log(localStorage.getItem('day'));
-            let v=setTimeout(function(){
+            this.state.v=setTimeout(function(){
               AnsAlert(9);
               if(localStorage.getItem('day')==3 || response.data.error)
               {
@@ -63,6 +66,7 @@ class game extends React.Component {
                 
                 Router.push('/finale2');
               }
+
               
               
             },temp)
@@ -101,6 +105,7 @@ class game extends React.Component {
         //if (response.data.error) Router.push("/finale2");
         if (response.data.quiz_finished)
         {
+          clearTimeout(this.state.v);
           localStorage.setItem('success',1);
           Router.push("/finale");
         } 
@@ -173,6 +178,7 @@ class game extends React.Component {
           this.getQuestions();
         } else if (r && response.data.quiz_finished) {
           AnsAlert(1);
+          clearTimeout(this.state.v);
           Router.push("/finale");
         } else {
           this.setState({

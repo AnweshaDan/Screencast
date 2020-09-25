@@ -35,7 +35,7 @@ class GoogleLog extends React.Component {
     {
       
       if((localStorage.getItem('start') < Date.now())) Router.push("/game");
-      else AnsAlert(-1)      
+           
       
     }    
   
@@ -100,11 +100,7 @@ class GoogleLog extends React.Component {
           
           if((localStorage.getItem('start') <= Date.now())) 
             Router.push("/game");
-            else
-            {
-              AnsAlert(-1);
-              Router.push('/');
-            }
+           
 
         })
         //this.refresh(res.data.access_token,res.data.refresh_token);
