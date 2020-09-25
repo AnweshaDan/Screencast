@@ -1,18 +1,7 @@
 import Swal from 'sweetalert2';
 
 export default (isCorrect) => {
-    if (isCorrect == -1)
-        Swal.fire({
-            padding: "60px",
-            position: 'center',
-            type: 'success',
-            title: 'Yay',
-            text: 'Successfully registered !',
-            
-            showConfirmButton: false,
-
-
-        })
+    
     if (isCorrect === 1)
     {
         let timerInterval;
@@ -64,7 +53,7 @@ export default (isCorrect) => {
     }
         if (isCorrect === 9)
         {
-            let timerInterval;
+            
             Swal.fire({
                 padding: "60px",
                 position: 'center',
@@ -72,21 +61,11 @@ export default (isCorrect) => {
                 title: 'Times up!',
                 text: 'Ahaaa sorry!',
                 showConfirmButton: false,
-                timer: 2000,
-                    timerProgressBar: true,
-                    willOpen: () => {
-                        Swal.showLoading()
-                        timerInterval = setInterval(() => {
-                        
-                        }, 100)
-                    },
-                    onClose: () => {
-                        clearInterval(timerInterval)
-                    }  
-    
-            })
+                
+               
 
-        }
+        })
+    }
         
         if (isCorrect === 8)
         Swal.fire({

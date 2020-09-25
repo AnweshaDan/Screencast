@@ -33,6 +33,7 @@ class GoogleLog extends React.Component {
     
     if(localStorage.getItem("email"))
     {
+      this.setState({isUserLoggedIn:true})
       
       if((localStorage.getItem('start') < Date.now())) Router.push("/game");
            
@@ -82,7 +83,7 @@ class GoogleLog extends React.Component {
   }*/
   responseGoogle = (response) => {
       console.log(response);
-   
+      
     //localStorage.setItem('token', response.tokenObj.access_token)
     axios
       .post(data.api+"/api/googlelogin", {
@@ -91,18 +92,21 @@ class GoogleLog extends React.Component {
       })
       .then((res) => {
         console.log(response);
+        this.forceUpdate();
+        console.log("jajajaj")
         localStorage.setItem('token', res.data.access_token)
         //localStorage.setItem('ref_token', res.data.refresh_token)
         localStorage.setItem("email", response.profileObj.email);
         localStorage.setItem("name", response.profileObj.name);
         localStorage.setItem("image", response.profileObj.imageUrl);
         this.setState({ access: res.data.access_token,userDetails: response.profileObj, isUserLoggedIn: true }, ()=>{
-          
+        
           if((localStorage.getItem('start') <= Date.now())) 
             Router.push("/game");
            
 
         })
+        
         //this.refresh(res.data.access_token,res.data.refresh_token);
         /* if ((localStorage.getItem('start') <= Date.now()))
           Router.push("/game");*/

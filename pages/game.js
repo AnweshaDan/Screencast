@@ -53,7 +53,7 @@ class game extends React.Component {
             console.log(temp);
             console.log(localStorage.getItem('end'));
             console.log(localStorage.getItem('day'));
-            this.state.v=setTimeout(function(){
+            this.setState({v:setTimeout(function(){
               AnsAlert(9);
               if(localStorage.getItem('day')==3 || response.data.error)
               {
@@ -69,7 +69,7 @@ class game extends React.Component {
 
               
               
-            },temp)
+            },temp)})
             console.log(localStorage.getItem('end'))
             this.setState({day:localStorage.getItem('day'), end:localStorage.getItem('end')},()=>
             {

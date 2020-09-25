@@ -19,8 +19,7 @@ function index() {
   const [end, setEnd] = useState(Date.now());
   const [start, setStart] = useState(Date.now());
   const [day, setDay] = useState(0);
-  const [signedIn,setSignedIn]=useState(false);
-
+  
   useEffect(() => {
     
     axios
@@ -37,7 +36,7 @@ function index() {
         localStorage.setItem("start", start);
         localStorage.setItem("end", end);
         localStorage.setItem("day",day);
-        if(localStorage.getItem('email'))
+        //if(localStorage.getItem('email'))
 
         if(localStorage.getItem('day')==3 && (localStorage.getItem('end') < Date.now()))
               Router.push('/game_finale')
