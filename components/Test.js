@@ -4,12 +4,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
+
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
+
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+
 import MenuIcon from "@material-ui/icons/Menu";
 import Link from "next/link";
 import Fade from "@material-ui/core/Fade";
@@ -17,7 +16,7 @@ import Rules from "./Rules";
 import MenuItem from "@material-ui/core/MenuItem";
 import { GoogleLogout } from "react-google-login";
 import Router from "next/router";
-import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
+
 import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
@@ -47,9 +46,24 @@ export default function TemporaryDrawer() {
 
   const logout = () => {
     //FB.logout();
-    clearTimeout(localStorage.getItem("interval_id"));
-    localStorage.clear();
-    Router.reload("/");
+    //clearTimeout(localStorage.getItem("interval_id"));
+    
+    console.log("Lady")
+    if(localStorage.getItem('start')<Date.now())
+    {
+      console.log(localStorage.getItem('start')<Date.now())
+      localStorage.clear();
+      Router.push('/')
+    }
+    else
+    {
+      console.log(localStorage.getItem('start')<Date.now())
+      localStorage.clear();
+      Router.reload('/')
+    }
+    
+  
+    
   };
 
 

@@ -17,7 +17,7 @@ import data from '../env.json';
 function index() {
 
   const [end, setEnd] = useState(Date.now());
-  const [start, setStart] = useState(Date.now());
+  const [start, setStart] = useState(Date.now()+2000);
   const [day, setDay] = useState(0);
   
   useEffect(() => {
@@ -37,13 +37,14 @@ function index() {
         localStorage.setItem("end", end);
         localStorage.setItem("day",day);
         //if(localStorage.getItem('email'))
-
-        if(localStorage.getItem('day')==3 && (localStorage.getItem('end') < Date.now()))
-              Router.push('/game_finale')
+        console.log(localStorage.getItem('start') )
+        /*if(localStorage.getItem('day')==3 && (localStorage.getItem('end') < Date.now()) && (localStorage.getItem('email')))
+              Router.push('/game_finale')*/
         
         
         if (localStorage.getItem('email') && (localStorage.getItem('start') < Date.now()))
         {
+          Router.push('/game')
           //console.log(Date.now()+"    "+localStorage.getItem('start'))
           //Router.push('/game')
         }
@@ -72,10 +73,10 @@ function index() {
           <link rel="stylesheet" type="text/css" href="question.css" />
         </Head>
       </div>
-
+      
       <Navbar />
 
-      <Timer2 start={start} />
+      <Timer2 start={start} end={end} />
 
       <div>
         <div
@@ -101,7 +102,7 @@ function index() {
       </div>
     
       <div>
-        <Footer />
+      <Footer  />
       </div>
 
     </div>

@@ -50,6 +50,7 @@ export default function Navbar(props) {
       setImage(localStorage.getItem("image"));
     }
   });
+  
   console.log("Just b4 return of nav")
   return (
     <div className={classes.root}>

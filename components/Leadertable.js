@@ -8,7 +8,8 @@ import TableRow from "@material-ui/core/TableRow";
 import Typography from "@material-ui/core/Typography";
 import axios from "axios";
 import data from '../env.json';
-
+import Avatar from "@material-ui/core/Avatar";
+import styles from "./Navbar.module.css";
 const StyledTableCell = withStyles((theme) => ({
   head: {
     backgroundColor: "rgba(53,35,60,1)",
@@ -73,7 +74,9 @@ export default function Leadertable() {
         <Table className={classes.table} aria-label="customized table">
           <TableHead>
             <TableRow>
+
               <StyledTableCell>Rank</StyledTableCell>
+              <StyledTableCell></StyledTableCell>
               <StyledTableCell align="left">Player</StyledTableCell>
               <StyledTableCell align="left">Points</StyledTableCell>
             </TableRow>
@@ -89,7 +92,15 @@ export default function Leadertable() {
                   <StyledTableCell component="th" scope="row">
                     {row.rank}.
                   </StyledTableCell>
-                  <StyledTableCell align="left">{row.name}</StyledTableCell>
+                  <StyledTableCell align="left">
+                    <Avatar
+                  
+                  alt={name}
+                  src={row.imageurl}
+                  
+                  
+                /></StyledTableCell>
+                <StyledTableCell>{row.name}</StyledTableCell>
                   <StyledTableCell align="left">{row.score}</StyledTableCell>
                 </StyledTableRow>
               ))}

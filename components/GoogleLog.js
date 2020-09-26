@@ -35,7 +35,7 @@ class GoogleLog extends React.Component {
     {
       this.setState({isUserLoggedIn:true})
       
-      if((localStorage.getItem('start') < Date.now())) Router.push("/game");
+      //if((localStorage.getItem('start') < Date.now())) Router.push("/game");
            
       
     }    

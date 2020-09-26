@@ -58,13 +58,13 @@ class game extends React.Component {
               if(localStorage.getItem('day')==3 || response.data.error)
               {
                 
-                Router.replace('/game_finale')
+                Router.push('/game_finale')
               }
               
               else
               {
                 
-                Router.replace('/finale2');
+                Router.push('/finale2');
               }
 
               
@@ -73,6 +73,8 @@ class game extends React.Component {
             console.log(localStorage.getItem('end'))
             this.setState({day:localStorage.getItem('day'), end:localStorage.getItem('end')},()=>
             {
+              if(localStorage.getItem('day')==3 && (localStorage.getItem('end') < Date.now()))
+              Router.push('/game_finale')
               console.log(this.state.day+this.state.end);
               if (!(localStorage.getItem("email"))) {
                 AnsAlert(8)
@@ -83,6 +85,7 @@ class game extends React.Component {
                 Router.push("/");
               }
               else {
+                console.log("YOOOOOOO")
                 this.getQuestions();
               }
             });
@@ -101,13 +104,13 @@ class game extends React.Component {
         },
       })
       .then((response) => {
-        console.log(response);
+        console.log("YOOO+"+response);
         //if (response.data.error) Router.push("/finale2");
         if (response.data.quiz_finished)
         {
           clearTimeout(this.state.v);
           localStorage.setItem('success',1);
-          Router.push("/finale");
+          Router.replace("/finale");
         } 
         this.setState((prevState) => {
           return {
@@ -179,7 +182,7 @@ class game extends React.Component {
         } else if (r && response.data.quiz_finished) {
           AnsAlert(1);
           clearTimeout(this.state.v);
-          Router.push("/finale");
+          Router.replace("/finale");
         } else {
           this.setState({
             answer: ""

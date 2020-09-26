@@ -6,18 +6,7 @@ import data from '../env.json';
 import Router from "next/router";
 function finale() {
 
- /*useEffect()
-  {
-    axios
-      .get(data.api+"/api/status")
-      .then((response) => {
-        if(!( response.data.current_day==3 && ((new Date(response.data.end_time)).getTime() < Date.now() )))
-              {
-                
-                Router.push('/')
-              }
-      })
-  }*/
+
   return (
     <div>
       <Navbar />
