@@ -128,11 +128,11 @@ class game extends React.Component {
 
   submit = (event) => {
     //send final answer for checking
-    if (event.key === "Enter") {
+    
       console.log(this.state.answer);
       console.log("JOJOJOJOJOJ");
       this.checkAns(this.state.answer);
-    }
+    
   };
   submit2 = () => {
     //send final answer for checking

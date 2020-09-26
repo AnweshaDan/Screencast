@@ -34,7 +34,7 @@ class Answer extends Component {
             label="Type your answer here."
             variant="filled"
             onChange={this.props.change}
-            onKeyDown={this.props.submit}
+            onSubmit={this.props.submit}
             value={this.props.answer}
             className={classes.anstype}
             style={{ maxWidth: "600px", width: "80%", }}

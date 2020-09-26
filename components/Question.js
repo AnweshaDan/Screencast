@@ -25,9 +25,11 @@ const useStyles = makeStyles({
     marginBottom: 12,
   },
   media: {
-    height: 140,
+    height: 300,
     width: "auto",
+    
   },
+ 
 });
 
 export default function Question(props) {
