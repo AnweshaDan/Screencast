@@ -93,10 +93,11 @@ export default function Leadertable() {
                     {row.rank}.
                   </StyledTableCell>
                   <StyledTableCell align="left">
+                    
                     <Avatar
                   
                   alt={name}
-                  src={row.imageurl}
+                  src={row.imgurl}
                   
                   
                 /></StyledTableCell>
