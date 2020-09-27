@@ -28,13 +28,13 @@ class Answer extends Component {
     const { classes } = this.props;
     return (
       <div>
-        <form className={classes.ansdiv} noValidate autoComplete="off">
+        <form className={classes.ansdiv} noValidate autoComplete="off" onSubmit={this.props.submit2}>
           <TextField
             id="filled-basic"
             label="Type your answer here."
             variant="filled"
             onChange={this.props.change}
-            onSubmit={this.props.submit}
+            
             value={this.props.answer}
             className={classes.anstype}
             style={{ maxWidth: "600px", width: "80%", }}

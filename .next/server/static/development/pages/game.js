@@ -249,6 +249,7 @@ class Answer extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       className: classes.ansdiv,
       noValidate: true,
       autoComplete: "off",
+      onSubmit: this.props.submit2,
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -260,7 +261,6 @@ class Answer extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       label: "Type your answer here.",
       variant: "filled",
       onChange: this.props.change,
-      onSubmit: this.props.submit,
       value: this.props.answer,
       className: classes.anstype,
       style: {
@@ -663,6 +663,61 @@ function SimplePopover(props) {
 
 /***/ }),
 
+/***/ "./components/ImageHint.js":
+/*!*********************************!*\
+  !*** ./components/ImageHint.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ResponsiveImage; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/home/anwesha/Desktop/screencast/components/ImageHint.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+function ResponsiveImage({
+  src,
+  width,
+  height
+}) {
+  return __jsx("div", {
+    style: {
+      width
+    },
+    className: "responsive-image",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5,
+      columnNumber: 5
+    }
+  }, __jsx("div", {
+    style: {
+      paddingBottom: height / width * 100 + '%'
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10,
+      columnNumber: 7
+    }
+  }), __jsx("img", {
+    src: src,
+    className: "responsive-image__image",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13,
+      columnNumber: 7
+    }
+  }));
+}
+
+/***/ }),
+
 /***/ "./components/Navbar.js":
 /*!******************************!*\
   !*** ./components/Navbar.js ***!
@@ -898,8 +953,10 @@ var _env_json__WEBPACK_IMPORTED_MODULE_6___namespace = /*#__PURE__*/__webpack_re
 /* harmony import */ var _AudioHint__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./AudioHint */ "./components/AudioHint.js");
 /* harmony import */ var react_f_lib_src_form__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-f/lib/src/form */ "react-f/lib/src/form");
 /* harmony import */ var react_f_lib_src_form__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_f_lib_src_form__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _ImageHint__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./ImageHint */ "./components/ImageHint.js");
 var _jsxFileName = "/home/anwesha/Desktop/screencast/components/Question.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -927,7 +984,8 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
   },
   media: {
     height: 300,
-    width: "auto"
+    width: "auto",
+    objectFit: 'contain'
   }
 });
 function Question(props) {
@@ -936,7 +994,7 @@ function Question(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 42,
       columnNumber: 5
     }
   }, __jsx("div", {
@@ -944,7 +1002,7 @@ function Question(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 43,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -957,7 +1015,7 @@ function Question(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 44,
       columnNumber: 9
     }
   }, __jsx("span", {
@@ -965,7 +1023,7 @@ function Question(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 52,
       columnNumber: 11
     }
   }, "ROUND ", props.day))), __jsx(_material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -973,7 +1031,7 @@ function Question(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 56,
       columnNumber: 7
     }
   }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -986,7 +1044,7 @@ function Question(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 57,
       columnNumber: 9
     }
   }, "Question ", props.qsNo), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -999,35 +1057,31 @@ function Question(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 66,
       columnNumber: 9
     }
-  }, props.qs), props.image ? __jsx(_material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    className: classes.media,
-    style: {
-      textAlign: "center",
-      margin: "0 auto"
-    },
-    image: _env_json__WEBPACK_IMPORTED_MODULE_6__.api + props.image,
-    title: "Image Hint",
+  }, props.qs), props.image ? __jsx(_ImageHint__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    src: _env_json__WEBPACK_IMPORTED_MODULE_6__.api + props.image,
+    width: 1200,
+    height: 800,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 75,
       columnNumber: 11
     }
   }) : __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 81,
       columnNumber: 13
     }
   }), __jsx("br", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 84,
       columnNumber: 9
     }
   }), props.audio ? __jsx("div", {
@@ -1038,7 +1092,7 @@ function Question(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
+      lineNumber: 86,
       columnNumber: 11
     }
   }, __jsx(_AudioHint__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -1050,18 +1104,24 @@ function Question(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 87,
       columnNumber: 13
     }
   })) : __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92,
+      lineNumber: 93,
       columnNumber: 13
     }
   })));
 }
+/*<CardMedia
+            className={classes.media}
+            style={{ textAlign: "center", margin: "0 auto" }}
+            image={data.api + props.image}
+            title="Image Hint"
+          />*/
 
 /***/ }),
 

@@ -7,7 +7,7 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 import data from '../env.json';
 import AudioHint from "./AudioHint";
 import { Data } from "react-f/lib/src/form";
-
+import ResponsiveImage from './ImageHint'
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
@@ -27,8 +27,10 @@ const useStyles = makeStyles({
   media: {
     height: 300,
     width: "auto",
+    objectFit:'contain'
     
   },
+  
  
 });
 
@@ -70,12 +72,11 @@ export default function Question(props) {
           {props.qs}
         </Typography>
         {props.image ? (
-          <CardMedia
-            className={classes.media}
-            style={{ textAlign: "center", margin: "0 auto" }}
-            image={data.api + props.image}
-            title="Image Hint"
-          />
+          <ResponsiveImage
+          src={data.api + props.image}
+          width={ 1200 }
+          height={ 800 } />
+
         ) : (
             <div></div>
           )}
@@ -95,3 +96,10 @@ export default function Question(props) {
     </div>
   );
 }
+
+/*<CardMedia
+            className={classes.media}
+            style={{ textAlign: "center", margin: "0 auto" }}
+            image={data.api + props.image}
+            title="Image Hint"
+          />*/
