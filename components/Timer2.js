@@ -13,7 +13,11 @@ export default function Timer(props) {
     console.log(props)
     const complete=()=>
     {
-        if(localStorage.getItem('email')) Router.push('/game');
+        if(localStorage.getItem('email'))
+        {
+            console.log("DONEEEEEE");
+            Router.push('/');
+        } 
     }
     const Completionist = () => {
         return (

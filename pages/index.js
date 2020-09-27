@@ -26,7 +26,8 @@ function index() {
       .get(data.api+"/api/status")
       .then((response) => {
         console.log(response);
-
+        if(response.data.status==404)
+        Router.push('/error')
         var temp=new Date(response.data.start_time);
         setStart(temp.getTime() + (temp.getTimezoneOffset() * 60000));        
         let temp2 = new Date(response.data.end_time);
@@ -38,8 +39,8 @@ function index() {
         localStorage.setItem("day",day);
         //if(localStorage.getItem('email'))
         console.log(localStorage.getItem('start') )
-        /*if(localStorage.getItem('day')==3 && (localStorage.getItem('end') < Date.now()) && (localStorage.getItem('email')))
-              Router.push('/game_finale')*/
+        if(localStorage.getItem('day')==3 && (localStorage.getItem('end') < Date.now()) )
+              Router.push('/game_finale')
         
         
         if (localStorage.getItem('email') && (localStorage.getItem('start') < Date.now()))

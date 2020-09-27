@@ -5,18 +5,8 @@ import Footer from "../components/Footer";
 import data from '../env.json';
 import Router from "next/router";
 function finale() {
- /* useEffect()
-  {
-    axios
-      .get(data.api+"/api/status")
-      .then((response) => {
-        if(!(  ((new Date(response.data.end_time)).getTime() < Date.now() )))
-              {
-                
-                Router.push('/game')
-              }
-      })
-  }*/
+  
+  
   return (
     <div>
       <Navbar />

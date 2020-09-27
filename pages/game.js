@@ -81,7 +81,7 @@ class game extends React.Component {
                 Router.push('/');
               }
               else if (!(localStorage.getItem('start') <= Date.now())) {
-                localStorage.clear();
+                AnsAlert(8)
                 Router.push("/");
               }
               else {
@@ -109,8 +109,8 @@ class game extends React.Component {
         if (response.data.quiz_finished)
         {
           clearTimeout(this.state.v);
-          localStorage.setItem('success',1);
-          Router.replace("/finale");
+          
+          Router.push("/finale");
         } 
         this.setState((prevState) => {
           return {
@@ -182,7 +182,7 @@ class game extends React.Component {
         } else if (r && response.data.quiz_finished) {
           AnsAlert(1);
           clearTimeout(this.state.v);
-          Router.replace("/finale");
+          Router.push("/finale");
         } else {
           this.setState({
             answer: ""

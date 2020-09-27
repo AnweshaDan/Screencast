@@ -1206,10 +1206,12 @@ function TemporaryDrawer() {
 
     if (localStorage.getItem('start') < Date.now()) {
       console.log(localStorage.getItem('start') < Date.now());
+      localStorage.removeItem('email');
       localStorage.clear();
       next_router__WEBPACK_IMPORTED_MODULE_16___default.a.push('/');
     } else {
       console.log(localStorage.getItem('start') < Date.now());
+      localStorage.removeItem('email');
       localStorage.clear();
       next_router__WEBPACK_IMPORTED_MODULE_16___default.a.reload('/');
     }
@@ -1236,14 +1238,14 @@ function TemporaryDrawer() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 79,
+        lineNumber: 81,
         columnNumber: 5
       }
     }, __jsx(_material_ui_core_List__WEBPACK_IMPORTED_MODULE_7__["default"], {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85,
+        lineNumber: 87,
         columnNumber: 7
       }
     }, __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -1252,7 +1254,7 @@ function TemporaryDrawer() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86,
+        lineNumber: 88,
         columnNumber: 7
       }
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_11___default.a, {
@@ -1260,7 +1262,7 @@ function TemporaryDrawer() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87,
+        lineNumber: 89,
         columnNumber: 11
       }
     }, __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_9__["default"], (_jsx = {
@@ -1275,12 +1277,12 @@ function TemporaryDrawer() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 90,
+        lineNumber: 92,
         columnNumber: 22
       }
     }, "Home")), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_jsx, "__self", _this), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_jsx, "__source", {
       fileName: _jsxFileName,
-      lineNumber: 88,
+      lineNumber: 90,
       columnNumber: 13
     }), _jsx)))), __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_8__["default"], {
       button: true,
@@ -1288,7 +1290,7 @@ function TemporaryDrawer() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 97,
+        lineNumber: 99,
         columnNumber: 9
       }
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_11___default.a, {
@@ -1296,7 +1298,7 @@ function TemporaryDrawer() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 98,
+        lineNumber: 100,
         columnNumber: 11
       }
     }, __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_9__["default"], (_jsx2 = {
@@ -1311,19 +1313,19 @@ function TemporaryDrawer() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 101,
+        lineNumber: 103,
         columnNumber: 22
       }
     }, "Leaderboard")), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_jsx2, "__self", _this), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_jsx2, "__source", {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 101,
       columnNumber: 13
     }), _jsx2)))), Log && __jsx("div", {
       className: "userDetails-wrapper",
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 106,
+        lineNumber: 108,
         columnNumber: 11
       }
     }, __jsx("div", {
@@ -1331,7 +1333,7 @@ function TemporaryDrawer() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 107,
+        lineNumber: 109,
         columnNumber: 13
       }
     }, __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_15__["GoogleLogout"], {
@@ -1341,7 +1343,7 @@ function TemporaryDrawer() {
           __self: _this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 110,
+            lineNumber: 112,
             columnNumber: 19
           }
         }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_11___default.a, {
@@ -1349,7 +1351,7 @@ function TemporaryDrawer() {
           __self: _this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 111,
+            lineNumber: 113,
             columnNumber: 21
           }
         }, __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_14__["default"], {
@@ -1357,7 +1359,7 @@ function TemporaryDrawer() {
           __self: _this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 112,
+            lineNumber: 114,
             columnNumber: 23
           }
         }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_17__["default"], {
@@ -1369,7 +1371,7 @@ function TemporaryDrawer() {
           __self: _this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 112,
+            lineNumber: 114,
             columnNumber: 50
           }
         }, "Logout"))));
@@ -1378,7 +1380,7 @@ function TemporaryDrawer() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 108,
+        lineNumber: 110,
         columnNumber: 15
       }
     })), __jsx("div", {
@@ -1386,7 +1388,7 @@ function TemporaryDrawer() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 119,
+        lineNumber: 121,
         columnNumber: 13
       }
     }), __jsx("div", {
@@ -1394,7 +1396,7 @@ function TemporaryDrawer() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 120,
+        lineNumber: 122,
         columnNumber: 13
       }
     }))));
@@ -1405,7 +1407,7 @@ function TemporaryDrawer() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 132,
+      lineNumber: 134,
       columnNumber: 5
     }
   }, ['left'].map(function (anchor) {
@@ -1414,7 +1416,7 @@ function TemporaryDrawer() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 134,
+        lineNumber: 136,
         columnNumber: 9
       }
     }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -1422,7 +1424,7 @@ function TemporaryDrawer() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 135,
+        lineNumber: 137,
         columnNumber: 11
       }
     }, __jsx(_material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_10___default.a, {
@@ -1432,7 +1434,7 @@ function TemporaryDrawer() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 135,
+        lineNumber: 137,
         columnNumber: 56
       }
     })), __jsx(_material_ui_core_Drawer__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -1474,7 +1476,7 @@ function TemporaryDrawer() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 136,
+        lineNumber: 138,
         columnNumber: 11
       }
     }, list(anchor), __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_14__["default"], {
@@ -1482,14 +1484,14 @@ function TemporaryDrawer() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 162,
+        lineNumber: 164,
         columnNumber: 13
       }
     }, __jsx(_Rules__WEBPACK_IMPORTED_MODULE_13__["default"], {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 163,
+        lineNumber: 165,
         columnNumber: 15
       }
     }, "Rules"))));
@@ -1540,7 +1542,10 @@ function Timer(props) {
   console.log(props);
 
   var complete = function complete() {
-    if (localStorage.getItem('email')) next_router__WEBPACK_IMPORTED_MODULE_1___default.a.push('/game');
+    if (localStorage.getItem('email')) {
+      console.log("DONEEEEEE");
+      next_router__WEBPACK_IMPORTED_MODULE_1___default.a.push('/');
+    }
   };
 
   var Completionist = function Completionist() {
@@ -1549,7 +1554,7 @@ function Timer(props) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20,
+        lineNumber: 24,
         columnNumber: 13
       }
     }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Card"], {
@@ -1562,7 +1567,7 @@ function Timer(props) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21,
+        lineNumber: 25,
         columnNumber: 13
       }
     }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["CardHeader"], {
@@ -1573,14 +1578,14 @@ function Timer(props) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22,
+        lineNumber: 26,
         columnNumber: 17
       }
     }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["CardContent"], {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27,
+        lineNumber: 31,
         columnNumber: 17
       }
     }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Typography"], {
@@ -1591,14 +1596,14 @@ function Timer(props) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28,
+        lineNumber: 32,
         columnNumber: 21
       }
     }, __jsx("h1", {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30,
+        lineNumber: 34,
         columnNumber: 25
       }
     }, "Game is live !")))));
@@ -1616,7 +1621,7 @@ function Timer(props) {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43,
+          lineNumber: 47,
           columnNumber: 20
         }
       });
@@ -1626,7 +1631,7 @@ function Timer(props) {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46,
+          lineNumber: 50,
           columnNumber: 17
         }
       }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Card"], {
@@ -1639,7 +1644,7 @@ function Timer(props) {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47,
+          lineNumber: 51,
           columnNumber: 21
         }
       }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["CardHeader"], {
@@ -1650,14 +1655,14 @@ function Timer(props) {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48,
+          lineNumber: 52,
           columnNumber: 25
         }
       }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["CardContent"], {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53,
+          lineNumber: 57,
           columnNumber: 25
         }
       }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Typography"], {
@@ -1668,21 +1673,21 @@ function Timer(props) {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54,
+          lineNumber: 58,
           columnNumber: 29
         }
       }, __jsx("h1", {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55,
+          lineNumber: 59,
           columnNumber: 33
         }
       }, props.message, "\xA0\xA0", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(days, 2), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(hours), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(minutes), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(seconds)), __jsx("h1", {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58,
+          lineNumber: 62,
           columnNumber: 33
         }
       }, "Game is not live yet !")))));
@@ -1696,7 +1701,7 @@ function Timer(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 84,
       columnNumber: 9
     }
   });
@@ -65420,6 +65425,7 @@ function index() {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(_env_json__WEBPACK_IMPORTED_MODULE_9__.api + "/api/status").then(function (response) {
       console.log(response);
+      if (response.data.status == 404) next_router__WEBPACK_IMPORTED_MODULE_8___default.a.push('/error');
       var temp = new Date(response.data.start_time);
       setStart(temp.getTime() + temp.getTimezoneOffset() * 60000);
       var temp2 = new Date(response.data.end_time);
@@ -65430,8 +65436,7 @@ function index() {
       localStorage.setItem("day", day); //if(localStorage.getItem('email'))
 
       console.log(localStorage.getItem('start'));
-      /*if(localStorage.getItem('day')==3 && (localStorage.getItem('end') < Date.now()) && (localStorage.getItem('email')))
-            Router.push('/game_finale')*/
+      if (localStorage.getItem('day') == 3 && localStorage.getItem('end') < Date.now()) next_router__WEBPACK_IMPORTED_MODULE_8___default.a.push('/game_finale');
 
       if (localStorage.getItem('email') && localStorage.getItem('start') < Date.now()) {
         next_router__WEBPACK_IMPORTED_MODULE_8___default.a.push('/game'); //console.log(Date.now()+"    "+localStorage.getItem('start'))
@@ -65448,21 +65453,21 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 64,
       columnNumber: 5
     }
   }, __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
+      lineNumber: 66,
       columnNumber: 7
     }
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 67,
       columnNumber: 9
     }
   }, __jsx("meta", {
@@ -65470,7 +65475,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 68,
       columnNumber: 11
     }
   }), __jsx("meta", {
@@ -65479,14 +65484,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 69,
       columnNumber: 11
     }
   }), __jsx("title", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72,
+      lineNumber: 73,
       columnNumber: 11
     }
   }, "Screencast "), __jsx("link", {
@@ -65496,14 +65501,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 74,
       columnNumber: 11
     }
   }))), __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 78,
       columnNumber: 7
     }
   }), __jsx(_components_Timer2__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -65512,14 +65517,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79,
+      lineNumber: 80,
       columnNumber: 7
     }
   }), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 82,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -65532,7 +65537,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 83,
       columnNumber: 9
     }
   }, __jsx("span", {
@@ -65540,7 +65545,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90,
+      lineNumber: 91,
       columnNumber: 11
     }
   }, "screen"), "cast", " ", __jsx("span", {
@@ -65548,7 +65553,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91,
+      lineNumber: 92,
       columnNumber: 11
     }
   }, "2020 ")), __jsx("div", {
@@ -65559,14 +65564,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94,
+      lineNumber: 95,
       columnNumber: 9
     }
   }, __jsx("h1", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95,
+      lineNumber: 96,
       columnNumber: 11
     }
   }, "Ready to play ?"))), __jsx("div", {
@@ -65581,35 +65586,35 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 100,
       columnNumber: 7
     }
   }, __jsx(_components_GoogleLog__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100,
+      lineNumber: 101,
       columnNumber: 9
     }
   }), __jsx(_components_FbLog2__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101,
+      lineNumber: 102,
       columnNumber: 9
     }
   })), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104,
+      lineNumber: 105,
       columnNumber: 7
     }
   }, __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105,
+      lineNumber: 106,
       columnNumber: 7
     }
   })));
