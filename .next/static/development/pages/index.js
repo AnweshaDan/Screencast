@@ -488,13 +488,6 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
         token: response.tokenObj.access_token
       }).then(function (res) {
         console.log(res);
-
-        if (res.data.quiz_finished) {
-          console.log('yes');
-          next_router__WEBPACK_IMPORTED_MODULE_14___default.a.push('/finale');
-          console.log("yesyes");
-        }
-
         console.log("jajajaj");
         localStorage.setItem('token', res.data.access_token); //localStorage.setItem('ref_token', res.data.refresh_token)
 
@@ -503,11 +496,19 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
         localStorage.setItem("image", response.profileObj.imageUrl);
 
         _this.setState({
+          result: res.data.quiz_finished,
           access: res.data.access_token,
           userDetails: response.profileObj,
           isUserLoggedIn: true
         }, function () {
-          if (localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_14___default.a.push("/game");else next_router__WEBPACK_IMPORTED_MODULE_14___default.a.reload();
+          console.log("mountain" + _this.state.result);
+
+          if (localStorage.getItem('start') <= Date.now()) {
+            if (!res.data.quiz_finished) next_router__WEBPACK_IMPORTED_MODULE_14___default.a.push('/game');else {
+              console.log("seaaa");
+              next_router__WEBPACK_IMPORTED_MODULE_14___default.a.push('/finale');
+            }
+          } else next_router__WEBPACK_IMPORTED_MODULE_14___default.a.reload();
         }); //this.refresh(res.data.access_token,res.data.refresh_token);
 
         /* if ((localStorage.getItem('start') <= Date.now()))
@@ -519,7 +520,8 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       userDetails: {},
       isUserLoggedIn: false,
-      access: ""
+      access: "",
+      result: false
     }; //this.refresh=this.refresh.bind(this);
 
     return _this;
@@ -528,11 +530,12 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
   Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(GoogleLog, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      //this.responseGoogle(this.state.result)
       if (localStorage.getItem("email")) {
+        //this.responseGoogle(this.state.result)
         this.setState({
           isUserLoggedIn: true
-        });
-        console.log('mounted'); //if((localStorage.getItem('start') < Date.now())) Router.push("/game");
+        }); //if((localStorage.getItem('start') < Date.now())) Router.push("/game");
       }
       /*if (localStorage.getItem("email") && ((localStorage.getItem('start') <= Date.now()))) {
         //this.refresh(localStorage.getItem('token'),localStorage.getItem('ref_token'))
@@ -578,28 +581,28 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 128,
+          lineNumber: 134,
           columnNumber: 7
         }
       }, __jsx("div", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 129,
+          lineNumber: 135,
           columnNumber: 9
         }
       }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_10___default.a, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 130,
+          lineNumber: 136,
           columnNumber: 11
         }
       })), __jsx("div", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 134,
+          lineNumber: 140,
           columnNumber: 9
         }
       }, !this.state.isUserLoggedIn && __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -610,7 +613,7 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 139,
+              lineNumber: 145,
               columnNumber: 17
             }
           }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -625,7 +628,7 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 141,
+              lineNumber: 147,
               columnNumber: 19
             }
           }, __jsx(social_media_icons_react__WEBPACK_IMPORTED_MODULE_13__["SocialMediaIconsReact"], {
@@ -641,7 +644,7 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 149,
+              lineNumber: 155,
               columnNumber: 21
             }
           })));
@@ -654,7 +657,7 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 136,
+          lineNumber: 142,
           columnNumber: 13
         }
       })));

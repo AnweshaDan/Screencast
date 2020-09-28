@@ -24,17 +24,20 @@ class GoogleLog extends React.Component {
     this.state = {
       userDetails: {},
       isUserLoggedIn: false,
-      access: ""
+      access: "",
+      result:false
     };
     //this.refresh=this.refresh.bind(this);
   }
 
   componentDidMount() {
+    //this.responseGoogle(this.state.result)
     
     if(localStorage.getItem("email"))
     {
+      //this.responseGoogle(this.state.result)
       this.setState({isUserLoggedIn:true})
-      console.log('mounted')
+      
       //if((localStorage.getItem('start') < Date.now())) Router.push("/game");
            
       
@@ -89,12 +92,7 @@ class GoogleLog extends React.Component {
       })
       .then((res) => {
         console.log(res);
-        if(res.data.quiz_finished)
-        {
-          console.log('yes')
-          Router.push('/finale')
-          console.log("yesyes")
-        } 
+       
         console.log("jajajaj")
         localStorage.setItem('token', res.data.access_token)
         //localStorage.setItem('ref_token', res.data.refresh_token)
@@ -102,10 +100,18 @@ class GoogleLog extends React.Component {
         localStorage.setItem("name", response.profileObj.name);
         localStorage.setItem("image", response.profileObj.imageUrl);
         
-        this.setState({ access: res.data.access_token,userDetails: response.profileObj, isUserLoggedIn: true }, ()=>{
-        
-          if((localStorage.getItem('start') <= Date.now())) 
-            Router.push("/game");
+        this.setState({ result:res.data.quiz_finished, access: res.data.access_token,userDetails: response.profileObj, isUserLoggedIn: true }, ()=>{
+          console.log("mountain"+this.state.result)
+          if((localStorage.getItem('start') <= Date.now()))
+          {
+            if(!(res.data.quiz_finished)) Router.push('/game')
+            else 
+            {  
+              console.log("seaaa")
+              Router.push('/finale')
+            }
+          } 
+            
           else
             Router.reload();
            
@@ -152,7 +158,7 @@ class GoogleLog extends React.Component {
               )}
               onSuccess={this.responseGoogle} //isSignedIn ??
               onFailure={this.responseGoogle} //handle later
-
+              
               cookiePolicy={"single_host_origin"}
             />
           )}
