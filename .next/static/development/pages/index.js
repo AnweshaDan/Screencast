@@ -212,7 +212,7 @@ var FbLog2 = /*#__PURE__*/function (_React$Component) {
           isSignedIn: true,
           access: res.data.access_token
         }, function () {
-          if (localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_10___default.a.push("/game");else Object(_components_AnsAlert__WEBPACK_IMPORTED_MODULE_12__["default"])(-1);
+          if (localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_10___default.a.push("/game");else next_router__WEBPACK_IMPORTED_MODULE_10___default.a.reload();
         });
       });
     });
@@ -229,9 +229,13 @@ var FbLog2 = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       if (localStorage.getItem("email")) {
-        if (localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_10___default.a.push("/game");else {
-          Object(_components_AnsAlert__WEBPACK_IMPORTED_MODULE_12__["default"])(-1);
-        }
+        this.setState({
+          isSignedIn: true
+        }, function () {
+          if (localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_10___default.a.push("/game");else {
+            Object(_components_AnsAlert__WEBPACK_IMPORTED_MODULE_12__["default"])(-1);
+          }
+        });
       }
     }
   }, {
@@ -241,7 +245,7 @@ var FbLog2 = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 85,
+          lineNumber: 89,
           columnNumber: 7
         }
       }, !this.state.isSignedIn && __jsx("div", {
@@ -253,7 +257,7 @@ var FbLog2 = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 87,
+          lineNumber: 91,
           columnNumber: 11
         }
       }, __jsx(LoginButton, {
@@ -261,7 +265,7 @@ var FbLog2 = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90,
+          lineNumber: 94,
           columnNumber: 13
         }
       })));
@@ -65604,6 +65608,9 @@ function index() {
       columnNumber: 9
     }
   })), __jsx("div", {
+    style: {
+      paddingTop: '140px'
+    },
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -65624,7 +65631,7 @@ function index() {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!****************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fanwesha%2FDesktop%2Fscreencast%2Fpages%2Findex.js ***!
   \****************************************************************************************************************************/
@@ -65647,5 +65654,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

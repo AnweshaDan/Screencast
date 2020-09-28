@@ -40,12 +40,16 @@ class FbLog2 extends React.Component {
       
       if(localStorage.getItem("email"))
       {
-        if((localStorage.getItem('start') <= Date.now()))
-        Router.push("/game");
-        else 
-        {
-          AnsAlert(-1);
-        }
+        this.setState({isSignedIn:true},()=>{
+          if((localStorage.getItem('start') <= Date.now()))
+            Router.push("/game");
+          else 
+            {
+              AnsAlert(-1);
+            }
+
+        })
+        
       }    
     }
   
@@ -72,7 +76,7 @@ class FbLog2 extends React.Component {
           if((localStorage.getItem('start') <= Date.now()))
             Router.push("/game");
             else
-            AnsAlert(-1);
+            Router.reload();
 
         })
         

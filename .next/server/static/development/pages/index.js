@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -295,7 +295,7 @@ class FbLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
           isSignedIn: true,
           access: res.data.access_token
         }, () => {
-          if (localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push("/game");else Object(_components_AnsAlert__WEBPACK_IMPORTED_MODULE_5__["default"])(-1);
+          if (localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push("/game");else next_router__WEBPACK_IMPORTED_MODULE_3___default.a.reload();
         });
       });
     });
@@ -309,9 +309,13 @@ class FbLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
   componentDidMount() {
     if (localStorage.getItem("email")) {
-      if (localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push("/game");else {
-        Object(_components_AnsAlert__WEBPACK_IMPORTED_MODULE_5__["default"])(-1);
-      }
+      this.setState({
+        isSignedIn: true
+      }, () => {
+        if (localStorage.getItem('start') <= Date.now()) next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push("/game");else {
+          Object(_components_AnsAlert__WEBPACK_IMPORTED_MODULE_5__["default"])(-1);
+        }
+      });
     }
   }
 
@@ -320,7 +324,7 @@ class FbLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85,
+        lineNumber: 89,
         columnNumber: 7
       }
     }, !this.state.isSignedIn && __jsx("div", {
@@ -332,7 +336,7 @@ class FbLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87,
+        lineNumber: 91,
         columnNumber: 11
       }
     }, __jsx(LoginButton, {
@@ -340,7 +344,7 @@ class FbLog2 extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 90,
+        lineNumber: 94,
         columnNumber: 13
       }
     })));
@@ -3635,6 +3639,9 @@ function index() {
       columnNumber: 9
     }
   })), __jsx("div", {
+    style: {
+      paddingTop: '140px'
+    },
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -3655,7 +3662,7 @@ function index() {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

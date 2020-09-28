@@ -102,7 +102,7 @@ function index() {
         <FbLog2 />
       </div>
     
-      <div>
+      <div style={{paddingTop:'140px'}}>
       <Footer  />
       </div>
 
