@@ -34,7 +34,7 @@ class GoogleLog extends React.Component {
     if(localStorage.getItem("email"))
     {
       this.setState({isUserLoggedIn:true})
-      
+      console.log('mounted')
       //if((localStorage.getItem('start') < Date.now())) Router.push("/game");
            
       
@@ -44,7 +44,6 @@ class GoogleLog extends React.Component {
     
     /*if (localStorage.getItem("email") && ((localStorage.getItem('start') <= Date.now()))) {
       //this.refresh(localStorage.getItem('token'),localStorage.getItem('ref_token'))
-
       console.log("email yes timer yes")
       //Router.push("/game");
     }
@@ -78,8 +77,6 @@ class GoogleLog extends React.Component {
     },50000)
     localStorage.setItem("interval_id",t);
     
-
-
   }*/
   responseGoogle = (response) => {
       console.log(response);
@@ -91,14 +88,20 @@ class GoogleLog extends React.Component {
 
       })
       .then((res) => {
-        console.log(response);
-        
+        console.log(res);
+        if(res.data.quiz_finished)
+        {
+          console.log('yes')
+          Router.push('/finale')
+          console.log("yesyes")
+        } 
         console.log("jajajaj")
         localStorage.setItem('token', res.data.access_token)
         //localStorage.setItem('ref_token', res.data.refresh_token)
         localStorage.setItem("email", response.profileObj.email);
         localStorage.setItem("name", response.profileObj.name);
         localStorage.setItem("image", response.profileObj.imageUrl);
+        
         this.setState({ access: res.data.access_token,userDetails: response.profileObj, isUserLoggedIn: true }, ()=>{
         
           if((localStorage.getItem('start') <= Date.now())) 

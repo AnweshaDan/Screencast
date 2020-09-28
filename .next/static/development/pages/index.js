@@ -487,7 +487,14 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
       axios__WEBPACK_IMPORTED_MODULE_9___default.a.post(_env_json__WEBPACK_IMPORTED_MODULE_16__.api + "/api/googlelogin", {
         token: response.tokenObj.access_token
       }).then(function (res) {
-        console.log(response);
+        console.log(res);
+
+        if (res.data.quiz_finished) {
+          console.log('yes');
+          next_router__WEBPACK_IMPORTED_MODULE_14___default.a.push('/finale');
+          console.log("yesyes");
+        }
+
         console.log("jajajaj");
         localStorage.setItem('token', res.data.access_token); //localStorage.setItem('ref_token', res.data.refresh_token)
 
@@ -524,11 +531,12 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
       if (localStorage.getItem("email")) {
         this.setState({
           isUserLoggedIn: true
-        }); //if((localStorage.getItem('start') < Date.now())) Router.push("/game");
+        });
+        console.log('mounted'); //if((localStorage.getItem('start') < Date.now())) Router.push("/game");
       }
       /*if (localStorage.getItem("email") && ((localStorage.getItem('start') <= Date.now()))) {
         //this.refresh(localStorage.getItem('token'),localStorage.getItem('ref_token'))
-         console.log("email yes timer yes")
+        console.log("email yes timer yes")
         //Router.push("/game");
       }
       else
@@ -557,7 +565,7 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
       },50000)
       localStorage.setItem("interval_id",t);
       
-      }*/
+    }*/
 
   }, {
     key: "render",
@@ -570,28 +578,28 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 125,
+          lineNumber: 128,
           columnNumber: 7
         }
       }, __jsx("div", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 126,
+          lineNumber: 129,
           columnNumber: 9
         }
       }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_10___default.a, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 127,
+          lineNumber: 130,
           columnNumber: 11
         }
       })), __jsx("div", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 131,
+          lineNumber: 134,
           columnNumber: 9
         }
       }, !this.state.isUserLoggedIn && __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -602,7 +610,7 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 136,
+              lineNumber: 139,
               columnNumber: 17
             }
           }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -617,7 +625,7 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 138,
+              lineNumber: 141,
               columnNumber: 19
             }
           }, __jsx(social_media_icons_react__WEBPACK_IMPORTED_MODULE_13__["SocialMediaIconsReact"], {
@@ -633,7 +641,7 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
             __self: _this2,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 146,
+              lineNumber: 149,
               columnNumber: 21
             }
           })));
@@ -646,7 +654,7 @@ var GoogleLog = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 133,
+          lineNumber: 136,
           columnNumber: 13
         }
       })));
@@ -1211,12 +1219,10 @@ function TemporaryDrawer() {
     if (localStorage.getItem('start') < Date.now()) {
       console.log(localStorage.getItem('start') < Date.now());
       localStorage.removeItem('email');
-      localStorage.clear();
       next_router__WEBPACK_IMPORTED_MODULE_16___default.a.push('/');
     } else {
       console.log(localStorage.getItem('start') < Date.now());
       localStorage.removeItem('email');
-      localStorage.clear();
       next_router__WEBPACK_IMPORTED_MODULE_16___default.a.reload('/');
     }
   };

@@ -53,14 +53,14 @@ export default function TemporaryDrawer() {
     {
       console.log(localStorage.getItem('start')<Date.now())
       localStorage.removeItem('email');
-      localStorage.clear();
+      
       Router.push('/')
     }
     else
     {
       console.log(localStorage.getItem('start')<Date.now())
       localStorage.removeItem('email');
-      localStorage.clear();
+      
       Router.reload('/')
     }
     
