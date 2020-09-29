@@ -21,6 +21,7 @@ function index() {
   const [day, setDay] = useState(0);
   
   useEffect(() => {
+    console.log('index mounted')
     
     axios
       .get(data.api+"/api/status")
@@ -38,12 +39,14 @@ function index() {
         localStorage.setItem("end", end);
         localStorage.setItem("day",day);
         //if(localStorage.getItem('email'))
-        console.log(localStorage.getItem('start') )
+        console.log(localStorage.getItem('end') )
+        console.log(localStorage.getItem('day')==3 && (localStorage.getItem('end') < Date.now()) )
+        console.log(localStorage.getItem('email') && (localStorage.getItem('start') < Date.now()) && end >Date.now())
         if(localStorage.getItem('day')==3 && (localStorage.getItem('end') < Date.now()) )
               Router.push('/game_finale')
         
         
-        if (localStorage.getItem('email') && (localStorage.getItem('start') < Date.now()))
+        if (localStorage.getItem('email') && (localStorage.getItem('start') < Date.now()) && localStorage.getItem('end') >Date.now())
         {
           Router.push('/game')
           //console.log(Date.now()+"    "+localStorage.getItem('start'))

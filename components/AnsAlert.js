@@ -13,7 +13,7 @@ export default (isCorrect) => {
             type: 'success',
             title: 'You gave the correct answer',
             showConfirmButton: false,
-            timer: 2000,
+            timer: 1500,
             timerProgressBar: true,
             willOpen: () => {
                 Swal.showLoading()
@@ -37,7 +37,7 @@ export default (isCorrect) => {
                     title: 'Oops! Wrong answer.',
                     text: 'Try again',
                     showConfirmButton: false,
-                    timer: 2000,
+                    timer: 1500,
                     timerProgressBar: true,
                     willOpen: () => {
                         Swal.showLoading()
@@ -62,7 +62,17 @@ export default (isCorrect) => {
                 title: 'Times up!',
                 text: 'Ahaaa sorry!',
                 showConfirmButton: false,
-                
+                timer: 1500,
+                timerProgressBar: true,
+                willOpen: () => {
+                    Swal.showLoading()
+                    timerInterval = setInterval(() => {
+                    
+                    }, 100)
+                },
+                onClose: () => {
+                    clearInterval(timerInterval)
+                }  
                
 
         })
@@ -75,8 +85,18 @@ export default (isCorrect) => {
             icon: 'info',
             title: 'Error !',
             text: 'Aha prohibited ! ;_;',
-            showConfirmButton: false
-
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+            willOpen: () => {
+                Swal.showLoading()
+                timerInterval = setInterval(() => {
+                
+                }, 100)
+            },
+            onClose: () => {
+                clearInterval(timerInterval)
+            }  
         })
 
 

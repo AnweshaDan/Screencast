@@ -137,7 +137,7 @@ __webpack_require__.r(__webpack_exports__);
       type: 'success',
       title: 'You gave the correct answer',
       showConfirmButton: false,
-      timer: 2000,
+      timer: 1500,
       timerProgressBar: true,
       willOpen: () => {
         sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.showLoading();
@@ -158,7 +158,7 @@ __webpack_require__.r(__webpack_exports__);
       title: 'Oops! Wrong answer.',
       text: 'Try again',
       showConfirmButton: false,
-      timer: 2000,
+      timer: 1500,
       timerProgressBar: true,
       willOpen: () => {
         sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.showLoading();
@@ -177,7 +177,16 @@ __webpack_require__.r(__webpack_exports__);
       icon: 'error',
       title: 'Times up!',
       text: 'Ahaaa sorry!',
-      showConfirmButton: false
+      showConfirmButton: false,
+      timer: 1500,
+      timerProgressBar: true,
+      willOpen: () => {
+        sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.showLoading();
+        timerInterval = setInterval(() => {}, 100);
+      },
+      onClose: () => {
+        clearInterval(timerInterval);
+      }
     });
   }
 
@@ -187,7 +196,16 @@ __webpack_require__.r(__webpack_exports__);
     icon: 'info',
     title: 'Error !',
     text: 'Aha prohibited ! ;_;',
-    showConfirmButton: false
+    showConfirmButton: false,
+    timer: 1500,
+    timerProgressBar: true,
+    willOpen: () => {
+      sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.showLoading();
+      timerInterval = setInterval(() => {}, 100);
+    },
+    onClose: () => {
+      clearInterval(timerInterval);
+    }
   });
 });
 
@@ -556,10 +574,10 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
           console.log("mountain" + this.state.result);
 
           if (localStorage.getItem('start') <= Date.now()) {
-            if (!res.data.quiz_finished) next_router__WEBPACK_IMPORTED_MODULE_7___default.a.push('/game');else {
+            if (!res.data.quiz_finished && localStorage.getItem('end') > Date.now()) next_router__WEBPACK_IMPORTED_MODULE_7___default.a.push('/game');else if (res.data.quiz_finished && localStorage.getItem('end') > Date.now()) {
               console.log("seaaa");
               next_router__WEBPACK_IMPORTED_MODULE_7___default.a.push('/finale');
-            }
+            } else {}
           } else next_router__WEBPACK_IMPORTED_MODULE_7___default.a.reload();
         }); //this.refresh(res.data.access_token,res.data.refresh_token);
 
@@ -577,12 +595,15 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   }
 
   componentDidMount() {
-    //this.responseGoogle(this.state.result)
-    if (localStorage.getItem("email")) {
-      //this.responseGoogle(this.state.result)
-      this.setState({
-        isUserLoggedIn: true
-      }); //if((localStorage.getItem('start') < Date.now())) Router.push("/game");
+    console.log('Google mounted'); //this.responseGoogle(this.state.result)
+
+    if (localStorage.getItem('day') == 3 && localStorage.getItem('end') < Date.now()) next_router__WEBPACK_IMPORTED_MODULE_7___default.a.push('/game_finale');else {
+      if (localStorage.getItem("email")) {
+        //this.responseGoogle(this.state.result)
+        this.setState({
+          isUserLoggedIn: true
+        }, () => {});
+      }
     }
     /*if (localStorage.getItem("email") && ((localStorage.getItem('start') <= Date.now()))) {
       //this.refresh(localStorage.getItem('token'),localStorage.getItem('ref_token'))
@@ -594,7 +615,6 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       console.log("timer no");
       //Router.push('/');  
     }*/
-
   }
   /*refresh=(a,r)=>{
     console.log(r)
@@ -627,28 +647,28 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 134,
+        lineNumber: 144,
         columnNumber: 7
       }
     }, __jsx("div", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 135,
+        lineNumber: 145,
         columnNumber: 9
       }
     }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 136,
+        lineNumber: 146,
         columnNumber: 11
       }
     })), __jsx("div", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 140,
+        lineNumber: 150,
         columnNumber: 9
       }
     }, !this.state.isUserLoggedIn && __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -658,7 +678,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 145,
+          lineNumber: 155,
           columnNumber: 17
         }
       }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -673,7 +693,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 147,
+          lineNumber: 157,
           columnNumber: 19
         }
       }, __jsx(social_media_icons_react__WEBPACK_IMPORTED_MODULE_6__["SocialMediaIconsReact"], {
@@ -689,7 +709,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 155,
+          lineNumber: 165,
           columnNumber: 21
         }
       }))),
@@ -701,7 +721,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 142,
+        lineNumber: 152,
         columnNumber: 13
       }
     })));
@@ -3467,6 +3487,7 @@ function index() {
     1: setDay
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    console.log('index mounted');
     axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(_env_json__WEBPACK_IMPORTED_MODULE_9__.api + "/api/status").then(response => {
       console.log(response);
       if (response.data.status == 404) next_router__WEBPACK_IMPORTED_MODULE_8___default.a.push('/error');
@@ -3479,10 +3500,12 @@ function index() {
       localStorage.setItem("end", end);
       localStorage.setItem("day", day); //if(localStorage.getItem('email'))
 
-      console.log(localStorage.getItem('start'));
+      console.log(localStorage.getItem('end'));
+      console.log(localStorage.getItem('day') == 3 && localStorage.getItem('end') < Date.now());
+      console.log(localStorage.getItem('email') && localStorage.getItem('start') < Date.now() && end > Date.now());
       if (localStorage.getItem('day') == 3 && localStorage.getItem('end') < Date.now()) next_router__WEBPACK_IMPORTED_MODULE_8___default.a.push('/game_finale');
 
-      if (localStorage.getItem('email') && localStorage.getItem('start') < Date.now()) {
+      if (localStorage.getItem('email') && localStorage.getItem('start') < Date.now() && localStorage.getItem('end') > Date.now()) {
         next_router__WEBPACK_IMPORTED_MODULE_8___default.a.push('/game'); //console.log(Date.now()+"    "+localStorage.getItem('start'))
         //Router.push('/game')
       } //if(localStorage.getItem('end') < Date.now()) Router.push('/finale2');
@@ -3497,21 +3520,21 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 67,
       columnNumber: 5
     }
   }, __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 69,
       columnNumber: 7
     }
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 70,
       columnNumber: 9
     }
   }, __jsx("meta", {
@@ -3519,7 +3542,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 71,
       columnNumber: 11
     }
   }), __jsx("meta", {
@@ -3528,14 +3551,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 72,
       columnNumber: 11
     }
   }), __jsx("title", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 76,
       columnNumber: 11
     }
   }, "Screencast "), __jsx("link", {
@@ -3545,14 +3568,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 77,
       columnNumber: 11
     }
   }))), __jsx(_components_Navbar__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78,
+      lineNumber: 81,
       columnNumber: 7
     }
   }), __jsx(_components_Timer2__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -3561,14 +3584,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 83,
       columnNumber: 7
     }
   }), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 85,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -3581,7 +3604,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 86,
       columnNumber: 9
     }
   }, __jsx("span", {
@@ -3589,7 +3612,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91,
+      lineNumber: 94,
       columnNumber: 11
     }
   }, "screen"), "cast", " ", __jsx("span", {
@@ -3597,7 +3620,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92,
+      lineNumber: 95,
       columnNumber: 11
     }
   }, "2020 ")), __jsx("div", {
@@ -3608,14 +3631,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95,
+      lineNumber: 98,
       columnNumber: 9
     }
   }, __jsx("h1", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96,
+      lineNumber: 99,
       columnNumber: 11
     }
   }, "Ready to play ?"))), __jsx("div", {
@@ -3630,21 +3653,21 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100,
+      lineNumber: 103,
       columnNumber: 7
     }
   }, __jsx(_components_GoogleLog__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101,
+      lineNumber: 104,
       columnNumber: 9
     }
   }), __jsx(_components_FbLog2__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 105,
       columnNumber: 9
     }
   })), __jsx("div", {
@@ -3654,14 +3677,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105,
+      lineNumber: 108,
       columnNumber: 7
     }
   }, __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106,
+      lineNumber: 109,
       columnNumber: 7
     }
   })));

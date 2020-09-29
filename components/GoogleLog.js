@@ -31,17 +31,26 @@ class GoogleLog extends React.Component {
   }
 
   componentDidMount() {
+    console.log('Google mounted')
     //this.responseGoogle(this.state.result)
+    if(localStorage.getItem('day')==3 && localStorage.getItem('end')<Date.now()) Router.push('/game_finale')
+    else{
+      if(localStorage.getItem("email"))
+      {
+        //this.responseGoogle(this.state.result)
+        this.setState({isUserLoggedIn:true},()=>{
+
+
+        })
+        
+        
+        
+            
+        
+      }    
+
+    }
     
-    if(localStorage.getItem("email"))
-    {
-      //this.responseGoogle(this.state.result)
-      this.setState({isUserLoggedIn:true})
-      
-      //if((localStorage.getItem('start') < Date.now())) Router.push("/game");
-           
-      
-    }    
   
     
     
@@ -104,12 +113,13 @@ class GoogleLog extends React.Component {
           console.log("mountain"+this.state.result)
           if((localStorage.getItem('start') <= Date.now()))
           {
-            if(!(res.data.quiz_finished)) Router.push('/game')
-            else 
+            if(!(res.data.quiz_finished) && localStorage.getItem('end')>Date.now()) Router.push('/game')
+            else if(res.data.quiz_finished && localStorage.getItem('end')>Date.now())
             {  
               console.log("seaaa")
               Router.push('/finale')
             }
+            else{}
           } 
             
           else

@@ -19,7 +19,7 @@ function finale() {
       })*/
    const goback=()=>
    {
-     localStorage.clear();
+     localStorage.removeItem('email');
      Router.push('/');
    }
   
@@ -42,18 +42,23 @@ function finale() {
           <br />
           <span className="flicker">You have completed all Questions.</span>
           <br />
-          <span className="flicker">Wait for more exciting ones.</span>
+          <span className="flicker">Wait for tomorrow for more exciting ones.</span>
+          <br/>
+          <br/>
+          <br />
+          <span className="flicker">Your job here is done !</span>
         </div>
-        <div style={{paddingLeft:'180px'}}>
+        <div style={{}}>
             <Button
             className="btnSubmit"
             variant="contained"
             color="primary"
+            
             elevation={3}
             onClick={goback}
-            style={{ backgroundColor: '#522d80', border: "3px solid white", height: "40px", width: "100px", borderRadius: "7px" }}
+            style={{ backgroundColor: '#522d80', border: "3px solid white", height: "40px", width: "100px", borderRadius: "7px",display:'block',margin : '0 auto', width:'50%' }}
           >
-            Logout
+            Logout/Go back
               </Button>
         </div>
       </div>
