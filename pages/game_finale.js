@@ -27,7 +27,10 @@ function finale() {
           <span className="flicker">Results will be up soon !</span>
         </div>
       </div>
+      <div style={{paddingTop:'220px'}}>
       <Footer />
+      </div>
+      
     </div>
   );
 }

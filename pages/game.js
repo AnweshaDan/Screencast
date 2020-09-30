@@ -224,7 +224,7 @@ class game extends React.Component {
             }
           `}</style>
         </div>
-        <div>
+        <div style={{paddingTop:'220px'}} >
           <Footer />
 
         </div>

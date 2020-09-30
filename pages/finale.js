@@ -62,7 +62,7 @@ function finale() {
               </Button>
         </div>
       </div>
-      <div style={{paddingTop:'210px'}}>
+      <div style={{paddingTop:'220px'}}>
       <Footer />
       </div>
       
