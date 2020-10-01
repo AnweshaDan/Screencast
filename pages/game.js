@@ -184,9 +184,9 @@ class game extends React.Component {
           clearTimeout(this.state.v);
           Router.push("/finale");
         } else {
-          this.setState({
+          /*this.setState({
             answer: ""
-          });
+          });*/
           AnsAlert(0);
         }
       });
