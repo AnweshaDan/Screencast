@@ -5,10 +5,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
-
 import Test from "./Test"
-
-
 import styles from "./Navbar.module.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -17,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#000044",
     width: "100%",
     padding: 0,
-    // position:"fixed"
+   
   },
   menuButton: {
     marginRight: theme.spacing(0),
@@ -55,7 +52,7 @@ export default function Navbar(props) {
   console.log("Just b4 return of nav")
   return (
     <div className={classes.root}>
-      <AppBar position="static" className={styles.navv} style={{ padding: "0px" }}>
+      <AppBar position="fixed" className={styles.navv} style={{ padding: "0px" }}>
         <Toolbar className={styles.navcontent}>
           <IconButton
             edge="start"

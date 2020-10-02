@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -823,8 +823,7 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
     flexGrow: 0,
     backgroundColor: "#000044",
     width: "100%",
-    padding: 0 // position:"fixed"
-
+    padding: 0
   },
   menuButton: {
     marginRight: theme.spacing(0)
@@ -869,11 +868,11 @@ function Navbar(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 54,
       columnNumber: 5
     }
   }, __jsx(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    position: "static",
+    position: "fixed",
     className: _Navbar_module_css__WEBPACK_IMPORTED_MODULE_8___default.a.navv,
     style: {
       padding: "0px"
@@ -881,7 +880,7 @@ function Navbar(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 55,
       columnNumber: 7
     }
   }, __jsx(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -889,7 +888,7 @@ function Navbar(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 56,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -903,14 +902,14 @@ function Navbar(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 57,
       columnNumber: 11
     }
   }, __jsx(_Test__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 64,
       columnNumber: 13
     }
   })), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -923,7 +922,7 @@ function Navbar(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 67,
       columnNumber: 11
     }
   }, "\xA0\xA0\xA0SCREENCAST 2020"), __jsx("div", {
@@ -931,14 +930,14 @@ function Navbar(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79,
+      lineNumber: 76,
       columnNumber: 11
     }
   }, isSignedIn ? __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 78,
       columnNumber: 15
     }
   }, __jsx(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -952,21 +951,21 @@ function Navbar(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 80,
       columnNumber: 17
     }
   })) : __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95,
+      lineNumber: 92,
       columnNumber: 17
     }
   })))), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 99,
       columnNumber: 7
     }
   }));
@@ -3652,7 +3651,7 @@ function index() {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
