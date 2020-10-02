@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow&family=Cabin+Sketch&family=Montserrat:wght@500&family=Russo+One&family=Monoton&display=swap");
 body {
     margin: 0px;
-    background-size: cover;
+    background-size: auto 110vh;
     background-attachment: fixed;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
-    min-height: 101vh;
+    min-height: 110vh;
     display: flex;
     flex-direction: column;
     background-image: url("public/bac.jpg");
@@ -15,7 +15,7 @@ body {
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
-    overflow: auto;
+    /* overflow: hidden; */
     z-index: 0;
     background-color: rgba(10, 10, 10, 0);
 }
