@@ -12,7 +12,7 @@ import Avatar from "@material-ui/core/Avatar";
 import styles from "./Navbar.module.css";
 const StyledTableCell = withStyles((theme) => ({
   head: {
-    backgroundColor: "rgba(53,35,60,1)",
+    backgroundColor: "#000044",
     color: "white",
     border: "none",
     fontFamily:"Russo One",

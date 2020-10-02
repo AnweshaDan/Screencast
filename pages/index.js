@@ -57,7 +57,7 @@ function index() {
 
 { (loading === true) ?
 <>
-    <div style={{ textAlign: "center",  backgroundColor:"rgba(3, 3, 65, 0.5)",boxShadow: "5px 5px 7px rgba(10, 10, 10, 0.9)", width:"92%", maxWidth:"600px", borderTopLeftRadius:"40px",borderBottomRightRadius:"40px", margin:"0 auto", marginTop:"100px", paddingTop:"30px", paddingBottom:"0px"}}>
+    <div style={{ textAlign: "center",  backgroundColor:"rgba(3, 3, 65, 0.7)",boxShadow: "5px 5px 7px rgba(10, 10, 10, 0.9)", width:"92%", maxWidth:"600px", borderTopLeftRadius:"50px",borderBottomRightRadius:"50px", margin:"0 auto", marginTop:"100px", paddingTop:"30px", paddingBottom:"0px"}}>
       <Timer2 start={start} end={end} />
 
       <div>
