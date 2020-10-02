@@ -7,6 +7,7 @@ import Answer from "../components/Answer";
 import Router from "next/router";
 import data from '../env.json';
 import Layout from "../components/Layout";
+import Loader from "../components/Loader"
 
 class game extends React.Component {
   constructor(props) {
@@ -22,7 +23,8 @@ class game extends React.Component {
       day: "",
       end:"",
       message:"",
-      v:""
+      v:"",
+      loaded: false,
       
       
     };
@@ -88,6 +90,7 @@ class game extends React.Component {
               }
             });
         })
+        
     
   }
 
@@ -120,6 +123,9 @@ class game extends React.Component {
             image: response.data.image
           };
         });
+      })
+      .then(() => {
+        this.setState({loaded: true});
       });
     console.log(localStorage.getItem("token"));
   }
@@ -192,6 +198,8 @@ class game extends React.Component {
 
   render() {
     return (
+      <>
+      { (this.state.loaded === true) ?
       <Layout>
       <div
         style={{ marginRight: "auto", marginLeft: "auto", textAlign: "center", minHeight: "100vh-100px" }}
@@ -225,6 +233,8 @@ class game extends React.Component {
     </div>
       </div>
       </Layout>
+      : <Loader/> }
+      </>
     );
   }
 }

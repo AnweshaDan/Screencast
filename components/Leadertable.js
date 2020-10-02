@@ -10,6 +10,7 @@ import axios from "axios";
 import data from '../env.json';
 import Avatar from "@material-ui/core/Avatar";
 import styles from "./Navbar.module.css";
+import Loader from "./Loader"
 const StyledTableCell = withStyles((theme) => ({
   head: {
     backgroundColor: "#000044",
@@ -28,6 +29,18 @@ const StyledTableCell = withStyles((theme) => ({
 
 const StyledTableRow = withStyles((theme) => ({
   root: {
+    "&:nth-of-type(1)": {
+      backgroundColor: "rgba(0,255,0,0.3) !important",
+      color:"#000 !important"
+    },
+    "&:nth-of-type(2)": {
+      backgroundColor: "rgba(0,255,0,0.3) !important",
+      color:"#000 !important"
+    },
+    "&:nth-of-type(3)": {
+      backgroundColor: "rgba(0,255,0,0.3) !important",
+      color:"#000 !important"
+    },
     "&:nth-of-type(odd)": {
       backgroundColor: "rgba(55,55,100,0.3)",
       color:"#000 !important"
@@ -52,7 +65,8 @@ const useStyles = makeStyles({
 });
 
 export default function Leadertable() {
-  const [RankList, setRankList] = useState([]);
+  const [RankList, setRankList] = useState(false);
+  const [loaded,setloaded] = useState([]);
   const classes = useStyles();
 
   useEffect(() => {
@@ -66,11 +80,15 @@ export default function Leadertable() {
         setRankList(response.data);
         console.log(response.data);
         console.log(RankList);
+      })
+      .then(() => {
+        setloaded(true);
       });
   }, []);
 
   return (
     <div>
+      { (loaded === true) ?
       <div className="rtable">
         <Table className={classes.table} aria-label="customized table">
           <TableHead>
@@ -120,6 +138,7 @@ export default function Leadertable() {
             )}
         </Table>
       </div>
+      : <Loader/> }
     </div>
   );
 }
