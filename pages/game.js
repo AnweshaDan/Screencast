@@ -56,13 +56,13 @@ class game extends React.Component {
               if(localStorage.getItem('day')==3 || response.data.error)
               {
                 
-                Router.push('/game_finale')
+                Router.push('/finale')
               }
               
               else
               {
                 
-                Router.push('/finale2');
+                Router.push('/finale');
               }
 
               

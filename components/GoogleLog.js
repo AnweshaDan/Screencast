@@ -33,7 +33,7 @@ class GoogleLog extends React.Component {
   componentDidMount() {
     console.log('Google mounted')
     //this.responseGoogle(this.state.result)
-    if (localStorage.getItem('day') == 3 && localStorage.getItem('end') < Date.now()) Router.push('/game_finale')
+    if (localStorage.getItem('day') == 3 && localStorage.getItem('end') < Date.now()) Router.push('/finale')
     else {
       if (localStorage.getItem("email")) {
         //this.responseGoogle(this.state.result)
