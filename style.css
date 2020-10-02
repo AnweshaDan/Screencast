@@ -16,18 +16,20 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     display: flex;
     flex-direction: column;
-    /*changed*/
-    /*overflow: scroll;
- /* position: relative;*/
-    /*will-change:scroll-position;*/
-    /*changed*/
-    background-color: rgba(10, 10, 50, 0.97);
-    background-image: url("public/bg.jpg");
+    background-image: url("public/bac.jpg");
     font-family: "Barlow", sans-serif;
-    color: "#eee";
+    color: "#fff";
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 .fbbutton {

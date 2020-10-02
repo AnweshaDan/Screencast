@@ -4,11 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
-
 import ListItem from '@material-ui/core/ListItem';
-
 import ListItemText from '@material-ui/core/ListItemText';
-
 import MenuIcon from "@material-ui/icons/Menu";
 import Link from "next/link";
 import Fade from "@material-ui/core/Fade";
@@ -16,7 +13,6 @@ import Rules from "./Rules";
 import MenuItem from "@material-ui/core/MenuItem";
 import { GoogleLogout } from "react-google-login";
 import Router from "next/router";
-
 import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
@@ -148,7 +144,7 @@ export default function TemporaryDrawer() {
                 
                 top: 0,
                 left: 0,
-                background:"rgba(53,35,60,1)",
+                background:"rgba(3, 3, 65, 0.8)",
 
 borderRadius:"0px",
                 color: "white",

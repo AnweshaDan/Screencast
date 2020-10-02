@@ -1,6 +1,5 @@
 import React from "react";
-import Logo from "glug.png";
-import Logo2 from 'scl.png';
+
 function Footer() {
   return (
     <div>
