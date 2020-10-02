@@ -1,18 +1,12 @@
 import React, { useEffect, useState } from "react";
-
-
-
 import Head from "next/head";
-
 import axios from "axios";
-
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import GoogleLog from "../components/GoogleLog";
 import FbLog2 from "../components/FbLog2";
 import Timer2 from "../components/Timer2"
 import Router from "next/router";
 import data from '../env.json';
+import Layout from "../components/Layout";
 
 function index() {
 
@@ -63,22 +57,11 @@ function index() {
 
 
 
-
+<Layout>
     <div style={{ textAlign: "center", minHeight: "100vh" }}>
 
-      <div>
-        <Head>
-          <meta charSet="UTF-8" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, shrink-to-fit:no"
-          />
-          <title>Screencast </title>
-          <link rel="stylesheet" type="text/css" href="question.css" />
-        </Head>
-      </div>
       
-      <Navbar />
+      
 
       <Timer2 start={start} end={end} />
 
@@ -106,12 +89,12 @@ function index() {
       </div>
     
       <div style={{paddingTop:'140px'}}>
-      <Footer  />
+      
       </div>
 
     </div>
 
-
+    </Layout>
 
 
 

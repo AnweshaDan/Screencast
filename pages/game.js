@@ -1,14 +1,12 @@
 import axios from "axios";
 import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import Question from "../components/Question";
 import Hint from "../components/Hint";
 import AnsAlert from "../components/AnsAlert"
 import Answer from "../components/Answer";
 import Router from "next/router";
 import data from '../env.json';
-
+import Layout from "../components/Layout";
 
 class game extends React.Component {
   constructor(props) {
@@ -194,13 +192,11 @@ class game extends React.Component {
 
   render() {
     return (
+      <Layout>
       <div
         style={{ marginRight: "auto", marginLeft: "auto", textAlign: "center", minHeight: "100vh-100px" }}
         questions
       >
-
-
-        <Navbar />
 
         <Question qs={this.state.questions} qsNo={this.state.qsNo} audio={this.state.audio} image={this.state.image} day={this.state.day} />
         <div>
@@ -225,10 +221,11 @@ class game extends React.Component {
           `}</style>
         </div>
         <div style={{paddingTop:'220px'}} >
-          <Footer />
+          
 
         </div>
       </div>
+      </Layout>
     );
   }
 }

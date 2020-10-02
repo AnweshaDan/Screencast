@@ -1,34 +1,18 @@
-import React, { useEffect } from "react";
-import axios from "axios";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import data from '../env.json';
+import React from "react";
 import Router from "next/router";
 import Button from "@material-ui/core/Button";
+import Layout from "../components/Layout";
+
 function finale() {
 
-    /*axios
-      .get(data.api+"/api/status")
-      .then((response) => {
-        console.log(response);
-        var temp=new Date(response.data.start_time);
-        if((temp.getTime() + (temp.getTimezoneOffset() * 60000))<=Date.now())
-        Router.push('/');
-         
-        
-      })*/
    const goback=()=>
    {
      localStorage.removeItem('email');
      Router.push('/');
    }
   
-  
-  
   return (
-    <div>
-      <Navbar />
-
+    <Layout>
       <div>
         <div
           style={{
@@ -63,10 +47,10 @@ function finale() {
         </div>
       </div>
       <div style={{paddingTop:'220px'}}>
-      <Footer />
+      
       </div>
       
-    </div>
+    </Layout>
   );
 }
 

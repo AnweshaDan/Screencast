@@ -1,7 +1,9 @@
 import React from 'react'
+import Layout from "../components/Layout";
 
 function terms_of_service() {
     return (
+        <Layout>
         <div>
             <h1>Website Terms and Conditions of Use</h1>
 
@@ -51,6 +53,7 @@ function terms_of_service() {
 
 <p>Any claim related to GLUG's Website shall be governed by the laws of in without regards to its conflict of law provisions.</p>
         </div>
+        </Layout>
     )
 }
 

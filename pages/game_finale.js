@@ -1,16 +1,9 @@
-import React, { useEffect } from "react";
-import axios from "axios";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import data from '../env.json';
-import Router from "next/router";
+import React from "react";
+import Layout from "../components/Layout";
+
 function finale() {
-
-
   return (
-    <div>
-      <Navbar />
-
+    <Layout>
       <div>
         <div
           style={{
@@ -28,10 +21,10 @@ function finale() {
         </div>
       </div>
       <div style={{paddingTop:'220px'}}>
-      <Footer />
+      
       </div>
       
-    </div>
+    </Layout>
   );
 }
 
