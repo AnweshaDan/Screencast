@@ -43,7 +43,7 @@ export default function Timer(props) {
             return <Completionist />;
         } else {
             return (
-                <span className="sign">
+                
                     <div style={{ backgroundColor: "rgba(0,0,0,0)", color: "white", padding: "0", margin: "0 auto" }}>
                         
                             <div style={{ textAlign: "center", fontSize: "17px", fontFamily: "'Cabin Sketch', sans-serif", }}>
@@ -56,7 +56,7 @@ export default function Timer(props) {
                             </div>
                        
                     </div>
-                </span>)
+                )
 
         }
       

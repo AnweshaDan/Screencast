@@ -1705,15 +1705,7 @@ function Timer(props) {
         }
       });
     } else {
-      return __jsx("span", {
-        className: "sign",
-        __self: _this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 46,
-          columnNumber: 17
-        }
-      }, __jsx("div", {
+      return __jsx("div", {
         style: {
           backgroundColor: "rgba(0,0,0,0)",
           color: "white",
@@ -1752,7 +1744,7 @@ function Timer(props) {
           lineNumber: 53,
           columnNumber: 33
         }
-      }, "Game is not live yet !"))));
+      }, "Game is not live yet !")));
     }
   };
 
@@ -65423,22 +65415,19 @@ module.exports = g;
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "./node_modules/next/dist/next-server/lib/head.js");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_GoogleLog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/GoogleLog */ "./components/GoogleLog.js");
-/* harmony import */ var _components_FbLog2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/FbLog2 */ "./components/FbLog2.js");
-/* harmony import */ var _components_Timer2__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Timer2 */ "./components/Timer2.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _env_json__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../env.json */ "./env.json");
-var _env_json__WEBPACK_IMPORTED_MODULE_7___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../env.json */ "./env.json", 1);
-/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
-/* harmony import */ var _components_Loader__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/Loader */ "./components/Loader.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_GoogleLog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/GoogleLog */ "./components/GoogleLog.js");
+/* harmony import */ var _components_FbLog2__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/FbLog2 */ "./components/FbLog2.js");
+/* harmony import */ var _components_Timer2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Timer2 */ "./components/Timer2.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _env_json__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../env.json */ "./env.json");
+var _env_json__WEBPACK_IMPORTED_MODULE_6___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../env.json */ "./env.json", 1);
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
+/* harmony import */ var _components_Loader__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Loader */ "./components/Loader.js");
 var _jsxFileName = "/home/rishav4101/Screencast/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -65468,9 +65457,9 @@ function index() {
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     console.log('index mounted');
-    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(_env_json__WEBPACK_IMPORTED_MODULE_7__.api + "/api/status").then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(_env_json__WEBPACK_IMPORTED_MODULE_6__.api + "/api/status").then(function (response) {
       console.log(response);
-      if (response.data.status == 404) next_router__WEBPACK_IMPORTED_MODULE_6___default.a.push('/error');
+      if (response.data.status == 404) next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push('/error');
       var temp = new Date(response.data.start_time);
       setStart(temp.getTime() + temp.getTimezoneOffset() * 60000);
       var temp2 = new Date(response.data.end_time);
@@ -65483,24 +65472,24 @@ function index() {
       console.log(localStorage.getItem('end'));
       console.log(localStorage.getItem('day') == 3 && localStorage.getItem('end') < Date.now());
       console.log(localStorage.getItem('email') && localStorage.getItem('start') < Date.now() && end > Date.now());
-      if (localStorage.getItem('day') == 3 && localStorage.getItem('end') < Date.now()) next_router__WEBPACK_IMPORTED_MODULE_6___default.a.push('/game_finale');
+      if (localStorage.getItem('day') == 3 && localStorage.getItem('end') < Date.now()) next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push('/game_finale');
 
       if (localStorage.getItem('email') && localStorage.getItem('start') < Date.now() && localStorage.getItem('end') > Date.now()) {
-        next_router__WEBPACK_IMPORTED_MODULE_6___default.a.push('/game'); //console.log(Date.now()+"    "+localStorage.getItem('start'))
+        next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push('/game'); //console.log(Date.now()+"    "+localStorage.getItem('start'))
         //Router.push('/game')
       } //if(localStorage.getItem('end') < Date.now()) Router.push('/finale2');
 
     });
     setloading(true);
   });
-  return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 57,
       columnNumber: 1
     }
-  }, loading === true ? __jsx("div", {
+  }, loading === true ? __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
     style: {
       textAlign: "center",
       backgroundColor: "rgba(3, 3, 65, 0.5)",
@@ -65517,23 +65506,23 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 61,
       columnNumber: 5
     }
-  }, __jsx(_components_Timer2__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, __jsx(_components_Timer2__WEBPACK_IMPORTED_MODULE_4__["default"], {
     start: start,
     end: end,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 62,
       columnNumber: 7
     }
   }), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 64,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -65546,7 +65535,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 65,
       columnNumber: 9
     }
   }, __jsx("span", {
@@ -65554,15 +65543,22 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 73,
       columnNumber: 11
     }
-  }, "screen"), "cast", " ", __jsx("span", {
+  }, "screen"), "cast", " ", __jsx("br", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 74,
+      columnNumber: 11
+    }
+  }), __jsx("span", {
     className: "flicker",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 75,
       columnNumber: 11
     }
   }, "2020 ")), __jsx("div", {
@@ -65573,14 +65569,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79,
+      lineNumber: 78,
       columnNumber: 9
     }
   }, __jsx("h1", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 79,
       columnNumber: 11
     }
   }, "Ready to play ?"))), __jsx("div", {
@@ -65595,28 +65591,36 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84,
+      lineNumber: 83,
       columnNumber: 7
     }
-  }, __jsx(_components_GoogleLog__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, __jsx(_components_GoogleLog__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 84,
+      columnNumber: 9
+    }
+  }), __jsx(_components_FbLog2__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 85,
       columnNumber: 9
     }
-  }), __jsx(_components_FbLog2__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }))), __jsx("div", {
+    className: "footerBuff",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
-      columnNumber: 9
+      lineNumber: 88,
+      columnNumber: 5
     }
-  }))) : __jsx(_components_Loader__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  })) : __jsx(_components_Loader__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94,
+      lineNumber: 92,
       columnNumber: 3
     }
   }));
@@ -65626,7 +65630,7 @@ function index() {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!*********************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Frishav4101%2FScreencast%2Fpages%2Findex.js ***!
   \*********************************************************************************************************************/
@@ -65649,5 +65653,5 @@ module.exports = dll_c2e10d183b950a67d9e7;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

@@ -27,6 +27,16 @@ body::-webkit-scrollbar {
     }
 }
 
+.footerBuff {
+    height: 120px;
+}
+
+@media only screen and (max-width: 600px) {
+    .footerBuff {
+        height: 0px;
+    }
+}
+
 .fbbutton {
     margin: 0 auto;
     position: relative;

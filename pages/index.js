@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Head from "next/head";
 import axios from "axios";
 import GoogleLog from "../components/GoogleLog";
 import FbLog2 from "../components/FbLog2";
@@ -48,8 +47,6 @@ function index() {
           //console.log(Date.now()+"    "+localStorage.getItem('start'))
           //Router.push('/game')
         }
-       
-         
         
         //if(localStorage.getItem('end') < Date.now()) Router.push('/finale2');
       });
@@ -60,6 +57,7 @@ function index() {
 <Layout>
 
 { (loading === true) ?
+<>
     <div style={{ textAlign: "center",  backgroundColor:"rgba(3, 3, 65, 0.5)",boxShadow: "5px 5px 7px rgba(10, 10, 10, 0.9)", width:"92%", maxWidth:"600px", borderTopLeftRadius:"40px",borderBottomRightRadius:"40px", margin:"0 auto", marginTop:"100px", paddingTop:"30px", paddingBottom:"0px"}}>
       <Timer2 start={start} end={end} />
 
@@ -73,6 +71,7 @@ function index() {
           }}
         >
           <span className="fast-flicker">screen</span>cast{" "}
+          <br/>
           <span className="flicker">2020 </span>
         </div>
 
@@ -85,17 +84,13 @@ function index() {
         <GoogleLog />
         <FbLog2 />
       </div>
-    
-      {/* <div style={{paddingTop:'70px'}}>
-      
-      </div> */}
-
     </div>
+    <div className='footerBuff'>
+      
+    </div>
+    </>
 : <Loader/> }
     </Layout>
-
-
-
   );
 }
 
