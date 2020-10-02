@@ -34,7 +34,7 @@ body::-webkit-scrollbar {
 
 @media only screen and (max-width: 600px) {
     body {
-        background-image: url("public/bacM1.jpg");
+        background-image: url("public/mobile.jpg");
     }
 }
 
@@ -133,10 +133,13 @@ body::-webkit-scrollbar {
 }
 
 .login-head h1 {
-    font: 150% Consolas, Monaco, monospace;
+    /* font: 150% Consolas, Monaco, monospace; */
+    font-family: 'Russo One', sans-serif;
     border-right: 0.1em solid;
     width: 16.5em;
     width: 15.5ch;
+    font-size: 30px;
+    color: #14004b;
     margin: 0 auto;
     white-space: nowrap;
     overflow: hidden;

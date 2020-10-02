@@ -1639,7 +1639,7 @@ function Timer(props) {
         lineNumber: 24,
         columnNumber: 13
       }
-    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Card"], {
+    }, __jsx("div", {
       style: {
         backgroundColor: "rgba(0,0,0,0)",
         color: "white",
@@ -1716,7 +1716,7 @@ function Timer(props) {
           lineNumber: 50,
           columnNumber: 17
         }
-      }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Card"], {
+      }, __jsx("div", {
         style: {
           backgroundColor: "rgba(0,0,0,0)",
           color: "white",
@@ -65515,8 +65515,7 @@ function index() {
     }
   }, __jsx("div", {
     style: {
-      textAlign: "center",
-      minHeight: "100vh"
+      textAlign: "center"
     },
     __self: this,
     __source: {
@@ -65616,24 +65615,14 @@ function index() {
       lineNumber: 88,
       columnNumber: 9
     }
-  })), __jsx("div", {
-    style: {
-      paddingTop: '140px'
-    },
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 91,
-      columnNumber: 7
-    }
-  })));
+  }))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (index);
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!*********************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Frishav4101%2FScreencast%2Fpages%2Findex.js ***!
   \*********************************************************************************************************************/
@@ -65656,5 +65645,5 @@ module.exports = dll_c2e10d183b950a67d9e7;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

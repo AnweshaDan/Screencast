@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1630,7 +1630,7 @@ function Timer(props) {
         lineNumber: 24,
         columnNumber: 13
       }
-    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Card"], {
+    }, __jsx("div", {
       style: {
         backgroundColor: "rgba(0,0,0,0)",
         color: "white",
@@ -1707,7 +1707,7 @@ function Timer(props) {
           lineNumber: 50,
           columnNumber: 17
         }
-      }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Card"], {
+      }, __jsx("div", {
         style: {
           backgroundColor: "rgba(0,0,0,0)",
           color: "white",
@@ -3545,8 +3545,7 @@ function index() {
     }
   }, __jsx("div", {
     style: {
-      textAlign: "center",
-      minHeight: "100vh"
+      textAlign: "center"
     },
     __self: this,
     __source: {
@@ -3646,24 +3645,14 @@ function index() {
       lineNumber: 88,
       columnNumber: 9
     }
-  })), __jsx("div", {
-    style: {
-      paddingTop: '140px'
-    },
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 91,
-      columnNumber: 7
-    }
-  })));
+  }))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (index);
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

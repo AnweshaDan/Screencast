@@ -58,7 +58,7 @@ function index() {
 
 
 <Layout>
-    <div style={{ textAlign: "center", minHeight: "100vh" }}>
+    <div style={{ textAlign: "center"}}>
 
       
       
@@ -88,9 +88,9 @@ function index() {
         <FbLog2 />
       </div>
     
-      <div style={{paddingTop:'140px'}}>
+      {/* <div style={{paddingTop:'70px'}}>
       
-      </div>
+      </div> */}
 
     </div>
 

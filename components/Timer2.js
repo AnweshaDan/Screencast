@@ -22,7 +22,7 @@ export default function Timer(props) {
     const Completionist = () => {
         return (
             <span className="sign">
-            <Card style={{ backgroundColor: "rgba(0,0,0,0)", color: "white", padding: "0", margin: "0 auto" }}>
+            <div style={{ backgroundColor: "rgba(0,0,0,0)", color: "white", padding: "0", margin: "0 auto" }}>
                 <CardHeader
                     style={{ textAlign: "center" }}
                     title=" ">
@@ -36,7 +36,7 @@ export default function Timer(props) {
                         </h1>
                     </Typography>
                 </CardContent>
-            </Card>
+            </div>
         </span>
         )
         
@@ -48,7 +48,7 @@ export default function Timer(props) {
         } else {
             return (
                 <span className="sign">
-                    <Card style={{ backgroundColor: "rgba(0,0,0,0)", color: "white", padding: "0", margin: "0 auto" }}>
+                    <div style={{ backgroundColor: "rgba(0,0,0,0)", color: "white", padding: "0", margin: "0 auto" }}>
                         <CardHeader
                             style={{ textAlign: "center" }}
                             title=" ">
@@ -64,7 +64,7 @@ export default function Timer(props) {
                                 </h1>
                             </Typography>
                         </CardContent>
-                    </Card>
+                    </div>
                 </span>)
 
         }
