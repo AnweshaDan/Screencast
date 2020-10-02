@@ -5,16 +5,19 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    /* min-height: 100vh; */
+    min-height: 101vh;
     display: flex;
     flex-direction: column;
     background-image: url("public/bac.jpg");
     font-family: "Barlow", sans-serif;
-    color: "#fff";
+    /* color: "#fff"; */
     -ms-overflow-style: none;
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
+    overflow: auto;
+    z-index: 0;
+    background-color: rgba(10, 10, 10, 0);
 }
 
 body::-webkit-scrollbar {
