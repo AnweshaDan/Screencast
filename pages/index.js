@@ -47,7 +47,6 @@ function index() {
           //console.log(Date.now()+"    "+localStorage.getItem('start'))
           //Router.push('/game')
         }
-        
         //if(localStorage.getItem('end') < Date.now()) Router.push('/finale2');
       });
       setloading(true)
