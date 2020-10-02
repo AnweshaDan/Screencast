@@ -599,38 +599,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         }, () => {});
       }
     }
-    /*if (localStorage.getItem("email") && ((localStorage.getItem('start') <= Date.now()))) {
-      //this.refresh(localStorage.getItem('token'),localStorage.getItem('ref_token'))
-      console.log("email yes timer yes")
-      //Router.push("/game");
-    }
-    else
-    {
-      console.log("timer no");
-      //Router.push('/');  
-    }*/
   }
-  /*refresh=(a,r)=>{
-    console.log(r)
-    localStorage.setItem("token",a);
-    console.log(localStorage.getItem("token"));
-     const t=setInterval(()=>{
-      
-      axios.post("https://https://screencast2020.herokuapp.com/api/refresh",{
-        refresh:r
-      }).then((re)=>{
-        
-        console.log(re);
-        localStorage.setItem("token",re.data.access);
-        this.setState({access:re.data.access})
-        console.log(localStorage.getItem("token"));
-    
-      })
-    },50000)
-    localStorage.setItem("interval_id",t);
-    
-  }*/
-
 
   render() {
     console.log("render of google");
@@ -641,28 +610,14 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 144,
+        lineNumber: 91,
         columnNumber: 7
       }
     }, __jsx("div", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 145,
-        columnNumber: 9
-      }
-    }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 146,
-        columnNumber: 11
-      }
-    })), __jsx("div", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 150,
+        lineNumber: 92,
         columnNumber: 9
       }
     }, !this.state.isUserLoggedIn && __jsx(react_google_login__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -672,7 +627,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 155,
+          lineNumber: 97,
           columnNumber: 17
         }
       }, __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -683,11 +638,12 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         variant: "contained",
         color: "secondary",
         className: "button",
+        disableElevation: true,
         onClick: renderProps.onClick,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 157,
+          lineNumber: 99,
           columnNumber: 19
         }
       }, __jsx(social_media_icons_react__WEBPACK_IMPORTED_MODULE_6__["SocialMediaIconsReact"], {
@@ -703,7 +659,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 165,
+          lineNumber: 108,
           columnNumber: 21
         }
       }))),
@@ -715,7 +671,7 @@ class GoogleLog extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 152,
+        lineNumber: 94,
         columnNumber: 13
       }
     })));
@@ -780,6 +736,64 @@ function Layout(props) {
 
 /***/ }),
 
+/***/ "./components/Loader.js":
+/*!******************************!*\
+  !*** ./components/Loader.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Loader; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/CircularProgress */ "@material-ui/core/CircularProgress");
+/* harmony import */ var _material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/home/rishav4101/Screencast/components/Loader.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(theme => ({
+  loader: {
+    width: "100%",
+    height: "100vh",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: "#fff"
+  }
+}));
+function Loader(props) {
+  const classes = useStyles();
+  return __jsx("div", {
+    className: classes.loader,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
+      columnNumber: 9
+    }
+  }, __jsx(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    color: "#fff",
+    style: {
+      width: "60px",
+      height: "60px"
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21,
+      columnNumber: 13
+    }
+  }));
+}
+
+/***/ }),
+
 /***/ "./components/Navbar.js":
 /*!******************************!*\
   !*** ./components/Navbar.js ***!
@@ -823,7 +837,8 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
     flexGrow: 0,
     backgroundColor: "#000044",
     width: "100%",
-    padding: 0
+    padding: 0,
+    paddingBottom: "50px"
   },
   menuButton: {
     marginRight: theme.spacing(0)
@@ -1642,43 +1657,26 @@ function Timer(props) {
         lineNumber: 25,
         columnNumber: 13
       }
-    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["CardHeader"], {
-      style: {
-        textAlign: "center"
-      },
-      title: " ",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 26,
-        columnNumber: 17
-      }
-    }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["CardContent"], {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 31,
-        columnNumber: 17
-      }
-    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Typography"], {
+    }, __jsx("div", {
       style: {
         textAlign: "center",
-        fontSize: "17px"
+        fontSize: "17px",
+        fontFamily: "'Cabin Sketch', sans-serif"
       },
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32,
+        lineNumber: 28,
         columnNumber: 21
       }
     }, __jsx("h1", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34,
+        lineNumber: 30,
         columnNumber: 25
       }
-    }, "Game is live !")))));
+    }, "Game is live !"))));
   };
 
   const renderer = ({
@@ -1693,7 +1691,7 @@ function Timer(props) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47,
+          lineNumber: 43,
           columnNumber: 20
         }
       });
@@ -1703,7 +1701,7 @@ function Timer(props) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50,
+          lineNumber: 46,
           columnNumber: 17
         }
       }, __jsx("div", {
@@ -1716,53 +1714,36 @@ function Timer(props) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51,
+          lineNumber: 47,
           columnNumber: 21
         }
-      }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["CardHeader"], {
-        style: {
-          textAlign: "center"
-        },
-        title: " ",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 52,
-          columnNumber: 25
-        }
-      }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["CardContent"], {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 57,
-          columnNumber: 25
-        }
-      }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Typography"], {
+      }, __jsx("div", {
         style: {
           textAlign: "center",
-          fontSize: "17px"
+          fontSize: "17px",
+          fontFamily: "'Cabin Sketch', sans-serif"
         },
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58,
+          lineNumber: 49,
           columnNumber: 29
         }
       }, __jsx("h1", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59,
+          lineNumber: 50,
           columnNumber: 33
         }
       }, props.message, "\xA0\xA0", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(days, 2), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(hours), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(minutes), ":", Object(react_countdown__WEBPACK_IMPORTED_MODULE_2__["zeroPad"])(seconds)), __jsx("h1", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62,
+          lineNumber: 53,
           columnNumber: 33
         }
-      }, "Game is not live yet !")))));
+      }, "Game is not live yet !"))));
     }
   };
 
@@ -1773,7 +1754,7 @@ function Timer(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84,
+      lineNumber: 75,
       columnNumber: 9
     }
   });
@@ -3484,8 +3465,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _env_json__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../env.json */ "./env.json");
 var _env_json__WEBPACK_IMPORTED_MODULE_7___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../env.json */ "./env.json", 1);
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
+/* harmony import */ var _components_Loader__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/Loader */ "./components/Loader.js");
 var _jsxFileName = "/home/rishav4101/Screencast/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -3509,6 +3492,10 @@ function index() {
     0: day,
     1: setDay
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+  const {
+    0: loading,
+    1: setloading
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     console.log('index mounted');
     axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(_env_json__WEBPACK_IMPORTED_MODULE_7__.api + "/api/status").then(response => {
@@ -3534,6 +3521,7 @@ function index() {
       } //if(localStorage.getItem('end') < Date.now()) Router.push('/finale2');
 
     });
+    setloading(true);
   });
   return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __self: this,
@@ -3542,14 +3530,24 @@ function index() {
       lineNumber: 60,
       columnNumber: 1
     }
-  }, __jsx("div", {
+  }, loading === true ? __jsx("div", {
     style: {
-      textAlign: "center"
+      textAlign: "center",
+      backgroundColor: "rgba(3, 3, 65, 0.5)",
+      boxShadow: "5px 5px 7px rgba(10, 10, 10, 0.9)",
+      width: "92%",
+      maxWidth: "600px",
+      borderTopLeftRadius: "40px",
+      borderBottomRightRadius: "40px",
+      margin: "0 auto",
+      marginTop: "100px",
+      paddingTop: "30px",
+      paddingBottom: "0px"
     },
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 63,
       columnNumber: 5
     }
   }, __jsx(_components_Timer2__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -3558,14 +3556,14 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 64,
       columnNumber: 7
     }
   }), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 66,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -3578,7 +3576,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 67,
       columnNumber: 9
     }
   }, __jsx("span", {
@@ -3586,7 +3584,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 75,
       columnNumber: 11
     }
   }, "screen"), "cast", " ", __jsx("span", {
@@ -3594,7 +3592,7 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78,
+      lineNumber: 76,
       columnNumber: 11
     }
   }, "2020 ")), __jsx("div", {
@@ -3605,21 +3603,21 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 79,
       columnNumber: 9
     }
   }, __jsx("h1", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 80,
       columnNumber: 11
     }
   }, "Ready to play ?"))), __jsx("div", {
     className: "rowC",
     style: {
       margin: "0 auto",
-      marginBottom: '100px',
+      paddingBottom: '40px',
       textAlign: "center",
       width: "100%",
       justifyContent: "center"
@@ -3627,24 +3625,31 @@ function index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 84,
       columnNumber: 7
     }
   }, __jsx(_components_GoogleLog__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
+      lineNumber: 85,
       columnNumber: 9
     }
   }), __jsx(_components_FbLog2__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88,
+      lineNumber: 86,
       columnNumber: 9
     }
-  }))));
+  }))) : __jsx(_components_Loader__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 94,
+      columnNumber: 3
+    }
+  }));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (index);
@@ -3704,6 +3709,17 @@ module.exports = require("@material-ui/core/Avatar");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/Button");
+
+/***/ }),
+
+/***/ "@material-ui/core/CircularProgress":
+/*!*****************************************************!*\
+  !*** external "@material-ui/core/CircularProgress" ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/CircularProgress");
 
 /***/ }),
 

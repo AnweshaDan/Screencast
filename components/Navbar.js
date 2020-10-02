@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#000044",
     width: "100%",
     padding: 0,
-   
+    paddingBottom:"50px"
   },
   menuButton: {
     marginRight: theme.spacing(0),

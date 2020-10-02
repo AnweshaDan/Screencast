@@ -7,12 +7,14 @@ import Timer2 from "../components/Timer2"
 import Router from "next/router";
 import data from '../env.json';
 import Layout from "../components/Layout";
+import Loader from "../components/Loader";
 
 function index() {
 
   const [end, setEnd] = useState(Date.now());
   const [start, setStart] = useState(Date.now()+2000);
   const [day, setDay] = useState(0);
+  const [loading, setloading] = useState(false)
   
   useEffect(() => {
     console.log('index mounted')
@@ -48,21 +50,17 @@ function index() {
         }
        
          
-
+        
         //if(localStorage.getItem('end') < Date.now()) Router.push('/finale2');
       });
+      setloading(true)
   })
 
   return (
-
-
-
 <Layout>
-    <div style={{ textAlign: "center"}}>
 
-      
-      
-
+{ (loading === true) ?
+    <div style={{ textAlign: "center",  backgroundColor:"rgba(3, 3, 65, 0.5)",boxShadow: "5px 5px 7px rgba(10, 10, 10, 0.9)", width:"92%", maxWidth:"600px", borderTopLeftRadius:"40px",borderBottomRightRadius:"40px", margin:"0 auto", marginTop:"100px", paddingTop:"30px", paddingBottom:"0px"}}>
       <Timer2 start={start} end={end} />
 
       <div>
@@ -83,7 +81,7 @@ function index() {
         </div>
       </div>
 
-      <div className='rowC' style={{ margin: "0 auto", marginBottom: '100px', textAlign: "center", width: "100%", justifyContent: "center" }}>
+      <div className='rowC' style={{ margin: "0 auto", paddingBottom: '40px', textAlign: "center", width: "100%", justifyContent: "center" }}>
         <GoogleLog />
         <FbLog2 />
       </div>
@@ -93,7 +91,7 @@ function index() {
       </div> */}
 
     </div>
-
+: <Loader/> }
     </Layout>
 
 
