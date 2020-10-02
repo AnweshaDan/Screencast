@@ -1,13 +1,6 @@
-
 import React from 'react'
 import Router from "next/router";
 import Countdown, { zeroPad } from 'react-countdown';
-import {
-    Typography,
-    CardContent,
-    CardHeader,
-    Card
-} from "@material-ui/core";
 
 export default function Timer(props) {
     console.log(props)
@@ -60,7 +53,7 @@ export default function Timer(props) {
 
         }
     };
-    
+
     return (
         
         <Countdown

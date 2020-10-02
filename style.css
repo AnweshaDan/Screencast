@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow&family=Cabin+Sketch&family=Montserrat:wght@500&family=Russo+One&family=Monoton&display=swap");
 body {
     margin: 0px;
-    background-size: auto 101vh;
+    background-size: auto 100%;
     background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
@@ -36,6 +36,16 @@ body::-webkit-scrollbar {
 
 @media only screen and (max-width: 600px) {
     .footerBuff {
+        height: 0px;
+    }
+}
+
+.footerBuff2 {
+    height: 200px;
+}
+
+@media only screen and (max-width: 600px) {
+    .footerBuff2 {
         height: 0px;
     }
 }

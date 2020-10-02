@@ -18,7 +18,9 @@ function finale() {
             textAlign: "center",
             fontSize: "22px",
             fontFamily: "'Russo One', sans-serif",
-            margin: "190px auto",
+            margin: "30px auto",
+            marginTop:"100px",
+            width:"320px"
           }}
         >
           <span className="flicker">Congratulations</span>
@@ -40,15 +42,15 @@ function finale() {
 
             elevation={3}
             onClick={goback}
-            style={{ backgroundColor: '#522d80', border: "3px solid white", height: "40px", width: "100px", borderRadius: "7px", display: 'block', margin: '0 auto', width: '50%' }}
+            style={{ backgroundColor: '#000044', border: "0px solid white", height: "40px", borderRadius: "7px", display: 'block', margin: '0 auto', }}
           >
-            Logout/Go back
+            Logout
               </Button>
         </div>
       </div>
-      <div style={{ paddingTop: '220px' }}>
+          <div className="footerBuff2">
 
-      </div>
+          </div>
 
     </Layout>
   );

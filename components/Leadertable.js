@@ -40,13 +40,13 @@ const StyledTableRow = withStyles((theme) => ({
 
 const useStyles = makeStyles({
   table: {
-    marginTop: "10px",
+    marginTop: "15px",
     marginLeft: "auto",
     marginRight: "auto",
     display: "auto",
-    maxWidth: "700px",
+    maxWidth: "900px",
     position: "relative",
-    marginBottom: "100px"
+    marginBottom: "20px"
   },
 });
 

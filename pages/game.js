@@ -220,10 +220,9 @@ class game extends React.Component {
             }
           `}</style>
         </div>
-        <div style={{paddingTop:'220px'}} >
-          
-
-        </div>
+        <div className='footerBuff'>
+      
+    </div>
       </div>
       </Layout>
     );
