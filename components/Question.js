@@ -56,7 +56,7 @@ export default function Question(props) {
       <CardContent className="question">
         <Typography
           className={classes.title}
-          style={{ fontFamily: "'Montserrat', sans-serif",color:"rgb(196, 175, 153)"}}
+          style={{ fontFamily: "'Montserrat', sans-serif",color:"#fff"}}
           
           gutterBottom
         >

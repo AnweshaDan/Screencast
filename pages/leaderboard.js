@@ -5,7 +5,7 @@ import Layout from "../components/Layout";
 export default function leaderboard() {
   return (
     <Layout>
-    <div style={{ textAlign: "center", minHeight: "100vh" }}>
+    <div style={{ textAlign: "center" }}>
 
       
       <div className="head">

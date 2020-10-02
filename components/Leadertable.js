@@ -21,7 +21,7 @@ const StyledTableCell = withStyles((theme) => ({
   body: {
     fontFamily:"Russo One",
     fontSize: 14,
-    color: "white",
+    color:"#fff",
     border: "none",
   },
 }))(TableCell);
@@ -29,11 +29,12 @@ const StyledTableCell = withStyles((theme) => ({
 const StyledTableRow = withStyles((theme) => ({
   root: {
     "&:nth-of-type(odd)": {
-      backgroundColor: "rgba(255,255,255,0.4)",
+      backgroundColor: "rgba(55,55,100,0.3)",
+      color:"#000 !important"
     },
     "&:nth-of-type(even)": {
-      backgroundColor: "rgba(0,0,0,0.5)",
-      color: "white",
+      backgroundColor: "rgba(0,0,0,0.6)",
+      color: "white !important",
     },
   },
 }))(TableRow);
@@ -46,7 +47,7 @@ const useStyles = makeStyles({
     display: "auto",
     maxWidth: "900px",
     position: "relative",
-    marginBottom: "20px"
+    marginBottom: "0px"
   },
 });
 
