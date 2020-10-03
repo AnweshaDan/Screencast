@@ -132,7 +132,7 @@ class game extends React.Component {
 
   submit = (event) => {
     //send final answer for checking
-    
+      event.preventDefault()
       console.log(this.state.answer);
 
       this.checkAns(this.state.answer);
@@ -191,9 +191,9 @@ class game extends React.Component {
           clearTimeout(this.state.v);
           Router.push("/finale");
         } else {
-          /*this.setState({
+          this.setState({
             answer: ""
-          });*/
+          });
           AnsAlert(0);
         }
       });
@@ -214,6 +214,7 @@ class game extends React.Component {
           <Answer
             change={this.change}
             answer={this.state.answer}
+            submit={this.submit}
           />
 
           <Hint hint={this.state.hint}
