@@ -32,7 +32,7 @@ export default function SimplePopover(props) {
         variant="contained"
         color="primary"
         elevation={3}
-        onClick={props.submit2}
+        onClick={props.submit}
         style={{ backgroundColor: "rgb(32, 32, 177)", border: "0px solid white", height: "40px", width: "100px", borderTopRightRadius: "16px", borderBottomLeftRadius: "16px" }}
       >
         Submit

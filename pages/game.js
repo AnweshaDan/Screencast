@@ -28,7 +28,7 @@ class game extends React.Component {
     };
 
     this.submit = this.submit.bind(this);
-    this.submit2 = this.submit2.bind(this);
+    // this.submit2 = this.submit2.bind(this);
     this.change = this.change.bind(this);
     this.checkAns = this.checkAns.bind(this);
     this.getQuestions = this.getQuestions.bind(this);
@@ -54,18 +54,12 @@ class game extends React.Component {
               AnsAlert(9);
               if(localStorage.getItem('day')==3 || response.data.error)
               {
-                
                 Router.push('/finale')
               }
-              
               else
               {
-                
                 Router.push('/finale');
               }
-
-              
-              
             },temp)})
             console.log(localStorage.getItem('end'))
             this.setState({day:localStorage.getItem('day'), end:localStorage.getItem('end')},()=>
@@ -140,17 +134,20 @@ class game extends React.Component {
     //send final answer for checking
     
       console.log(this.state.answer);
-      console.log("JOJOJOJOJOJ");
+
       this.checkAns(this.state.answer);
+      this.setState((prevState) => {
+        return { ...prevState, answer: "" };
+      });
     
   };
-  submit2 = () => {
-    //send final answer for checking
+  // submit2 = () => {
+  //   //send final answer for checking
 
-    console.log(this.state.answer);
+  //   console.log(this.state.answer);
 
-    this.checkAns(this.state.answer);
-  };
+  //   this.checkAns(this.state.answer);
+  // };
 
   change = (event) => {
     //keep updating answer
@@ -216,13 +213,12 @@ class game extends React.Component {
         <div>
           <Answer
             change={this.change}
-
             answer={this.state.answer}
           />
 
           <Hint hint={this.state.hint}
             submit={this.submit}
-            submit2={this.submit2}
+            // submit2={this.submit2}
 
           />
 

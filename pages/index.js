@@ -38,9 +38,7 @@ function index() {
         console.log(localStorage.getItem('day')==3 && (localStorage.getItem('end') < Date.now()) )
         console.log(localStorage.getItem('email') && (localStorage.getItem('start') < Date.now()) && end >Date.now())
         if(localStorage.getItem('day')==3 && (localStorage.getItem('end') < Date.now()) )
-              Router.push('/finale')
-        
-        
+          Router.push('/finale')  
         if (localStorage.getItem('email') && (localStorage.getItem('start') < Date.now()) && localStorage.getItem('end') >Date.now())
         {
           Router.push('/game')
@@ -48,15 +46,17 @@ function index() {
           //Router.push('/game')
         }
         //if(localStorage.getItem('end') < Date.now()) Router.push('/finale2');
+        console.log("in fin")
       })
-      // .then(() => {
-      //   setloading(true)
-      // })
+      .then(() => {
+        setloading(true)
+      })
       .catch(err => {
         console.log(err)
         Router.push('/error')
       });
-      setloading(true)
+
+      // setloading(true)
       
   })
 
