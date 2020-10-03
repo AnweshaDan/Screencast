@@ -25,8 +25,6 @@ class game extends React.Component {
       message:"",
       v:"",
       loaded: false,
-      
-      
     };
 
     this.submit = this.submit.bind(this);
@@ -46,7 +44,6 @@ class game extends React.Component {
             var temp3=new Date(response.data.start_time);
             let temp2 = new Date(response.data.end_time);
             localStorage.setItem('end',temp2.getTime() + (temp2.getTimezoneOffset() * 60000))
-            
             localStorage.setItem("start", temp3.getTime() + (temp3.getTimezoneOffset() * 60000));
             let temp=localStorage.getItem('end')-Date.now();
             localStorage.setItem("day",response.data.current_day);
@@ -90,6 +87,13 @@ class game extends React.Component {
               }
             });
         })
+        .then(() => {
+          this.setState({loaded: true});
+        })
+        .catch(err => {
+          console.log(err)
+          Router.push('/error')
+        });
         
     
   }
@@ -124,9 +128,11 @@ class game extends React.Component {
           };
         });
       })
-      .then(() => {
-        this.setState({loaded: true});
+      .catch(err => {
+        console.log(err)
+        Router.push('/error')
       });
+      
     console.log(localStorage.getItem("token"));
   }
 

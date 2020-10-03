@@ -17,7 +17,7 @@ function index() {
   
   useEffect(() => {
     console.log('index mounted')
-    
+
     axios
       .get(data.api+"/api/status")
       .then((response) => {
@@ -48,8 +48,16 @@ function index() {
           //Router.push('/game')
         }
         //if(localStorage.getItem('end') < Date.now()) Router.push('/finale2');
+      })
+      // .then(() => {
+      //   setloading(true)
+      // })
+      .catch(err => {
+        console.log(err)
+        Router.push('/error')
       });
       setloading(true)
+      
   })
 
   return (

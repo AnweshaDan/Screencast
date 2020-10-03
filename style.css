@@ -50,7 +50,8 @@ body::-webkit-scrollbar {
     }
 }
 
-.fbbutton {
+
+/* .fbbutton {
     margin: 0 auto;
     position: relative;
     text-decoration: none;
@@ -62,6 +63,11 @@ body::-webkit-scrollbar {
     border: none;
     border-radius: 6px;
     z-index: 1000;
+} */
+
+.fbbutton {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
 }
 
 .head {

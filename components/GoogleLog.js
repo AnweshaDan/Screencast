@@ -1,7 +1,6 @@
 import React from "react";
 import GoogleLogin from "react-google-login";
 import axios from "axios";
-import Head from "next/head";
 import Button from "@material-ui/core/Button";
 import { withStyles } from "@material-ui/core/styles";
 import { SocialMediaIconsReact } from 'social-media-icons-react';
@@ -54,8 +53,6 @@ class GoogleLog extends React.Component {
       })
       .then((res) => {
         console.log(res);
-
-        console.log("jajajaj")
         localStorage.setItem('token', res.data.access_token)
         //localStorage.setItem('ref_token', res.data.refresh_token)
         localStorage.setItem("email", response.profileObj.email);
@@ -70,7 +67,12 @@ class GoogleLog extends React.Component {
               console.log("seaaa")
               Router.push('/finale')
             }
-            else { }
+            else if((res.data.error) === "No active quizes"){
+              Router.push('/finale')
+            }
+            else { 
+              Router.push('/error')
+            }
           }
           else
             Router.reload();
