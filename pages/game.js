@@ -2,12 +2,12 @@ import axios from "axios";
 import React from "react";
 import Question from "../components/Question";
 import Hint from "../components/Hint";
-import AnsAlert from "../components/AnsAlert"
+import AnsAlert from "../components/AnsAlert";
 import Answer from "../components/Answer";
 import Router from "next/router";
 import data from '../env.json';
 import Layout from "../components/Layout";
-import Loader from "../components/Loader"
+import Loader from "../components/Loader";
 
 class game extends React.Component {
   constructor(props) {
