@@ -19,7 +19,6 @@ const useStyles = makeStyles({
   list: {
     width: 300,
   },
-
 });
 
 export default function TemporaryDrawer() {
@@ -27,17 +26,15 @@ export default function TemporaryDrawer() {
   const classes = useStyles();
   const [Log, setLog] = useState(false);
   const [state, setState] = React.useState({
-
     left: false
-
   });
   const handleClose = () => {
     setAnchorEl(null);
   };
   useEffect(() => {
-    console.log("menu mounted");
+
     setLog(localStorage.getItem("email"));
-    console.log(Log);
+
   }, []);
 
   const logout = () => {
@@ -47,21 +44,18 @@ export default function TemporaryDrawer() {
     console.log("Lady")
     if(localStorage.getItem('start')<Date.now())
     {
-      console.log(localStorage.getItem('start')<Date.now())
+
       localStorage.removeItem('email');
       
       Router.push('/')
     }
     else
     {
-      console.log(localStorage.getItem('start')<Date.now())
+
       localStorage.removeItem('email');
       
       Router.reload('/')
     }
-    
-  
-    
   };
 
 
@@ -82,7 +76,7 @@ export default function TemporaryDrawer() {
     >
       <List>
       <ListItem button key='Home'>
-          <Link href='/'>
+          <Link href={Log ? "/game" : "/"}>
             <ListItemText primary='Home'
             disableTypography
             primary={<Typography style={{ color: '#FFFFFF', fontFamily:"'Russo One', sans-serif", fontSize:18 }}>Home</Typography>} />
@@ -167,21 +161,3 @@ borderRadius:"0px",
   );
 }
 
-
-/* <ListItem button key='Home'>
-          <Link href='/'>
-            <ListItemText primary='Home' />
-          </Link>
-        </ListItem>*/
-
-        //<ListItemIcon><SportsEsportsIcon/></ListItemIcon>
-
-
-
-        /*<ListItem button key='Game'>
-              <Link href='/game'>
-                
-                
-              <ListItemText primary='Game' />
-              </Link>
-            </ListItem>*/

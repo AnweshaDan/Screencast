@@ -40,16 +40,12 @@ class game extends React.Component {
     axios
       .get(data.api+"/api/status")
       .then((response) => {
-            console.log(response);
             var temp3=new Date(response.data.start_time);
             let temp2 = new Date(response.data.end_time);
             localStorage.setItem('end',temp2.getTime() + (temp2.getTimezoneOffset() * 60000))
             localStorage.setItem("start", temp3.getTime() + (temp3.getTimezoneOffset() * 60000));
             let temp=localStorage.getItem('end')-Date.now();
             localStorage.setItem("day",response.data.current_day);
-            console.log(temp);
-            console.log(localStorage.getItem('end'));
-            console.log(localStorage.getItem('day'));
             this.setState({v:setTimeout(function(){
               AnsAlert(9);
               if(localStorage.getItem('day')==3 || response.data.error)
@@ -61,12 +57,10 @@ class game extends React.Component {
                 Router.push('/finale');
               }
             },temp)})
-            console.log(localStorage.getItem('end'))
             this.setState({day:localStorage.getItem('day'), end:localStorage.getItem('end')},()=>
             {
               if(localStorage.getItem('day')==3 && (localStorage.getItem('end') < Date.now()))
               Router.push('/game_finale')
-              console.log(this.state.day+this.state.end);
               if (!(localStorage.getItem("email"))) {
                 AnsAlert(8)
                 Router.push('/');
@@ -76,14 +70,14 @@ class game extends React.Component {
                 Router.push("/");
               }
               else {
-                console.log("YOOOOOOO")
                 this.getQuestions();
               }
             });
+            
         })
-        .then(() => {
-          this.setState({loaded: true});
-        })
+        // .then(() => {
+          
+        // })
         .catch(err => {
           console.log(err)
           Router.push('/error')
@@ -93,8 +87,6 @@ class game extends React.Component {
   }
 
   getQuestions() {
-    console.log(this.state.qsNo);
-    console.log(localStorage.getItem("token")); //get questions from api and updates state
 
     axios
       .get(data.api+"/api/question", {
@@ -103,8 +95,6 @@ class game extends React.Component {
         },
       })
       .then((response) => {
-        console.log("YOOO+"+response);
-        //if (response.data.error) Router.push("/finale2");
         if (response.data.quiz_finished)
         {
           clearTimeout(this.state.v);
@@ -121,19 +111,18 @@ class game extends React.Component {
             image: response.data.image
           };
         });
+        this.setState({loaded: true});
       })
       .catch(err => {
         console.log(err)
         Router.push('/error')
       });
-      
-    console.log(localStorage.getItem("token"));
   }
 
   submit = (event) => {
     //send final answer for checking
       event.preventDefault()
-      console.log(this.state.answer);
+
 
       this.checkAns(this.state.answer);
       this.setState((prevState) => {
@@ -160,8 +149,7 @@ class game extends React.Component {
   checkAns(
     ans //check answer from api and send for correct alert
   ) {
-    console.log(ans);
-    console.log(this.state.qsNo);
+
     axios
       .post(
         data.api+"/api/checkanswer",
@@ -174,14 +162,14 @@ class game extends React.Component {
       )
       .then((response) => {
         let r = response.data.result;
-        console.log(response);
+
 
         if (r && !response.data.quiz_finished) {
           this.setState((prevState) => {
             return { ...prevState, qsNo: prevState.qsNo + 1, answer: "" };
           });
           AnsAlert(1); //where does the effing control go after this?
-          console.log("SANTA");
+
           this.setState({
             answer: ""
           });

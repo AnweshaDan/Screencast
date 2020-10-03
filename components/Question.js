@@ -97,9 +97,3 @@ export default function Question(props) {
   );
 }
 
-/*<CardMedia
-            className={classes.media}
-            style={{ textAlign: "center", margin: "0 auto" }}
-            image={data.api + props.image}
-            title="Image Hint"
-          />*/

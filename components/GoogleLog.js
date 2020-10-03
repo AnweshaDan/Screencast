@@ -30,7 +30,7 @@ class GoogleLog extends React.Component {
   }
 
   componentDidMount() {
-    console.log('Google mounted')
+
     //this.responseGoogle(this.state.result)
     if (localStorage.getItem('day') == 3 && localStorage.getItem('end') < Date.now()) Router.push('/finale')
     else {
@@ -43,7 +43,7 @@ class GoogleLog extends React.Component {
   }
 
   responseGoogle = (response) => {
-    console.log(response);
+
 
     //localStorage.setItem('token', response.tokenObj.access_token)
     axios
@@ -52,7 +52,7 @@ class GoogleLog extends React.Component {
 
       })
       .then((res) => {
-        console.log(res);
+
         localStorage.setItem('token', res.data.access_token)
         //localStorage.setItem('ref_token', res.data.refresh_token)
         localStorage.setItem("email", response.profileObj.email);
@@ -60,11 +60,11 @@ class GoogleLog extends React.Component {
         localStorage.setItem("image", response.profileObj.imageUrl);
 
         this.setState({ result: res.data.quiz_finished, access: res.data.access_token, userDetails: response.profileObj, isUserLoggedIn: true }, () => {
-          console.log("mountain" + this.state.result)
+
           if ((localStorage.getItem('start') <= Date.now())) {
             if (!(res.data.quiz_finished) && localStorage.getItem('end') > Date.now()) Router.push('/game')
             else if (res.data.quiz_finished && localStorage.getItem('end') > Date.now()) {
-              console.log("seaaa")
+
               Router.push('/finale')
             }
             else if((res.data.error) === "No active quizes"){
@@ -86,7 +86,7 @@ class GoogleLog extends React.Component {
 
 
   render() {
-    console.log("render of google")
+
     const { classes } = this.props;
 
     return (

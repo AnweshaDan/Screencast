@@ -78,8 +78,7 @@ export default function Leadertable() {
       }*/)
       .then((response) => {
         setRankList(response.data);
-        console.log(response.data);
-        console.log(RankList);
+
       })
       .then(() => {
         setloaded(true);

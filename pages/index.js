@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import GoogleLog from "../components/GoogleLog";
 import FbLog2 from "../components/FbLog2";
-import Timer2 from "../components/Timer2"
+import Timer2 from "../components/Timer2";
 import Router from "next/router";
 import data from '../env.json';
 import Layout from "../components/Layout";
@@ -16,12 +16,12 @@ function index() {
   const [loading, setloading] = useState(false)
   
   useEffect(() => {
-    console.log('index mounted')
+   
 
     axios
       .get(data.api+"/api/status")
       .then((response) => {
-        console.log(response);
+
         if(response.data.status==404)
         Router.push('/error')
         var temp=new Date(response.data.start_time);
@@ -33,24 +33,18 @@ function index() {
         localStorage.setItem("start", start);
         localStorage.setItem("end", end);
         localStorage.setItem("day",day);
-        //if(localStorage.getItem('email'))
-        console.log(localStorage.getItem('end') )
-        console.log(localStorage.getItem('day')==3 && (localStorage.getItem('end') < Date.now()) )
-        console.log(localStorage.getItem('email') && (localStorage.getItem('start') < Date.now()) && end >Date.now())
+
+
         if(localStorage.getItem('day')==3 && (localStorage.getItem('end') < Date.now()) )
-          Router.push('/finale')  
-        if (localStorage.getItem('email') && (localStorage.getItem('start') < Date.now()) && localStorage.getItem('end') >Date.now())
+        { Router.push('/finale')  
+        }
+        else if (localStorage.getItem('email') && (localStorage.getItem('start') < Date.now()) && localStorage.getItem('end') >Date.now())
         {
           Router.push('/game')
-          //console.log(Date.now()+"    "+localStorage.getItem('start'))
-          //Router.push('/game')
         }
-        //if(localStorage.getItem('end') < Date.now()) Router.push('/finale2');
-        console.log("in fin")
-      })
-      .then(() => {
         setloading(true)
       })
+      
       .catch(err => {
         console.log(err)
         Router.push('/error')
