@@ -12,9 +12,9 @@ const LoginButton = ({ facebookResponse }) => (
     autoload={true}
     fields="name,email,picture"
     callback={facebookResponse}
-    isMobile={false}
-    disableMobileRedirects={true}
-    disableMobileRedirect
+    // isMobile={false}
+    disableMobileRedirect={true}
+    // disableMobileRedirect
     redirectUri="https://screencast.trennds.com/"
     render={renderProps => (
       <button style={{ backgroundColor: "rgba(0,0,0,0)", border: "none" }} onClick={renderProps.onClick}>
