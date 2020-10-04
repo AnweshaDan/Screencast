@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow&family=Cabin+Sketch&family=Montserrat:wght@500&family=Russo+One&family=Monoton&display=swap");
 body {
     margin: 0px;
-    background-size: cover;
-    background-attachment: fixed;
+    background-size: auto 1150px;
+    /* background-attachment: fixed; */
     background-position: center center;
     background-repeat: no-repeat;
     /* min-height: 100vh; */
