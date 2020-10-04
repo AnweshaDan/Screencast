@@ -27,6 +27,7 @@ body::-webkit-scrollbar {
 @media only screen and (max-width: 600px) {
     body {
         background-image: url("public/mobile.jpg");
+        background-size: auto 950px;
     }
 }
 
