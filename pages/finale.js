@@ -19,8 +19,8 @@ function finale() {
             fontSize: "22px",
             fontFamily: "'Russo One', sans-serif",
             margin: "30px auto",
-            marginTop:"100px",
-            width:"320px"
+            marginTop: "100px",
+            width: "320px"
           }}
         >
           <span className="flicker">Congratulations</span>
@@ -39,7 +39,6 @@ function finale() {
             className="btnSubmit"
             variant="contained"
             color="primary"
-
             elevation={3}
             onClick={goback}
             style={{ backgroundColor: '#000044', border: "0px solid white", height: "40px", borderRadius: "7px", display: 'block', margin: '0 auto', }}
@@ -48,9 +47,9 @@ function finale() {
               </Button>
         </div>
       </div>
-          <div className="footerBuff2">
+      <div className="footerBuff2">
 
-          </div>
+      </div>
 
     </Layout>
   );

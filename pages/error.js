@@ -15,8 +15,8 @@ function error() {
         >
           <span className="flicker">Deadend!</span>
           <br />
-          <br/>
-          <span className="flicker">We are extremely sorry,<br/> seems like some error has occured!</span>
+          <br />
+          <span className="flicker">We are extremely sorry,<br /> seems like some error has occured!</span>
           <br />
           <span className="flicker"></span>
         </div>

@@ -21,9 +21,9 @@ class game extends React.Component {
       isLoggedIn: false,
       hint: "",
       day: "",
-      end:"",
-      message:"",
-      v:"",
+      end: "",
+      message: "",
+      v: "",
       loaded: false,
     };
 
@@ -33,74 +33,65 @@ class game extends React.Component {
     this.checkAns = this.checkAns.bind(this);
     this.getQuestions = this.getQuestions.bind(this);
   }
-  
 
   componentDidMount() {
-    
     axios
-      .get(data.api+"/api/status")
+      .get(data.api + "/api/status")
       .then((response) => {
-            var temp3=new Date(response.data.start_time);
-            let temp2 = new Date(response.data.end_time);
-            localStorage.setItem('end',temp2.getTime() + (temp2.getTimezoneOffset() * 60000))
-            localStorage.setItem("start", temp3.getTime() + (temp3.getTimezoneOffset() * 60000));
-            let temp=localStorage.getItem('end')-Date.now();
-            localStorage.setItem("day",response.data.current_day);
-            this.setState({v:setTimeout(function(){
-              AnsAlert(9);
-              if(localStorage.getItem('day')==3 || response.data.error)
-              {
-                Router.push('/finale')
-              }
-              else
-              {
-                Router.push('/finale');
-              }
-            },temp)})
-            this.setState({day:localStorage.getItem('day'), end:localStorage.getItem('end')},()=>
-            {
-              if(localStorage.getItem('day')==3 && (localStorage.getItem('end') < Date.now()))
-              Router.push('/game_finale')
-              if (!(localStorage.getItem("email"))) {
-                AnsAlert(8)
-                Router.push('/');
-              }
-              else if (!(localStorage.getItem('start') <= Date.now())) {
-                AnsAlert(8)
-                Router.push("/");
-              }
-              else {
-                this.getQuestions();
-              }
-            });
-            
+        var temp3 = new Date(response.data.start_time);
+        let temp2 = new Date(response.data.end_time);
+        localStorage.setItem('end', temp2.getTime() + (temp2.getTimezoneOffset() * 60000))
+        localStorage.setItem("start", temp3.getTime() + (temp3.getTimezoneOffset() * 60000));
+        let temp = localStorage.getItem('end') - Date.now();
+        localStorage.setItem("day", response.data.current_day);
+        this.setState({
+          v: setTimeout(function () {
+            AnsAlert(9);
+            if (localStorage.getItem('day') === 3) {
+              Router.push('/finale')
+            }
+            else if(response.data.error){
+              Router.push('/error')
+            }
+            else {
+              Router.push('/finale');
+            }
+          }, temp)
         })
-        // .then(() => {
-          
-        // })
-        .catch(err => {
-          console.log(err)
-          Router.push('/error')
+        this.setState({ day: localStorage.getItem('day'), end: localStorage.getItem('end') }, () => {
+          if (localStorage.getItem('day') == 3 && (localStorage.getItem('end') < Date.now()))
+            Router.push('/finale')
+          if (!(localStorage.getItem("email"))) {
+            AnsAlert(8)
+            Router.push('/');
+          }
+          else if (!(localStorage.getItem('start') <= Date.now())) {
+            AnsAlert(8)
+            Router.push("/");
+          }
+          else {
+            this.getQuestions();
+          }
         });
-        
-    
+      })
+      .catch(err => {
+        console.log(err)
+        Router.push('/error')
+      });
   }
 
   getQuestions() {
-
     axios
-      .get(data.api+"/api/question", {
+      .get(data.api + "/api/question", {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },
       })
       .then((response) => {
-        if (response.data.quiz_finished)
-        {
+        if (response.data.quiz_finished) {
           clearTimeout(this.state.v);
-          
           Router.push("/finale");
-        } 
+        }
         this.setState((prevState) => {
           return {
             ...prevState,
@@ -111,7 +102,7 @@ class game extends React.Component {
             image: response.data.image
           };
         });
-        this.setState({loaded: true});
+        this.setState({ loaded: true });
       })
       .catch(err => {
         console.log(err)
@@ -121,20 +112,15 @@ class game extends React.Component {
 
   submit = (event) => {
     //send final answer for checking
-      event.preventDefault()
-
-
-      this.checkAns(this.state.answer);
-      this.setState((prevState) => {
-        return { ...prevState, answer: "" };
-      });
-    
+    event.preventDefault()
+    this.checkAns(this.state.answer);
+    this.setState((prevState) => {
+      return { ...prevState, answer: "" };
+    });
   };
   // submit2 = () => {
   //   //send final answer for checking
-
   //   console.log(this.state.answer);
-
   //   this.checkAns(this.state.answer);
   // };
 
@@ -149,10 +135,9 @@ class game extends React.Component {
   checkAns(
     ans //check answer from api and send for correct alert
   ) {
-
     axios
       .post(
-        data.api+"/api/checkanswer",
+        data.api + "/api/checkanswer",
         { answer: ans },
         {
           headers: {
@@ -162,14 +147,11 @@ class game extends React.Component {
       )
       .then((response) => {
         let r = response.data.result;
-
-
         if (r && !response.data.quiz_finished) {
           this.setState((prevState) => {
             return { ...prevState, qsNo: prevState.qsNo + 1, answer: "" };
           });
-          AnsAlert(1); //where does the effing control go after this?
-
+          AnsAlert(1);
           this.setState({
             answer: ""
           });
@@ -190,41 +172,37 @@ class game extends React.Component {
   render() {
     return (
       <>
-      { (this.state.loaded === true) ?
-      <Layout>
-      <div
-        style={{ marginRight: "auto", marginLeft: "auto", textAlign: "center", minHeight: "100vh-100px" }}
-        questions
-      >
-
-        <Question qs={this.state.questions} qsNo={this.state.qsNo} audio={this.state.audio} image={this.state.image} day={this.state.day} />
-        <div>
-          <Answer
-            change={this.change}
-            answer={this.state.answer}
-            submit={this.submit}
-          />
-
-          <Hint hint={this.state.hint}
-            submit={this.submit}
-            // submit2={this.submit2}
-
-          />
-
-          <style jsx>{`
+        { (this.state.loaded === true) ?
+          <Layout>
+            <div
+              style={{ marginRight: "auto", marginLeft: "auto", textAlign: "center", minHeight: "100vh-100px" }}
+              questions
+            >
+              <Question qs={this.state.questions} qsNo={this.state.qsNo} audio={this.state.audio} image={this.state.image} day={this.state.day} />
+              <div>
+                <Answer
+                  change={this.change}
+                  answer={this.state.answer}
+                  submit={this.submit}
+                />
+                <Hint hint={this.state.hint}
+                  submit={this.submit}
+                // submit2={this.submit2}
+                />
+                <style jsx>{`
             div {
               text-align: center;
               margin: 5px;
               margin-bottom:100px;
             }
           `}</style>
-        </div>
-        <div className='footerBuff'>
-      
-    </div>
-      </div>
-      </Layout>
-      : <Loader/> }
+              </div>
+              <div className='footerBuff'>
+
+              </div>
+            </div>
+          </Layout>
+          : <Loader />}
       </>
     );
   }

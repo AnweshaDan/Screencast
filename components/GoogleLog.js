@@ -26,16 +26,12 @@ class GoogleLog extends React.Component {
       access: "",
       result: false
     };
-    //this.refresh=this.refresh.bind(this);
   }
 
   componentDidMount() {
-
-    //this.responseGoogle(this.state.result)
     if (localStorage.getItem('day') == 3 && localStorage.getItem('end') < Date.now()) Router.push('/finale')
     else {
       if (localStorage.getItem("email")) {
-        //this.responseGoogle(this.state.result)
         this.setState({ isUserLoggedIn: true }, () => {
         })
       }
@@ -44,15 +40,11 @@ class GoogleLog extends React.Component {
 
   responseGoogle = (response) => {
 
-
-    //localStorage.setItem('token', response.tokenObj.access_token)
     axios
       .post(data.api + "/api/googlelogin", {
         token: response.tokenObj.access_token
-
       })
       .then((res) => {
-
         localStorage.setItem('token', res.data.access_token)
         //localStorage.setItem('ref_token', res.data.refresh_token)
         localStorage.setItem("email", response.profileObj.email);
@@ -77,24 +69,21 @@ class GoogleLog extends React.Component {
           else
             Router.reload();
         })
-        //this.refresh(res.data.access_token,res.data.refresh_token);
-        /* if ((localStorage.getItem('start') <= Date.now()))
-          Router.push("/game");*/
+      })
+      .catch((err) => {
+        console.log(err)
       });
-
   };
 
 
   render() {
-
     const { classes } = this.props;
-
     return (
       <div>
         <div>
           {!this.state.isUserLoggedIn && (
             <GoogleLogin
-              clientId="1091948986515-evn13uscvig9k6olefvrkdk3q374iumi.apps.googleusercontent.com"
+              clientId="785334417583-prl4pto7m5cakqbes2p0h6nise9u7n17.apps.googleusercontent.com"
               render={(renderProps) => (
                 <div className={classes.root}  >
 

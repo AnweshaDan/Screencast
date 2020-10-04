@@ -31,8 +31,6 @@ const useStyles = makeStyles((theme) => ({
 export default function Navbar(props) {
 
   const classes = useStyles();
-
-
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   //to display avatar in logged in state
@@ -41,7 +39,6 @@ export default function Navbar(props) {
   const [image, setImage] = useState("");
 
   useEffect(() => {
-
     if (localStorage.getItem("email")) {
       setIsSigned(true);
       setName(localStorage.getItem("name"));
@@ -49,7 +46,6 @@ export default function Navbar(props) {
     }
   });
   
-
   return (
     <div className={classes.root}>
       <AppBar position="fixed" className={styles.navv} style={{ padding: "0px" }}>
@@ -69,14 +65,12 @@ export default function Navbar(props) {
             className={classes.title}
             style={{ fontFamily: "'Russo One', sans-serif", fontSize:20 }}
           >
-
             &nbsp;&nbsp;&nbsp;SCREENCAST 2020
           </Typography>
 
           <div className={classes.ava}>
             {isSignedIn ? (
               <div>
-
                 <Avatar
                   position="right"
                   alt={name}
@@ -86,21 +80,15 @@ export default function Navbar(props) {
                     textAlign: "right",
                   }}
                 />
-
               </div>
             ) : (
                 <div></div>
               )}
           </div>
-
         </Toolbar>
-
       </AppBar>
       <div>
-
       </div>
-
-
     </div>
   );
 }
