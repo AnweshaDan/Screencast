@@ -8,7 +8,7 @@ import data from '../env.json';
 
 const LoginButton = ({ facebookResponse }) => (
   <FacebookLogin
-    appId="1285489205143716"
+    appId="365959954585586"
     autoload={true}
     fields="name,email,picture"
     callback={facebookResponse}
