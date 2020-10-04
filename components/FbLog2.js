@@ -13,6 +13,8 @@ const LoginButton = ({ facebookResponse }) => (
     fields="name,email,picture"
     callback={facebookResponse}
     isMobile={false}
+    disableMobileRedirects={true}
+    disableMobileRedirect
     redirectUri="https://screencast.trennds.com/"
     render={renderProps => (
       <button style={{ backgroundColor: "rgba(0,0,0,0)", border: "none" }} onClick={renderProps.onClick}>
