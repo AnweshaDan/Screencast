@@ -105,9 +105,9 @@ body::-webkit-scrollbar {
     min-width: 100px;
     margin: 40px auto;
     padding: 20px;
-    border-bottom-left-radius: 50px;
-    border-top-right-radius: 50px;
-    /* border-radius: 20px; */
+    /* border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px; */
+    border-radius: 20px;
 }
 
 @media only screen and (max-width: 700px) {
@@ -354,9 +354,9 @@ body::-webkit-scrollbar {
     width: 88%;
     max-width: 350px;
     border: 4px solid #d500e9;
-    border-radius: 60px;
-    /* border-bottom-left-radius: 40px;
-    border-top-right-radius: 40px; */
+    /* border-radius: 60px; */
+    border-bottom-left-radius: 40px;
+    border-top-right-radius: 40px;
     margin: 0 auto;
     background-color: rgba(10, 10, 50, 0.5);
 }
