@@ -22,7 +22,7 @@ body {
     min-height: 105vh;
     position: absolute;
     overflow: hidden;
-    background-size: auto 1250px;
+    background-size: cover;
     background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
@@ -37,7 +37,7 @@ body::-webkit-scrollbar {
 @media only screen and (max-width: 600px) {
     .back {
         background-image: url("public/mobile.jpg");
-        background-size: auto 1050px;
+        background-size: cover;
     }
 }
 
@@ -107,7 +107,7 @@ body::-webkit-scrollbar {
     padding: 20px;
     /* border-bottom-left-radius: 50px;
     border-top-right-radius: 50px; */
-    border-radius: 20px;
+    border-radius: 15px;
 }
 
 @media only screen and (max-width: 700px) {
