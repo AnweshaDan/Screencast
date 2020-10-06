@@ -14,7 +14,6 @@ const useStyles = (theme) => ({
     ansdiv: {
       width: "600px"
     }
-
   },
   ans:{
     width:"85%",
@@ -22,16 +21,17 @@ const useStyles = (theme) => ({
     height: "50px",
     outline: "none",
     border: "none",
-    borderTopRightRadius: "30px",
-    borderBottomLeftRadius: "30px",
-    backgroundColor: "#ff2483",
-    boxShadow: "5px 5px 7px rgba(10, 10, 10, 0.9)",
+    // borderTopRightRadius: "30px",
+    // borderBottomLeftRadius: "30px",
+    borderRadius: "6px",
+    backgroundColor: "rgb(32, 32, 177)",
+    boxShadow: "1px 1px 2px rgba(10, 10, 10, 0.9)",
     margin:"10px auto",
     textAlign: "center",
     fontSize:"17px",
     color:"white",
     '&::placeholder':{
-      color:"#eee"
+      color:"#aaa"
     }
   }
 });

@@ -46,12 +46,14 @@ class MyApp extends App {
           <link rel="stylesheet" type="text/css" href="question.css" />
         </Head>
         <ThemeProvider>
+          <div className="back">
           <CssBaseline />
           {this.state.loaded ? (
             <Component {...pageProps} />
           ) : (
             <Loader />
           )}
+          </div>
         </ThemeProvider>
         </React.Fragment>
         </>

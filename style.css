@@ -1,14 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow&family=Cabin+Sketch&family=Montserrat:wght@500&family=Russo+One&family=Monoton&display=swap");
 body {
-    margin: 0px;
-    background-size: auto 1150px;
-    background-attachment: fixed;
-    background-position: center center;
-    background-repeat: no-repeat;
     /* min-height: 100vh; */
     display: flex;
     flex-direction: column;
-    background-image: url("public/bac.jpg");
     font-family: "Barlow", sans-serif;
     /* color: "#fff"; */
     -ms-overflow-style: none;
@@ -20,19 +14,31 @@ body {
     background-color: rgba(10, 10, 10, 0);
 }
 
+.back {
+    margin: 0px;
+    width: 100%;
+    position: absolute;
+    background-size: auto 1150px;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("public/bac.jpg");
+    z-index: -99;
+}
+
 body::-webkit-scrollbar {
     display: none;
 }
 
 @media only screen and (max-width: 600px) {
-    body {
+    .back {
         background-image: url("public/mobile.jpg");
         background-size: auto 950px;
     }
 }
 
 .footerBuff {
-    height: 120px;
+    height: 110px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -42,7 +48,7 @@ body::-webkit-scrollbar {
 }
 
 .footerBuff2 {
-    height: 200px;
+    height: 150px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -86,16 +92,18 @@ body::-webkit-scrollbar {
 .question {
     position: relative;
     z-index: 20;
-    background-color: rgba(3, 3, 65, 0.8);
+    background-color: rgba(3, 3, 65, 0.9);
+    /* background-color: rgb(32, 32, 177); */
     color: white;
     box-sizing: border-box;
-    box-shadow: 5px 5px 7px rgba(10, 10, 10, 0.9);
+    box-shadow: 1px 1px 2px rgba(10, 10, 10, 0.9);
     max-width: 1000px;
     min-width: 100px;
     margin: 40px auto;
     padding: 20px;
-    border-bottom-left-radius: 50px;
-    border-top-right-radius: 50px;
+    /* border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px; */
+    border-radius: 20px;
 }
 
 @media only screen and (max-width: 700px) {
@@ -341,9 +349,10 @@ body::-webkit-scrollbar {
     padding: 15px;
     width: 88%;
     max-width: 350px;
-    border: 4px solid #ff16ec;
-    border-bottom-left-radius: 40px;
-    border-top-right-radius: 40px;
+    border: 4px solid #d500e9;
+    border-radius: 60px;
+    /* border-bottom-left-radius: 40px;
+    border-top-right-radius: 40px; */
     margin: 0 auto;
     background-color: rgba(10, 10, 50, 0.5);
 }
