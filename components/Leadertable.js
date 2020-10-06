@@ -21,9 +21,10 @@ const StyledTableCell = withStyles((theme) => ({
   },
   body: {
     fontFamily: "Russo One",
-    fontSize: 14,
+    fontSize: 13,
     color: "#fff",
     border: "none",
+    padding:"10px"
   },
 }))(TableCell);
 
