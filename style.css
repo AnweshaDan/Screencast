@@ -114,13 +114,18 @@ body::-webkit-scrollbar {
 /*changed*/
 
 .responsive-image {
-    max-width: 300px;
+    max-width: 350px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .responsive-image__image {
     width: 90%;
-    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 350px;
     height: auto;
+    border-radius: 15px;
 }
 
 #filled-basic {
@@ -336,7 +341,7 @@ body::-webkit-scrollbar {
     padding: 15px;
     width: 88%;
     max-width: 350px;
-    border: 4px solid #ff2483;
+    border: 4px solid #ff16ec;
     border-bottom-left-radius: 40px;
     border-top-right-radius: 40px;
     margin: 0 auto;

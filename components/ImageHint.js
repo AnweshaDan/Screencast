@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default function ResponsiveImage( { src, width, height } ) {
+export default function ResponsiveImage( { src } ) {
   return (
     <div className="responsive-image">
       <img

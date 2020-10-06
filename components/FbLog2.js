@@ -12,10 +12,10 @@ const LoginButton = ({ facebookResponse }) => (
     autoload={true}
     fields="name,email,picture"
     callback={facebookResponse}
-    // isMobile={false}
+    isMobile={false}
     disableMobileRedirect={true}
-    // disableMobileRedirect
-    // redirectUri="https://screencast.trennds.com/"
+    disableMobileRedirect
+    redirectUri="https://screencast.trennds.com/"
     render={renderProps => (
       <button style={{ backgroundColor: "rgba(0,0,0,0)", border: "none" }} onClick={renderProps.onClick}>
         <SocialMediaIconsReact borderColor="rgba(0,0,0,0.25)" borderWidth="3" borderStyle="inset" icon="facebook" iconColor="rgba(255,255,255,1)" backgroundColor="rgba(28,149,223,1)" iconSize="6" roundness="29%" size="54" />
