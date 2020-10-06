@@ -24,7 +24,7 @@ const useStyles = (theme) => ({
     // borderTopRightRadius: "30px",
     // borderBottomLeftRadius: "30px",
     borderRadius: "6px",
-    backgroundColor: "rgb(32, 32, 177)",
+    backgroundColor: "rgb(30, 30, 147)",
     boxShadow: "1px 1px 2px rgba(10, 10, 10, 0.9)",
     margin:"10px auto",
     textAlign: "center",

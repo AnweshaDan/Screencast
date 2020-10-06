@@ -30,15 +30,15 @@ const StyledTableCell = withStyles((theme) => ({
 const StyledTableRow = withStyles((theme) => ({
   root: {
     "&:nth-of-type(1)": {
-      backgroundColor: "rgba(0,255,0,0.3) !important",
+      backgroundColor: "rgba(0,200,0,0.4) !important",
       color: "#000 !important"
     },
     "&:nth-of-type(2)": {
-      backgroundColor: "rgba(0,255,0,0.3) !important",
+      backgroundColor: "rgba(0,200,0,0.4) !important",
       color: "#000 !important"
     },
     "&:nth-of-type(3)": {
-      backgroundColor: "rgba(0,255,0,0.3) !important",
+      backgroundColor: "rgba(0,200,0,0.4) !important",
       color: "#000 !important"
     },
     "&:nth-of-type(odd)": {
@@ -46,7 +46,7 @@ const StyledTableRow = withStyles((theme) => ({
       color: "#000 !important"
     },
     "&:nth-of-type(even)": {
-      backgroundColor: "rgba(0,0,0,0.6)",
+      backgroundColor: "rgba(0,0,0,0.7)",
       color: "white !important",
     },
   },
@@ -58,9 +58,12 @@ const useStyles = makeStyles({
     marginLeft: "auto",
     marginRight: "auto",
     display: "auto",
+    width:"95%",
     maxWidth: "900px",
     position: "relative",
-    marginBottom: "0px"
+    marginBottom: "0px",
+    overflowX: "hidden",
+    padding:"10px"
   },
 });
 
