@@ -58,7 +58,7 @@ const useStyles = makeStyles({
     marginLeft: "auto",
     marginRight: "auto",
     display: "auto",
-    width:"95%",
+    width:"90%",
     maxWidth: "900px",
     position: "relative",
     marginBottom: "0px",
