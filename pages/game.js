@@ -102,6 +102,11 @@ class game extends React.Component {
             image: response.data.image
           };
         });
+        window.scrollTo(0, 0);
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
         this.setState({ loaded: true });
       })
       .catch(err => {

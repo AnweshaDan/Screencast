@@ -25,7 +25,7 @@ export default function Rules() {
 
   return (
     <div>
-      <div style={{ color: "white", width: "370px", color: '#FFFFFF', fontFamily:"'Russo One', sans-serif", fontSize:18 }} onClick={handleClickOpen}>
+      <div style={{ width: "370px", color: '#FFFFFF', fontFamily:"'Russo One', sans-serif", fontSize:18 }} onClick={handleClickOpen}>
         Rules
       </div>
       <Dialog
@@ -35,9 +35,10 @@ export default function Rules() {
         onClose={handleClose}
         aria-labelledby="alert-dialog-slide-title"
         aria-describedby="alert-dialog-slide-description"
+        
       >
         <DialogTitle id="alert-dialog-slide-title">{"Rules"}</DialogTitle>
-        <DialogContent>
+        <DialogContent> 
           <DialogContentText id="alert-dialog-slide-description">
             <Typography>
               <ol className="p-3">
