@@ -23,13 +23,13 @@ function finale() {
             width: "320px"
           }}
         >
-          <span className="flicker">Thank You!</span>
+          <span className="flicker">Thank You for Playing!</span>
           <br />
           <br />
-          <span className="flicker">You have completed all Questions</span>
+          {/* <span className="flicker">You have completed all Questions</span>
           <br />
-          <br />
-          <span className="flicker">We might be back soon :)</span>
+          <br /> */}
+          <span className="flicker">Be back soon :)</span>
           <br />
           <br />
           <br />
