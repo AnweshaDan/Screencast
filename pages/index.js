@@ -16,12 +16,9 @@ function index() {
   const [loading, setloading] = useState(false)
 
   useEffect(() => {
-
-
     axios
       .get(data.api + "/api/status")
       .then((response) => {
-
         if (response.data.status == 404)
           Router.push('/error')
         var temp = new Date(response.data.start_time);

@@ -66,7 +66,7 @@ class game extends React.Component {
             Router.push('/');
           }
           else if (!(localStorage.getItem('start') <= Date.now())) {
-            AnsAlert(8)
+            // AnsAlert(8)
             Router.push("/");
           }
           else {
