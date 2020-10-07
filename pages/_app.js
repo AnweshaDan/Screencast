@@ -42,7 +42,7 @@ class MyApp extends App {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
-          <title>Screencast</title>
+          <title>Geektober</title>
           <link rel="stylesheet" type="text/css" href="question.css" />
         </Head>
         <ThemeProvider>

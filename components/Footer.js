@@ -35,14 +35,14 @@ function Footer() {
                   />
                   </a>
                   
-                  &nbsp;&nbsp;
+                  {/* &nbsp;&nbsp;
                   <a href="#">
                   <img
                     src="/scl.png"
                     alt="logo"
                     style={{ width: "50px", borderRadius: "50px" }}
                   />
-                  </a>
+                  </a> */}
                   
                 </div>
                 <h5 style={{ left: "0", right: "0", color: "#eee", }}>HOSTED & CREATED BY GNU/LINUX USERS' GROUP</h5>

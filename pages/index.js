@@ -69,9 +69,9 @@ function index() {
                   fontFamily: "'Russo One', sans-serif",
                 }}
               >
-                <span className="fast-flicker">screen</span>cast{" "}
+                <span className="fast-flicker">GEEK</span>TOBER{" "}
                 <br />
-                <span className="flicker">2020 </span>
+                <span className="flicker">QUIZ </span>
               </div>
 
               <div className="login-head" style={{ marginBottom: "60px" }}>

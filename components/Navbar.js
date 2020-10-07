@@ -65,7 +65,7 @@ export default function Navbar(props) {
             className={classes.title}
             style={{ fontFamily: "'Russo One', sans-serif", fontSize:20 }}
           >
-            &nbsp;&nbsp;&nbsp;SCREENCAST 2020
+            &nbsp;&nbsp;&nbsp;GEEKTOBER
           </Typography>
 
           <div className={classes.ava}>
