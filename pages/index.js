@@ -81,7 +81,7 @@ function index() {
 
             <div className='rowC' style={{ margin: "0 auto", paddingBottom: '40px', textAlign: "center", width: "100%", justifyContent: "center" }}>
               <GoogleLog />
-              <FbLog2 />
+              {/* <FbLog2 /> */}
             </div>
           </div>
           <div className='footerBuff'>
