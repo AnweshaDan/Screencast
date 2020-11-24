@@ -13,7 +13,7 @@ The official Screencast application frontend, created by GNU/Linux Users' Group,
 
 ## Project status
 
-Under Development. Visit [https://screencast.anweshadan.vercel.app/](https://screencast.anweshadan.vercel.app/).
+Under Development. Visit [https://screencast-zeta.vercel.app/](https://screencast-zeta.vercel.app/).
 
 <h3>Application is dockerized<h3>
 
