@@ -7,8 +7,7 @@
   SCREENCAST FRONTEND
 </h1>
 
-## UI 
-<center><img alt="ui" src="public/ui.jpg" width="600" /></center>
+<p align="center"><img alt="ui" src="public/ui.jpg" width="800" /></p>
 
 ## Description
 
