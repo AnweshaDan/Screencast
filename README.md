@@ -7,6 +7,9 @@
   SCREENCAST FRONTEND
 </h1>
 
+## UI 
+<center><img alt="ui" src="public/ui.jpg" width="600" /></center>
+
 ## Description
 
 The official Screencast application frontend, created by GNU/Linux Users' Group, NIT Durgapur
