@@ -4,11 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
-
 import ListItem from '@material-ui/core/ListItem';
-
 import ListItemText from '@material-ui/core/ListItemText';
-
 import MenuIcon from "@material-ui/icons/Menu";
 import Link from "next/link";
 import Fade from "@material-ui/core/Fade";
@@ -16,14 +13,12 @@ import Rules from "./Rules";
 import MenuItem from "@material-ui/core/MenuItem";
 import { GoogleLogout } from "react-google-login";
 import Router from "next/router";
-
 import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   list: {
     width: 300,
   },
-
 });
 
 export default function TemporaryDrawer() {
@@ -31,17 +26,15 @@ export default function TemporaryDrawer() {
   const classes = useStyles();
   const [Log, setLog] = useState(false);
   const [state, setState] = React.useState({
-
     left: false
-
   });
   const handleClose = () => {
     setAnchorEl(null);
   };
   useEffect(() => {
-    console.log("menu mounted");
+
     setLog(localStorage.getItem("email"));
-    console.log(Log);
+
   }, []);
 
   const logout = () => {
@@ -51,21 +44,18 @@ export default function TemporaryDrawer() {
     console.log("Lady")
     if(localStorage.getItem('start')<Date.now())
     {
-      console.log(localStorage.getItem('start')<Date.now())
+
       localStorage.removeItem('email');
       
       Router.push('/')
     }
     else
     {
-      console.log(localStorage.getItem('start')<Date.now())
+
       localStorage.removeItem('email');
       
       Router.reload('/')
     }
-    
-  
-    
   };
 
 
@@ -86,7 +76,7 @@ export default function TemporaryDrawer() {
     >
       <List>
       <ListItem button key='Home'>
-          <Link href='/'>
+          <Link href={Log ? "/game" : "/"}>
             <ListItemText primary='Home'
             disableTypography
             primary={<Typography style={{ color: '#FFFFFF', fontFamily:"'Russo One', sans-serif", fontSize:18 }}>Home</Typography>} />
@@ -148,7 +138,7 @@ export default function TemporaryDrawer() {
                 
                 top: 0,
                 left: 0,
-                background:"rgba(53,35,60,1)",
+                background:"rgba(3, 3, 65, 0.8)",
 
 borderRadius:"0px",
                 color: "white",
@@ -171,21 +161,3 @@ borderRadius:"0px",
   );
 }
 
-
-/* <ListItem button key='Home'>
-          <Link href='/'>
-            <ListItemText primary='Home' />
-          </Link>
-        </ListItem>*/
-
-        //<ListItemIcon><SportsEsportsIcon/></ListItemIcon>
-
-
-
-        /*<ListItem button key='Game'>
-              <Link href='/game'>
-                
-                
-              <ListItemText primary='Game' />
-              </Link>
-            </ListItem>*/

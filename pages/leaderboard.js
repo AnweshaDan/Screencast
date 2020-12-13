@@ -1,30 +1,25 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import Leadertable from "../components/Leadertable";
-import Footer from "../components/Footer";
-import Particles from "react-particles-js";
+import Layout from "../components/Layout";
 
 export default function leaderboard() {
   return (
-    <div style={{ textAlign: "center", minHeight: "100vh" }}>
-
-      <Navbar />
-      <div className="head">
-        <div
-          className="container neon-box"
-          style={{
-            textAlign: "center",
-            fontSize: "20px",
-            fontFamily: "'Russo One', sans-serif",
-          }}
-        >
-          <span className="flicker">LEADERBOARD</span>
+    <Layout>
+      <div style={{ textAlign: "center" }}>
+        <div className="head">
+          <div
+            className="container neon-box"
+            style={{
+              textAlign: "center",
+              fontSize: "20px",
+              fontFamily: "'Russo One', sans-serif",
+            }}
+          >
+            <span className="flicker">LEADERBOARD</span>
+          </div>
         </div>
+        <Leadertable />
       </div>
-
-      <Leadertable />
-
-      <Footer />
-    </div>
+    </Layout>
   );
 }

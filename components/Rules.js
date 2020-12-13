@@ -25,7 +25,7 @@ export default function Rules() {
 
   return (
     <div>
-      <div style={{ color: "white", width: "370px", color: '#FFFFFF', fontFamily:"'Russo One', sans-serif", fontSize:18 }} onClick={handleClickOpen}>
+      <div style={{ width: "370px", color: '#FFFFFF', fontFamily:"'Russo One', sans-serif", fontSize:18 }} onClick={handleClickOpen}>
         Rules
       </div>
       <Dialog
@@ -35,21 +35,21 @@ export default function Rules() {
         onClose={handleClose}
         aria-labelledby="alert-dialog-slide-title"
         aria-describedby="alert-dialog-slide-description"
+        
       >
         <DialogTitle id="alert-dialog-slide-title">{"Rules"}</DialogTitle>
-        <DialogContent>
+        <DialogContent> 
           <DialogContentText id="alert-dialog-slide-description">
             <Typography>
               <ol className="p-3">
                 <li>The quiz comprises of 3 levels with 10 questions each.</li>
-                <li>Each question carries 10 marks.</li>
-                <li>The one who finishes the quiz first is the winner.</li>
+                <li>Each question in the 1st, 2nd and 3rd rounds carry scores 10,15 and 20 respectively.</li>
+                <li>You can go to the next question only after correctly attempting the current question.</li>
                 <li>
-                  You can go to the next question only after getting the current
-                  question correct.
+                A level can be played only between its start and end timings.
                 </li>
                 <li>
-                  A level can be played only between its start and end timings.
+                Answers are not case sensitive.
                 </li>
               </ol>
             </Typography>

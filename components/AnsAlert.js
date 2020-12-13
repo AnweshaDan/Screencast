@@ -1,10 +1,8 @@
-
 import Swal from 'sweetalert2';
 
 export default (isCorrect) => {
-    
-    if (isCorrect === 1)
-    {
+
+    if (isCorrect === 1) {
         let timerInterval;
         Swal.fire({
             padding: "60px",
@@ -18,67 +16,67 @@ export default (isCorrect) => {
             willOpen: () => {
                 Swal.showLoading()
                 timerInterval = setInterval(() => {
-                
+
                 }, 100)
             },
             onClose: () => {
                 clearInterval(timerInterval)
             }
-            })
+        })
 
 
     }
-            if (isCorrect === 0)
-            {   let timerInterval
-                Swal.fire({
-                    padding: "60px",
-                    position: 'center',
-                    icon: 'error',
-                    title: 'Oops! Wrong answer.',
-                    text: 'Try again',
-                    showConfirmButton: false,
-                    timer: 1500,
-                    timerProgressBar: true,
-                    willOpen: () => {
-                        Swal.showLoading()
-                        timerInterval = setInterval(() => {
-                        
-                        }, 100)
-                    },
-                    onClose: () => {
-                        clearInterval(timerInterval)
-                    }  
-        
+    if (isCorrect === 0) {
+        let timerInterval
+        Swal.fire({
+            padding: "60px",
+            position: 'center',
+            icon: 'error',
+            title: 'Oops! Wrong answer.',
+            text: 'Try again',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+            willOpen: () => {
+                Swal.showLoading()
+                timerInterval = setInterval(() => {
 
-            })
-    }
-        if (isCorrect === 9)
-        {
-            
-            Swal.fire({
-                padding: "60px",
-                position: 'center',
-                icon: 'error',
-                title: 'Times up!',
-                text: 'Ahaaa sorry!',
-                showConfirmButton: false,
-                timer: 1500,
-                timerProgressBar: true,
-                willOpen: () => {
-                    Swal.showLoading()
-                    timerInterval = setInterval(() => {
-                    
-                    }, 100)
-                },
-                onClose: () => {
-                    clearInterval(timerInterval)
-                }  
-               
+                }, 100)
+            },
+            onClose: () => {
+                clearInterval(timerInterval)
+            }
+
 
         })
     }
-        
-        if (isCorrect === 8)
+    if (isCorrect === 9) {
+        let timerInterval
+        Swal.fire({
+            padding: "60px",
+            position: 'center',
+            icon: 'error',
+            title: 'Times up!',
+            text: 'Ahaaa sorry!',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+            willOpen: () => {
+                Swal.showLoading()
+                timerInterval = setInterval(() => {
+
+                }, 100)
+            },
+            onClose: () => {
+                clearInterval(timerInterval)
+            }
+
+
+        })
+    }
+
+    if (isCorrect === 8) {
+        let timerInterval
         Swal.fire({
             padding: "60px",
             position: 'center',
@@ -91,13 +89,14 @@ export default (isCorrect) => {
             willOpen: () => {
                 Swal.showLoading()
                 timerInterval = setInterval(() => {
-                
+
                 }, 100)
             },
             onClose: () => {
                 clearInterval(timerInterval)
-            }  
+            }
         })
+    }
 
 
 

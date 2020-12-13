@@ -5,10 +5,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
-
 import Test from "./Test"
-
-
 import styles from "./Navbar.module.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -17,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#000044",
     width: "100%",
     padding: 0,
+    paddingBottom:"50px"
   },
   menuButton: {
     marginRight: theme.spacing(0),
@@ -33,8 +31,6 @@ const useStyles = makeStyles((theme) => ({
 export default function Navbar(props) {
 
   const classes = useStyles();
-
-
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   //to display avatar in logged in state
@@ -43,7 +39,6 @@ export default function Navbar(props) {
   const [image, setImage] = useState("");
 
   useEffect(() => {
-    console.log("Nav mounted")
     if (localStorage.getItem("email")) {
       setIsSigned(true);
       setName(localStorage.getItem("name"));
@@ -51,10 +46,9 @@ export default function Navbar(props) {
     }
   });
   
-  console.log("Just b4 return of nav")
   return (
     <div className={classes.root}>
-      <AppBar position="static" className={styles.navv} style={{ padding: "0px" }}>
+      <AppBar position="fixed" className={styles.navv} style={{ padding: "0px" }}>
         <Toolbar className={styles.navcontent}>
           <IconButton
             edge="start"
@@ -71,14 +65,12 @@ export default function Navbar(props) {
             className={classes.title}
             style={{ fontFamily: "'Russo One', sans-serif", fontSize:20 }}
           >
-
-            &nbsp;&nbsp;&nbsp;SCREENCAST 2020
+            &nbsp;&nbsp;&nbsp;GEEKTOBER
           </Typography>
 
           <div className={classes.ava}>
             {isSignedIn ? (
               <div>
-
                 <Avatar
                   position="right"
                   alt={name}
@@ -88,21 +80,15 @@ export default function Navbar(props) {
                     textAlign: "right",
                   }}
                 />
-
               </div>
             ) : (
                 <div></div>
               )}
           </div>
-
         </Toolbar>
-
       </AppBar>
       <div>
-
       </div>
-
-
     </div>
   );
 }

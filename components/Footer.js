@@ -1,6 +1,5 @@
 import React from "react";
-import Logo from "../glug.png";
-import Logo2 from './scl.png';
+
 function Footer() {
   return (
     <div>
@@ -30,20 +29,20 @@ function Footer() {
                 }}>
                   <a href="https://nitdgplug.org/">
                   <img
-                    src={Logo}
+                    src="/glug.png"
                     alt="logo"
                     style={{ width: "50px" }}
                   />
                   </a>
                   
-                  &nbsp;&nbsp;
-                  <a href={Logo2}>
+                  {/* &nbsp;&nbsp;
+                  <a href="#">
                   <img
-                    src={Logo2}
+                    src="/scl.png"
                     alt="logo"
                     style={{ width: "50px", borderRadius: "50px" }}
                   />
-                  </a>
+                  </a> */}
                   
                 </div>
                 <h5 style={{ left: "0", right: "0", color: "#eee", }}>HOSTED & CREATED BY GNU/LINUX USERS' GROUP</h5>

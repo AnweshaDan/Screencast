@@ -1,15 +1,8 @@
 import React, { Component } from "react";
 
-export default function ResponsiveImage( { src, width, height } ) {
+export default function ResponsiveImage( { src } ) {
   return (
-    <div
-      style={ { 
-        width,
-      } }
-      className="responsive-image">
-      <div style={ {
-          paddingBottom: ( height / width * 100 ) + '%'
-        } } />
+    <div className="responsive-image">
       <img
         src={ src }
         className="responsive-image__image" />

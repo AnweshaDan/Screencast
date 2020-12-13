@@ -32,8 +32,8 @@ export default function SimplePopover(props) {
         variant="contained"
         color="primary"
         elevation={3}
-        onClick={props.submit2}
-        style={{ backgroundColor: "rgb(32, 32, 177)", border: "3px solid white", height: "40px", width: "100px", borderRadius: "7px" }}
+        onClick={props.submit}
+        style={{ backgroundColor: "rgb(32, 32, 177)", border: "0px solid white", height: "40px", width: "100px", borderTopRightRadius: "16px", borderBottomLeftRadius: "16px" }}
       >
         Submit
           </Button>
@@ -45,7 +45,7 @@ export default function SimplePopover(props) {
         color="secondary"
         elevation={3}
         onClick={handleClick}
-        style={{ backgroundColor: "#ff2483", border: "3px solid white", height: "40px", width: "100px", borderRadius: "7px" }}
+        style={{ backgroundColor: "#ff2483", border: "0px solid white", height: "40px", width: "100px", borderTopLeftRadius: "16px", borderBottomRightRadius: "16px" }}
       >
         Hint
       </Button>

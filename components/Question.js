@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-import CardMedia from "@material-ui/core/CardMedia";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 import data from '../env.json';
 import AudioHint from "./AudioHint";
 import { Data } from "react-f/lib/src/form";
@@ -22,7 +20,9 @@ const useStyles = makeStyles({
     fontSize: 21,
   },
   pos: {
-    marginBottom: 12,
+    marginBottom: 4,
+    margin: "0 auto", 
+    maxWidth:"600px"
   },
   media: {
     height: 300,
@@ -56,21 +56,13 @@ export default function Question(props) {
       <CardContent className="question">
         <Typography
           className={classes.title}
-          style={{ fontFamily: "'Montserrat', sans-serif",color:"rgb(196, 175, 153)"}}
+          style={{ fontFamily: "'Montserrat', sans-serif",color:"#fff"}}
           
           gutterBottom
         >
           Question {props.qsNo}
         </Typography>
 
-        <Typography
-          className={classes.pos}
-          color="#f0f0f0"
-          style={{ fontSize: "17px", fontFamily: "'Barlow', sans-serif" }}
-
-        >
-          {props.qs}
-        </Typography>
         {props.image ? (
           <ResponsiveImage
           src={data.api + props.image}
@@ -80,6 +72,16 @@ export default function Question(props) {
         ) : (
             <div></div>
           )}
+
+        <Typography
+          className={classes.pos}
+          color="#f0f0f0"
+          style={{ fontSize: "17px", fontFamily: "'Barlow', sans-serif" }}
+
+        >
+          {props.qs}
+        </Typography>
+        
 
         <br />
         {props.audio ? (
@@ -97,9 +99,3 @@ export default function Question(props) {
   );
 }
 
-/*<CardMedia
-            className={classes.media}
-            style={{ textAlign: "center", margin: "0 auto" }}
-            image={data.api + props.image}
-            title="Image Hint"
-          />*/

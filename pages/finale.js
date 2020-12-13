@@ -1,72 +1,57 @@
-import React, { useEffect } from "react";
-import axios from "axios";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import data from '../env.json';
+import React from "react";
 import Router from "next/router";
 import Button from "@material-ui/core/Button";
+import Layout from "../components/Layout";
+
 function finale() {
 
-    /*axios
-      .get(data.api+"/api/status")
-      .then((response) => {
-        console.log(response);
-        var temp=new Date(response.data.start_time);
-        if((temp.getTime() + (temp.getTimezoneOffset() * 60000))<=Date.now())
-        Router.push('/');
-         
-        
-      })*/
-   const goback=()=>
-   {
-     localStorage.removeItem('email');
-     Router.push('/');
-   }
-  
-  
-  
-  return (
-    <div>
-      <Navbar />
+  const goback = () => {
+    localStorage.removeItem('email');
+    Router.push('/');
+  }
 
+  return (
+    <Layout>
       <div>
         <div
           style={{
             textAlign: "center",
             fontSize: "22px",
             fontFamily: "'Russo One', sans-serif",
-            margin: "190px auto",
+            margin: "30px auto",
+            marginTop: "100px",
+            width: "320px"
           }}
         >
-          <span className="flicker">Congratulations!</span>
+          <span className="flicker">Thank You for Playing!</span>
           <br />
-          <span className="flicker">You have completed all Questions.</span>
           <br />
-          <span className="flicker">Wait for tomorrow for more exciting ones.</span>
-          <br/>
-          <br/>
+          {/* <span className="flicker">You have completed all Questions</span>
           <br />
-          <span className="flicker">Your job here is done !</span>
+          <br /> */}
+          <span className="flicker">Be back soon :)</span>
+          <br />
+          <br />
+          <br />
         </div>
         <div style={{}}>
-            <Button
+          <Button
             className="btnSubmit"
             variant="contained"
             color="primary"
-            
             elevation={3}
             onClick={goback}
-            style={{ backgroundColor: '#522d80', border: "3px solid white", height: "40px", width: "100px", borderRadius: "7px",display:'block',margin : '0 auto', width:'50%' }}
+            style={{ backgroundColor: '#000044', border: "0px solid white", height: "40px", borderRadius: "7px", display: 'block', margin: '0 auto', }}
           >
-            Logout/Go back
+            Logout
               </Button>
         </div>
       </div>
-      <div style={{paddingTop:'220px'}}>
-      <Footer />
+      <div className="footerBuff2">
+
       </div>
-      
-    </div>
+
+    </Layout>
   );
 }
 

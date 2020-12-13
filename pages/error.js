@@ -1,16 +1,9 @@
-import React, { useEffect } from "react";
-import axios from "axios";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import data from '../env.json';
-import Router from "next/router";
-function finale() {
-  
-  
-  return (
-    <div>
-      <Navbar />
+import React from "react";
+import Layout from "../components/Layout";
 
+function error() {
+  return (
+    <Layout>
       <div>
         <div
           style={{
@@ -20,16 +13,16 @@ function finale() {
             margin: "190px auto",
           }}
         >
-          <span className="flicker">Deadend !</span>
+          <span className="flicker">Deadend!</span>
           <br />
-          <span className="flicker">You are in the wrong lane.</span>
+          <br />
+          <span className="flicker">We are extremely sorry,<br /> seems like some error has occured!</span>
           <br />
           <span className="flicker"></span>
         </div>
       </div>
-      <Footer />
-    </div>
+    </Layout>
   );
 }
 
-export default finale;
+export default error;
